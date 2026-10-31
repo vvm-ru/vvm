@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VVM Ульяновск</title>
+<meta name="description" content="VVM готовится к запуску в Ульяновске: доска объявлений, где место в ленте нельзя купить. Первым продавцам размещение бесплатно.">
+<meta name="theme-color" content="#0a0b10">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="VVM — доска объявлений Ульяновска"><meta property="og:description" content="VVM готовится к запуску в Ульяновске: доска объявлений, где место в ленте нельзя купить. Первым продавцам размещение бесплатно.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23a183ff%22/%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%235b8cff%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2244%22%20height%3D%2244%22%20rx%3D%2214%22%20fill%3D%22url%28%23a%29%22/%3E%3Cpath%20d%3D%22M12%2014L24%2029L36%2014%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%224.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M12%2024L24%2039L36%2024%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+body{margin:0}
+
+/* Макет: широкая сетка. Слева обещание и действие, справа пример выдачи с разбором «почему вы это видите». Ниже спокойные полосы без анимации. */
+:root{
+  --bg:#0a0b10; --band:#0e1017; --sf:rgba(255,255,255,.045); --sf2:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.1); --tx:#f1f3f8; --mu:#98a0b5;
+  --ac:#9a85ff; --ac2:#34d3ee; --ok:#3ddba0;
+  --b1:#6d4dff; --b2:#4f7cf5; --btx:#fff;
+  --w0:#ffffff; --w1:#d3deff; --w2:#8fb4ff; --w3:#3fe0ee;
+  --shadow:0 24px 60px -30px rgba(0,0,0,.85);
+  --f:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#f6f7fb; --band:#eceff7; --sf:#ffffff; --sf2:#eef0f8;
+  --line:rgba(20,24,46,.11); --tx:#14172a; --mu:#586078;
+  --ac:#5a43d6; --ac2:#0b8aa3; --ok:#0c8a5c;
+  --w0:#14172a; --w1:#2b3170; --w2:#4a5bd6; --w3:#0b8aa3;
+  --shadow:0 24px 60px -34px rgba(30,40,90,.4); color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f6f7fb; --band:#eceff7; --sf:#ffffff; --sf2:#eef0f8;
+  --line:rgba(20,24,46,.11); --tx:#14172a; --mu:#586078;
+  --ac:#5a43d6; --ac2:#0b8aa3; --ok:#0c8a5c;
+  --w0:#14172a; --w1:#2b3170; --w2:#4a5bd6; --w3:#0b8aa3;
+  --shadow:0 24px 60px -34px rgba(30,40,90,.4); color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+.w{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:700 12px/1 var(--f);letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:8px}
+
+/* шапка */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .lm{width:34px;height:34px;flex:none}
+.logo .wm{height:20px;width:auto;flex:none}
+.state{font:600 12.5px/1 var(--f);color:var(--mu);border:1px solid var(--line);border-radius:99px;padding:8px 13px;white-space:nowrap}
+.state b{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:8px;vertical-align:1px}
+
+/* первый экран */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-block:44px 76px}
+.hero h1{font-size:clamp(34px,5.2vw,58px);line-height:1.04}
+.lead{margin-top:20px;font-size:clamp(17px,2vw,20px);line-height:1.55;color:var(--mu);max-width:34em}
+.lead b{color:var(--tx);font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 24px;border-radius:14px;font:700 15.5px/1 var(--f);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,border-color .2s,filter .2s}
+.btn.p{background:linear-gradient(120deg,var(--b1),var(--b2));color:var(--btx)}
+.btn.p:hover{filter:brightness(1.08)}
+.btn.g{background:transparent;color:var(--tx);border-color:var(--line)}
+.btn.g:hover{background:var(--sf2)}
+.note{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--mu);max-width:36em}
+.jn{margin-top:14px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--sf);font-size:14px;line-height:1.5;max-width:36em}
+
+/* пример карточки */
+.mock{position:relative;border:1px solid var(--line);background:var(--sf);border-radius:22px;padding:18px;box-shadow:var(--shadow);max-width:420px;width:100%;justify-self:end}
+.mk-tag{position:absolute;top:-11px;left:18px;background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:5px 11px;font:600 11.5px/1 var(--f);color:var(--mu)}
+.mk-img{height:132px;border-radius:14px;background:linear-gradient(135deg,rgba(124,92,255,.22),rgba(34,211,238,.16));display:grid;place-items:center;color:var(--ac)}
+.mk-img svg{width:150px;height:auto;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.mk-t{margin-top:14px;font-weight:700;font-size:16px}
+.mk-p{margin-top:2px;font-weight:800;font-size:20px}
+.mk-p span{font-weight:600;font-size:12.5px;color:var(--ok);margin-left:8px}
+.mk-h{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font:700 12px/1 var(--f);letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+.mk-r{display:grid;grid-template-columns:1fr auto;gap:5px 10px;margin-top:11px;font-size:13.5px;font-weight:600}
+.mk-r em{font-style:normal;color:var(--mu);font-variant-numeric:tabular-nums}
+.mk-r i{grid-column:1/-1;height:5px;border-radius:5px;background:var(--sf2);overflow:hidden}
+.mk-r i s{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--b1),var(--ac2))}
+
+/* полосы */
+.band{background:var(--band);border-block:1px solid var(--line)}
+section{padding-block:76px}
+.hd{display:grid;gap:12px;margin-bottom:38px;max-width:40em}
+.hd h2{font-size:clamp(26px,3.4vw,38px);line-height:1.12}
+.hd p{color:var(--mu);font-size:17px}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--line);background:var(--sf);border-radius:18px;padding:26px;min-width:0}
+.card h3{font-size:19px;line-height:1.25;margin-top:16px}
+.card p{margin-top:10px;color:var(--mu);font-size:15.5px}
+.ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--sf2);color:var(--ac)}
+.ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tag{display:inline-block;margin-top:16px;font:600 12px/1 var(--f);color:var(--ok);border:1px solid var(--line);border-radius:99px;padding:6px 10px}
+
+.terms{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}
+.list{list-style:none;margin:0;padding:0;border:1px solid var(--line);background:var(--sf);border-radius:18px}
+.list li{display:grid;grid-template-columns:24px 1fr;gap:14px;padding:18px 22px;font-size:16px}
+.list li+li{border-top:1px solid var(--line)}
+.list svg{width:22px;height:22px;margin-top:2px;fill:none;stroke:var(--ok);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.list small{display:block;margin-top:3px;color:var(--mu);font-size:14px;line-height:1.5}
+.side{border:1px dashed var(--line);border-radius:18px;padding:22px;color:var(--mu);font-size:15px}
+.side b{display:block;color:var(--tx);font-size:16px;margin-bottom:8px}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--line);padding-top:18px}
+.steps li::before{content:counter(s);display:block;font:800 30px/1 var(--f);color:var(--ac);margin-bottom:12px;font-variant-numeric:tabular-nums}
+.steps h3{font-size:18px}
+.steps p{margin-top:8px;color:var(--mu);font-size:15.5px}
+
+.faq{display:grid;gap:10px;max-width:46em}
+details{border:1px solid var(--line);background:var(--sf);border-radius:14px}
+summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:600;font-size:22px;line-height:1;color:var(--mu);flex:none}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 22px 20px;color:var(--mu);font-size:15.5px;max-width:40em}
+
+.last{text-align:left;display:grid;gap:18px;max-width:42em}
+.last h2{font-size:clamp(26px,3.4vw,40px);line-height:1.12}
+.last p{color:var(--mu);font-size:17px}
+footer{padding-block:34px 44px;color:var(--mu);font-size:13.5px}
+footer .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;border-top:1px solid var(--line);padding-top:24px}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:44px;padding-block:28px 56px}
+  .mock{justify-self:start}
+  .three,.steps{grid-template-columns:1fr}
+  .terms{grid-template-columns:1fr}
+  section{padding-block:56px}
+}
+@media (max-width:480px){
+  .state{display:none}
+  .btn{width:100%}
+  .list li{padding:16px 16px}
+  summary{padding:16px}
+  details p{padding:0 16px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head><body>
+
+
+
+
+<header class="w top">
+  <div class="logo" aria-label="VVM">
+    <svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg-a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="lg-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="lg-c"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#lg-a)"/><g clip-path="url(#lg-c)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 24 L24 39 L36 24" fill="none" stroke="url(#lg-b)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg>
+    <svg class="wm" viewBox="-2 -3 124 37" role="img" aria-label="VVM"><defs><linearGradient id="lg-w" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" style="stop-color:var(--w0)"/><stop offset=".42" style="stop-color:var(--w1)"/><stop offset=".72" style="stop-color:var(--w2)"/><stop offset="1" style="stop-color:var(--w3)"/></linearGradient></defs><g fill="url(#lg-w)"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><path d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" style="fill:var(--w3)"/></svg>
+  </div>
+  <span class="state"><b></b>Сайт в разработке</span>
+</header>
+
+<main>
+<div class="w hero">
+  <div>
+    <p class="eyebrow">Ульяновск</p>
+    <h1 style="margin-top:16px">Доска объявлений, где место в ленте не продаётся</h1>
+    <p class="lead">VVM готовится к запуску в Ульяновске. Первым продавцам размещение <b>бесплатно <span data-months>12 месяцев</span></b> с момента открытия сайта.</p>
+    <div class="cta">
+      <a class="btn p" href="#join" data-join>Записаться в список первых продавцов</a>
+      <a class="btn g" href="#" id="proto" hidden>Посмотреть прототип</a>
+    </div>
+    <p class="jn" id="jn" hidden>Ссылка для записи ещё не подключена. Сейчас это макет страницы.</p>
+    <p class="note">Сайта и приложения пока нет. Есть рабочий прототип, на нём можно увидеть, как всё будет устроено. Записываться ни к чему не обязывает.</p>
+  </div>
+
+  <div class="mock" role="img" aria-label="Пример карточки объявления. Под ней разбор, из чего сложилась позиция в ленте: интересы 36 процентов, расстояние 26, цена к рынку 22, формат фото 8, разнообразие 8.">
+    <span class="mk-tag">Пример интерфейса</span>
+    <div class="mk-img"><svg viewBox="0 0 160 80"><circle cx="38" cy="54" r="18"/><circle cx="122" cy="54" r="18"/><path d="M38 54 L68 54 L56 28 M68 54 L98 28 L122 54 M56 28 H46 M98 28 H108"/></svg></div>
+    <div class="mk-t">Велосипед городской, рама 54</div>
+    <div class="mk-p">12 500 ₽ <span>ниже средней по рынку</span></div>
+    <div class="mk-h">Почему вы это видите</div>
+    <div class="mk-r"><span>Ваши интересы</span><em>36%</em><i><s style="width:36%"></s></i></div>
+    <div class="mk-r"><span>Рядом с вами</span><em>26%</em><i><s style="width:26%"></s></i></div>
+    <div class="mk-r"><span>Цена к рынку</span><em>22%</em><i><s style="width:22%"></s></i></div>
+    <div class="mk-r"><span>Формат фото</span><em>8%</em><i><s style="width:8%"></s></i></div>
+    <div class="mk-r"><span>Немного случайности</span><em>8%</em><i><s style="width:8%"></s></i></div>
+  </div>
+</div>
+
+<div class="band"><section class="w">
+  <div class="hd">
+    <p class="eyebrow">Что мы строим</p>
+    <h2>Три вещи, которых не хватает обычным доскам</h2>
+    <p>Все три уже собраны в прототипе. После запуска они будут работать в сервисе.</p>
+  </div>
+  <div class="three">
+    <article class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>Честная выдача</h3>
+      <p>Позицию в ленте нельзя купить. Объявления идут по интересам, расстоянию и цене к рынку. У каждого есть кнопка «Почему я это вижу» с разбором в процентах.</p>
+      <span class="tag">Есть в прототипе</span>
+    </article>
+    <article class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+      <h3>Паспорт вещи</h3>
+      <p>Продавец отвечает на вопросы о состоянии и прикладывает нужные фото: серийный номер, пробег, дефекты. Покупатель видит это до первого сообщения.</p>
+      <span class="tag">Есть в прототипе</span>
+    </article>
+    <article class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></div>
+      <h3>Безопасная встреча</h3>
+      <p>Место и время в одном окне, отметка «всё в порядке» каждые 30 минут, быстрый вызов экстренных служб и код, которым стороны подтверждают сделку. Отзывы только по таким сделкам.</p>
+      <span class="tag">Есть в прототипе</span>
+    </article>
+  </div>
+</section></div>
+
+<section class="w">
+  <div class="hd">
+    <p class="eyebrow">Условия для первых продавцов</p>
+    <h2>Что вы получаете, записавшись сейчас</h2>
+  </div>
+  <div class="terms">
+    <ul class="list">
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div>Размещение бесплатно <span data-months>12 месяцев</span> с момента запуска<small>Срок считается от дня, когда сайт откроется, а не от дня записи.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div>Значок «Ранний участник» в профиле<small>Он остаётся у вас после окончания бесплатного срока.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div>Частные продавцы остаются бесплатными<small>Это касается и времени после первого года.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div>Реклама, если она появится, будет подписана «Реклама»<small>Платными могут стать бизнес-аккаунты и продвижение. Место в общей ленте не продаётся.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div>Сейчас ничего платить и переносить не нужно<small>Уходить с других площадок тоже не нужно.</small></div></li>
+    </ul>
+    <aside class="side"><b>Кто считается первым продавцом</b><span id="early">Все, кто запишется до открытия сайта.</span></aside>
+  </div>
+</section>
+
+<div class="band"><section class="w">
+  <div class="hd">
+    <p class="eyebrow">Для кого</p>
+    <h2>Кому это подходит</h2>
+  </div>
+  <div class="three">
+    <article class="card">
+      <h3 style="margin-top:0">Магазины, разборки, секонд-хенды</h3>
+      <p>Много товара и бесплатное размещение в первый год. Покупатели видят ваши объявления по цене и расстоянию, без платных мест выше вас.</p>
+    </article>
+    <article class="card">
+      <h3 style="margin-top:0">Мастера и комиссионки</h3>
+      <p>Профиль с отзывами только по подтверждённым сделкам. Репутацию нельзя накрутить, и покупатель видит её рядом с объявлением.</p>
+    </article>
+    <article class="card">
+      <h3 style="margin-top:0">Частные продавцы</h3>
+      <p>Бесплатно сейчас и после первого года. Паспорт вещи сокращает вопросы о состоянии, а код встречи подтверждает, что сделка состоялась.</p>
+    </article>
+  </div>
+</section></div>
+
+<section class="w">
+  <div class="hd">
+    <p class="eyebrow">Как записаться</p>
+    <h2>Три шага</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Оставьте контакт</h3><p>Имя, что вы продаёте и как с вами связаться. Больше ничего не нужно.</p></li>
+    <li><h3>Мы напишем, когда сайт откроется</h3><p>По возможности поможем перенести первые объявления, чтобы вам не пришлось делать это с нуля.</p></li>
+    <li><h3>Размещайтесь бесплатно</h3><p>Продавайте у нас и там, где продаёте сейчас. Срок бесплатного размещения идёт от дня запуска.</p></li>
+  </ol>
+</section>
+
+<div class="band"><section class="w">
+  <div class="hd">
+    <p class="eyebrow">Вопросы</p>
+    <h2>Что обычно спрашивают</h2>
+  </div>
+  <div class="faq">
+    <details><summary>Это уже работает?</summary><p>Нет. Сайта и приложения пока нет, есть прототип, который можно открыть и посмотреть. Мы запишем вас в список и напишем, когда сайт откроется.</p></details>
+    <details><summary>Почему бесплатно?</summary><p>Нам нужны первые продавцы и их мнение о том, что менять. Частные продавцы останутся бесплатными и после первого года. Платными могут стать бизнес-аккаунты и продвижение, такая реклама будет подписана и показана отдельно от выдачи.</p></details>
+    <details><summary>Нужно ли уходить с других площадок?</summary><p>Нет. Размещайтесь и там, и у нас. Если покупателей у нас пока будет мало, вы потеряете только время на одно объявление.</p></details>
+    <details><summary>Что вы делаете с моими данными?</summary><p>Эта страница ничего не собирает и не хранит. Для записи нужны только имя, что вы продаёте, и способ связи. Эти данные используются только для того, чтобы написать вам о запуске.</p></details>
+    <details><summary>Кто делает VVM?</summary><p id="who">Проект делает разработчик из Ульяновска. Сейчас он работает над ним один.</p></details>
+  </div>
+</section></div>
+
+<section class="w">
+  <div class="last">
+    <h2>Войдите в число первых продавцов Ульяновска</h2>
+    <p>Запись займёт минуту. Мы напишем, когда сайт будет готов.</p>
+    <div class="cta" style="margin-top:6px"><a class="btn p" href="#join" data-join>Записаться в список первых продавцов</a></div>
+    <p class="jn" id="jn2" hidden>Ссылка для записи ещё не подключена. Сейчас это макет страницы.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="w"><span>VVM · Ульяновск · сайт в разработке</span><span>Страница информационная, это не публичная оферта.</span></div></footer>
+
+<script>
+/* ===== Настройки: меняйте только эти значения ===== */
+var JOIN_URL  = "";   /* ссылка на форму записи или чат в Telegram; форма должна быть на сервере в России */
+var PROTO_URL = "https://claude.ai/artifact/2cZGrYi32Uwqr6FtWHmUps"; /* прототип; пустая строка скрывает кнопку */
+var FREE_MONTHS = 12; /* срок бесплатного размещения для первых продавцов */
+var EARLY_RULE = "Все, кто запишется до открытия сайта."; /* кто считается первым */
+var FOUNDER = "";     /* например: «Владимир, разработчик из Ульяновска»; пустая строка оставляет общий текст */
+/* ================================================== */
+(function(){
+  function plural(n,a,b,c){var m=n%100,d=n%10;return (m>10&&m<20)?c:d===1?a:(d>1&&d<5)?b:c}
+  var mt=FREE_MONTHS+" "+plural(FREE_MONTHS,"месяц","месяца","месяцев");
+  [].forEach.call(document.querySelectorAll("[data-months]"),function(e){e.textContent=mt});
+  document.getElementById("early").textContent=EARLY_RULE;
+  if(FOUNDER){document.getElementById("who").textContent=FOUNDER+". Сейчас он работает над проектом один."}
+  var notes=[document.getElementById("jn"),document.getElementById("jn2")];
+  [].forEach.call(document.querySelectorAll("[data-join]"),function(a,i){
+    if(JOIN_URL){a.href=JOIN_URL;a.target="_blank";a.rel="noopener"}
+    else{a.addEventListener("click",function(ev){ev.preventDefault();notes[i].hidden=false})}
+  });
+  var p=document.getElementById("proto");
+  if(PROTO_URL){p.href=PROTO_URL;p.target="_blank";p.rel="noopener";p.hidden=false}
+})();
+</script>
+
+</body></html>
