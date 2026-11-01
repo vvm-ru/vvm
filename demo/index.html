@@ -900,8 +900,28 @@ body.srv #grid{min-height:40vh}
  body.srv #feed .live{display:none}
  .srcats{margin:0 -14px 12px;padding:2px 14px}
 }
+/* ===== v38: где искать — город, вся Россия, радиус ===== */
+.gseg{display:inline-flex;gap:3px;padding:3px;margin-top:12px;border-radius:99px;background:rgba(var(--wr),.07);border:1px solid var(--line);max-width:100%}
+body:not(.srv) .gseg{display:none}
+.gseg button{display:inline-flex;align-items:center;gap:6px;min-width:0;height:34px;padding:0 15px;border-radius:99px;border:0;background:none;color:var(--mu);font:700 13.5px Manrope,sans-serif;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s,box-shadow .25s}
+.gseg button span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.gseg button:hover{color:var(--tx)}
+.gseg button.on{background:var(--g);color:#fff;box-shadow:0 6px 16px -8px var(--ac)}
+.gseg svg{flex:none;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dv:has(+.dvn){margin-bottom:8px}
+.dvn{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 14px;margin:0 0 18px;padding:0 6px;text-align:center;color:var(--mu);font-size:13.5px;line-height:1.45}
+.dvn button{border:0;background:none;color:var(--ac2);font:700 13.5px Manrope,sans-serif;cursor:pointer;padding:6px 4px}
+.fl.sub{margin-top:18px}
+.fcw .chip svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.cpk{max-height:204px;overflow-y:auto;overscroll-behavior:contain;margin-top:12px;padding:10px;border-radius:18px;background:var(--glass);border:1px solid var(--line)}
+.ghint{margin-top:14px;font-size:12.5px;line-height:1.45;color:var(--mu)}
+@media(max-width:700px){
+ .gseg{display:flex;width:100%}
+ body:not(.srv) .gseg{display:none}
+ .gseg button{flex:1;justify-content:center;padding:0 8px}
+}
 </style>
-<style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=38)}.i-granta{background-image:url(img/granta.jpg?v=38)}.i-mac{background-image:url(img/mac.jpg?v=38)}.i-icepeak{background-image:url(img/icepeak.jpg?v=38)}.i-mhw{background-image:url(img/mhw.jpg?v=38)}.i-mhw2{background-image:url(img/mhw2.jpg?v=38)}.i-mhw3{background-image:url(img/mhw3.jpg?v=38)}.i-mhw4{background-image:url(img/mhw4.jpg?v=38)}.i-kalina{background-image:url(img/kalina.jpg?v=38)}.i-honda{background-image:url(img/honda.jpg?v=38)}.i-tires{background-image:url(img/tires.jpg?v=38)}.i-shock{background-image:url(img/shock.jpg?v=38)}.i-alt{background-image:url(img/alt.jpg?v=38)}.i-honda3{background-image:url(img/honda3.jpg?v=38)}.i-sk1{background-image:url(img/sk1.jpg?v=38)}.i-sk2{background-image:url(img/sk2.jpg?v=38)}.i-pc{background-image:url(img/pc.jpg?v=38)}.i-s5{background-image:url(img/s5.jpg?v=38)}.i-nike{background-image:url(img/nike.jpg?v=38)}.i-stels{background-image:url(img/stels.jpg?v=38)}.i-boots{background-image:url(img/boots.jpg?v=38)}.i-snk{background-image:url(img/snk.jpg?v=38)}.i-braun{background-image:url(img/braun.jpg?v=38)}.i-l14a{background-image:url(img/l14a.jpg?v=38)}.i-rapid{background-image:url(img/rapid.jpg?v=38)}.i-granta2{background-image:url(img/granta2.jpg?v=38)}.i-s10x2{background-image:url(img/s10x2.jpg?v=38)}.i-heli{background-image:url(img/heli.jpg?v=38)}.i-eiffel{background-image:url(img/eiffel.jpg?v=38)}.i-s5b{background-image:url(img/s5b.jpg?v=38)}.i-gwh{background-image:url(img/gwh.jpg?v=38)}.i-s22{background-image:url(img/s22.jpg?v=38)}.i-s10{background-image:url(img/s10.jpg?v=38)}.i-priw{background-image:url(img/priw.jpg?v=38)}.i-prib{background-image:url(img/prib.jpg?v=38)}.i-fender{background-image:url(img/fender.jpg?v=38)}.i-air{background-image:url(img/air.jpg?v=38)}.i-kalint{background-image:url(img/kalint.jpg?v=38)}.i-y1b{background-image:url(img/y1b.jpg?v=38)}.i-y1d{background-image:url(img/y1d.jpg?v=38)}.i-y1e{background-image:url(img/y1e.jpg?v=38)}.i-y1k{background-image:url(img/y1k.jpg?v=38)}.i-f14m{background-image:url(img/f14m.jpg?v=38)}.i-f14n{background-image:url(img/f14n.jpg?v=38)}.i-f14o{background-image:url(img/f14o.jpg?v=38)}.i-f14p{background-image:url(img/f14p.jpg?v=38)}.i-sn14{background-image:url(img/sn14.jpg?v=38)}.i-nt14{background-image:url(img/nt14.jpg?v=38)}.i-prh{background-image:url(img/prh.jpg?v=38)}.i-bmwg{background-image:url(img/bmwg.jpg?v=38)}.i-bmwh{background-image:url(img/bmwh.jpg?v=38)}.i-bmwi{background-image:url(img/bmwi.jpg?v=38)}.i-bmwj{background-image:url(img/bmwj.jpg?v=38)}.i-bmwl{background-image:url(img/bmwl.jpg?v=38)}.i-ap1{background-image:url(img/ap1.jpg?v=38)}.i-ap2{background-image:url(img/ap2.jpg?v=38)}.i-bask{background-image:url(img/bask.jpg?v=38)}.i-mba1{background-image:url(img/mba1.jpg?v=38)}.i-mba2{background-image:url(img/mba2.jpg?v=38)}.i-mba3{background-image:url(img/mba3.jpg?v=38)}.i-mba4{background-image:url(img/mba4.jpg?v=38)}.i-mba5{background-image:url(img/mba5.jpg?v=38)}.i-gz1{background-image:url(img/gz1.jpg?v=38)}.i-gz2{background-image:url(img/gz2.jpg?v=38)}.i-gz3{background-image:url(img/gz3.jpg?v=38)}.i-gz4{background-image:url(img/gz4.jpg?v=38)}.i-gz5{background-image:url(img/gz5.jpg?v=38)}.i-cam1{background-image:url(img/cam1.jpg?v=38)}.i-cam2{background-image:url(img/cam2.jpg?v=38)}.i-cam3{background-image:url(img/cam3.jpg?v=38)}.i-gpu1{background-image:url(img/gpu1.jpg?v=38)}.i-bpc1{background-image:url(img/bpc1.jpg?v=38)}.i-bpc2{background-image:url(img/bpc2.jpg?v=38)}.i-bpc3{background-image:url(img/bpc3.jpg?v=38)}.i-bpc4{background-image:url(img/bpc4.jpg?v=38)}.i-bpc5{background-image:url(img/bpc5.jpg?v=38)}.i-wz1{background-image:url(img/wz1.jpg?v=38)}.i-lan1{background-image:url(img/lan1.jpg?v=38)}.i-lan2{background-image:url(img/lan2.jpg?v=38)}.i-lan3{background-image:url(img/lan3.jpg?v=38)}.i-s14sun{background-image:url(img/s14sun.jpg?v=38)}.i-s14wet{background-image:url(img/s14wet.jpg?v=38)}.i-s14rib{background-image:url(img/s14rib.jpg?v=38)}.i-s14pair{background-image:url(img/s14pair.jpg?v=38)}.i-v6a{background-image:url(img/v6a.jpg?v=38)}.i-v6b{background-image:url(img/v6b.jpg?v=38)}.i-v6c{background-image:url(img/v6c.jpg?v=38)}.i-prh1{background-image:url(img/prh1.jpg?v=38)}.i-prh2{background-image:url(img/prh2.jpg?v=38)}.i-prh3{background-image:url(img/prh3.jpg?v=38)}.i-bd1{background-image:url(img/bd1.jpg?v=38)}.i-bd2{background-image:url(img/bd2.jpg?v=38)}.i-bmwa{background-image:url(img/bmwa.jpg?v=38)}.i-bmwb{background-image:url(img/bmwb.jpg?v=38)}.i-bmwc{background-image:url(img/bmwc.jpg?v=38)}.i-bmwd{background-image:url(img/bmwd.jpg?v=38)}.i-bmwe{background-image:url(img/bmwe.jpg?v=38)}.i-z7a{background-image:url(img/z7a.jpg?v=38)}.i-z7b{background-image:url(img/z7b.jpg?v=38)}.i-z7c{background-image:url(img/z7c.jpg?v=38)}.i-gb1{background-image:url(img/gb1.jpg?v=38)}.i-gb2{background-image:url(img/gb2.jpg?v=38)}.i-gg1{background-image:url(img/gg1.jpg?v=38)}.i-gg2{background-image:url(img/gg2.jpg?v=38)}.i-gg3{background-image:url(img/gg3.jpg?v=38)}.i-gg4{background-image:url(img/gg4.jpg?v=38)}.i-d14a{background-image:url(img/d14a.jpg?v=38)}.i-d14b{background-image:url(img/d14b.jpg?v=38)}.i-d14c{background-image:url(img/d14c.jpg?v=38)}.i-d14d{background-image:url(img/d14d.jpg?v=38)}.i-d14e{background-image:url(img/d14e.jpg?v=38)}.i-gk1{background-image:url(img/gk1.jpg?v=38)}.i-gk2{background-image:url(img/gk2.jpg?v=38)}.i-gk3{background-image:url(img/gk3.jpg?v=38)}.i-gk4{background-image:url(img/gk4.jpg?v=38)}.i-kl1{background-image:url(img/kl1.jpg?v=38)}.i-kl2{background-image:url(img/kl2.jpg?v=38)}</style>
+<style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=39)}.i-granta{background-image:url(img/granta.jpg?v=39)}.i-mac{background-image:url(img/mac.jpg?v=39)}.i-icepeak{background-image:url(img/icepeak.jpg?v=39)}.i-mhw{background-image:url(img/mhw.jpg?v=39)}.i-mhw2{background-image:url(img/mhw2.jpg?v=39)}.i-mhw3{background-image:url(img/mhw3.jpg?v=39)}.i-mhw4{background-image:url(img/mhw4.jpg?v=39)}.i-kalina{background-image:url(img/kalina.jpg?v=39)}.i-honda{background-image:url(img/honda.jpg?v=39)}.i-tires{background-image:url(img/tires.jpg?v=39)}.i-shock{background-image:url(img/shock.jpg?v=39)}.i-alt{background-image:url(img/alt.jpg?v=39)}.i-honda3{background-image:url(img/honda3.jpg?v=39)}.i-sk1{background-image:url(img/sk1.jpg?v=39)}.i-sk2{background-image:url(img/sk2.jpg?v=39)}.i-pc{background-image:url(img/pc.jpg?v=39)}.i-s5{background-image:url(img/s5.jpg?v=39)}.i-nike{background-image:url(img/nike.jpg?v=39)}.i-stels{background-image:url(img/stels.jpg?v=39)}.i-boots{background-image:url(img/boots.jpg?v=39)}.i-snk{background-image:url(img/snk.jpg?v=39)}.i-braun{background-image:url(img/braun.jpg?v=39)}.i-l14a{background-image:url(img/l14a.jpg?v=39)}.i-rapid{background-image:url(img/rapid.jpg?v=39)}.i-granta2{background-image:url(img/granta2.jpg?v=39)}.i-s10x2{background-image:url(img/s10x2.jpg?v=39)}.i-heli{background-image:url(img/heli.jpg?v=39)}.i-eiffel{background-image:url(img/eiffel.jpg?v=39)}.i-s5b{background-image:url(img/s5b.jpg?v=39)}.i-gwh{background-image:url(img/gwh.jpg?v=39)}.i-s22{background-image:url(img/s22.jpg?v=39)}.i-s10{background-image:url(img/s10.jpg?v=39)}.i-priw{background-image:url(img/priw.jpg?v=39)}.i-prib{background-image:url(img/prib.jpg?v=39)}.i-fender{background-image:url(img/fender.jpg?v=39)}.i-air{background-image:url(img/air.jpg?v=39)}.i-kalint{background-image:url(img/kalint.jpg?v=39)}.i-y1b{background-image:url(img/y1b.jpg?v=39)}.i-y1d{background-image:url(img/y1d.jpg?v=39)}.i-y1e{background-image:url(img/y1e.jpg?v=39)}.i-y1k{background-image:url(img/y1k.jpg?v=39)}.i-f14m{background-image:url(img/f14m.jpg?v=39)}.i-f14n{background-image:url(img/f14n.jpg?v=39)}.i-f14o{background-image:url(img/f14o.jpg?v=39)}.i-f14p{background-image:url(img/f14p.jpg?v=39)}.i-sn14{background-image:url(img/sn14.jpg?v=39)}.i-nt14{background-image:url(img/nt14.jpg?v=39)}.i-prh{background-image:url(img/prh.jpg?v=39)}.i-bmwg{background-image:url(img/bmwg.jpg?v=39)}.i-bmwh{background-image:url(img/bmwh.jpg?v=39)}.i-bmwi{background-image:url(img/bmwi.jpg?v=39)}.i-bmwj{background-image:url(img/bmwj.jpg?v=39)}.i-bmwl{background-image:url(img/bmwl.jpg?v=39)}.i-ap1{background-image:url(img/ap1.jpg?v=39)}.i-ap2{background-image:url(img/ap2.jpg?v=39)}.i-bask{background-image:url(img/bask.jpg?v=39)}.i-mba1{background-image:url(img/mba1.jpg?v=39)}.i-mba2{background-image:url(img/mba2.jpg?v=39)}.i-mba3{background-image:url(img/mba3.jpg?v=39)}.i-mba4{background-image:url(img/mba4.jpg?v=39)}.i-mba5{background-image:url(img/mba5.jpg?v=39)}.i-gz1{background-image:url(img/gz1.jpg?v=39)}.i-gz2{background-image:url(img/gz2.jpg?v=39)}.i-gz3{background-image:url(img/gz3.jpg?v=39)}.i-gz4{background-image:url(img/gz4.jpg?v=39)}.i-gz5{background-image:url(img/gz5.jpg?v=39)}.i-cam1{background-image:url(img/cam1.jpg?v=39)}.i-cam2{background-image:url(img/cam2.jpg?v=39)}.i-cam3{background-image:url(img/cam3.jpg?v=39)}.i-gpu1{background-image:url(img/gpu1.jpg?v=39)}.i-bpc1{background-image:url(img/bpc1.jpg?v=39)}.i-bpc2{background-image:url(img/bpc2.jpg?v=39)}.i-bpc3{background-image:url(img/bpc3.jpg?v=39)}.i-bpc4{background-image:url(img/bpc4.jpg?v=39)}.i-bpc5{background-image:url(img/bpc5.jpg?v=39)}.i-wz1{background-image:url(img/wz1.jpg?v=39)}.i-lan1{background-image:url(img/lan1.jpg?v=39)}.i-lan2{background-image:url(img/lan2.jpg?v=39)}.i-lan3{background-image:url(img/lan3.jpg?v=39)}.i-s14sun{background-image:url(img/s14sun.jpg?v=39)}.i-s14wet{background-image:url(img/s14wet.jpg?v=39)}.i-s14rib{background-image:url(img/s14rib.jpg?v=39)}.i-s14pair{background-image:url(img/s14pair.jpg?v=39)}.i-v6a{background-image:url(img/v6a.jpg?v=39)}.i-v6b{background-image:url(img/v6b.jpg?v=39)}.i-v6c{background-image:url(img/v6c.jpg?v=39)}.i-prh1{background-image:url(img/prh1.jpg?v=39)}.i-prh2{background-image:url(img/prh2.jpg?v=39)}.i-prh3{background-image:url(img/prh3.jpg?v=39)}.i-bd1{background-image:url(img/bd1.jpg?v=39)}.i-bd2{background-image:url(img/bd2.jpg?v=39)}.i-bmwa{background-image:url(img/bmwa.jpg?v=39)}.i-bmwb{background-image:url(img/bmwb.jpg?v=39)}.i-bmwc{background-image:url(img/bmwc.jpg?v=39)}.i-bmwd{background-image:url(img/bmwd.jpg?v=39)}.i-bmwe{background-image:url(img/bmwe.jpg?v=39)}.i-z7a{background-image:url(img/z7a.jpg?v=39)}.i-z7b{background-image:url(img/z7b.jpg?v=39)}.i-z7c{background-image:url(img/z7c.jpg?v=39)}.i-gb1{background-image:url(img/gb1.jpg?v=39)}.i-gb2{background-image:url(img/gb2.jpg?v=39)}.i-gg1{background-image:url(img/gg1.jpg?v=39)}.i-gg2{background-image:url(img/gg2.jpg?v=39)}.i-gg3{background-image:url(img/gg3.jpg?v=39)}.i-gg4{background-image:url(img/gg4.jpg?v=39)}.i-d14a{background-image:url(img/d14a.jpg?v=39)}.i-d14b{background-image:url(img/d14b.jpg?v=39)}.i-d14c{background-image:url(img/d14c.jpg?v=39)}.i-d14d{background-image:url(img/d14d.jpg?v=39)}.i-d14e{background-image:url(img/d14e.jpg?v=39)}.i-gk1{background-image:url(img/gk1.jpg?v=39)}.i-gk2{background-image:url(img/gk2.jpg?v=39)}.i-gk3{background-image:url(img/gk3.jpg?v=39)}.i-gk4{background-image:url(img/gk4.jpg?v=39)}.i-kl1{background-image:url(img/kl1.jpg?v=39)}.i-kl2{background-image:url(img/kl2.jpg?v=39)}</style>
 </head>
 <body>
 <div id="sp"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="as" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cs"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#as)"/><g clip-path="url(#cs)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bs)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><div class="sw"><svg class="wm" viewBox="-2 -3 124 37" height="68" role="img" aria-label="VVM"><defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cs"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gs)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cs)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><div class="sps">Бесплатно · Красиво · Рядом</div></div>
@@ -938,7 +958,7 @@ body.srv #grid{min-height:40vh}
 <section id="feedp" aria-label="Объявления"><div class="srcats" id="srcats" hidden></div>
 <div class="filters"><div class="chip fbt" id="fbtn" role="button" tabindex="0" onclick="fOpen()" onkeydown="if(event.key=='Enter')fOpen()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>Фильтры<b id="fbb" hidden></b></div><div class="chip" id="fd" onclick="tg()">🔥 Выгодные</div><div class="chip" onclick="openMap()">🗺️ Карта</div><div class="chip" onclick="sub()">🔔 Подписаться</div><select id="sort" aria-label="Сортировка"><option value="n">Для тебя</option><option value="a">Дешевле</option><option value="d">Дороже</option><option value="f">Выгодные цены</option><option value="c">Ближе всего</option><option value="t">Сначала новые</option></select></div>
 <div class="afc" id="afc" hidden></div>
-<div class="row" id="feed"><button class="srb" id="srb" type="button" onclick="homeGo()" aria-label="Назад, на главную"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="srt"><small id="sre"></small><h2 id="ttl">Рядом с тобой</h2><em class="src" id="rcn"></em></div><div class="fr"><button class="fair" id="fairb" onclick="whyOpen()">🛡 Честная выдача</button><span class="live"><i></i><span id="lv2">без платных мест</span></span></div></div>
+<div class="row" id="feed"><button class="srb" id="srb" type="button" onclick="homeGo()" aria-label="Назад, на главную"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="srt"><small id="sre"></small><h2 id="ttl">Рядом с тобой</h2><em class="src" id="rcn"></em><div class="gseg" id="gseg"></div></div><div class="fr"><button class="fair" id="fairb" onclick="whyOpen()">🛡 Честная выдача</button><span class="live"><i></i><span id="lv2">без платных мест</span></span></div></div>
 <div class="vis" id="vis" hidden></div>
 <div id="grid"></div>
 <div class="more" id="more"><div class="skg" id="skg"><i></i><i></i><i></i><i></i></div></div>
@@ -1473,7 +1493,7 @@ function mk(vid,n,rfix){const i=getL(vid),r=rng(vid*31+n*7+3),m=PM[i.k[0]]||[1.2
 const locT=i=>i.ct==city?"📍 "+dkm(i.dist)+" км":"📍 "+esc(i.ct)+" · "+i.dist+" км";
 const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
 function cardH(e,delay,extra){const i=e.i,ks=e.ps&&!i.up&&i.k&&i.k.length>1?i.k:null,dl=/dl/.test(extra||""),h=292,
- loc=i.ct==city?`<span class="lc">${dkm(i.dist)} км</span>`:`<span class="lc"><em>${esc(i.ct)}</em><u>&nbsp;·&nbsp;${i.dist} км</u></span>`;
+ loc=(rf=>rf==city?(i.ct==city?`<span class="lc">${dkm(i.dist)} км</span>`:`<span class="lc"><em>${esc(i.ct)}</em><u>&nbsp;·&nbsp;${i.dist} км</u></span>`):i.ct==rf?`<span class="lc"><em>${esc(i.ct)}</em></span>`:`<span class="lc"><em>${esc(i.ct)}</em><u>&nbsp;·&nbsp;${gdist(i,rf)} км</u></span>`)(FL.gc&&FL.gc!="*"?FL.gc:city);
  return `<div class="card ${extra||""}" style="--r:1.14;animation-delay:${delay||0}ms;contain-intrinsic-size:auto ${h}px" onclick="openL(${i.id})"><div class="cim${ks?" psw p0":""}">${ks?`<div class="pv" data-id="${i.id}" data-n="${ks.length}"><div class="pt"><div class="psl">${imK(i,e.z,e.dy)}</div></div></div>`:imK(i,e.z,e.dy)}${dl&&i.dr?`<span class="dsc">−${i.dr}%</span>`:""}<button class="fav ${fav.has(i.id)?"on":""}" data-f="${i.id}" onclick="event.stopPropagation();tf(${i.id},this)" aria-label="В избранное" aria-pressed="${fav.has(i.id)}">${HEART}</button>${ks?`<div class="pdots">${ks.map((_,n)=>`<i class="${n?"":"on"}"></i>`).join("")}</div><button type="button" class="pa l" tabindex="-1" aria-label="Предыдущее фото">${CHVL}</button><button type="button" class="pa r" tabindex="-1" aria-label="Следующее фото">${CHV}</button>`:""}</div><div class="cb"><div class="pr"><b>${rub(i.p)}</b>${i.old?`<s>${rub(i.old)}</s>`:""}</div><div class="tt">${esc(i.t)}</div><div class="mt">${loc}<span>${e.ago}</span></div></div></div>`}
 /* ---------- новое, скидки, купоны, бонусы ---------- */
 let NW=[];
@@ -1659,11 +1679,16 @@ const FSET={auto:["br","md","y","km","kpp","body","drive","fuel","own","cond"],t
 const FNAME={md:"Модель",type:"Тип",kpp:"Коробка передач",body:"Кузов",drive:"Привод",fuel:"Топливо",own:"Владельцев по ПТС",cond:"Состояние",size:"Размер",season:"Сезон"};
 const FORD={cond:["Новое","Отличное","Хорошее","Среднее","Требует ремонта"],own:["1","2","3+"],season:["Зима","Демисезон","Лето"],size:["XXS","XS","S","M","L","XL","XXL","XXXL"]};
 const FPRE={auto:[150000,300000,500000,1000000],tech:[5000,15000,30000,100000],fash:[2000,5000,10000,15000],parts:[2000,5000,10000,20000],home:[1000,3000,5000,10000],sport:[3000,7000,12000,20000],hobby:[500,1500,3000,10000],all:[1000,5000,20000,100000]};
-const F0=()=>({p1:0,p2:0,y1:0,y2:0,km:0,age:0,dist:0,disc:false,br:[],md:[],type:[],kpp:[],body:[],drive:[],fuel:[],own:[],cond:[],size:[],season:[]});
-let FL=F0(),FDR=null;
+const F0=()=>({p1:0,p2:0,y1:0,y2:0,km:0,age:0,gc:null,gr:100,disc:false,br:[],md:[],type:[],kpp:[],body:[],drive:[],fuel:[],own:[],cond:[],size:[],season:[]});
+let FL=F0(),FDR=null,GP=false,GCprev=null;
 const fS=()=>Object.assign({},FL,{cat,deal});
 const fName=(k,c)=>k=="br"?(c=="auto"?"Марка":"Бренд"):FNAME[k];
-function fN(s){s=s||fS();let n=0;if(s.p1||s.p2)n++;if(s.y1||s.y2)n++;if(s.km)n++;if(s.age)n++;if(s.dist)n++;if(s.disc)n++;if(s.deal)n++;for(const k of FARR)if(s[k].length)n++;return n}
+const geoOn=s=>s.gc!==null||s.gr!==100;
+const gdist=(i,ref)=>ref==city?i.dist:(i.ct==ref?0:Math.round(hav(CT[ref],CT[i.ct])));
+function gpass(i,s){if(s.gc==="*")return true;const ref=s.gc||city;return s.gr===0?i.ct==ref:gdist(i,ref)<=s.gr}
+const KMS=n=>n.toLocaleString("ru-RU").replace(/[\u00a0\u202f]/g," ");
+function gLabel(s,full){s=s||fS();if(s.gc==="*")return full?"Вся Россия":"вся Россия";const ref=s.gc||city;return ref+(s.gr===100&&!full?"":s.gr===0?" · только город":s.gr===100&&!s.gc?"":" · до "+KMS(s.gr)+" км")}
+function fN(s){s=s||fS();let n=0;if(s.p1||s.p2)n++;if(s.y1||s.y2)n++;if(s.km)n++;if(s.age)n++;if(geoOn(s))n++;if(s.disc)n++;if(s.deal)n++;for(const k of FARR)if(s[k].length)n++;return n}
 const poolIds=()=>[...new Set([...MY,...B.map(b=>b.id)])];
 const fBaseIds=()=>visOn()?visIds():poolIds();
 const fQ=()=>visOn()?"":AQ.toLowerCase();
@@ -1675,15 +1700,26 @@ function fpass(i,s,skip,q){
  if(s.deal&&verdict(i)[0]!="Выгодно")return false;
  if(s.disc&&!i.old)return false;
  if(s.age&&Date.now()-(i.mine?(i.pt||Date.now()):pubTs(i.id))>s.age*864e5)return false;
- if(s.dist&&i.dist>s.dist)return false;
+ if(!gpass(i,s))return false;
  if(s.y1||s.y2){const y=fyr(i);if(!y||(s.y1&&y<s.y1)||(s.y2&&y>s.y2))return false}
  if(s.km){const k=fkm(i);if(!k||k>s.km)return false}
  for(const k of FARR){if(k==skip)continue;const sel=s[k];if(!sel.length)continue;if(!fv(i,k).some(x=>sel.includes(x)))return false}
  return true}
-function matchIds(){const s=fS();
+function matchIds(s0){const s=s0||fS();
  if(visOn()){s.cat="all";return visIds().filter(id=>fpass(getL(id),s,"",""))}
  const q=AQ.toLowerCase();
  return[...MY,...rank(0,$("sort").value).map(b=>b.id)].filter(id=>fpass(getL(id),s,"",q))}
+const FEW=6,EXTN=12;
+function nearIds(ms,n){const s=fS();if(s.gc==="*"||n>=FEW)return[];const ref=s.gc||city;
+ return matchIds(Object.assign(s,{gc:"*"})).filter(id=>!ms.has(id)).map((id,k)=>[id,gdist(getL(id),ref),k]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).slice(0,Math.max(0,EXTN-n)).map(x=>x[0])}
+function nearNote(n){const ref=fS().gc||city;
+ return `<span>${esc(ref)}: ${n?"нашлось только "+n:"пока ничего нет"}. Добавили объявления из ближайших городов.</span><button type="button" onclick="geoAll()">Искать по всей России</button><button type="button" onclick="fOpen()">Изменить область</button>`}
+function geoAll(){const g=FL.gc;if(g!=="*")GCprev=g;FL.gc="*";resetFeed();toFeed()}
+function geoBack(){FL.gc=GCprev;resetFeed();toFeed()}
+function gsegDraw(){const s=fS(),all=s.gc==="*",ref=s.gc&&!all?s.gc:city,
+ pin='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>',
+ ru='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>';
+ $("gseg").innerHTML=`<button type="button" class="${all?"":"on"}" onclick="${all?"geoBack()":"fOpen()"}" aria-label="Город поиска: ${esc(ref)}">${pin}<span>${esc(ref)}</span></button><button type="button" class="${all?"on":""}" onclick="geoAll()">${ru}<span>Вся Россия</span></button>`}
 const fCount=s=>{const q=fQ(),sc=fSc(s);return fBaseIds().filter(id=>fpass(getL(id),sc,"",q)).length};
 const fObjs=s=>{const sc=fSc(s);return fBaseIds().map(getL).filter(i=>sc.cat=="all"||i.c==sc.cat)};
 const szCmp=(x,y)=>{const a=+x[0],b=+y[0];return !isNaN(a)&&!isNaN(b)?a-b:!isNaN(a)?-1:!isNaN(b)?1:FORD.size.indexOf(x[0])-FORD.size.indexOf(y[0])};
@@ -1697,10 +1733,18 @@ function fOpts(k,s){const q=fQ(),sc=fSc(s);let base=fObjs(s);
 function pruneMd(s){if(!s.md.length)return;const mb={};poolIds().forEach(id=>{const i=getL(id),m=fv(i,"md")[0];if(m)mb[m]=fv(i,"br")[0]});s.md=s.md.filter(m=>s.br.includes(mb[m]))}
 const shortP=v=>v>=1e6?String(v/1e6).replace(".",",")+" млн":v>=1e3?String(v/1e3).replace(".",",")+" тыс":String(v);
 /* ---------- шторка фильтров ---------- */
-function fOpen(){sgHide();$("q").blur();FDR=Object.assign(F0(),JSON.parse(JSON.stringify(FL)),{cat,deal});cl();fDraw();$("m16").classList.add("show");$("fb").scrollTop=0}
+function fOpen(){GP=false;sgHide();$("q").blur();FDR=Object.assign(F0(),JSON.parse(JSON.stringify(FL)),{cat,deal});cl();fDraw();$("m16").classList.add("show");$("fb").scrollTop=0}
 function fDraw(){const bd=$("fb"),st=bd.scrollTop,s=FDR,cs=s.cat,P=n=>n?n.toLocaleString("ru-RU"):"";
  const chip=(on,fn,txt,cls)=>`<button type="button" class="chip ${on?"on":""} ${cls||""}" onclick="${fn}">${txt}</button>`;
- let h=`<div class="fs"><div class="fl"><b>Категория</b></div><div class="fcw sc" data-nodrag>${C.map(c=>chip(cs==c[0],`fCat('${c[0]}')`,(c[0]=="all"?"":c[2]+" ")+c[1])).join("")}</div></div>`;
+ const my=city,all=s.gc==="*",oth=s.gc&&!all&&s.gc!==my?s.gc:null,
+  pin='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>',
+  ru='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>',
+  dn='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+ let h=`<div class="fs" id="fgeo"><div class="fl"><b>Где искать</b><em>${all?"Вся Россия":esc((s.gc||my)+(s.gr===0?" · только город":" · до "+KMS(s.gr)+" км"))}</em></div><div class="fcw">${chip(!all&&!oth,"fGeo(null)",pin+esc(my))}${chip(all,"fGeo('*')",ru+"Вся Россия")}${oth?chip(true,"fGeo('"+oth+"')",pin+esc(oth)):""}${chip(GP,"GP=!GP;fDraw()","Другой город"+dn)}</div>`;
+ if(GP)h+=`<div class="cpk"><div class="fcw">${CN.filter(c=>c!=my&&c!=oth).sort((a,b)=>a.localeCompare(b,"ru")).map(c=>chip(false,"fGeo('"+c+"')",esc(c))).join("")}</div></div>`;
+ if(!all)h+=`<div class="fl sub"><b>Радиус от города</b><em>${esc(s.gc||my)}</em></div><div class="fcw">${[[0,"Только город"],[3,"до 3 км"],[5,"до 5 км"],[10,"до 10 км"],[25,"до 25 км"],[50,"до 50 км"],[100,"до 100 км"],[200,"до 200 км"],[300,"до 300 км"],[500,"до 500 км"],[1000,"до 1 000 км"],[2000,"до 2 000 км"]].map(a=>chip(s.gr===a[0],`fSet('gr',${a[0]})`,a[1])).join("")}</div>`;
+ h+=`<div class="ghint">${all?"Показываем объявления из всех городов России. Сначала те, что ближе к вам.":"Если в городе мало объявлений, мы автоматически добавим объявления из ближайших городов."}</div></div>`;
+ h+=`<div class="fs"><div class="fl"><b>Категория</b></div><div class="fcw sc" data-nodrag>${C.map(c=>chip(cs==c[0],`fCat('${c[0]}')`,(c[0]=="all"?"":c[2]+" ")+c[1])).join("")}</div></div>`;
  h+=`<div class="fs"><div class="fl"><b>Цена</b></div><div class="frg"><div class="fin"><label>От</label><input inputmode="numeric" autocomplete="off" value="${P(s.p1)}" placeholder="0" oninput="fNum('p1',this)"><u>₽</u></div><div class="fin"><label>До</label><input inputmode="numeric" autocomplete="off" value="${P(s.p2)}" placeholder="любая" oninput="fNum('p2',this)"><u>₽</u></div></div><div class="fcw mt">${(FPRE[cs]||FPRE.all).map(v=>chip(s.p2==v,`fSet('p2',${s.p2==v?0:v})`,"до "+shortP(v))).join("")}</div></div>`;
  if(cs=="all")h+='<div class="fs"><div class="fhint">Выберите категорию, чтобы уточнить поиск: марка и модель, год, пробег, размер, бренд.</div></div>';
  for(const k of FSET[cs]||FSET.all){
@@ -1711,12 +1755,12 @@ function fDraw(){const bd=$("fb"),st=bd.scrollTop,s=FDR,cs=s.cat,P=n=>n?n.toLoca
   const o=fOpts(k,s);if(!o.length||(o.length<2&&!s[k].length))continue;
   h+=`<div class="fs"><div class="fl"><b>${fName(k,cs)}</b>${k=="md"?`<em>${esc(s.br.join(", "))}</em>`:""}</div><div class="fcw">${o.map(x=>`<button type="button" class="chip ${s[k].includes(x[0])?"on":""} ${x[1]?"":"z"}" data-v="${esc(x[0])}" onclick="fTg('${k}',this)">${esc(x[0])}<i>${x[1]}</i></button>`).join("")}</div></div>`}
  h+=`<div class="fs"><div class="fl"><b>Размещено</b></div><div class="fcw">${[[0,"Любое"],[1,"За сутки"],[3,"3 дня"],[7,"Неделя"],[30,"Месяц"]].map(a=>chip(s.age==a[0],`fSet('age',${a[0]})`,a[1])).join("")}</div></div>`;
- h+=`<div class="fs"><div class="fl"><b>Расстояние</b></div><div class="fcw">${[[0,"Любое"],[3,"до 3 км"],[5,"до 5 км"],[10,"до 10 км"],[25,"до 25 км"],[100,"до 100 км"]].map(a=>chip(s.dist==a[0],`fSet('dist',${a[0]})`,a[1])).join("")}</div></div>`;
  const sw=(k,t,d)=>`<div class="fsw ${s[k]?"on":""}" role="switch" tabindex="0" aria-checked="${!!s[k]}" onclick="fSet('${k}',${!s[k]})" onkeydown="if(event.key==' '||event.key=='Enter'){event.preventDefault();fSet('${k}',${!s[k]})}"><div><b>${t}</b><span>${d}</span></div><i class="tgl"></i></div>`;
  h+=`<div class="fs">${sw("deal","Только выгодные цены","Ниже рыночной по оценке VVM")}${sw("disc","Только со скидкой","Цена снижена продавцом")}</div>`;
  bd.innerHTML=h;bd.scrollTop=st;fCnt()}
-function fCnt(){if(!FDR)return;const n=fCount(FDR),b=$("fshow");b.disabled=!n;b.textContent=n?"Показать "+n+" "+ruN(n,"объявление","объявления","объявлений"):"Ничего не найдено";$("frs").disabled=!fN(FDR)}
+function fCnt(){if(!FDR)return;const n=fCount(FDR),b=$("fshow"),w=!n&&FDR.gc!=="*"?fCount(Object.assign({},FDR,{gc:"*"})):0;b.disabled=!n&&!w;b.textContent=n?"Показать "+n+" "+ruN(n,"объявление","объявления","объявлений"):w?"Показать из ближайших городов":"Ничего не найдено";$("frs").disabled=!fN(FDR)}
 function fNum(k,el,pl){const d=el.value.replace(/\D/g,"").slice(0,pl?4:9);FDR[k]=+d||0;el.value=d?(pl?d:(+d).toLocaleString("ru-RU")):"";fCnt()}
+function fGeo(c){FDR.gc=c==="*"?"*":(c===null||c===city?null:c);if(c&&c!=="*"&&c!==city)GCprev=c;GP=false;fDraw()}
 function fSet(k,v){FDR[k]=v;if(k=="p2"&&FDR.p1&&FDR.p2&&FDR.p1>FDR.p2)FDR.p1=0;fDraw()}
 function fTg(k,el){const v=el.dataset.v,a=FDR[k],n=a.indexOf(v);n<0?a.push(v):a.splice(n,1);if(k=="br")pruneMd(FDR);fDraw()}
 function fCat(c){if(FDR.cat==c)return;FDR.cat=c;FARR.forEach(k=>{if(k!="cond")FDR[k]=[]});FDR.y1=FDR.y2=FDR.km=0;fDraw();const sc=document.querySelector("#fb .fcw.sc .on");if(sc&&sc.scrollIntoView)try{sc.scrollIntoView({inline:"center",block:"nearest"})}catch(e){}}
@@ -1734,7 +1778,7 @@ function afDraw(){const s=fS(),a=[],P=n=>n.toLocaleString("ru-RU");
  if(s.y1||s.y2)a.push(["y",s.y1&&s.y2?s.y1+" – "+s.y2+" г.":s.y1?"от "+s.y1+" г.":"до "+s.y2+" г."]);
  if(s.km)a.push(["km","до "+P(s.km)+" км"]);
  if(s.age)a.push(["age",{1:"За сутки",3:"За 3 дня",7:"За неделю",30:"За месяц"}[s.age]]);
- if(s.dist)a.push(["dist","до "+s.dist+" км"]);
+ if(geoOn(s))a.push(["geo",gLabel(s,1)]);
  if(s.deal)a.push(["deal","Выгодные цены"]);
  if(s.disc)a.push(["disc","Со скидкой"]);
  const box=$("afc"),X='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
@@ -1742,7 +1786,7 @@ function afDraw(){const s=fS(),a=[],P=n=>n.toLocaleString("ru-RU");
  box.innerHTML=a.length?a.map(x=>`<button type="button" class="ac" data-k="${x[0]}" data-v="${esc(x[2]||"")}" onclick="afRm(this)">${esc(x[1])}${X}</button>`).join("")+'<button type="button" class="ar" onclick="fClear()">Сбросить</button>':"";
  const n=a.length;$("fbb").hidden=!n;$("fbb").textContent=n;$("fbtn").classList.toggle("has",n>0);$("sfbb").hidden=!n;$("sfbb").textContent=n;$("sfb").classList.toggle("has",n>0)}
 function afRm(el){const k=el.dataset.k,v=el.dataset.v;
- if(k=="p")FL.p1=FL.p2=0;else if(k=="y")FL.y1=FL.y2=0;else if(k=="km")FL.km=0;else if(k=="age")FL.age=0;else if(k=="dist")FL.dist=0;else if(k=="disc")FL.disc=false;
+ if(k=="p")FL.p1=FL.p2=0;else if(k=="y")FL.y1=FL.y2=0;else if(k=="km")FL.km=0;else if(k=="age")FL.age=0;else if(k=="geo"){FL.gc=null;FL.gr=100}else if(k=="disc")FL.disc=false;
  else if(k=="deal"){deal=false;$("fd").classList.remove("on")}
  else if(FARR.includes(k)){FL[k]=FL[k].filter(x=>x!=v);if(k=="br")pruneMd(FL)}
  resetFeed()}
@@ -1750,7 +1794,7 @@ function empEl(){const el=document.createElement("div"),sf=fN()>0;el.className="
  el.innerHTML='<div class="eic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><b>'+(AQ?"Ничего не нашли по запросу «"+esc(AQ)+"»":"Ничего не нашли")+'</b><span>'+(AQ?"Проверьте написание или попробуйте запрос покороче.":"Попробуйте изменить или убрать часть фильтров.")+'</span><div class="acts">'+(sf?'<button class="btn ghost" type="button" onclick="fOpen()">Изменить фильтры</button>':"")+'<button class="btn" type="button" onclick="'+(AQ||cat!="all"?"homeGo()":"fClear()")+'">'+(AQ||cat!="all"?(sf?"Сбросить всё":"Сбросить поиск"):"Сбросить фильтры")+'</button></div>';return el}
 
 const colsN=()=>{const w=$("grid").clientWidth||innerWidth;return w>=1000?4:w>=700?3:2};
-function mkBlock(title){const el=document.createElement("div");if(title){const d=document.createElement("div");d.className="dv";d.textContent=title;el.appendChild(d)}
+function mkBlock(title,note){const el=document.createElement("div");if(title){const d=document.createElement("div");d.className="dv";d.textContent=title;el.appendChild(d);if(note){const q=document.createElement("div");q.className="dvn";q.innerHTML=note;el.appendChild(q)}}
  const cw=document.createElement("div");cw.className="cols";el.appendChild(cw);$("grid").appendChild(el);const b={el,cw,items:[],h:[],cols:[],title};setCols(b);blocks.push(b);return b}
 const gcw=c=>((c.clientWidth||$("grid").clientWidth||innerWidth-28)-(NC-1)*(innerWidth<=700?12:14))/NC;
 function setCols(b){b.cw.innerHTML="";b.cw.style.setProperty("--n",NC);b.cw.style.setProperty("--cw",gcw(b.cw).toFixed(1)+"px");b.cols=[];b.h=[]}
@@ -1759,21 +1803,22 @@ function cyc(){const c=S.cycle++;if(c>0)return[];const ord=$("sort").value;retur
 function endCard(){S.end=true;const el=document.createElement("div");el.className="endc";el.innerHTML=RM&&S.m?'<b>Это все объявления по вашему запросу</b><span>Подпишитесь, и мы сообщим, когда появится новое.</span><div class="acts"><button class="btn ghost" onclick="homeGo()">На главную</button><button class="btn" onclick="sub()">🔔 Подписаться</button></div>':'<b>Вы посмотрели все объявления рядом</b><span>Новые появляются каждый день. Подпишитесь, и мы сообщим о свежих.</span><div class="acts"><button class="btn ghost" onclick="sub()">🔔 Подписаться</button><button class="btn" onclick="openPost()">+ Подать объявление</button></div>';$("grid").appendChild(el);$("more").style.display="none"}
 function pump(n){let cur=blocks[blocks.length-1];
  while(n>0){if(S.end)return;if(!S.q.length)S.q=cyc();if(!S.q.length){endCard();return}const e=S.q.shift();
-  if(typeof e=="object"){if(e.emp){$("grid").appendChild(empEl());cur=null}else cur=mkBlock(e.div);continue}
+  if(typeof e=="object"){if(e.emp){$("grid").appendChild(empEl());cur=null}else cur=mkBlock(e.div,e.note);continue}
   if(!cur)cur=mkBlock("");const it=mk(e,S.n++);it.ps=1;cur.items.push(it);place(cur,it,cardH(it,(n%10)*45));n--}}
 function modeSync(){const want=filt()||!!vis;if(want&&!RM&&!favMode)srvOpen();else if(!want&&RM)srvClose()}
 function resetFeed(){if(favMode)favClose(false,favHist&&!RM&&(filt()||!!vis));modeSync();navSync();fairUpd();afDraw();const g=$("grid");g.innerHTML="";blocks=[];NC=colsN();$("skg").style.setProperty("--n",NC);S={q:[],cycle:0,n:0,busy:false,end:false,m:0};$("more").style.display="";
  const vp=!!vis&&!visOn();let ey="",tl=($("sort").value=="c"?"Ближе всего · ":"Рядом с тобой · ")+city,cn="";
- if(!vp&&filt()){const m=matchIds(),ms=new Set(m),sf=fN()>0,n=m.length;
-  const rest=sf&&n?[]:rank(0,$("sort").value).map(b=>b.id).filter(id=>!ms.has(id));
-  S.q=m.slice();S.m=n;if(!n)S.q.push({emp:1});
-  if(rest.length){S.q.push({div:n?"Похожее рядом с тобой":"Другие объявления рядом с тобой"});rest.forEach(id=>S.q.push(id))}
+ if(!vp&&filt()){const m=matchIds(),ms=new Set(m),sf=fN()>0,n=m.length,nr=nearIds(ms,n),got=new Set([...m,...nr]);
+  const rest=sf&&got.size?[]:rank(0,$("sort").value).map(b=>b.id).filter(id=>!got.has(id)&&gpass(getL(id),fS()));
+  S.q=m.slice();S.m=n+nr.length;if(!got.size)S.q.push({emp:1});
+  if(nr.length){S.q.push({div:"Из ближайших городов",note:nearNote(n)});nr.forEach(id=>S.q.push(id))}
+  if(rest.length){S.q.push({div:got.size?"Похожее рядом с тобой":"Другие объявления рядом с тобой"});rest.forEach(id=>S.q.push(id))}
   S.cycle=1;
   if(visOn()){ey="Поиск по фото";tl="Похоже на твоё фото"}else if(AQ){ey="Результаты поиска";tl="«"+AQ+"»"}else if(cat!="all"){ey="Категория";tl=C.find(c=>c[0]==cat)[1]}else{ey="Фильтры";tl="По вашим фильтрам"}
-  cn=n?n+" "+ruN(n,"объявление","объявления","объявлений")+" · "+city:"Ничего не найдено · "+city}
+  cn=(n?n+" "+ruN(n,"объявление","объявления","объявлений")+" · "+gLabel()+(nr.length?" · ещё "+nr.length+" из ближайших городов":""):nr.length?nr.length+" "+ruN(nr.length,"объявление","объявления","объявлений")+" из ближайших городов · "+gLabel():"Ничего не найдено · "+gLabel())}
  else{S.q=MY.slice();if(vp){S.end=!!vis.busy;ey="Поиск по фото";tl=vis.busy?"Ищем похожее…":"Не удалось распознать"}}
  $("sre").textContent=ey;$("ttl").textContent=tl;$("rcn").textContent=cn;document.title=RM&&AQ?AQ+" — поиск, VVM":DT0;
- srcDraw();favCount();pump(14);recheck();
+ gsegDraw();srcDraw();favCount();pump(14);recheck();
  if(pendY!=null){const y=pendY;pendY=null;scrollTo(0,y)}}
 /* категории в результатах: сколько нашлось в каждой */
 function srcDraw(){const box=$("srcats");
@@ -1852,7 +1897,7 @@ const hSave=()=>ST.s("vvm_hist",HIST);
 function hAdd(q){q=String(q||"").trim().replace(/\s+/g," ");if(q.length<2)return;const l=q.toLowerCase();HIST=[q,...HIST.filter(x=>x.toLowerCase()!=l)].slice(0,12);hSave()}
 function hDel(n){HIST.splice(n,1);hSave();sgDraw()}
 function hClr(){HIST=[];hSave();sgDraw()}
-const IC={clock:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',s:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',cam:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg>'};
+const IC={clock:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',s:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',globe:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>',cam:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg>'};
 let SGQ=[];
 const sgQ=t=>"SGQ["+(SGQ.push(t)-1)+"]";
 const hl=(x,v)=>{const n=x.toLowerCase().indexOf(v);return n<0?esc(x):esc(x.slice(0,n))+"<mark>"+esc(x.slice(n,n+v.length))+"</mark>"+esc(x.slice(n+v.length))};
@@ -1863,7 +1908,7 @@ function sgDraw(){const raw=$("q").value.trim(),v=raw.toLowerCase(),box=$("sg");
   else h='<div class="sge">Здесь появятся ваши последние запросы</div>';
   if($("cam").classList.contains("on"))h+=(HIST.length?'<div class="sgsep"></div>':"")+`<div class="sgr" onclick="sgPhoto()">${IC.cam}<span>Найти по фото</span></div>`}
  else{
-  h=`<div class="sgr" onclick="sq(${sgQ(raw)})">${IC.s}<span>Искать «<mark>${esc(raw)}</mark>»</span></div>`;
+  h=`<div class="sgr" onclick="sq(${sgQ(raw)})">${IC.s}<span>Искать «<mark>${esc(raw)}</mark>»</span></div>`+(FL.gc=="*"?"":`<div class="sgr" onclick="sqAll(${sgQ(raw)})">${IC.globe}<span>Искать «<mark>${esc(raw)}</mark>» по всей России</span></div>`);
   const hs=HIST.filter(x=>x.toLowerCase().includes(v)&&x.toLowerCase()!=v).slice(0,3);
   h+=hs.map(x=>`<div class="sgr" onclick="sq(${sgQ(x)})">${IC.clock}<span>${hl(x,v)}</span></div>`).join("");
   const a=B.map(b=>getL(b.id)).filter(i=>mq(i,v)).slice(0,5);
@@ -1871,6 +1916,7 @@ function sgDraw(){const raw=$("q").value.trim(),v=raw.toLowerCase(),box=$("sg");
  box.innerHTML=h;box.classList.add("show")}
 const sgHide=()=>$("sg").classList.remove("show");
 function sq(t){visOff();qSet(t);hAdd(AQ);sgHide();$("q").blur();clearTimeout(qt);resetFeed();toFeed()}
+function sqAll(t){GCprev=FL.gc;FL.gc="*";sq(t)}
 function sgo(id){hAdd($("q").value);sgHide();$("q").blur();openL(id)}
 function sgPhoto(){sgHide();$("q").blur();visPick()}
 let noSg=0;
@@ -2072,7 +2118,7 @@ function openMap(){const a=B.filter(b=>cat=="all"||b.c==cat);$("mcap").textConte
  $("mp").innerHTML='<div class="ring"></div>'+a.map((b,n)=>`<button class="pin" style="left:${12+(b.id*37)%76}%;top:${28+(b.id*53)%62}%;animation-delay:${n*70}ms" onclick="cl();openL(${b.id})">${rub(b.p)}</button>`).join("");$("m4").classList.add("show")}
 /* ---------- город ---------- */
 function openCity(){$("cg").innerHTML=CNP.map(c=>`<button class="chip ${c==city?"on":""}" onclick="setCity('${c}')">${c}</button>`).join("");cl();$("m10").classList.add("show");$("cb").classList.remove("pulse")}
-function setCity(c){city=c;ST.s("vvm_city",c);Lc={};Object.values(UL).forEach(u=>{u.ct=u.city=c});calcNear();$("cn").textContent=c;newsInit();newsDraw();cl();refreshTop();resetFeed();toast("📍 Теперь показываем: "+c)}
+function setCity(c){city=c;if(FL.gc===c)FL.gc=null;if(GCprev===c)GCprev=null;ST.s("vvm_city",c);Lc={};Object.values(UL).forEach(u=>{u.ct=u.city=c});calcNear();$("cn").textContent=c;newsInit();newsDraw();cl();refreshTop();resetFeed();toast("📍 Теперь показываем: "+c)}
 function autoCity(){setCity(guessCity())}
 /* ---------- вход / регистрация ---------- */
 let aT=0,aM=0,users=ST.g("vvm_users",{}),me=ST.g("vvm_me",null),fails=0,lockT=0;
