@@ -279,7 +279,7 @@ label{display:block;font-size:12px;color:var(--mu);margin:12px 0 5px;font-weight
  .bar .btn{padding:0 14px;height:40px}.search::after{display:none}
  .hero{padding-top:14px}.hero::before{left:0;margin-left:0;width:100%;height:420px}
  h1{margin-bottom:10px}
- .stage{height:300px}.stage::before{width:300px;height:300px;margin:-150px}.fc{--w:172px;top:8px}.sa{display:none}
+ .stage::before{width:300px;height:300px;margin:-150px}.fc{--w:172px;top:8px}.sa{display:none}
 
  .pb{font-size:12px;padding:4px 9px;left:6px;bottom:6px}.fci{border-radius:18px}
 
@@ -818,6 +818,31 @@ body.favview main>:not(.favp){display:none!important}
 }
 .fh{position:relative;z-index:2;transition:box-shadow .2s}
 #s16.sc .fh{box-shadow:0 1px 0 var(--line)}
+
+/* ===== v36: фото-слайдер в карточках и в объявлении ===== */
+.pv{position:relative;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.pt{display:flex;height:100%;backface-visibility:hidden}
+.psl,.pt>.gs{position:relative;flex:none;width:100%;height:100%}
+.cim .pv{position:absolute;inset:0}
+.gt.pv{display:block;overflow:hidden;scroll-snap-type:none}
+.pdots{position:absolute;left:0;right:0;bottom:9px;display:flex;justify-content:center;gap:4px;pointer-events:none;z-index:2}
+.pdots i{width:5px;height:5px;border-radius:99px;background:rgba(255,255,255,.55);box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 1px 3px rgba(0,0,0,.4);transition:width .3s cubic-bezier(.3,.9,.3,1),background .2s}
+.pdots i.on{width:14px;background:#fff}
+.gd i{transition:width .3s cubic-bezier(.3,.9,.3,1),background .2s}
+.pa{position:absolute;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;border:0;background:rgba(10,12,18,.52);color:#fff;display:grid;place-items:center;padding:0;cursor:pointer;z-index:3;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s,background .2s}
+.pa.l{left:8px}.pa.r{right:8px}
+.pa svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.gal .pa{width:38px;height:38px;margin-top:-19px}.gal .pa svg{width:19px;height:19px}.gal .pa.l{left:12px}.gal .pa.r{right:12px}
+@media(hover:hover) and (pointer:fine){
+ .psw:hover .pa{opacity:1;pointer-events:auto}
+ .psw.p0 .pa.l,.psw.pn .pa.r{opacity:0;pointer-events:none}
+ .pa:hover{background:rgba(10,12,18,.8);transform:scale(1.08)}
+ .card:hover .im{transform:scale(var(--z,1))}
+ .pv{cursor:pointer}
+}
+.card:has(.pv.drag){transform:none!important}
+.stage{height:404px}
+@media(max-width:700px){.stage{height:258px}}
 </style>
 <style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=35)}.i-granta{background-image:url(img/granta.jpg?v=35)}.i-mac{background-image:url(img/mac.jpg?v=35)}.i-icepeak{background-image:url(img/icepeak.jpg?v=35)}.i-mhw{background-image:url(img/mhw.jpg?v=35)}.i-mhw2{background-image:url(img/mhw2.jpg?v=35)}.i-mhw3{background-image:url(img/mhw3.jpg?v=35)}.i-mhw4{background-image:url(img/mhw4.jpg?v=35)}.i-kalina{background-image:url(img/kalina.jpg?v=35)}.i-honda{background-image:url(img/honda.jpg?v=35)}.i-tires{background-image:url(img/tires.jpg?v=35)}.i-shock{background-image:url(img/shock.jpg?v=35)}.i-alt{background-image:url(img/alt.jpg?v=35)}.i-honda3{background-image:url(img/honda3.jpg?v=35)}.i-sk1{background-image:url(img/sk1.jpg?v=35)}.i-sk2{background-image:url(img/sk2.jpg?v=35)}.i-pc{background-image:url(img/pc.jpg?v=35)}.i-s5{background-image:url(img/s5.jpg?v=35)}.i-nike{background-image:url(img/nike.jpg?v=35)}.i-stels{background-image:url(img/stels.jpg?v=35)}.i-boots{background-image:url(img/boots.jpg?v=35)}.i-snk{background-image:url(img/snk.jpg?v=35)}.i-braun{background-image:url(img/braun.jpg?v=35)}.i-l14a{background-image:url(img/l14a.jpg?v=35)}.i-rapid{background-image:url(img/rapid.jpg?v=35)}.i-granta2{background-image:url(img/granta2.jpg?v=35)}.i-s10x2{background-image:url(img/s10x2.jpg?v=35)}.i-heli{background-image:url(img/heli.jpg?v=35)}.i-eiffel{background-image:url(img/eiffel.jpg?v=35)}.i-s5b{background-image:url(img/s5b.jpg?v=35)}.i-gwh{background-image:url(img/gwh.jpg?v=35)}.i-s22{background-image:url(img/s22.jpg?v=35)}.i-s10{background-image:url(img/s10.jpg?v=35)}.i-priw{background-image:url(img/priw.jpg?v=35)}.i-prib{background-image:url(img/prib.jpg?v=35)}.i-fender{background-image:url(img/fender.jpg?v=35)}.i-air{background-image:url(img/air.jpg?v=35)}.i-kalint{background-image:url(img/kalint.jpg?v=35)}.i-y1b{background-image:url(img/y1b.jpg?v=35)}.i-y1d{background-image:url(img/y1d.jpg?v=35)}.i-y1e{background-image:url(img/y1e.jpg?v=35)}.i-y1k{background-image:url(img/y1k.jpg?v=35)}.i-f14m{background-image:url(img/f14m.jpg?v=35)}.i-f14n{background-image:url(img/f14n.jpg?v=35)}.i-f14o{background-image:url(img/f14o.jpg?v=35)}.i-f14p{background-image:url(img/f14p.jpg?v=35)}.i-sn14{background-image:url(img/sn14.jpg?v=35)}.i-nt14{background-image:url(img/nt14.jpg?v=35)}.i-prh{background-image:url(img/prh.jpg?v=35)}.i-bmwg{background-image:url(img/bmwg.jpg?v=35)}.i-bmwh{background-image:url(img/bmwh.jpg?v=35)}.i-bmwi{background-image:url(img/bmwi.jpg?v=35)}.i-bmwj{background-image:url(img/bmwj.jpg?v=35)}.i-bmwl{background-image:url(img/bmwl.jpg?v=35)}.i-ap1{background-image:url(img/ap1.jpg?v=35)}.i-ap2{background-image:url(img/ap2.jpg?v=35)}.i-bask{background-image:url(img/bask.jpg?v=35)}.i-mba1{background-image:url(img/mba1.jpg?v=35)}.i-mba2{background-image:url(img/mba2.jpg?v=35)}.i-mba3{background-image:url(img/mba3.jpg?v=35)}.i-mba4{background-image:url(img/mba4.jpg?v=35)}.i-mba5{background-image:url(img/mba5.jpg?v=35)}.i-gz1{background-image:url(img/gz1.jpg?v=35)}.i-gz2{background-image:url(img/gz2.jpg?v=35)}.i-gz3{background-image:url(img/gz3.jpg?v=35)}.i-gz4{background-image:url(img/gz4.jpg?v=35)}.i-gz5{background-image:url(img/gz5.jpg?v=35)}.i-cam1{background-image:url(img/cam1.jpg?v=35)}.i-cam2{background-image:url(img/cam2.jpg?v=35)}.i-cam3{background-image:url(img/cam3.jpg?v=35)}.i-gpu1{background-image:url(img/gpu1.jpg?v=35)}.i-bpc1{background-image:url(img/bpc1.jpg?v=35)}.i-bpc2{background-image:url(img/bpc2.jpg?v=35)}.i-bpc3{background-image:url(img/bpc3.jpg?v=35)}.i-bpc4{background-image:url(img/bpc4.jpg?v=35)}.i-bpc5{background-image:url(img/bpc5.jpg?v=35)}.i-wz1{background-image:url(img/wz1.jpg?v=35)}.i-lan1{background-image:url(img/lan1.jpg?v=35)}.i-lan2{background-image:url(img/lan2.jpg?v=35)}.i-lan3{background-image:url(img/lan3.jpg?v=35)}.i-s14sun{background-image:url(img/s14sun.jpg?v=35)}.i-s14wet{background-image:url(img/s14wet.jpg?v=35)}.i-s14rib{background-image:url(img/s14rib.jpg?v=35)}.i-s14pair{background-image:url(img/s14pair.jpg?v=35)}.i-v6a{background-image:url(img/v6a.jpg?v=35)}.i-v6b{background-image:url(img/v6b.jpg?v=35)}.i-v6c{background-image:url(img/v6c.jpg?v=35)}.i-prh1{background-image:url(img/prh1.jpg?v=35)}.i-prh2{background-image:url(img/prh2.jpg?v=35)}.i-prh3{background-image:url(img/prh3.jpg?v=35)}.i-bd1{background-image:url(img/bd1.jpg?v=35)}.i-bd2{background-image:url(img/bd2.jpg?v=35)}.i-bmwa{background-image:url(img/bmwa.jpg?v=35)}.i-bmwb{background-image:url(img/bmwb.jpg?v=35)}.i-bmwc{background-image:url(img/bmwc.jpg?v=35)}.i-bmwd{background-image:url(img/bmwd.jpg?v=35)}.i-bmwe{background-image:url(img/bmwe.jpg?v=35)}.i-z7a{background-image:url(img/z7a.jpg?v=35)}.i-z7b{background-image:url(img/z7b.jpg?v=35)}.i-z7c{background-image:url(img/z7c.jpg?v=35)}.i-gb1{background-image:url(img/gb1.jpg?v=35)}.i-gb2{background-image:url(img/gb2.jpg?v=35)}.i-gg1{background-image:url(img/gg1.jpg?v=35)}.i-gg2{background-image:url(img/gg2.jpg?v=35)}.i-gg3{background-image:url(img/gg3.jpg?v=35)}.i-gg4{background-image:url(img/gg4.jpg?v=35)}.i-d14a{background-image:url(img/d14a.jpg?v=35)}.i-d14b{background-image:url(img/d14b.jpg?v=35)}.i-d14c{background-image:url(img/d14c.jpg?v=35)}.i-d14d{background-image:url(img/d14d.jpg?v=35)}.i-d14e{background-image:url(img/d14e.jpg?v=35)}.i-gk1{background-image:url(img/gk1.jpg?v=35)}.i-gk2{background-image:url(img/gk2.jpg?v=35)}.i-gk3{background-image:url(img/gk3.jpg?v=35)}.i-gk4{background-image:url(img/gk4.jpg?v=35)}.i-kl1{background-image:url(img/kl1.jpg?v=35)}.i-kl2{background-image:url(img/kl2.jpg?v=35)}</style>
 </head>
@@ -1390,9 +1415,9 @@ function mk(vid,n,rfix){const i=getL(vid),r=rng(vid*31+n*7+3),m=PM[i.k[0]]||[1.2
  return {i,n,ago:i.mine?"только что":(r(),agoShort(pubTs(vid))),r:ratio,z:1,dy:0,mp:0}}
 const locT=i=>i.ct==city?"📍 "+dkm(i.dist)+" км":"📍 "+esc(i.ct)+" · "+i.dist+" км";
 const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
-function cardH(e,delay,extra){const i=e.i,dl=/dl/.test(extra||""),h=292,
+function cardH(e,delay,extra){const i=e.i,ks=e.ps&&!i.up&&i.k&&i.k.length>1?i.k:null,dl=/dl/.test(extra||""),h=292,
  loc=i.ct==city?`<span class="lc">${dkm(i.dist)} км</span>`:`<span class="lc"><em>${esc(i.ct)}</em><u>&nbsp;·&nbsp;${i.dist} км</u></span>`;
- return `<div class="card ${extra||""}" style="--r:1.14;animation-delay:${delay||0}ms;contain-intrinsic-size:auto ${h}px" onclick="openL(${i.id})"><div class="cim">${imK(i,e.z,e.dy)}${dl&&i.dr?`<span class="dsc">−${i.dr}%</span>`:""}<button class="fav ${fav.has(i.id)?"on":""}" data-f="${i.id}" onclick="event.stopPropagation();tf(${i.id},this)" aria-label="В избранное" aria-pressed="${fav.has(i.id)}">${HEART}</button></div><div class="cb"><div class="pr"><b>${rub(i.p)}</b>${i.old?`<s>${rub(i.old)}</s>`:""}</div><div class="tt">${esc(i.t)}</div><div class="mt">${loc}<span>${e.ago}</span></div></div></div>`}
+ return `<div class="card ${extra||""}" style="--r:1.14;animation-delay:${delay||0}ms;contain-intrinsic-size:auto ${h}px" onclick="openL(${i.id})"><div class="cim${ks?" psw p0":""}">${ks?`<div class="pv" data-id="${i.id}" data-n="${ks.length}"><div class="pt"><div class="psl">${imK(i,e.z,e.dy)}</div></div></div>`:imK(i,e.z,e.dy)}${dl&&i.dr?`<span class="dsc">−${i.dr}%</span>`:""}<button class="fav ${fav.has(i.id)?"on":""}" data-f="${i.id}" onclick="event.stopPropagation();tf(${i.id},this)" aria-label="В избранное" aria-pressed="${fav.has(i.id)}">${HEART}</button>${ks?`<div class="pdots">${ks.map((_,n)=>`<i class="${n?"":"on"}"></i>`).join("")}</div><button type="button" class="pa l" tabindex="-1" aria-label="Предыдущее фото">${CHVL}</button><button type="button" class="pa r" tabindex="-1" aria-label="Следующее фото">${CHV}</button>`:""}</div><div class="cb"><div class="pr"><b>${rub(i.p)}</b>${i.old?`<s>${rub(i.old)}</s>`:""}</div><div class="tt">${esc(i.t)}</div><div class="mt">${loc}<span>${e.ago}</span></div></div></div>`}
 /* ---------- новое, скидки, купоны, бонусы ---------- */
 let NW=[];
 const agoT=t=>agoShort(t);
@@ -1438,8 +1463,8 @@ function hpos(f){const N=HN.length,H=HM(),els=$("stage").children;hf=f;
  const i=(((Math.round(f))%N)+N)%N;if(i!==hcur){hcur=i;hcap()}}
 /* пружина без перелёта: карточки скользят и плавно тормозят, а не прыгают */
 function hgo(t){ht=t;hlast=Date.now();if(!hraf){hlt=performance.now();hraf=requestAnimationFrame(hstep)}}
-function hstep(now){const dt=Math.min(.034,Math.max(.001,(now-hlt)/1000)),w=9.5;hlt=now;
- hv+=(-2*w*hv-w*w*(hf-ht))*dt;hf+=hv*dt;
+function hstep(now){let rem=Math.min(.12,Math.max(.001,(now-hlt)/1000));const w=9.5;hlt=now;
+ while(rem>0){const h=Math.min(.008,rem);rem-=h;hv+=(-2*w*hv-w*w*(hf-ht))*h;hf+=hv*h}
  if(Math.abs(hf-ht)<.0015&&Math.abs(hv)<.02){hf=ht;hv=0;hraf=0;hpos(hf);return}
  hpos(hf);hraf=requestAnimationFrame(hstep)}
 function hstop(){if(hraf){cancelAnimationFrame(hraf);hraf=0}hv=0;ht=hf}
@@ -1476,6 +1501,49 @@ function rec(){const a=rankMain().slice(10,18);$("rec").innerHTML=a.map((b,n)=>c
 function rs(id,d){const e=$(id);e.scrollBy({left:d*(e.clientWidth*.8),behavior:"smooth"})}
 function cats(){$("cats").innerHTML=C.map(c=>`<div class="st ${cat==c[0]?"on":""}" onclick="setCat('${c[0]}')"><div class="rg"><div>${c[3]?`<div class="im i-${c[3]}" style="background-position:${PM[c[3]][1]}% ${PM[c[3]][2]}%"></div>`:c[2]}</div></div>${c[1]}</div>`).join("");
  $("pc").innerHTML=C.slice(1).map(c=>`<option value="${c[0]}">${c[1]}</option>`).join("")}
+
+/* ---------- фото-слайдер: пружина, один кадр за жест ---------- */
+const PSW=13,CHV='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>',CHVL='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>';
+const pvClamp=(p,t)=>Math.max(0,Math.min(p.n-1,t));
+function pvP(pv){return pv._p||(pv._p={n:+pv.dataset.n||pv.firstElementChild.children.length,pos:0,tgt:0,v:0,raf:0,lt:0,mvT:0,idx:0,W:1,wt:0})}
+function pvDots(pv){const p=pv._p,root=pv.parentNode;root.querySelectorAll(".pdots i,.gd i").forEach((d,j)=>d.classList.toggle("on",j==p.idx));
+ const c=root.querySelector(".gc");if(c)c.textContent=(p.idx+1)+" / "+p.n;root.classList.toggle("p0",p.idx==0);root.classList.toggle("pn",p.idx==p.n-1)}
+function pvPaint(pv,pos){const p=pv._p;p.pos=pos;pv.firstElementChild.style.transform="translateX("+(-pos*100).toFixed(3)+"%)";
+ const i=pvClamp(p,Math.round(pos));if(i!==p.idx){p.idx=i;pvDots(pv)}}
+function pvGo(pv,t){const p=pvP(pv);p.tgt=t;pv.firstElementChild.style.willChange="transform";if(!p.raf){p.lt=performance.now();p.raf=requestAnimationFrame(n=>pvStep(pv,n))}}
+function pvStep(pv,now){const p=pv._p;let rem=Math.min(.12,Math.max(.001,(now-p.lt)/1000)),x=p.pos;p.lt=now;
+ while(rem>0){const h=Math.min(.008,rem);rem-=h;p.v+=(-2*PSW*p.v-PSW*PSW*(x-p.tgt))*h;x+=p.v*h}
+ if(Math.abs(x-p.tgt)<.0015&&Math.abs(p.v)<.03){p.raf=0;p.v=0;pvPaint(pv,p.tgt);if(!pv.classList.contains("drag"))pv.firstElementChild.style.willChange="";return}
+ pvPaint(pv,x);p.raf=requestAnimationFrame(n=>pvStep(pv,n))}
+function pvFill(pv){if(!pv||pv._f)return;pv._f=1;const t=pv.firstElementChild;
+ if(pv.dataset.id){const i=getL(+pv.dataset.id),ks=i.k||[];for(let n=t.children.length;n<ks.length;n++){const d=document.createElement("div");d.className="psl";d.innerHTML=imK(i,1,0,ks[n]);t.appendChild(d)}}
+ pv.addEventListener("wheel",pvWheel,{passive:false})}
+function pvWheel(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>12){e.preventDefault();const pv=e.currentTarget,p=pvP(pv),now=Date.now();if(p.n>1&&now-p.wt>380){p.wt=now;pvGo(pv,pvClamp(p,Math.round(p.tgt)+(e.deltaX>0?1:-1)))}}}
+const psIO=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){pvFill(en.target.querySelector(".pv"));psIO.unobserve(en.target)}}),{rootMargin:"160px 0px"});
+let PD=null;
+document.addEventListener("pointerdown",e=>{if(e.button>0||e.isPrimary===false)return;const pv=e.target.closest&&e.target.closest(".pv");if(!pv||e.target.closest(".pa"))return;
+ pvFill(pv);const p=pvP(pv);if(p.n<2)return;p.W=pv.clientWidth||1;if(p.raf){cancelAnimationFrame(p.raf);p.raf=0}
+ PD={pv,id:e.pointerId,ox:e.clientX,x:e.clientX,y:e.clientY,s:Math.round(p.pos),f:p.pos,mv:false,lx:e.clientX,lt:e.timeStamp,v:0}},{passive:true});
+document.addEventListener("pointermove",e=>{const d=PD;if(!d||e.pointerId!=d.id)return;const pv=d.pv,p=pv._p,dx=e.clientX-d.x,dy=e.clientY-d.y;
+ if(!d.mv){if(Math.abs(dx)>6&&Math.abs(dx)>Math.abs(dy)*1.2){d.mv=true;d.x=e.clientX;d.f=p.pos;d.lx=e.clientX;d.lt=e.timeStamp;pv.classList.add("drag");pv.firstElementChild.style.willChange="transform";try{pv.setPointerCapture(e.pointerId)}catch(_){}}
+  else{if(Math.abs(dy)>8)PD=null;return}}
+ const dt=e.timeStamp-d.lt;if(dt>0){d.v=d.v*.6+(-(e.clientX-d.lx)/p.W/dt*1000)*.4}d.lx=e.clientX;d.lt=e.timeStamp;
+ let r=d.f-(e.clientX-d.x)/p.W;const mx=p.n-1;r=r<0?r*.32:r>mx?mx+(r-mx)*.32:r;r=Math.max(d.s-1,Math.min(d.s+1,r));pvPaint(pv,r)});
+function pvEnd(e){const d=PD;if(!d||(e&&e.pointerId!=d.id))return;PD=null;const pv=d.pv,p=pv._p;pv.classList.remove("drag");
+ if(!d.mv)return;p.mvT=Date.now();
+ let v=d.v;if(e&&e.timeStamp&&e.timeStamp-d.lt>90)v=0;
+ const dp=p.pos-d.s,tr=-(d.lx-d.ox)/p.W,fast=Math.abs(v)>.9;let t=d.s;
+ if(fast||Math.abs(tr)>.11)t=d.s+(fast?Math.sign(v):Math.sign(tr));
+ t=pvClamp(p,t);let vv=Math.max(-6,Math.min(6,v));const rem=t-p.pos;
+ if(vv*rem>0)vv=Math.sign(vv)*Math.min(Math.abs(vv),PSW*Math.abs(rem)*.9);else if(vv*rem<0)vv*=.4;
+ p.v=vv;pvGo(pv,t)}
+document.addEventListener("pointerup",pvEnd);document.addEventListener("pointercancel",pvEnd);
+/* после перетаскивания клик не открывает объявление; стрелки листают фото, не открывая его */
+document.addEventListener("click",e=>{const t=e.target;if(!t.closest)return;const a=t.closest(".pa");
+ if(a){e.stopPropagation();e.preventDefault();const pv=a.parentNode.querySelector(".pv");if(!pv)return;pvFill(pv);const p=pvP(pv);if(p.n>1)pvGo(pv,pvClamp(p,Math.round(p.tgt)+(a.classList.contains("r")?1:-1)));return}
+ const pv=t.closest(".pv");if(pv&&pv._p&&Date.now()-pv._p.mvT<320){e.stopPropagation();e.preventDefault()}},true);
+document.addEventListener("keydown",e=>{if((e.key!="ArrowLeft"&&e.key!="ArrowRight")||!$("m1").classList.contains("show"))return;if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;
+ const pv=document.querySelector("#s1 .gal .pv");if(!pv)return;pvFill(pv);const p=pvP(pv);if(p.n>1)pvGo(pv,pvClamp(p,Math.round(p.tgt)+(e.key=="ArrowRight"?1:-1)))});
 /* ---------- лента ---------- */
 let cat="all",fav=new Set(),favMode=false,deal=false,cur=null,blocks=[],S={q:[],cycle:0,n:0,skip:0,busy:false},NC=2;
 const filt=()=>!!($("q").value.trim()||cat!="all"||fN()||visOn());
@@ -1626,13 +1694,13 @@ function mkBlock(title){const el=document.createElement("div");if(title){const d
  const cw=document.createElement("div");cw.className="cols";el.appendChild(cw);$("grid").appendChild(el);const b={el,cw,items:[],h:[],cols:[],title};setCols(b);blocks.push(b);return b}
 const gcw=c=>((c.clientWidth||$("grid").clientWidth||innerWidth-28)-(NC-1)*(innerWidth<=700?12:14))/NC;
 function setCols(b){b.cw.innerHTML="";b.cw.style.setProperty("--n",NC);b.cw.style.setProperty("--cw",gcw(b.cw).toFixed(1)+"px");b.cols=[];b.h=[]}
-function place(b,e,html){const t=document.createElement("template");t.innerHTML=html;b.cw.appendChild(t.content)}
+function place(b,e,html){const t=document.createElement("template");t.innerHTML=html;const c=t.content.firstElementChild;b.cw.appendChild(t.content);if(c&&e.ps){const el=c.querySelector(".cim.psw");if(el)psIO.observe(el)}}
 function cyc(){const c=S.cycle++;if(c>0)return[];const ord=$("sort").value;return(ord=="n"&&!filt()?rankMain().slice(18):rank(0,ord)).map(b=>b.id)}
 function endCard(){S.end=true;const el=document.createElement("div");el.className="endc";el.innerHTML=fN()>0&&S.m?'<b>Это все объявления по вашим фильтрам</b><span>Подпишитесь, и мы сообщим, когда появится новое.</span><div class="acts"><button class="btn ghost" onclick="fOpen()">Изменить фильтры</button><button class="btn" onclick="sub()">🔔 Подписаться</button></div>':'<b>Вы посмотрели все объявления рядом</b><span>Новые появляются каждый день. Подпишитесь, и мы сообщим о свежих.</span><div class="acts"><button class="btn ghost" onclick="sub()">🔔 Подписаться</button><button class="btn" onclick="openPost()">+ Подать объявление</button></div>';$("grid").appendChild(el);$("more").style.display="none"}
 function pump(n){let cur=blocks[blocks.length-1];
  while(n>0){if(S.end)return;if(!S.q.length)S.q=cyc();if(!S.q.length){endCard();return}const e=S.q.shift();
   if(typeof e=="object"){if(e.emp){$("grid").appendChild(empEl());cur=null}else cur=mkBlock(e.div);continue}
-  if(!cur)cur=mkBlock("");const it=mk(e,S.n++);cur.items.push(it);place(cur,it,cardH(it,(n%10)*45));n--}}
+  if(!cur)cur=mkBlock("");const it=mk(e,S.n++);it.ps=1;cur.items.push(it);place(cur,it,cardH(it,(n%10)*45));n--}}
 function resetFeed(){if(favMode)favClose();navSync();fairUpd();afDraw();const g=$("grid");g.innerHTML="";blocks=[];NC=colsN();$("skg").style.setProperty("--n",NC);S={q:[],cycle:0,n:0,busy:false,end:false,m:0};$("more").style.display="";
  if(filt()){const m=matchIds(),ms=new Set(m),sf=fN()>0,qq=$("q").value.trim();
   const rest=sf&&m.length?[]:rank(0,$("sort").value).map(b=>b.id).filter(id=>!ms.has(id));
@@ -1678,7 +1746,7 @@ function favDraw(){const all=favIds(),cnt={};all.forEach(id=>{const c=getL(id).c
  const g=$("fgrid"),e=$("fpe");$("fsort").hidden=all.length<2;
  if(!all.length){g.innerHTML="";e.hidden=false;e.innerHTML=`<div class="fpe-i"><div class="fpe-h">${HEART}</div><b>Здесь пока пусто</b><span>Нажимайте сердечко на любом объявлении, и оно появится здесь.</span><button class="btn" onclick="favClose();window.scrollTo(0,0)">Смотреть объявления</button></div>`;return}
  e.hidden=true;NC=colsN();const fb={cw:g,items:[],h:[],cols:[]};setCols(fb);
- ids.forEach((id,n)=>{const it=mk(id,n);fb.items.push(it);place(fb,it,cardH(it,Math.min(n,10)*35,"noanim"))})}
+ ids.forEach((id,n)=>{const it=mk(id,n);it.ps=1;fb.items.push(it);place(fb,it,cardH(it,Math.min(n,10)*35,"noanim"))})}
 function setCat(c){visOff();cat=c;cats();resetFeed();$("feed").scrollIntoView({behavior:"smooth"})}
 function navSync(){$("nvh").classList.toggle("on",!favMode);$("nvf").classList.toggle("on",!!favMode);$("favb").classList.toggle("on",!!favMode)}
 function tg(){deal=!deal;$("fd").classList.toggle("on",deal);resetFeed()}
@@ -1717,9 +1785,8 @@ $("q").addEventListener("keydown",e=>{if(e.key=="Enter"){hAdd($("q").value);sgHi
 $("qx").addEventListener("click",()=>{$("q").value="";$("qx").hidden=true;clearTimeout(qt);resetFeed();$("q").focus()});
 
 /* ---------- объявление ---------- */
-function gal(i){const ks=i.up?[null]:(i.k.length?i.k:[null]);
- return `<div class="gal"><div class="gt" onscroll="gs(this)">${ks.map(k=>`<div class="gs" style="height:100%"><div style="position:absolute;inset:0">${i.up?imK(i):k?imK(i,1,0,k):imK(i)}</div></div>`).join("")}</div>${ks.length>1?`<div class="gd">${ks.map((_,n)=>`<i class="${n?"":"on"}"></i>`).join("")}</div><span class="gc" id="gcn">1 / ${ks.length}</span>`:""}</div>`}
-function gs(t){const n=Math.round(t.scrollLeft/t.clientWidth);t.parentNode.querySelectorAll(".gd i").forEach((d,j)=>d.classList.toggle("on",j==n));const c=$("gcn");if(c)c.textContent=(n+1)+" / "+t.children.length}
+function gal(i){const ks=i.up?[null]:(i.k.length?i.k:[null]),n=ks.length;
+ return `<div class="gal psw p0"><div class="gt pv"><div class="pt">${ks.map(k=>`<div class="gs"><div style="position:absolute;inset:0">${i.up?imK(i):k?imK(i,1,0,k):imK(i)}</div></div>`).join("")}</div></div>${n>1?`<div class="gd">${ks.map((_,j)=>`<i class="${j?"":"on"}"></i>`).join("")}</div><span class="gc" id="gcn">1 / ${n}</span><button type="button" class="pa l" tabindex="-1" aria-label="Предыдущее фото">${CHVL}</button><button type="button" class="pa r" tabindex="-1" aria-label="Следующее фото">${CHV}</button>`:""}</div>`}
 function dscBox(i){if(!i.d&&!i.sp)return"";
  return `${i.sp?`<div class="box"><b>Характеристики</b><dl class="spc">${i.sp.map(r=>`<dt>${esc(r[0])}</dt><dd>${esc(String(r[1]))}</dd>`).join("")}</dl></div>`:""}${i.d?`<div class="box"><b>Описание</b><div class="dtx">${esc(i.d)}</div></div>`:""}`}
 function openL(id){ovOff();const i=getL(id),v=verdict(i);if(!i.mine&&!VWS.has(i.id)){VWS.add(i.id);try{ST.s("vvm_vws",[...VWS])}catch(e){}}addRecent(id);if(i.tg&&!i.mine)bump(i.tg,1);
