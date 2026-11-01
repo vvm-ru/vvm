@@ -651,7 +651,6 @@ body.favview main>:not(.favp){display:none!important}
 .fpt h1{margin:0;font:800 clamp(24px,4.2vw,32px)/1.1 Manrope,sans-serif;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
 .fpt h1 svg{width:.82em;height:.82em;flex:none;fill:#ff4d86;stroke:#ff4d86;stroke-width:2;stroke-linejoin:round;filter:drop-shadow(0 4px 10px rgba(255,77,134,.5))}
 .fpt em{display:block;margin-top:3px;font-style:normal;color:var(--mu);font-size:13.5px;font-weight:600}
-#fsort{flex:none;max-width:46%}
 .fpcats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -14px 18px;padding:2px 14px}
 .fpcats::-webkit-scrollbar{display:none}.fpcats[hidden]{display:none}
 .fpcats .chip i{font-style:normal;opacity:.65;margin-left:6px;font-weight:700}
@@ -663,7 +662,7 @@ body.favview main>:not(.favp){display:none!important}
 .fpe[hidden]{display:none}
 #fgrid{margin-top:2px}
 
-@media(max-width:700px){#favb{display:none}.fpt h1{font-size:23px;white-space:nowrap}.fph{gap:10px}#fsort{max-width:128px;padding:9px 30px 9px 12px;font-size:13px}nav.nav #nvf .nb{top:6px;left:calc(50% + 7px)}}
+@media(max-width:700px){#favb{display:none}.fpt h1{font-size:23px;white-space:nowrap}.fph{gap:10px}nav.nav #nvf .nb{top:6px;left:calc(50% + 7px)}}
 .fc.act .pb{display:none}
 .ib.on{box-shadow:0 4px 12px -5px rgba(255,77,134,.8)}
 [data-theme=light] .vf,[data-theme=light] .slot.ok .sm{color:#fff}
@@ -1066,8 +1065,42 @@ body:not(.srv) .gseg{display:none}
 .cg .chip.ru svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 body.hmin main{animation:hmin .42s cubic-bezier(.22,.9,.3,1) both}
 @keyframes hmin{from{opacity:0}to{opacity:1}}
+/* ===== v43: подсказки поиска, «Избранное»: панель и поиск ===== */
+.sgr.sgs{padding-right:2px}
+.sgr u{flex:none;text-decoration:none;font-size:12px;font-weight:600;color:var(--mu);white-space:nowrap}
+.sgr>span em{font-style:normal;color:var(--mu);font-weight:500;font-size:13px}
+.sgr .sgf{flex:none;width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:10px;background:none;cursor:pointer;color:var(--mu);padding:0}
+.sgr .sgf:hover{background:var(--glass2);color:var(--tx)}
+.sgr .sgf svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sgr.act,.sgi.act{background:var(--glass2)}
+.sgq{padding-right:6px}
+.sgall{flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:99px;border:1px solid var(--line);background:var(--glass);color:var(--tx);font:600 13px Manrope,sans-serif;cursor:pointer;white-space:nowrap}
+.sgall:hover{background:var(--glass2)}
+.sgall svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sgall b{font-weight:600}
+.sg .sgh:not(:first-child){padding-top:6px}
+body.favview #cam{display:none}
+/* панель «Избранного»: сортировка и фильтры отдельной строкой, с воздухом под заголовком */
+.fph{margin:14px 0 16px}
+.fpm{display:flex;align-items:center;gap:10px;margin:0 0 16px}
+.fpm[hidden]{display:none}
+.fpm>*{box-sizing:border-box;height:42px;margin:0}
+.fpm select{flex:none;padding:0 16px}
+.fpm .chip.fbt{flex:none;padding:0 18px}
+.fpm select[hidden]{display:none}
+#fafc{margin-top:-4px}
+.fpcats .chip.z{opacity:.55}
+.fpcats .chip.z.on{opacity:1}
+@media(max-width:700px){
+ .fph{margin:14px 0 18px}
+ .fpm{margin-bottom:16px}
+ .fpm select{padding:0 14px;font-size:14px}
+ .sgr u{font-size:11.5px}
+}
+.sgr u s{text-decoration:none}
+@media(max-width:380px){.sgr u s{display:none}}
 </style>
-<style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=42)}.i-granta{background-image:url(img/granta.jpg?v=42)}.i-mac{background-image:url(img/mac.jpg?v=42)}.i-icepeak{background-image:url(img/icepeak.jpg?v=42)}.i-mhw{background-image:url(img/mhw.jpg?v=42)}.i-mhw2{background-image:url(img/mhw2.jpg?v=42)}.i-mhw3{background-image:url(img/mhw3.jpg?v=42)}.i-mhw4{background-image:url(img/mhw4.jpg?v=42)}.i-kalina{background-image:url(img/kalina.jpg?v=42)}.i-honda{background-image:url(img/honda.jpg?v=42)}.i-tires{background-image:url(img/tires.jpg?v=42)}.i-shock{background-image:url(img/shock.jpg?v=42)}.i-alt{background-image:url(img/alt.jpg?v=42)}.i-honda3{background-image:url(img/honda3.jpg?v=42)}.i-sk1{background-image:url(img/sk1.jpg?v=42)}.i-sk2{background-image:url(img/sk2.jpg?v=42)}.i-pc{background-image:url(img/pc.jpg?v=42)}.i-s5{background-image:url(img/s5.jpg?v=42)}.i-nike{background-image:url(img/nike.jpg?v=42)}.i-stels{background-image:url(img/stels.jpg?v=42)}.i-boots{background-image:url(img/boots.jpg?v=42)}.i-snk{background-image:url(img/snk.jpg?v=42)}.i-braun{background-image:url(img/braun.jpg?v=42)}.i-l14a{background-image:url(img/l14a.jpg?v=42)}.i-rapid{background-image:url(img/rapid.jpg?v=42)}.i-granta2{background-image:url(img/granta2.jpg?v=42)}.i-s10x2{background-image:url(img/s10x2.jpg?v=42)}.i-heli{background-image:url(img/heli.jpg?v=42)}.i-eiffel{background-image:url(img/eiffel.jpg?v=42)}.i-s5b{background-image:url(img/s5b.jpg?v=42)}.i-gwh{background-image:url(img/gwh.jpg?v=42)}.i-s22{background-image:url(img/s22.jpg?v=42)}.i-s10{background-image:url(img/s10.jpg?v=42)}.i-priw{background-image:url(img/priw.jpg?v=42)}.i-prib{background-image:url(img/prib.jpg?v=42)}.i-fender{background-image:url(img/fender.jpg?v=42)}.i-air{background-image:url(img/air.jpg?v=42)}.i-kalint{background-image:url(img/kalint.jpg?v=42)}.i-y1b{background-image:url(img/y1b.jpg?v=42)}.i-y1d{background-image:url(img/y1d.jpg?v=42)}.i-y1e{background-image:url(img/y1e.jpg?v=42)}.i-y1k{background-image:url(img/y1k.jpg?v=42)}.i-f14m{background-image:url(img/f14m.jpg?v=42)}.i-f14n{background-image:url(img/f14n.jpg?v=42)}.i-f14o{background-image:url(img/f14o.jpg?v=42)}.i-f14p{background-image:url(img/f14p.jpg?v=42)}.i-sn14{background-image:url(img/sn14.jpg?v=42)}.i-nt14{background-image:url(img/nt14.jpg?v=42)}.i-prh{background-image:url(img/prh.jpg?v=42)}.i-bmwg{background-image:url(img/bmwg.jpg?v=42)}.i-bmwh{background-image:url(img/bmwh.jpg?v=42)}.i-bmwi{background-image:url(img/bmwi.jpg?v=42)}.i-bmwj{background-image:url(img/bmwj.jpg?v=42)}.i-bmwl{background-image:url(img/bmwl.jpg?v=42)}.i-ap1{background-image:url(img/ap1.jpg?v=42)}.i-ap2{background-image:url(img/ap2.jpg?v=42)}.i-bask{background-image:url(img/bask.jpg?v=42)}.i-mba1{background-image:url(img/mba1.jpg?v=42)}.i-mba2{background-image:url(img/mba2.jpg?v=42)}.i-mba3{background-image:url(img/mba3.jpg?v=42)}.i-mba4{background-image:url(img/mba4.jpg?v=42)}.i-mba5{background-image:url(img/mba5.jpg?v=42)}.i-gz1{background-image:url(img/gz1.jpg?v=42)}.i-gz2{background-image:url(img/gz2.jpg?v=42)}.i-gz3{background-image:url(img/gz3.jpg?v=42)}.i-gz4{background-image:url(img/gz4.jpg?v=42)}.i-gz5{background-image:url(img/gz5.jpg?v=42)}.i-cam1{background-image:url(img/cam1.jpg?v=42)}.i-cam2{background-image:url(img/cam2.jpg?v=42)}.i-cam3{background-image:url(img/cam3.jpg?v=42)}.i-gpu1{background-image:url(img/gpu1.jpg?v=42)}.i-bpc1{background-image:url(img/bpc1.jpg?v=42)}.i-bpc2{background-image:url(img/bpc2.jpg?v=42)}.i-bpc3{background-image:url(img/bpc3.jpg?v=42)}.i-bpc4{background-image:url(img/bpc4.jpg?v=42)}.i-bpc5{background-image:url(img/bpc5.jpg?v=42)}.i-wz1{background-image:url(img/wz1.jpg?v=42)}.i-lan1{background-image:url(img/lan1.jpg?v=42)}.i-lan2{background-image:url(img/lan2.jpg?v=42)}.i-lan3{background-image:url(img/lan3.jpg?v=42)}.i-s14sun{background-image:url(img/s14sun.jpg?v=42)}.i-s14wet{background-image:url(img/s14wet.jpg?v=42)}.i-s14rib{background-image:url(img/s14rib.jpg?v=42)}.i-s14pair{background-image:url(img/s14pair.jpg?v=42)}.i-v6a{background-image:url(img/v6a.jpg?v=42)}.i-v6b{background-image:url(img/v6b.jpg?v=42)}.i-v6c{background-image:url(img/v6c.jpg?v=42)}.i-prh1{background-image:url(img/prh1.jpg?v=42)}.i-prh2{background-image:url(img/prh2.jpg?v=42)}.i-prh3{background-image:url(img/prh3.jpg?v=42)}.i-bd1{background-image:url(img/bd1.jpg?v=42)}.i-bd2{background-image:url(img/bd2.jpg?v=42)}.i-bmwa{background-image:url(img/bmwa.jpg?v=42)}.i-bmwb{background-image:url(img/bmwb.jpg?v=42)}.i-bmwc{background-image:url(img/bmwc.jpg?v=42)}.i-bmwd{background-image:url(img/bmwd.jpg?v=42)}.i-bmwe{background-image:url(img/bmwe.jpg?v=42)}.i-z7a{background-image:url(img/z7a.jpg?v=42)}.i-z7b{background-image:url(img/z7b.jpg?v=42)}.i-z7c{background-image:url(img/z7c.jpg?v=42)}.i-gb1{background-image:url(img/gb1.jpg?v=42)}.i-gb2{background-image:url(img/gb2.jpg?v=42)}.i-gg1{background-image:url(img/gg1.jpg?v=42)}.i-gg2{background-image:url(img/gg2.jpg?v=42)}.i-gg3{background-image:url(img/gg3.jpg?v=42)}.i-gg4{background-image:url(img/gg4.jpg?v=42)}.i-d14a{background-image:url(img/d14a.jpg?v=42)}.i-d14b{background-image:url(img/d14b.jpg?v=42)}.i-d14c{background-image:url(img/d14c.jpg?v=42)}.i-d14d{background-image:url(img/d14d.jpg?v=42)}.i-d14e{background-image:url(img/d14e.jpg?v=42)}.i-gk1{background-image:url(img/gk1.jpg?v=42)}.i-gk2{background-image:url(img/gk2.jpg?v=42)}.i-gk3{background-image:url(img/gk3.jpg?v=42)}.i-gk4{background-image:url(img/gk4.jpg?v=42)}.i-kl1{background-image:url(img/kl1.jpg?v=42)}.i-kl2{background-image:url(img/kl2.jpg?v=42)}</style>
+<style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=43)}.i-granta{background-image:url(img/granta.jpg?v=43)}.i-mac{background-image:url(img/mac.jpg?v=43)}.i-icepeak{background-image:url(img/icepeak.jpg?v=43)}.i-mhw{background-image:url(img/mhw.jpg?v=43)}.i-mhw2{background-image:url(img/mhw2.jpg?v=43)}.i-mhw3{background-image:url(img/mhw3.jpg?v=43)}.i-mhw4{background-image:url(img/mhw4.jpg?v=43)}.i-kalina{background-image:url(img/kalina.jpg?v=43)}.i-honda{background-image:url(img/honda.jpg?v=43)}.i-tires{background-image:url(img/tires.jpg?v=43)}.i-shock{background-image:url(img/shock.jpg?v=43)}.i-alt{background-image:url(img/alt.jpg?v=43)}.i-honda3{background-image:url(img/honda3.jpg?v=43)}.i-sk1{background-image:url(img/sk1.jpg?v=43)}.i-sk2{background-image:url(img/sk2.jpg?v=43)}.i-pc{background-image:url(img/pc.jpg?v=43)}.i-s5{background-image:url(img/s5.jpg?v=43)}.i-nike{background-image:url(img/nike.jpg?v=43)}.i-stels{background-image:url(img/stels.jpg?v=43)}.i-boots{background-image:url(img/boots.jpg?v=43)}.i-snk{background-image:url(img/snk.jpg?v=43)}.i-braun{background-image:url(img/braun.jpg?v=43)}.i-l14a{background-image:url(img/l14a.jpg?v=43)}.i-rapid{background-image:url(img/rapid.jpg?v=43)}.i-granta2{background-image:url(img/granta2.jpg?v=43)}.i-s10x2{background-image:url(img/s10x2.jpg?v=43)}.i-heli{background-image:url(img/heli.jpg?v=43)}.i-eiffel{background-image:url(img/eiffel.jpg?v=43)}.i-s5b{background-image:url(img/s5b.jpg?v=43)}.i-gwh{background-image:url(img/gwh.jpg?v=43)}.i-s22{background-image:url(img/s22.jpg?v=43)}.i-s10{background-image:url(img/s10.jpg?v=43)}.i-priw{background-image:url(img/priw.jpg?v=43)}.i-prib{background-image:url(img/prib.jpg?v=43)}.i-fender{background-image:url(img/fender.jpg?v=43)}.i-air{background-image:url(img/air.jpg?v=43)}.i-kalint{background-image:url(img/kalint.jpg?v=43)}.i-y1b{background-image:url(img/y1b.jpg?v=43)}.i-y1d{background-image:url(img/y1d.jpg?v=43)}.i-y1e{background-image:url(img/y1e.jpg?v=43)}.i-y1k{background-image:url(img/y1k.jpg?v=43)}.i-f14m{background-image:url(img/f14m.jpg?v=43)}.i-f14n{background-image:url(img/f14n.jpg?v=43)}.i-f14o{background-image:url(img/f14o.jpg?v=43)}.i-f14p{background-image:url(img/f14p.jpg?v=43)}.i-sn14{background-image:url(img/sn14.jpg?v=43)}.i-nt14{background-image:url(img/nt14.jpg?v=43)}.i-prh{background-image:url(img/prh.jpg?v=43)}.i-bmwg{background-image:url(img/bmwg.jpg?v=43)}.i-bmwh{background-image:url(img/bmwh.jpg?v=43)}.i-bmwi{background-image:url(img/bmwi.jpg?v=43)}.i-bmwj{background-image:url(img/bmwj.jpg?v=43)}.i-bmwl{background-image:url(img/bmwl.jpg?v=43)}.i-ap1{background-image:url(img/ap1.jpg?v=43)}.i-ap2{background-image:url(img/ap2.jpg?v=43)}.i-bask{background-image:url(img/bask.jpg?v=43)}.i-mba1{background-image:url(img/mba1.jpg?v=43)}.i-mba2{background-image:url(img/mba2.jpg?v=43)}.i-mba3{background-image:url(img/mba3.jpg?v=43)}.i-mba4{background-image:url(img/mba4.jpg?v=43)}.i-mba5{background-image:url(img/mba5.jpg?v=43)}.i-gz1{background-image:url(img/gz1.jpg?v=43)}.i-gz2{background-image:url(img/gz2.jpg?v=43)}.i-gz3{background-image:url(img/gz3.jpg?v=43)}.i-gz4{background-image:url(img/gz4.jpg?v=43)}.i-gz5{background-image:url(img/gz5.jpg?v=43)}.i-cam1{background-image:url(img/cam1.jpg?v=43)}.i-cam2{background-image:url(img/cam2.jpg?v=43)}.i-cam3{background-image:url(img/cam3.jpg?v=43)}.i-gpu1{background-image:url(img/gpu1.jpg?v=43)}.i-bpc1{background-image:url(img/bpc1.jpg?v=43)}.i-bpc2{background-image:url(img/bpc2.jpg?v=43)}.i-bpc3{background-image:url(img/bpc3.jpg?v=43)}.i-bpc4{background-image:url(img/bpc4.jpg?v=43)}.i-bpc5{background-image:url(img/bpc5.jpg?v=43)}.i-wz1{background-image:url(img/wz1.jpg?v=43)}.i-lan1{background-image:url(img/lan1.jpg?v=43)}.i-lan2{background-image:url(img/lan2.jpg?v=43)}.i-lan3{background-image:url(img/lan3.jpg?v=43)}.i-s14sun{background-image:url(img/s14sun.jpg?v=43)}.i-s14wet{background-image:url(img/s14wet.jpg?v=43)}.i-s14rib{background-image:url(img/s14rib.jpg?v=43)}.i-s14pair{background-image:url(img/s14pair.jpg?v=43)}.i-v6a{background-image:url(img/v6a.jpg?v=43)}.i-v6b{background-image:url(img/v6b.jpg?v=43)}.i-v6c{background-image:url(img/v6c.jpg?v=43)}.i-prh1{background-image:url(img/prh1.jpg?v=43)}.i-prh2{background-image:url(img/prh2.jpg?v=43)}.i-prh3{background-image:url(img/prh3.jpg?v=43)}.i-bd1{background-image:url(img/bd1.jpg?v=43)}.i-bd2{background-image:url(img/bd2.jpg?v=43)}.i-bmwa{background-image:url(img/bmwa.jpg?v=43)}.i-bmwb{background-image:url(img/bmwb.jpg?v=43)}.i-bmwc{background-image:url(img/bmwc.jpg?v=43)}.i-bmwd{background-image:url(img/bmwd.jpg?v=43)}.i-bmwe{background-image:url(img/bmwe.jpg?v=43)}.i-z7a{background-image:url(img/z7a.jpg?v=43)}.i-z7b{background-image:url(img/z7b.jpg?v=43)}.i-z7c{background-image:url(img/z7c.jpg?v=43)}.i-gb1{background-image:url(img/gb1.jpg?v=43)}.i-gb2{background-image:url(img/gb2.jpg?v=43)}.i-gg1{background-image:url(img/gg1.jpg?v=43)}.i-gg2{background-image:url(img/gg2.jpg?v=43)}.i-gg3{background-image:url(img/gg3.jpg?v=43)}.i-gg4{background-image:url(img/gg4.jpg?v=43)}.i-d14a{background-image:url(img/d14a.jpg?v=43)}.i-d14b{background-image:url(img/d14b.jpg?v=43)}.i-d14c{background-image:url(img/d14c.jpg?v=43)}.i-d14d{background-image:url(img/d14d.jpg?v=43)}.i-d14e{background-image:url(img/d14e.jpg?v=43)}.i-gk1{background-image:url(img/gk1.jpg?v=43)}.i-gk2{background-image:url(img/gk2.jpg?v=43)}.i-gk3{background-image:url(img/gk3.jpg?v=43)}.i-gk4{background-image:url(img/gk4.jpg?v=43)}.i-kl1{background-image:url(img/kl1.jpg?v=43)}.i-kl2{background-image:url(img/kl2.jpg?v=43)}</style>
 </head>
 <body>
 <div id="sp"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="as" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cs"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#as)"/><g clip-path="url(#cs)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bs)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><div class="sw"><svg class="wm" viewBox="-2 -3 124 37" height="68" role="img" aria-label="VVM"><defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cs"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gs)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cs)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><div class="sps">Бесплатно · Красиво · Рядом</div></div>
@@ -1075,14 +1108,16 @@ body.hmin main{animation:hmin .42s cubic-bezier(.22,.9,.3,1) both}
 <header id="hd"><div class="bar">
 <div class="logo" onclick="homeGo()" onkeydown="if(event.key=='Enter')homeGo()" role="link" tabindex="0" aria-label="VVM — на главную"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ah" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="ch"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#ah)"/><g clip-path="url(#ch)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bh)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><svg class="wm" viewBox="-2 -3 124 37" height="22" role="img" aria-label="VVM"><defs><linearGradient id="gh" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="ch"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gh)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#ch)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div>
 <button class="city glass pulse" id="cb" onclick="openCity()" aria-label="Выбрать город"><i id="ci" style="font-style:normal">📍</i><span id="cn">…</span></button>
-<div class="search glass" id="search" role="search"><svg class="sic" viewBox="0 0 24 24" aria-hidden="true" onclick="if($('q').value.trim())sq($('q').value)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Поиск по VVM" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск"><button class="sbt qx" id="qx" type="button" hidden aria-label="Очистить запрос" onmousedown="event.preventDefault()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="sbt cam" id="cam" type="button" onclick="visPick()" aria-label="Искать по фото" title="Поиск по фото"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg></button><input type="file" accept="image/*" id="vf" hidden><button class="sbt f" id="sfb" type="button" onclick="fOpen()" aria-label="Фильтры" title="Фильтры"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><b class="bdg" id="sfbb" hidden></b></button><div class="sg" id="sg" onmousedown="event.preventDefault()"></div></div>
+<div class="search glass" id="search" role="search"><svg class="sic" viewBox="0 0 24 24" aria-hidden="true" onclick="if($('q').value.trim())sq($('q').value)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Поиск по VVM" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск"><button class="sbt qx" id="qx" type="button" hidden aria-label="Очистить запрос" onmousedown="event.preventDefault()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="sbt cam" id="cam" type="button" onclick="visPick()" aria-label="Искать по фото" title="Поиск по фото"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg></button><input type="file" accept="image/*" id="vf" hidden><button class="sbt f" id="sfb" type="button" onclick="fOpen()" aria-label="Фильтры" title="Фильтры"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><b class="bdg" id="sfbb" hidden></b></button><div class="sg" id="sg" role="listbox" onmousedown="event.preventDefault()"></div></div>
 <button class="btn ghost" id="lg" onclick="profile()">Войти</button><button class="btn ghost" onclick="favOnly()" id="favb" aria-label="Избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></button>
 <button class="ib th" id="thb" onclick="themeCycle()" aria-label="Тема оформления" title="Тема оформления"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 <button class="btn" onclick="openPost()">+ Подать</button>
 </div></header>
 <main>
 <section class="favp" id="favp" aria-label="Избранное">
-<div class="fph"><button class="fpb" onclick="favClose()" aria-label="Назад"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="fpt"><h1><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></h1><em id="fpc"></em></div><select id="fsort" aria-label="Порядок" onchange="favSort=this.value;favDraw()"><option value="n">Новые</option><option value="a">Дешевле</option><option value="d">Дороже</option></select></div>
+<div class="fph"><button class="fpb" onclick="favClose()" aria-label="Назад"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="fpt"><h1><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></h1><em id="fpc"></em></div></div>
+<div class="fpm" id="fpm"><select id="fsort" aria-label="Порядок" onchange="favSort=this.value;favDraw()"><option value="n">Новые</option><option value="a">Дешевле</option><option value="d">Дороже</option></select><div class="chip fbt" id="fpf" role="button" tabindex="0" onclick="fOpen()" onkeydown="if(event.key=='Enter')fOpen()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>Фильтры<b id="fpfb" hidden></b></div></div>
+<div class="afc" id="fafc" hidden></div>
 <div class="fpcats" id="fpcats"></div>
 <div class="cols" id="fgrid"></div>
 <div class="fpe" id="fpe" hidden></div>
@@ -1797,7 +1832,7 @@ document.addEventListener("keydown",e=>{if((e.key!="ArrowLeft"&&e.key!="ArrowRig
  const pv=document.querySelector("#s1 .gal .pv");if(!pv)return;pvFill(pv);const p=pvP(pv);if(p.n>1)pvGo(pv,pvClamp(p,Math.round(p.tgt)+(e.key=="ArrowRight"?1:-1)))});
 /* ---------- лента ---------- */
 let cat="all",fav=new Set(),favMode=false,deal=false,cur=null,blocks=[],S={q:[],cycle:0,n:0,skip:0,busy:false},NC=2;
-let AQ="",RM=false,srvHist=false,srvSkip=0,homeY=0,pendY=null,srvY=0,histKeep=false;const DT0=document.title;
+let AQ="",FQ="",RM=false,srvHist=false,srvSkip=0,homeY=0,pendY=null,srvY=0,histKeep=false;const DT0=document.title;
 const filt=()=>!!(AQ||cat!="all"||fN()||visOn());
 /* страница результатов открывается только по поиску, категории и поиску по фото; фильтры сами по себе применяются на месте */
 const wantRM=()=>!!(AQ||cat!="all"||visOn()||vis||(RM&&fN()>0));
@@ -1806,13 +1841,121 @@ function jump(y){try{scrollTo({top:y,left:0,behavior:"instant"});return}catch(e)
 /* список перерисовывается на месте: высота держится, пока не появятся новые карточки */
 function gHold(g){clearTimeout(g._ft);const h=g.offsetHeight;if(g.style.minHeight===""){const m=parseFloat(getComputedStyle(g).minHeight);g._m0=isNaN(m)?0:m}if(h>0){g.style.transition="none";g.style.minHeight=Math.max(h,parseFloat(g.style.minHeight)||0)+"px"}}
 function gFree(g){if(g.style.minHeight==="")return;clearTimeout(g._ft);g._ft=setTimeout(()=>requestAnimationFrame(()=>{g.style.transition="min-height .55s cubic-bezier(.22,.8,.3,1)";g.style.minHeight=(g._m0||0)+"px";g._ft=setTimeout(()=>{g.style.transition="";g.style.minHeight=""},620)}),80)}
-function qSet(v){AQ=String(v||"").trim().replace(/\s+/g," ");$("q").value=AQ;$("qx").hidden=!AQ}
+function qSet(v){const t=String(v||"").trim().replace(/\s+/g," ");if(favMode)FQ=t;else AQ=t;$("q").value=t;$("qx").hidden=!t}
 const toFeed=()=>{if(RM)scrollTo({top:0,behavior:"smooth"})};
 /* фильтры из верхней строки поиска: если сама лента далеко внизу, плавно подводим к ней; из ленты ничего не двигаем */
 const feedFar=()=>{if(RM)return;const r=$("feed").getBoundingClientRect();if(r.top>innerHeight*.85)$("feed").scrollIntoView({behavior:"smooth"})};
+/* ---------- v43: умный поиск: раскладка, транслит, синонимы, опечатки ---------- */
+const RU_L="йцукенгшщзхъфывапролджэячсмитьбю",EN_L="qwertyuiop[]asdfghjkl;'zxcvbnm,.";
+/* нижний регистр, ё→е, без диакритики (Škoda → skoda); «й» остаётся */
+const norm=s=>String(s==null?"":s).toLowerCase().replace(/ё/g,"е").replace(/й/g,"\u0001").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/\u0001/g,"й");
+const clnW=s=>s.replace(/[^a-zа-я0-9]/g,"");
+/* слово, набранное не в той раскладке: «ghbdtn» ⇄ «привет» */
+function lsw(w){
+ if(/[а-я]/.test(w)&&!/[a-z]/.test(w))return[...w].map(c=>{const n=RU_L.indexOf(c);return n<0?c:EN_L[n]}).join("");
+ if(/^[a-z\[\];',.]+$/.test(w)&&/[a-z]/.test(w))return[...w].map(c=>{const n=EN_L.indexOf(c);return n<0?c:RU_L[n]}).join("");
+ return""}
+/* написания, которые не ловит общий транслит */
+const ALI={шкода:"skoda",найк:"nike",айфон:"iphone",айпад:"ipad",эйрподс:"airpods",эирподс:"airpods",эпл:"apple",эппл:"apple",мицубиси:"mitsubishi",митсубиси:"mitsubishi",фольксваген:"volkswagen",хендай:"hyundai",хундай:"hyundai",хендэ:"hyundai",рено:"renault",шевроле:"chevrolet",пежо:"peugeot",сяоми:"xiaomi",эйр:"air",скетчерс:"skechers",плейстейшн:"playstation",иксбокс:"xbox",райзен:"ryzen",джифорс:"geforce"};
+/* разговорные названия → основное слово */
+const SYN={ноутбук:"ноут ноуты нетбук лэптоп лептоп laptop notebook",компьютер:"комп компик пк pc десктоп системник",телефон:"мобильник мобила сотовый смартфон phone",машина:"тачка автомобиль авто car",велосипед:"велик байк bike",кроссовки:"кроссы кеды sneakers",куртка:"курточка ветровка пуховик",наушники:"наушник уши tws headphones",видеокарта:"видюха видяха gpu videocard",шины:"резина покрышки колеса",запчасти:"запчасть детали",фотоаппарат:"фотик камера зеркалка",телевизор:"телик тв tv",холодильник:"холодос"};
+const SYN_I=[];for(const k in SYN)SYN[k].split(" ").forEach(a=>SYN_I.push([norm(a),k]));
+/* «скелет» слова: кириллица и латиница сводятся к одному виду, чтобы «гра» находило Granta */
+const CY={а:"a",б:"b",в:"v",г:"g",д:"d",е:"e",ж:"zh",з:"z",и:"i",й:"i",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"h",ц:"ts",ч:"ch",ш:"sh",щ:"sh",ъ:"",ы:"i",ь:"",э:"e",ю:"iu",я:"ia"};
+const SKC=new Map();
+function sk(w){let r=SKC.get(w);if(r!==undefined)return r;
+ let s=ALI[w]||w;
+ s=s.replace(/[а-я]/g,c=>CY[c]).replace(/ch/g,"\u0002").replace(/c(?=[eiy])/g,"s").replace(/c/g,"k").replace(/\u0002/g,"ch").replace(/ph/g,"f").replace(/ck/g,"k").replace(/oo/g,"u").replace(/ee/g,"i").replace(/kh/g,"h").replace(/x/g,"ks").replace(/w/g,"v").replace(/q/g,"k").replace(/y/g,"i");
+ s=s.replace(/[^a-z0-9]/g,"").replace(/([a-z])\1+/g,"$1");
+ if(SKC.size>4000)SKC.clear();SKC.set(w,s);return s}
+/* расстояние Дамерау — Левенштейна (опечатки) */
+function dl(a,b){const n=a.length,m=b.length;if(Math.abs(n-m)>2)return 9;let p2=null,p1=[];for(let j=0;j<=m;j++)p1[j]=j;
+ for(let i=1;i<=n;i++){const c=[i];for(let j=1;j<=m;j++){let v=Math.min(p1[j]+1,c[j-1]+1,p1[j-1]+(a[i-1]==b[j-1]?0:1));if(p2&&i>1&&j>1&&a[i-1]==b[j-2]&&a[i-2]==b[j-1])v=Math.min(v,p2[j-2]+1);c[j]=v}p2=p1;p1=c}return p1[m]}
+
+/* поиск по объявлению: обычное вхождение + «скелет» (кириллица находит латинские названия) */
+const HSC=new Map(),QSTOP=["для","рядом","метро","около","возле"];
+function hsOf(i){const k=i.t+"|"+i.city+"|"+i.c+"|"+(i.kw||""),e=HSC.get(i.id);if(e&&e.k===k)return e;
+ const h=" "+norm(i.t+" "+i.city+" "+((C.find(c=>c[0]==i.c)||[0,""])[1])+" "+(i.kw||"")).split(/[^a-zа-я0-9]+/).filter(Boolean).join(" ")+" ",
+  s=" "+h.trim().split(" ").map(sk).join(" ")+" ",o={k,h,s};HSC.set(i.id,o);return o}
+function mq0(i,q){const H=hsOf(i),all=q.replace(/[^a-zа-я0-9]+/g," ").split(" ").filter(Boolean);
+ let ws=all.filter(w=>w.length>2&&!QSTOP.includes(w)),sh=0;
+ /* запрос из коротких слов («ла», «пк») ищем по началу слова целиком */
+ if(!ws.length){ws=all.filter(w=>w.length==2&&!QSTOP.includes(w));sh=1}
+ return ws.every(w=>{const st=sh?w:w.slice(0,Math.max(3,w.length-2));
+  if(H.h.includes(" "+st))return true;const k=sk(w);return k.length>=(sh?2:3)&&H.s.includes(" "+k)})}
+const QVC=new Map();
+/* запасные варианты запроса: другая раскладка и разговорные слова */
+function QV(q){let r=QVC.get(q);if(r)return r;
+ const ws=q.split(/\s+/),a=ws.map(w=>lsw(w)||w),b=ws.map(w=>{for(const[al,cn]of SYN_I)if(al==w)return norm(cn);return w});
+ r=[a.join(" "),b.join(" ")].filter(x=>x&&x!==q);if(QVC.size>300)QVC.clear();QVC.set(q,r);return r}
 function mq(i,q){if(!q)return true;let mp=0;const m=q.match(/до\s*(\d+(?:[.,]\d+)?)\s*(млн|тыс|к)?/);if(m){mp=parseFloat(m[1].replace(",","."))*(m[2]=="млн"?1e6:m[2]?1e3:1);q=q.replace(m[0],"")}
- if(mp&&i.p>mp)return false;const h=(i.t+" "+i.city+" "+(C.find(c=>c[0]==i.c)||[0,""])[1]+" "+(i.kw||"")).toLowerCase();
- return q.split(/\s+/).filter(w=>w.length>2&&!["для","рядом","метро","около","возле"].includes(w)).every(w=>h.includes(w.slice(0,Math.max(3,w.length-2))))}
+ if(mp&&i.p>mp)return false;q=norm(q).trim();return mq0(i,q)||QV(q).some(v=>mq0(i,v))}
+
+/* ---------- подсказки: словарь из объявлений, оценка, выдача ---------- */
+const ADJ=/(?:ый|ий|ой|ая|яя|ое|ее|ые|ие|ых|их|ым|им)$/,STOPW=new Set(["и","в","с","на","для","без","после","под","по","из","от","до","б/у","шт","или","при","как","это","дома","еще"]);
+const VOC={sig:"",list:[]},INFORMAL=new Set(["велик","видюха","видяха","комп","компик","мобила","тачка","кроссы","курточка","фотик","телик","холодос","ноуты","байк","системник"]);
+function mkC(txt,low,df,kw,kind){const toks=low.split(/[^a-zа-я0-9]+/).filter(Boolean);
+ return{txt,low,toks,stk:toks.map(sk),keys:kw.filter(w=>!toks.includes(w)).map(w=>({t:w,s:sk(w)})),df,kind}}
+function vocab(ids){const sig=(favMode?"f":"h")+ids.join(",");if(VOC.sig==sig)return VOC.list;
+ const P=new Map(),K=new Map(),CS={},PT=new Set();
+ ids.forEach(id=>{const i=getL(id),t=i.t||"",tk=t.split(/[,:;—–(«]/)[0].replace(/\s+/g," ").trim().split(" ").filter(Boolean);
+  (t.match(/[\p{L}\p{N}]+/gu)||[]).forEach(w=>{const n=norm(w);if(!CS[n])CS[n]=w});
+  const kws=[...new Set((i.kw||"").split(/\s+/).map(norm).filter(Boolean))],
+   adj0=tk.length>1&&/^[А-Яа-яЁё-]+$/.test(tk[0])&&ADJ.test(norm(tk[0]));
+  for(let n=1;n<=Math.min(3,tk.length);n++){const ph=tk.slice(0,n),last=norm(ph[n-1]);
+   if(STOPW.has(last)||STOPW.has(norm(ph[0]))||/^\d{1,3}$/.test(last)||(n==1&&adj0))continue;
+   const txt=ph.join(" "),key=norm(txt);let e=P.get(key);if(!e)P.set(key,e={txt,ids:new Set(),kw:new Map()});
+   e.ids.add(id);kws.forEach(w=>e.kw.set(w,(e.kw.get(w)||0)+1));ph.forEach(w=>PT.add(sk(norm(w))))}
+  kws.forEach(w=>{if(w.length<3||/\d/.test(w)||STOPW.has(w)||INFORMAL.has(w)||ADJ.test(w))return;let e=K.get(w);if(!e)K.set(w,e={ids:new Set()});e.ids.add(id)})});
+ const list=[];
+ /* смысловые слова берём, только если они есть хотя бы у половины объявлений с таким названием */
+ P.forEach((e,key)=>list.push(mkC(e.txt,key,e.ids.size,[...e.kw].filter(x=>x[1]*2>=e.ids.size).map(x=>x[0]),"p")));
+ K.forEach((e,w)=>{if(PT.has(sk(w)))return;list.push(mkC(CS[w]||(/^[a-z]/.test(w)?w[0].toUpperCase()+w.slice(1):w),w,e.ids.size,[],"k"))});
+ VOC.sig=sig;VOC.list=list;return list}
+/* насколько слово запроса `a` подходит к слову `tok` (0..1) */
+function mt(a,tok,st,fz){if(tok.startsWith(a))return 1;const sa=sk(a);if(sa.length>=2&&st.startsWith(sa))return .85;
+ if(fz&&a.length>=5){const L=a.length,mx=L>=8?2:1;for(const d of[0,-1,1]){const p=tok.slice(0,L+d);if(p.length>=3&&dl(a,p)<=mx)return .6}
+  if(sa.length>=4&&dl(sa,st.slice(0,sa.length))<=1)return .5}
+ return 0}
+function qAlts(q){const a=[[q.w,1]],seen=new Set([q.w]),add=(t,w)=>{if(t&&!seen.has(t)){seen.add(t);a.push([t,w])}};
+ add(q.sw,.9);
+ if(q.w.length>=2){for(const k in ALI)if(k.startsWith(q.w))add(ALI[k],.92);for(const[al,cn]of SYN_I)if(al.startsWith(q.w))add(norm(cn),.9)}
+ return a}
+function sgScore(c,qs,T){let tot=0,sem=false,first=false,via="";const mk=[];
+ for(let qi=0;qi<qs.length;qi++){const al=qs[qi].alts;let b=0,j=-1,kv="";
+  for(let x=0;x<c.toks.length;x++)for(const[a,w]of al){const v=mt(a,c.toks[x],c.stk[x],a===al[0][0])*w;if(v>b){b=v;j=x}}
+  if(b<.85)for(const kk of c.keys)for(const[a,w]of al){const v=mt(a,kk.t,kk.s,a===al[0][0])*w*.7;if(v>b){b=v;j=-1;kv=kk.t}}
+  if(b<=0)return null;tot+=b;
+  if(j<0){sem=true;via=via||kv}else{if(qi==0&&j==0)first=true;mk.push([j,qs[qi].w.length])}}
+ let s=tot/qs.length;
+ if(sem)s=s*.8+.05*Math.log2(1+c.df)+.03*Math.min(c.toks.length,2);
+ else{if(first)s+=.25;if(c.low.startsWith(T))s+=.4;s+=.1*Math.log2(1+c.df)+.03*Math.min(c.toks.length,2);s-=.012*Math.max(0,c.low.length-T.length)}
+ return{c,s,sem,via,mk}}
+/* подсветка набранной части */
+function hlTxt(txt,mk){const re=/[\p{L}\p{N}]+/gu,pos=[];let m;while(m=re.exec(txt))pos.push([m.index,m[0].length]);
+ const rg=[];(mk||[]).forEach(([j,n])=>{const p=pos[j];if(p)rg.push([p[0],Math.min(n,p[1])])});
+ rg.sort((a,b)=>a[0]-b[0]);let out="",at=0;for(const[s,l]of rg){if(s<at)continue;out+=esc(txt.slice(at,s))+"<mark>"+esc(txt.slice(s,s+l))+"</mark>";at=s+l}
+ return out+esc(txt.slice(at))}
+/* варианты запроса по набранным буквам */
+function sgSuggest(raw,ids,N){
+ const ws=norm(raw).split(/[\s\-_/+]+/).map(w=>({w:clnW(w),sw:clnW(lsw(w))})).filter(x=>x.w),T=ws.map(x=>x.w).join(" ");
+ if(T.replace(/ /g,"").length<2)return[];
+ ws.forEach(x=>x.alts=qAlts(x));
+ const sc=[];vocab(ids).forEach(c=>{const r=sgScore(c,ws,T);if(r&&r.s>=.5)sc.push(r)});
+ sc.sort((a,b)=>b.s-a.s||a.c.low.length-b.c.low.length);
+ const pool=ids.map(getL),seen=new Set(),st=[],sm=[];
+ const take=(r,arr)=>{const q=r.c.txt.toLowerCase(),hit=pool.filter(i=>mq(i,q));if(!hit.length)return;
+  const key=hit.map(i=>i.id).sort().join();if(seen.has(key))return;seen.add(key);arr.push({txt:r.c.txt,cnt:hit.length,mk:r.mk,via:r.via})};
+ for(const r of sc){if(st.length>=N)break;if(!r.sem)take(r,st)}
+ const room=st.length>=2?0:Math.min(3,N-st.length);
+ for(const r of sc){if(sm.length>=room)break;if(r.sem)take(r,sm)}
+ return st.concat(sm)}
+/* что чаще всего встречается в списке (когда строка пуста) */
+function sgTop(ids,N){const pool=ids.map(getL),seen=new Set(),out=[];
+ for(const c of vocab(ids).filter(c=>c.kind=="p"&&c.toks.length<=2).sort((a,b)=>b.df-a.df||a.low.length-b.low.length)){
+  if(out.length>=N)break;const hit=pool.filter(i=>mq(i,c.txt.toLowerCase()));if(!hit.length)continue;
+  const key=hit.map(i=>i.id).sort().join();if(seen.has(key))continue;seen.add(key);out.push({txt:c.txt,cnt:hit.length,mk:[],via:""})}
+ return out}
 /* ---------- фильтры: параметры объявлений ---------- */
 const sv=(i,k)=>{const a=(i.sp||[]).find(x=>x[0]==k);return a?String(a[1]):""};
 const nz=s=>+String(s||"").replace(/\D/g,"")||0;
@@ -1869,13 +2012,13 @@ const fS=()=>Object.assign({},FL,{cat,deal});
 const fName=(k,c)=>k=="br"?(c=="auto"?"Марка":"Бренд"):FNAME[k];
 const geoOn=s=>s.gc!==null||s.gr!==100,gAll=s=>s.gc==="*"||(RU&&s.gc===null);
 const gdist=(i,ref)=>ref==city?i.dist:(i.ct==ref?0:Math.round(hav(CT[ref],CT[i.ct])));
-function gpass(i,s){if(gAll(s))return true;const ref=s.gc||city;return s.gr===0?i.ct==ref:gdist(i,ref)<=s.gr}
+function gpass(i,s){if(s.fav||gAll(s))return true;const ref=s.gc||city;return s.gr===0?i.ct==ref:gdist(i,ref)<=s.gr}
 const KMS=n=>n.toLocaleString("ru-RU").replace(/[\u00a0\u202f]/g," ");
 function gLabel(s,full){s=s||fS();if(gAll(s))return full?"Вся Россия":"вся Россия";const ref=s.gc||city;return ref+(s.gr===100&&!full?"":s.gr===0?" · только город":s.gr===100&&!s.gc?"":" · до "+KMS(s.gr)+" км")}
-function fN(s){s=s||fS();let n=0;if(s.p1||s.p2)n++;if(s.y1||s.y2)n++;if(s.km)n++;if(s.age)n++;if(geoOn(s))n++;if(s.disc)n++;if(s.deal)n++;for(const k of FARR)if(s[k].length)n++;return n}
+function fN(s){s=s||fS();let n=0;if(s.p1||s.p2)n++;if(s.y1||s.y2)n++;if(s.km)n++;if(s.age)n++;if(!s.fav&&geoOn(s))n++;if(s.disc)n++;if(s.deal)n++;for(const k of FARR)if(s[k].length)n++;return n}
 const poolIds=()=>[...new Set([...MY,...B.map(b=>b.id)])];
-const fBaseIds=()=>visOn()?visIds():poolIds();
-const fQ=()=>visOn()?"":AQ.toLowerCase();
+const fBaseIds=()=>favMode?favIds():visOn()?visIds():poolIds();
+const fQ=()=>favMode?FQ.toLowerCase():visOn()?"":AQ.toLowerCase();
 const fSc=s=>visOn()?Object.assign({},s,{cat:"all"}):s;
 function fpass(i,s,skip,q){
  if(s.cat!="all"&&i.c!=s.cat)return false;
@@ -1918,7 +2061,7 @@ function fOpts(k,s){const q=fQ(),sc=fSc(s);let base=fObjs(s);
 function pruneMd(s){if(!s.md.length)return;const mb={};poolIds().forEach(id=>{const i=getL(id),m=fv(i,"md")[0];if(m)mb[m]=fv(i,"br")[0]});s.md=s.md.filter(m=>s.br.includes(mb[m]))}
 const shortP=v=>v>=1e6?String(v/1e6).replace(".",",")+" млн":v>=1e3?String(v/1e3).replace(".",",")+" тыс":String(v);
 /* ---------- шторка фильтров ---------- */
-function fOpen(){GP=false;sgHide();$("q").blur();FDR=Object.assign(F0(),JSON.parse(JSON.stringify(FL)),{cat,deal});cl();fDraw();$("m16").classList.add("show");$("fb").scrollTop=0}
+function fOpen(){GP=false;sgHide();$("q").blur();FDR=favMode?Object.assign(F0(),JSON.parse(JSON.stringify(FLF)),{cat:favCat,deal:favDeal,fav:true}):Object.assign(F0(),JSON.parse(JSON.stringify(FL)),{cat,deal});cl();fDraw();$("m16").classList.add("show");$("fb").scrollTop=0}
 function fDraw(){const bd=$("fb"),st=bd.scrollTop,s=FDR,cs=s.cat,P=n=>n?n.toLocaleString("ru-RU"):"";
  const chip=(on,fn,txt,cls)=>`<button type="button" class="chip ${on?"on":""} ${cls||""}" onclick="${fn}">${txt}</button>`;
  const my=city,all=gAll(s),oth=s.gc&&!all&&s.gc!==my?s.gc:null,
@@ -1929,7 +2072,8 @@ function fDraw(){const bd=$("fb"),st=bd.scrollTop,s=FDR,cs=s.cat,P=n=>n?n.toLoca
  if(GP)h+=`<div class="cpk"><div class="fcw">${CN.filter(c=>c!=my&&c!=oth).sort((a,b)=>a.localeCompare(b,"ru")).map(c=>chip(false,"fGeo('"+c+"')",esc(c))).join("")}</div></div>`;
  if(!all)h+=`<div class="fl sub"><b>Радиус от города</b><em>${esc(s.gc||my)}</em></div><div class="fcw">${[[0,"Только город"],[3,"до 3 км"],[5,"до 5 км"],[10,"до 10 км"],[25,"до 25 км"],[50,"до 50 км"],[100,"до 100 км"],[200,"до 200 км"],[300,"до 300 км"],[500,"до 500 км"],[1000,"до 1 000 км"],[2000,"до 2 000 км"]].map(a=>chip(s.gr===a[0],`fSet('gr',${a[0]})`,a[1])).join("")}</div>`;
  h+=`<div class="ghint">${all?"Показываем объявления из всех городов России. Сначала те, что ближе к вам.":"Если в городе мало объявлений, мы автоматически добавим объявления из ближайших городов."}</div></div>`;
- h+=`<div class="fs"><div class="fl"><b>Категория</b></div><div class="fcw sc" data-nodrag>${C.map(c=>chip(cs==c[0],`fCat('${c[0]}')`,(c[0]=="all"?"":c[2]+" ")+c[1])).join("")}</div></div>`;
+ if(s.fav)h="";
+ h+=`<div class="fs"><div class="fl"><b>Категория</b></div><div class="fcw sc" data-nodrag>${C.filter(c=>!s.fav||c[0]=="all"||FCS().has(c[0])).map(c=>chip(cs==c[0],`fCat('${c[0]}')`,(c[0]=="all"?"":c[2]+" ")+c[1])).join("")}</div></div>`;
  h+=`<div class="fs"><div class="fl"><b>Цена</b></div><div class="frg"><div class="fin"><label>От</label><input inputmode="numeric" autocomplete="off" value="${P(s.p1)}" placeholder="0" oninput="fNum('p1',this)"><u>₽</u></div><div class="fin"><label>До</label><input inputmode="numeric" autocomplete="off" value="${P(s.p2)}" placeholder="любая" oninput="fNum('p2',this)"><u>₽</u></div></div><div class="fcw mt">${(FPRE[cs]||FPRE.all).map(v=>chip(s.p2==v,`fSet('p2',${s.p2==v?0:v})`,"до "+shortP(v))).join("")}</div></div>`;
  if(cs=="all")h+='<div class="fs"><div class="fhint">Выберите категорию, чтобы уточнить поиск: марка и модель, год, пробег, размер, бренд.</div></div>';
  for(const k of FSET[cs]||FSET.all){
@@ -1943,38 +2087,66 @@ function fDraw(){const bd=$("fb"),st=bd.scrollTop,s=FDR,cs=s.cat,P=n=>n?n.toLoca
  const sw=(k,t,d)=>`<div class="fsw ${s[k]?"on":""}" role="switch" tabindex="0" aria-checked="${!!s[k]}" onclick="fSet('${k}',${!s[k]})" onkeydown="if(event.key==' '||event.key=='Enter'){event.preventDefault();fSet('${k}',${!s[k]})}"><div><b>${t}</b><span>${d}</span></div><i class="tgl"></i></div>`;
  h+=`<div class="fs">${sw("deal","Только выгодные цены","Ниже рыночной по оценке VVM")}${sw("disc","Только со скидкой","Цена снижена продавцом")}</div>`;
  bd.innerHTML=h;bd.scrollTop=st;fCnt()}
-function fCnt(){if(!FDR)return;const n=fCount(FDR),b=$("fshow"),w=!n&&!gAll(FDR)?fCount(Object.assign({},FDR,{gc:"*"})):0;b.disabled=!n&&!w;b.textContent=n?"Показать "+n+" "+ruN(n,"объявление","объявления","объявлений"):w?"Показать из ближайших городов":"Ничего не найдено";$("frs").disabled=!fN(FDR)}
+function fCnt(){if(!FDR)return;const n=fCount(FDR),b=$("fshow"),w=!n&&!FDR.fav&&!gAll(FDR)?fCount(Object.assign({},FDR,{gc:"*"})):0;b.disabled=!n&&!w;b.textContent=n?"Показать "+n+" "+ruN(n,"объявление","объявления","объявлений"):w?"Показать из ближайших городов":"Ничего не найдено";$("frs").disabled=!fN(FDR)}
 function fNum(k,el,pl){const d=el.value.replace(/\D/g,"").slice(0,pl?4:9);FDR[k]=+d||0;el.value=d?(pl?d:(+d).toLocaleString("ru-RU")):"";fCnt()}
 function fGeo(c){let g;if(c==="*")g=RU?null:"*";else if(c===null||c===city)g=RU?city:null;else g=c;FDR.gc=g;if(g&&g!=="*"&&g!==city)GCprev=g;GP=false;fDraw()}
 function fSet(k,v){FDR[k]=v;if(k=="p2"&&FDR.p1&&FDR.p2&&FDR.p1>FDR.p2)FDR.p1=0;fDraw()}
 function fTg(k,el){const v=el.dataset.v,a=FDR[k],n=a.indexOf(v);n<0?a.push(v):a.splice(n,1);if(k=="br")pruneMd(FDR);fDraw()}
 function fCat(c){if(FDR.cat==c)return;FDR.cat=c;FARR.forEach(k=>{if(k!="cond")FDR[k]=[]});FDR.y1=FDR.y2=FDR.km=0;fDraw();const sc=document.querySelector("#fb .fcw.sc .on");if(sc&&sc.scrollIntoView)try{sc.scrollIntoView({inline:"center",block:"nearest"})}catch(e){}}
-function fReset(){FDR=Object.assign(F0(),{cat:FDR.cat,deal:false});fDraw()}
-function fApply(){if(!FDR)return;const{cat:c2,deal:d2,...rest}=FDR;FL=Object.assign(F0(),rest);deal=d2;$("fd").classList.toggle("on",deal);
+function fReset(){FDR=Object.assign(F0(),{cat:FDR.cat,deal:false},FDR.fav?{fav:true}:{});fDraw()}
+function fApply(){if(!FDR)return;const{cat:c2,deal:d2,fav:isF,...rest}=FDR;
+ if(isF){FLF=Object.assign(F0(),rest);favDeal=d2;favCat=c2;cl();favDraw();jump(0);return}
+ FL=Object.assign(F0(),rest);deal=d2;$("fd").classList.toggle("on",deal);
  if(c2!=cat){visOff();cat=c2;cats()}
  cl();resetFeed();setTimeout(feedFar,320)}
 $("fb").addEventListener("scroll",()=>$("s16").classList.toggle("sc",$("fb").scrollTop>6),{passive:true});
 function fClear(){FL=F0();deal=false;$("fd").classList.remove("on");resetFeed()}
 /* ---------- активные фильтры под панелью ---------- */
 const OWL={"1":"1 владелец","2":"2 владельца","3+":"3+ владельцев"};
-function afDraw(){const s=fS(),a=[],P=n=>n.toLocaleString("ru-RU");
+/* ---------- v43: поиск и фильтры внутри «Избранного» ---------- */
+let FLF=F0(),favDeal=false;
+const favS=()=>Object.assign({},FLF,{cat:favCat,deal:favDeal,fav:true,gc:null,gr:100});
+const FCS=()=>new Set(favIds().map(id=>getL(id).c));
+function favReset(){qSet("");FLF=F0();favDeal=false;favCat="all";favDraw()}
+function favFClear(){FLF=F0();favDeal=false;favDraw()}
+function favDraw(){const all=favIds(),cnt={};all.forEach(id=>{const c=getL(id).c;cnt[c]=(cnt[c]||0)+1});
+ if(favCat!="all"&&!cnt[favCat])favCat="all";
+ const q=FQ.toLowerCase(),s=favS(),act=!!q||fN(s)>0,
+  base=all.filter(id=>fpass(getL(id),Object.assign({},s,{cat:"all"}),"",q)),bc={};base.forEach(id=>{const c=getL(id).c;bc[c]=(bc[c]||0)+1});
+ let ids=favCat=="all"?base:base.filter(id=>getL(id).c==favCat);
+ if(favSort=="a")ids=ids.slice().sort((x,y)=>getL(x).p-getL(y).p);else if(favSort=="d")ids=ids.slice().sort((x,y)=>getL(y).p-getL(x).p);
+ const cc=ids.length;
+ $("fpc").textContent=!all.length?"пока пусто":act?"Найдено "+cc+" из "+all.length:all.length+" "+ruN(all.length,"объявление","объявления","объявлений");
+ const cs=$("fpcats");cs.hidden=all.length<2;
+ cs.innerHTML=[["all","Все",base.length],...C.slice(1).filter(c=>cnt[c[0]]).map(c=>[c[0],c[1],bc[c[0]]||0])].map(c=>`<button class="chip ${favCat==c[0]?"on":""} ${c[2]?"":"z"}" onclick="favCat='${c[0]}';favDraw()">${c[1]}<i>${c[2]}</i></button>`).join("");
+ const g=$("fgrid"),e=$("fpe");$("fsort").hidden=all.length<2;$("fpm").hidden=!all.length;afDraw();
+ if(!all.length){g.innerHTML="";e.hidden=false;e.innerHTML=`<div class="fpe-i"><div class="fpe-h">${HEART}</div><b>Здесь пока пусто</b><span>Нажимайте сердечко на любом объявлении, и оно появится здесь.</span><button class="btn" onclick="favClose();window.scrollTo(0,0)">Смотреть объявления</button></div>`;return}
+ if(!cc){g.innerHTML="";e.hidden=false;
+  e.innerHTML=`<div class="fpe-i"><div class="fpe-h"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><b>В избранном ничего не нашлось</b><span>${q?"По запросу «"+esc(FQ)+"» среди сохранённых объявлений совпадений нет. ":""}Проверьте написание или уберите часть фильтров.</span><button class="btn" onclick="favReset()">Сбросить поиск и фильтры</button></div>`;return}
+ e.hidden=true;NC=colsN();const fb={cw:g,items:[],h:[],cols:[]};setCols(fb);
+ ids.forEach((id,n)=>{const it=mk(id,n);it.ps=1;fb.items.push(it);place(fb,it,cardH(it,Math.min(n,10)*35,"noanim"))})}
+/* активные фильтры под панелью: в «Избранном» свои, без выбора города */
+function afDraw(){const F=!!favMode,s=F?favS():fS(),a=[],P=n=>n.toLocaleString("ru-RU");
  if(s.p1||s.p2)a.push(["p",s.p1&&s.p2?P(s.p1)+" – "+P(s.p2)+" ₽":s.p1?"от "+P(s.p1)+" ₽":"до "+P(s.p2)+" ₽"]);
  for(const k of FARR)s[k].forEach(v=>a.push([k,k=="own"?OWL[v]:k=="size"?"Размер "+v:k=="drive"?v+" привод":v,v]));
  if(s.y1||s.y2)a.push(["y",s.y1&&s.y2?s.y1+" – "+s.y2+" г.":s.y1?"от "+s.y1+" г.":"до "+s.y2+" г."]);
  if(s.km)a.push(["km","до "+P(s.km)+" км"]);
  if(s.age)a.push(["age",{1:"За сутки",3:"За 3 дня",7:"За неделю",30:"За месяц"}[s.age]]);
- if(geoOn(s))a.push(["geo",gLabel(s,1)]);
+ if(!F&&geoOn(s))a.push(["geo",gLabel(s,1)]);
  if(s.deal)a.push(["deal","Выгодные цены"]);
  if(s.disc)a.push(["disc","Со скидкой"]);
- const box=$("afc"),X='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+ const box=F?$("fafc"):$("afc"),X='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
  box.hidden=!a.length;
- box.innerHTML=a.length?a.map(x=>`<button type="button" class="ac" data-k="${x[0]}" data-v="${esc(x[2]||"")}" onclick="afRm(this)">${esc(x[1])}${X}</button>`).join("")+'<button type="button" class="ar" onclick="fClear()">Сбросить</button>':"";
- const n=a.length;$("fbb").hidden=!n;$("fbb").textContent=n;$("fbtn").classList.toggle("has",n>0);$("sfbb").hidden=!n;$("sfbb").textContent=n;$("sfb").classList.toggle("has",n>0)}
-function afRm(el){const k=el.dataset.k,v=el.dataset.v;
- if(k=="p")FL.p1=FL.p2=0;else if(k=="y")FL.y1=FL.y2=0;else if(k=="km")FL.km=0;else if(k=="age")FL.age=0;else if(k=="geo"){FL.gc=null;FL.gr=100}else if(k=="disc")FL.disc=false;
- else if(k=="deal"){deal=false;$("fd").classList.remove("on")}
- else if(FARR.includes(k)){FL[k]=FL[k].filter(x=>x!=v);if(k=="br")pruneMd(FL)}
- resetFeed()}
+ box.innerHTML=a.length?a.map(x=>`<button type="button" class="ac" data-k="${x[0]}" data-v="${esc(x[2]||"")}" onclick="afRm(this)">${esc(x[1])}${X}</button>`).join("")+`<button type="button" class="ar" onclick="${F?"favFClear()":"fClear()"}">Сбросить</button>`:"";
+ const n=a.length;
+ if(F){$("fpfb").hidden=!n;$("fpfb").textContent=n;$("fpf").classList.toggle("has",n>0)}
+ else{$("fbb").hidden=!n;$("fbb").textContent=n;$("fbtn").classList.toggle("has",n>0)}
+ $("sfbb").hidden=!n;$("sfbb").textContent=n;$("sfb").classList.toggle("has",n>0)}
+function afRm(el){const k=el.dataset.k,v=el.dataset.v,F=!!favMode,T=F?FLF:FL;
+ if(k=="p")T.p1=T.p2=0;else if(k=="y")T.y1=T.y2=0;else if(k=="km")T.km=0;else if(k=="age")T.age=0;else if(k=="geo"){T.gc=null;T.gr=100}else if(k=="disc")T.disc=false;
+ else if(k=="deal"){if(F)favDeal=false;else{deal=false;$("fd").classList.remove("on")}}
+ else if(FARR.includes(k)){T[k]=T[k].filter(x=>x!=v);if(k=="br")pruneMd(T)}
+ if(F)favDraw();else resetFeed()}
 function empEl(){const el=document.createElement("div"),sf=fN()>0;el.className="emp";
  el.innerHTML='<div class="eic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><b>'+(AQ?"Ничего не нашли по запросу «"+esc(AQ)+"»":"Ничего не нашли")+'</b><span>'+(AQ?"Проверьте написание или попробуйте запрос покороче.":"Попробуйте изменить или убрать часть фильтров.")+'</span><div class="acts">'+(sf?'<button class="btn ghost" type="button" onclick="fOpen()">Изменить фильтры</button>':"")+'<button class="btn" type="button" onclick="'+(AQ||cat!="all"?"homeGo()":"fClear()")+'">'+(AQ||cat!="all"?(sf?"Сбросить всё":"Сбросить поиск"):"Сбросить фильтры")+'</button></div>';return el}
 
@@ -2030,7 +2202,7 @@ function burst(el){}
 let favSort="n",favCat="all",favHist=false,favSkip=false;
 const favIds=()=>[...fav].filter(id=>UL[id]||BI[id%1000]).reverse();
 function favCount(){$("favb").classList.toggle("has",favIds().length>0)}
-function favOpen(){visOff();if(!favMode){favMode=true;favCat="all";document.body.classList.add("favview");
+function favOpen(){visOff();if(!favMode){favMode=true;favCat="all";FQ="";FLF=F0();favDeal=false;document.body.classList.add("favview");
   try{if(top===window&&history.pushState){history.pushState({vvm:"fav"},"");favHist=true}}catch(e){}}
  navSync();favDraw();jump(0)}
 function favClose(pop,keep){if(!favMode)return;favMode=false;document.body.classList.remove("favview");navSync();
@@ -2059,20 +2231,9 @@ function homeGo(){
  srvHist=false;srvReset();$("q").blur();navSync();
  if(k>0){srvSkip++;srvY=0;try{history.go(-k)}catch(e){srvSkip--}}
  if(dirty)jump(0);else window.scrollTo({top:0,behavior:"smooth"})}
-function favDraw(){const all=favIds(),cnt={};all.forEach(id=>{const c=getL(id).c;cnt[c]=(cnt[c]||0)+1});
- if(favCat!="all"&&!cnt[favCat])favCat="all";
- let ids=favCat=="all"?all:all.filter(id=>getL(id).c==favCat);
- if(favSort=="a")ids=ids.slice().sort((x,y)=>getL(x).p-getL(y).p);else if(favSort=="d")ids=ids.slice().sort((x,y)=>getL(y).p-getL(x).p);
- $("fpc").textContent=all.length?all.length+" "+ruN(all.length,"объявление","объявления","объявлений"):"пока пусто";
- const cs=$("fpcats");cs.hidden=all.length<2;
- cs.innerHTML=[["all","Все",all.length],...C.slice(1).filter(c=>cnt[c[0]]).map(c=>[c[0],c[1],cnt[c[0]]])].map(c=>`<button class="chip ${favCat==c[0]?"on":""}" onclick="favCat='${c[0]}';favDraw()">${c[1]}<i>${c[2]}</i></button>`).join("");
- const g=$("fgrid"),e=$("fpe");$("fsort").hidden=all.length<2;
- if(!all.length){g.innerHTML="";e.hidden=false;e.innerHTML=`<div class="fpe-i"><div class="fpe-h">${HEART}</div><b>Здесь пока пусто</b><span>Нажимайте сердечко на любом объявлении, и оно появится здесь.</span><button class="btn" onclick="favClose();window.scrollTo(0,0)">Смотреть объявления</button></div>`;return}
- e.hidden=true;NC=colsN();const fb={cw:g,items:[],h:[],cols:[]};setCols(fb);
- ids.forEach((id,n)=>{const it=mk(id,n);it.ps=1;fb.items.push(it);place(fb,it,cardH(it,Math.min(n,10)*35,"noanim"))})}
 function catSwitch(c){if(c==cat)return;FARR.forEach(k=>{if(k!="cond")FL[k]=[]});FL.y1=FL.y2=FL.km=0;cat=c;cats()}
 function setCat(c){visOff();catSwitch(c);resetFeed();toFeed()}
-function navSync(){$("nvh").classList.toggle("on",!favMode);$("nvf").classList.toggle("on",!!favMode);$("favb").classList.toggle("on",!!favMode)}
+function navSync(){$("nvh").classList.toggle("on",!favMode);$("nvf").classList.toggle("on",!!favMode);$("favb").classList.toggle("on",!!favMode);qSync()}
 function tg(){deal=!deal;$("fd").classList.toggle("on",deal);resetFeed()}
 $("sort").addEventListener("change",resetFeed);
 function sub(){const q=AQ;toast("🔔 Подписка: «"+(q||"все новые объявления")+"». Пришлём уведомление")}
@@ -2082,36 +2243,58 @@ const hSave=()=>ST.s("vvm_hist",HIST);
 function hAdd(q){q=String(q||"").trim().replace(/\s+/g," ");if(q.length<2)return;const l=q.toLowerCase();HIST=[q,...HIST.filter(x=>x.toLowerCase()!=l)].slice(0,12);hSave()}
 function hDel(n){HIST.splice(n,1);hSave();sgDraw()}
 function hClr(){HIST=[];hSave();sgDraw()}
-const IC={clock:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',s:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',globe:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>',cam:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg>'};
+const IC={fill:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 16V7h9"/></svg>',clock:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',s:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',globe:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>',cam:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg>'};
 let SGQ=[];
 const sgQ=t=>"SGQ["+(SGQ.push(t)-1)+"]";
 const hl=(x,v)=>{const n=x.toLowerCase().indexOf(v);return n<0?esc(x):esc(x.slice(0,n))+"<mark>"+esc(x.slice(n,n+v.length))+"</mark>"+esc(x.slice(n+v.length))};
-function sgDraw(){const raw=$("q").value.trim(),v=raw.toLowerCase(),box=$("sg");let h="";SGQ=[];
+function sgDraw(){const raw=$("q").value.trim(),box=$("sg"),F=!!favMode,ids=F?favIds():poolIds();let h="",n=0;SGQ=[];sgAct=-1;
  $("qx").hidden=!$("q").value;
- if(!v){
-  if(HIST.length)h='<div class="sgh"><b>История поиска</b><button type="button" onclick="hClr()">Очистить</button></div>'+HIST.map((x,n)=>`<div class="sgr" onclick="sq(${sgQ(x)})">${IC.clock}<span>${esc(x)}</span><button type="button" class="rm" onclick="event.stopPropagation();hDel(${n})" aria-label="Удалить из истории">${IC.x}</button></div>`).join("");
-  else h='<div class="sge">Здесь появятся ваши последние запросы</div>';
-  if($("cam").classList.contains("on"))h+=(HIST.length?'<div class="sgsep"></div>':"")+`<div class="sgr" onclick="sgPhoto()">${IC.cam}<span>Найти по фото</span></div>`}
+ const sRow=s=>`<div class="sgr sgs" role="option" data-n="${n++}" onclick="sq(${sgQ(s.txt)})">${IC.s}<span>${hlTxt(s.txt,s.mk)}${s.via?`<em> · ${esc(s.via)}</em>`:""}</span><u>${s.cnt}<s> объявл.</s></u><button type="button" class="sgf" onclick="event.stopPropagation();sgFill(${sgQ(s.txt)})" aria-label="Подставить в строку" tabindex="-1">${IC.fill}</button></div>`;
+ if(!raw){
+  if(F){const t=ids.length?sgTop(ids,5):[];
+   h=t.length?'<div class="sgh"><b>Часто в избранном</b></div>'+t.map(sRow).join(""):'<div class="sge">'+(ids.length?"Начните вводить название, и мы поищем среди сохранённых объявлений":"В избранном пока пусто. Нажимайте сердечко на объявлениях, и они появятся здесь")+'</div>'}
+  else{
+   if(HIST.length)h='<div class="sgh"><b>История поиска</b><button type="button" onclick="hClr()">Очистить</button></div>'+HIST.map((x,k)=>`<div class="sgr" role="option" data-n="${n++}" onclick="sq(${sgQ(x)})">${IC.clock}<span>${esc(x)}</span><button type="button" class="rm" onclick="event.stopPropagation();hDel(${k})" aria-label="Удалить из истории" tabindex="-1">${IC.x}</button></div>`).join("");
+   else h='<div class="sge">Начните вводить, и мы подскажем варианты. Здесь же появятся ваши последние запросы</div>';
+   if($("cam").classList.contains("on"))h+=(HIST.length?'<div class="sgsep"></div>':"")+`<div class="sgr" role="option" data-n="${n++}" onclick="sgPhoto()">${IC.cam}<span>Найти по фото</span></div>`}}
  else{
-  h=`<div class="sgr" onclick="sq(${sgQ(raw)})">${IC.s}<span>Искать «<mark>${esc(raw)}</mark>»</span></div>`+(FL.gc=="*"?"":`<div class="sgr" onclick="sqAll(${sgQ(raw)})">${IC.globe}<span>Искать «<mark>${esc(raw)}</mark>» по всей России</span></div>`);
-  const hs=HIST.filter(x=>x.toLowerCase().includes(v)&&x.toLowerCase()!=v).slice(0,3);
-  h+=hs.map(x=>`<div class="sgr" onclick="sq(${sgQ(x)})">${IC.clock}<span>${hl(x,v)}</span></div>`).join("");
-  const a=B.map(b=>getL(b.id)).filter(i=>mq(i,v)).slice(0,5);
-  h+='<div class="sgsep"></div>'+(a.length?a.map(i=>`<div class="sgi" onclick="sgo(${i.id})"><div class="th2">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${rub(i.p)} · ${locT(i).replace("📍 ","")}</span></div></div>`).join(""):'<div class="sgt">Подходящих объявлений пока нет</div>')}
- box.innerHTML=h;box.classList.add("show")}
+  const v=raw.toLowerCase(),T=norm(raw),su=sgSuggest(raw,ids,6),have=new Set(su.map(s=>s.txt.toLowerCase()));
+  const hs=F?[]:HIST.filter(x=>norm(x).includes(T)&&norm(x)!=T&&!have.has(x.toLowerCase())).slice(0,2);
+  h+=hs.map(x=>`<div class="sgr" role="option" data-n="${n++}" onclick="sq(${sgQ(x)})">${IC.clock}<span>${hl(x,v)}</span></div>`).join("");
+  h+=su.map(sRow).join("");
+  const ls=ids.map(getL).filter(i=>mq(i,v)).slice(0,3);
+  if(ls.length)h+=(hs.length||su.length?'<div class="sgsep"></div>':"")+`<div class="sgh"><b>${F?"В избранном":"Объявления"}</b></div>`+ls.map(i=>`<div class="sgi" role="option" data-n="${n++}" onclick="sgo(${i.id})"><div class="th2">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${rub(i.p)} · ${locT(i).replace("📍 ","")}</span></div></div>`).join("");
+  else if(!su.length&&!hs.length)h+=`<div class="sgt">${F?"В избранном такого нет":"Подходящих объявлений пока нет"}</div>`;
+  h+='<div class="sgsep"></div>'+`<div class="sgr sgq" role="option" data-n="${n++}" onclick="sq(${sgQ(raw)})">${IC.s}<span>Искать «<mark>${esc(raw)}</mark>»${F?" в избранном":""}</span>`+(F||FL.gc=="*"?"":`<button type="button" class="sgall" onclick="event.stopPropagation();sqAll(${sgQ(raw)})" tabindex="-1">${IC.globe}<b>Вся Россия</b></button>`)+'</div>'}
+ box.innerHTML=h;box.classList.add("show");box.scrollTop=0}
 const sgHide=()=>$("sg").classList.remove("show");
-function sq(t){visOff();qSet(t);hAdd(AQ);sgHide();$("q").blur();clearTimeout(qt);resetFeed();toFeed()}
+let sgAct=-1;
+function sgMove(d){const box=$("sg");if(!box.classList.contains("show"))return;const r=[...box.querySelectorAll("[data-n]")];if(!r.length)return;
+ r.forEach(x=>x.classList.remove("act"));sgAct=sgAct<0?(d>0?0:r.length-1):(sgAct+d+r.length)%r.length;
+ const el=r[sgAct];el.classList.add("act");try{el.scrollIntoView({block:"nearest"})}catch(e){}}
+/* стрелка ↖ в строке подсказки: подставить в поле и продолжить ввод */
+function sgFill(t){const q=$("q");q.value=t+" ";try{q.focus();q.setSelectionRange(q.value.length,q.value.length)}catch(e){}sgDraw()}
+function sq(t){if(favMode){qSet(t);sgHide();$("q").blur();clearTimeout(qt);favDraw();jump(0);return}
+ visOff();qSet(t);hAdd(AQ);sgHide();$("q").blur();clearTimeout(qt);resetFeed();toFeed()}
 function sqAll(t){GCprev=FL.gc;FL.gc="*";sq(t)}
-function sgo(id){hAdd($("q").value);sgHide();$("q").blur();openL(id)}
+function sgo(id){if(!favMode)hAdd($("q").value);sgHide();$("q").blur();openL(id)}
 function sgPhoto(){sgHide();$("q").blur();visPick()}
 let noSg=0;
 $("q").addEventListener("focus",()=>{if(noSg){noSg=0;return}sgDraw()});
-$("q").addEventListener("blur",()=>setTimeout(()=>{sgHide();if(document.activeElement!==$("q")&&$("q").value.trim()!==AQ){$("q").value=AQ;$("qx").hidden=!AQ}},160));
+$("q").addEventListener("blur",()=>setTimeout(()=>{sgHide();const c=favMode?FQ:AQ;if(document.activeElement!==$("q")&&$("q").value.trim()!==c){$("q").value=c;$("qx").hidden=!c}},160));
 $("q").addEventListener("input",()=>sgDraw());
-$("q").addEventListener("keydown",e=>{if(e.key=="Enter"){e.preventDefault();sq($("q").value)}else if(e.key=="Escape"){sgHide();$("q").blur()}});
+$("q").addEventListener("keydown",e=>{
+ if(e.key=="Enter"){e.preventDefault();const a=sgAct>=0&&$("sg").classList.contains("show")?$("sg").querySelector('[data-n="'+sgAct+'"]'):null;if(a)a.click();else sq($("q").value)}
+ else if(e.key=="ArrowDown"){e.preventDefault();sgMove(1)}
+ else if(e.key=="ArrowUp"){e.preventDefault();sgMove(-1)}
+ else if(e.key=="Escape"){sgHide();$("q").blur()}});
 /* крестик только стирает запрос: без списка истории */
 $("qx").addEventListener("mousedown",e=>e.preventDefault());
-$("qx").addEventListener("click",()=>{const had=!!AQ;clearTimeout(qt);qSet("");sgHide();if(had)resetFeed()});
+$("qx").addEventListener("click",()=>{const had=!!(favMode?FQ:AQ);clearTimeout(qt);qSet("");sgHide();if(had){if(favMode)favDraw();else resetFeed()}});
+/* строка поиска сверху работает в двух режимах: по всему VVM и внутри «Избранного» */
+let qFav=false;
+function qSync(){if(qFav===!!favMode)return;qFav=!!favMode;const q=$("q"),v=favMode?FQ:AQ;
+ q.value=v;q.placeholder=favMode?"Поиск в избранном":"Поиск по VVM";q.setAttribute("aria-label",favMode?"Поиск в избранном":"Поиск");$("qx").hidden=!v;sgHide();afDraw()}
 
 /* ---------- объявление ---------- */
 function gal(i){const ks=i.up?[null]:(i.k.length?i.k:[null]),n=ks.length;
