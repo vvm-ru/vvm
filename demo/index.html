@@ -729,11 +729,6 @@ body.favview main>:not(.favp){display:none!important}
 .sgt{padding:10px 12px}
 /* ===== v35: панель фильтров и активные фильтры ===== */
 .filters{gap:8px;margin-bottom:10px}
-.chip.fl{display:inline-flex;align-items:center;gap:8px}
-.chip.fl svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.chip.fl b{min-width:20px;height:20px;border-radius:99px;padding:0 6px;background:rgba(255,255,255,.24);font:800 12px/20px Manrope,sans-serif;text-align:center;box-sizing:border-box}
-.chip.fl b[hidden]{display:none}
-.chip.fl.has{color:#fff;background:var(--g);border-color:transparent}
 .afc{display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none;margin:0 0 14px;padding:2px 0;overscroll-behavior-x:contain}
 .afc::-webkit-scrollbar{display:none}
 .afc[hidden]{display:none}
@@ -843,16 +838,78 @@ body.favview main>:not(.favp){display:none!important}
 .card:has(.pv.drag){transform:none!important}
 .stage{height:404px}
 @media(max-width:700px){.stage{height:258px}}
+/* ===== v37: панель фильтров — ровная линия ===== */
+.chip.fbt{display:inline-flex;align-items:center;gap:8px}
+.chip.fbt svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.chip.fbt b{min-width:20px;height:20px;border-radius:99px;padding:0 6px;background:rgba(255,255,255,.24);font:800 12px/20px Manrope,sans-serif;text-align:center;box-sizing:border-box}
+.chip.fbt b[hidden]{display:none}
+.chip.fbt.has{color:#fff;background:var(--g);border-color:transparent}
+.filters{--fh:40px;align-items:center}
+.filters>.chip,.filters>select{box-sizing:border-box;height:var(--fh);min-height:0;margin:0;line-height:1}
+.filters>.chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 18px}
+.filters>select{padding:0 16px;flex:none}
+@media(pointer:coarse){.filters{--fh:42px}}
+@media(max-width:700px){.filters{--fh:42px}.filters>select{height:var(--fh)!important}}
+
+/* ===== v37: экран результатов поиска ===== */
+.srb,.srt small,.src{display:none}
+.srt{min-width:0}
+.src{font-style:normal}
+body.srv main>:not(#feedp){display:none!important}
+body.srv #feedp{display:flex;flex-direction:column;padding-top:10px;animation:srvin .42s cubic-bezier(.22,.9,.3,1) both}
+@keyframes srvin{from{opacity:0;transform:translateY(14px)}}
+body.srv #feed{order:1}
+body.srv #vis{order:2}
+body.srv #srcats{order:3}
+body.srv .filters{order:4}
+body.srv #afc{order:5}
+body.srv #grid{order:6}
+body.srv #more{order:7}
+body.srv #feed{position:relative;overflow:hidden;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 16px;margin:4px 0 18px;padding:18px 20px 18px 16px;border-radius:26px;
+ background:radial-gradient(520px 200px at 0% 0%,rgba(124,92,255,.26),transparent 70%),radial-gradient(420px 180px at 100% 100%,rgba(34,211,238,.12),transparent 70%),var(--glass);
+ border:1px solid rgba(124,92,255,.34);box-shadow:inset 0 1px 0 rgba(var(--wr),.08),0 18px 40px -26px rgba(var(--shr),calc(.9*var(--shm)))}
+body.srv .srb{display:grid;flex:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--glass2);color:var(--tx);place-items:center;cursor:pointer;padding:0;transition:background .2s,border-color .2s,transform .2s}
+body.srv .srb:hover{background:rgba(var(--wr),.14);border-color:rgba(124,92,255,.5)}
+body.srv .srb:active{transform:scale(.94)}
+body.srv .srb svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+body.srv .srt{flex:1 1 220px;display:block}
+body.srv .srt small{display:block;margin:0 0 5px;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ac2)}
+body.srv #ttl{padding:0;margin:0;font:800 clamp(25px,4.2vw,36px)/1.12 Manrope,sans-serif;letter-spacing:-.025em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.srv #ttl::before{display:none}
+body.srv .src{display:block;margin-top:6px;font-size:14.5px;font-weight:600;color:var(--mu)}
+body.srv .src:empty{display:none}
+body.srv #feed .fr{flex:none;margin-left:auto}
+.srcats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding:2px 0;overscroll-behavior-x:contain}
+.srcats::-webkit-scrollbar{display:none}
+.srcats[hidden]{display:none}
+.srcats .chip{display:inline-flex;align-items:center;gap:8px;height:40px;min-height:0;padding:0 16px}
+.srcats .chip i{font-style:normal;font-size:12px;font-weight:700;opacity:.55}
+.srcats .chip.on i{opacity:.9}
+body.srv .filters{margin-bottom:10px}
+body.srv .afc{margin-bottom:16px}
+body.srv #grid{min-height:40vh}
+.emp b{overflow-wrap:anywhere}
+.logo:focus-visible{outline:2px solid var(--ac);outline-offset:4px;border-radius:12px}
+.search .sic{cursor:pointer}
+@media(max-width:700px){
+ body.srv #feedp{padding-top:6px}
+ body.srv #feed{margin:2px 0 14px;padding:14px 14px 14px 12px;border-radius:22px;gap:8px 12px}
+ body.srv .srb{width:42px;height:42px}
+ body.srv .srt{flex:1 1 0}
+ body.srv #feed .fr{flex:1 1 100%;margin:4px 0 0;padding-left:54px;gap:10px}
+ body.srv #feed .live{display:none}
+ .srcats{margin:0 -14px 12px;padding:2px 14px}
+}
 </style>
-<style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=35)}.i-granta{background-image:url(img/granta.jpg?v=35)}.i-mac{background-image:url(img/mac.jpg?v=35)}.i-icepeak{background-image:url(img/icepeak.jpg?v=35)}.i-mhw{background-image:url(img/mhw.jpg?v=35)}.i-mhw2{background-image:url(img/mhw2.jpg?v=35)}.i-mhw3{background-image:url(img/mhw3.jpg?v=35)}.i-mhw4{background-image:url(img/mhw4.jpg?v=35)}.i-kalina{background-image:url(img/kalina.jpg?v=35)}.i-honda{background-image:url(img/honda.jpg?v=35)}.i-tires{background-image:url(img/tires.jpg?v=35)}.i-shock{background-image:url(img/shock.jpg?v=35)}.i-alt{background-image:url(img/alt.jpg?v=35)}.i-honda3{background-image:url(img/honda3.jpg?v=35)}.i-sk1{background-image:url(img/sk1.jpg?v=35)}.i-sk2{background-image:url(img/sk2.jpg?v=35)}.i-pc{background-image:url(img/pc.jpg?v=35)}.i-s5{background-image:url(img/s5.jpg?v=35)}.i-nike{background-image:url(img/nike.jpg?v=35)}.i-stels{background-image:url(img/stels.jpg?v=35)}.i-boots{background-image:url(img/boots.jpg?v=35)}.i-snk{background-image:url(img/snk.jpg?v=35)}.i-braun{background-image:url(img/braun.jpg?v=35)}.i-l14a{background-image:url(img/l14a.jpg?v=35)}.i-rapid{background-image:url(img/rapid.jpg?v=35)}.i-granta2{background-image:url(img/granta2.jpg?v=35)}.i-s10x2{background-image:url(img/s10x2.jpg?v=35)}.i-heli{background-image:url(img/heli.jpg?v=35)}.i-eiffel{background-image:url(img/eiffel.jpg?v=35)}.i-s5b{background-image:url(img/s5b.jpg?v=35)}.i-gwh{background-image:url(img/gwh.jpg?v=35)}.i-s22{background-image:url(img/s22.jpg?v=35)}.i-s10{background-image:url(img/s10.jpg?v=35)}.i-priw{background-image:url(img/priw.jpg?v=35)}.i-prib{background-image:url(img/prib.jpg?v=35)}.i-fender{background-image:url(img/fender.jpg?v=35)}.i-air{background-image:url(img/air.jpg?v=35)}.i-kalint{background-image:url(img/kalint.jpg?v=35)}.i-y1b{background-image:url(img/y1b.jpg?v=35)}.i-y1d{background-image:url(img/y1d.jpg?v=35)}.i-y1e{background-image:url(img/y1e.jpg?v=35)}.i-y1k{background-image:url(img/y1k.jpg?v=35)}.i-f14m{background-image:url(img/f14m.jpg?v=35)}.i-f14n{background-image:url(img/f14n.jpg?v=35)}.i-f14o{background-image:url(img/f14o.jpg?v=35)}.i-f14p{background-image:url(img/f14p.jpg?v=35)}.i-sn14{background-image:url(img/sn14.jpg?v=35)}.i-nt14{background-image:url(img/nt14.jpg?v=35)}.i-prh{background-image:url(img/prh.jpg?v=35)}.i-bmwg{background-image:url(img/bmwg.jpg?v=35)}.i-bmwh{background-image:url(img/bmwh.jpg?v=35)}.i-bmwi{background-image:url(img/bmwi.jpg?v=35)}.i-bmwj{background-image:url(img/bmwj.jpg?v=35)}.i-bmwl{background-image:url(img/bmwl.jpg?v=35)}.i-ap1{background-image:url(img/ap1.jpg?v=35)}.i-ap2{background-image:url(img/ap2.jpg?v=35)}.i-bask{background-image:url(img/bask.jpg?v=35)}.i-mba1{background-image:url(img/mba1.jpg?v=35)}.i-mba2{background-image:url(img/mba2.jpg?v=35)}.i-mba3{background-image:url(img/mba3.jpg?v=35)}.i-mba4{background-image:url(img/mba4.jpg?v=35)}.i-mba5{background-image:url(img/mba5.jpg?v=35)}.i-gz1{background-image:url(img/gz1.jpg?v=35)}.i-gz2{background-image:url(img/gz2.jpg?v=35)}.i-gz3{background-image:url(img/gz3.jpg?v=35)}.i-gz4{background-image:url(img/gz4.jpg?v=35)}.i-gz5{background-image:url(img/gz5.jpg?v=35)}.i-cam1{background-image:url(img/cam1.jpg?v=35)}.i-cam2{background-image:url(img/cam2.jpg?v=35)}.i-cam3{background-image:url(img/cam3.jpg?v=35)}.i-gpu1{background-image:url(img/gpu1.jpg?v=35)}.i-bpc1{background-image:url(img/bpc1.jpg?v=35)}.i-bpc2{background-image:url(img/bpc2.jpg?v=35)}.i-bpc3{background-image:url(img/bpc3.jpg?v=35)}.i-bpc4{background-image:url(img/bpc4.jpg?v=35)}.i-bpc5{background-image:url(img/bpc5.jpg?v=35)}.i-wz1{background-image:url(img/wz1.jpg?v=35)}.i-lan1{background-image:url(img/lan1.jpg?v=35)}.i-lan2{background-image:url(img/lan2.jpg?v=35)}.i-lan3{background-image:url(img/lan3.jpg?v=35)}.i-s14sun{background-image:url(img/s14sun.jpg?v=35)}.i-s14wet{background-image:url(img/s14wet.jpg?v=35)}.i-s14rib{background-image:url(img/s14rib.jpg?v=35)}.i-s14pair{background-image:url(img/s14pair.jpg?v=35)}.i-v6a{background-image:url(img/v6a.jpg?v=35)}.i-v6b{background-image:url(img/v6b.jpg?v=35)}.i-v6c{background-image:url(img/v6c.jpg?v=35)}.i-prh1{background-image:url(img/prh1.jpg?v=35)}.i-prh2{background-image:url(img/prh2.jpg?v=35)}.i-prh3{background-image:url(img/prh3.jpg?v=35)}.i-bd1{background-image:url(img/bd1.jpg?v=35)}.i-bd2{background-image:url(img/bd2.jpg?v=35)}.i-bmwa{background-image:url(img/bmwa.jpg?v=35)}.i-bmwb{background-image:url(img/bmwb.jpg?v=35)}.i-bmwc{background-image:url(img/bmwc.jpg?v=35)}.i-bmwd{background-image:url(img/bmwd.jpg?v=35)}.i-bmwe{background-image:url(img/bmwe.jpg?v=35)}.i-z7a{background-image:url(img/z7a.jpg?v=35)}.i-z7b{background-image:url(img/z7b.jpg?v=35)}.i-z7c{background-image:url(img/z7c.jpg?v=35)}.i-gb1{background-image:url(img/gb1.jpg?v=35)}.i-gb2{background-image:url(img/gb2.jpg?v=35)}.i-gg1{background-image:url(img/gg1.jpg?v=35)}.i-gg2{background-image:url(img/gg2.jpg?v=35)}.i-gg3{background-image:url(img/gg3.jpg?v=35)}.i-gg4{background-image:url(img/gg4.jpg?v=35)}.i-d14a{background-image:url(img/d14a.jpg?v=35)}.i-d14b{background-image:url(img/d14b.jpg?v=35)}.i-d14c{background-image:url(img/d14c.jpg?v=35)}.i-d14d{background-image:url(img/d14d.jpg?v=35)}.i-d14e{background-image:url(img/d14e.jpg?v=35)}.i-gk1{background-image:url(img/gk1.jpg?v=35)}.i-gk2{background-image:url(img/gk2.jpg?v=35)}.i-gk3{background-image:url(img/gk3.jpg?v=35)}.i-gk4{background-image:url(img/gk4.jpg?v=35)}.i-kl1{background-image:url(img/kl1.jpg?v=35)}.i-kl2{background-image:url(img/kl2.jpg?v=35)}</style>
+<style id="phs">.i-corolla{background-image:url(img/corolla.jpg?v=37)}.i-granta{background-image:url(img/granta.jpg?v=37)}.i-mac{background-image:url(img/mac.jpg?v=37)}.i-icepeak{background-image:url(img/icepeak.jpg?v=37)}.i-mhw{background-image:url(img/mhw.jpg?v=37)}.i-mhw2{background-image:url(img/mhw2.jpg?v=37)}.i-mhw3{background-image:url(img/mhw3.jpg?v=37)}.i-mhw4{background-image:url(img/mhw4.jpg?v=37)}.i-kalina{background-image:url(img/kalina.jpg?v=37)}.i-honda{background-image:url(img/honda.jpg?v=37)}.i-tires{background-image:url(img/tires.jpg?v=37)}.i-shock{background-image:url(img/shock.jpg?v=37)}.i-alt{background-image:url(img/alt.jpg?v=37)}.i-honda3{background-image:url(img/honda3.jpg?v=37)}.i-sk1{background-image:url(img/sk1.jpg?v=37)}.i-sk2{background-image:url(img/sk2.jpg?v=37)}.i-pc{background-image:url(img/pc.jpg?v=37)}.i-s5{background-image:url(img/s5.jpg?v=37)}.i-nike{background-image:url(img/nike.jpg?v=37)}.i-stels{background-image:url(img/stels.jpg?v=37)}.i-boots{background-image:url(img/boots.jpg?v=37)}.i-snk{background-image:url(img/snk.jpg?v=37)}.i-braun{background-image:url(img/braun.jpg?v=37)}.i-l14a{background-image:url(img/l14a.jpg?v=37)}.i-rapid{background-image:url(img/rapid.jpg?v=37)}.i-granta2{background-image:url(img/granta2.jpg?v=37)}.i-s10x2{background-image:url(img/s10x2.jpg?v=37)}.i-heli{background-image:url(img/heli.jpg?v=37)}.i-eiffel{background-image:url(img/eiffel.jpg?v=37)}.i-s5b{background-image:url(img/s5b.jpg?v=37)}.i-gwh{background-image:url(img/gwh.jpg?v=37)}.i-s22{background-image:url(img/s22.jpg?v=37)}.i-s10{background-image:url(img/s10.jpg?v=37)}.i-priw{background-image:url(img/priw.jpg?v=37)}.i-prib{background-image:url(img/prib.jpg?v=37)}.i-fender{background-image:url(img/fender.jpg?v=37)}.i-air{background-image:url(img/air.jpg?v=37)}.i-kalint{background-image:url(img/kalint.jpg?v=37)}.i-y1b{background-image:url(img/y1b.jpg?v=37)}.i-y1d{background-image:url(img/y1d.jpg?v=37)}.i-y1e{background-image:url(img/y1e.jpg?v=37)}.i-y1k{background-image:url(img/y1k.jpg?v=37)}.i-f14m{background-image:url(img/f14m.jpg?v=37)}.i-f14n{background-image:url(img/f14n.jpg?v=37)}.i-f14o{background-image:url(img/f14o.jpg?v=37)}.i-f14p{background-image:url(img/f14p.jpg?v=37)}.i-sn14{background-image:url(img/sn14.jpg?v=37)}.i-nt14{background-image:url(img/nt14.jpg?v=37)}.i-prh{background-image:url(img/prh.jpg?v=37)}.i-bmwg{background-image:url(img/bmwg.jpg?v=37)}.i-bmwh{background-image:url(img/bmwh.jpg?v=37)}.i-bmwi{background-image:url(img/bmwi.jpg?v=37)}.i-bmwj{background-image:url(img/bmwj.jpg?v=37)}.i-bmwl{background-image:url(img/bmwl.jpg?v=37)}.i-ap1{background-image:url(img/ap1.jpg?v=37)}.i-ap2{background-image:url(img/ap2.jpg?v=37)}.i-bask{background-image:url(img/bask.jpg?v=37)}.i-mba1{background-image:url(img/mba1.jpg?v=37)}.i-mba2{background-image:url(img/mba2.jpg?v=37)}.i-mba3{background-image:url(img/mba3.jpg?v=37)}.i-mba4{background-image:url(img/mba4.jpg?v=37)}.i-mba5{background-image:url(img/mba5.jpg?v=37)}.i-gz1{background-image:url(img/gz1.jpg?v=37)}.i-gz2{background-image:url(img/gz2.jpg?v=37)}.i-gz3{background-image:url(img/gz3.jpg?v=37)}.i-gz4{background-image:url(img/gz4.jpg?v=37)}.i-gz5{background-image:url(img/gz5.jpg?v=37)}.i-cam1{background-image:url(img/cam1.jpg?v=37)}.i-cam2{background-image:url(img/cam2.jpg?v=37)}.i-cam3{background-image:url(img/cam3.jpg?v=37)}.i-gpu1{background-image:url(img/gpu1.jpg?v=37)}.i-bpc1{background-image:url(img/bpc1.jpg?v=37)}.i-bpc2{background-image:url(img/bpc2.jpg?v=37)}.i-bpc3{background-image:url(img/bpc3.jpg?v=37)}.i-bpc4{background-image:url(img/bpc4.jpg?v=37)}.i-bpc5{background-image:url(img/bpc5.jpg?v=37)}.i-wz1{background-image:url(img/wz1.jpg?v=37)}.i-lan1{background-image:url(img/lan1.jpg?v=37)}.i-lan2{background-image:url(img/lan2.jpg?v=37)}.i-lan3{background-image:url(img/lan3.jpg?v=37)}.i-s14sun{background-image:url(img/s14sun.jpg?v=37)}.i-s14wet{background-image:url(img/s14wet.jpg?v=37)}.i-s14rib{background-image:url(img/s14rib.jpg?v=37)}.i-s14pair{background-image:url(img/s14pair.jpg?v=37)}.i-v6a{background-image:url(img/v6a.jpg?v=37)}.i-v6b{background-image:url(img/v6b.jpg?v=37)}.i-v6c{background-image:url(img/v6c.jpg?v=37)}.i-prh1{background-image:url(img/prh1.jpg?v=37)}.i-prh2{background-image:url(img/prh2.jpg?v=37)}.i-prh3{background-image:url(img/prh3.jpg?v=37)}.i-bd1{background-image:url(img/bd1.jpg?v=37)}.i-bd2{background-image:url(img/bd2.jpg?v=37)}.i-bmwa{background-image:url(img/bmwa.jpg?v=37)}.i-bmwb{background-image:url(img/bmwb.jpg?v=37)}.i-bmwc{background-image:url(img/bmwc.jpg?v=37)}.i-bmwd{background-image:url(img/bmwd.jpg?v=37)}.i-bmwe{background-image:url(img/bmwe.jpg?v=37)}.i-z7a{background-image:url(img/z7a.jpg?v=37)}.i-z7b{background-image:url(img/z7b.jpg?v=37)}.i-z7c{background-image:url(img/z7c.jpg?v=37)}.i-gb1{background-image:url(img/gb1.jpg?v=37)}.i-gb2{background-image:url(img/gb2.jpg?v=37)}.i-gg1{background-image:url(img/gg1.jpg?v=37)}.i-gg2{background-image:url(img/gg2.jpg?v=37)}.i-gg3{background-image:url(img/gg3.jpg?v=37)}.i-gg4{background-image:url(img/gg4.jpg?v=37)}.i-d14a{background-image:url(img/d14a.jpg?v=37)}.i-d14b{background-image:url(img/d14b.jpg?v=37)}.i-d14c{background-image:url(img/d14c.jpg?v=37)}.i-d14d{background-image:url(img/d14d.jpg?v=37)}.i-d14e{background-image:url(img/d14e.jpg?v=37)}.i-gk1{background-image:url(img/gk1.jpg?v=37)}.i-gk2{background-image:url(img/gk2.jpg?v=37)}.i-gk3{background-image:url(img/gk3.jpg?v=37)}.i-gk4{background-image:url(img/gk4.jpg?v=37)}.i-kl1{background-image:url(img/kl1.jpg?v=37)}.i-kl2{background-image:url(img/kl2.jpg?v=37)}</style>
 </head>
 <body>
 <div id="sp"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="as" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cs"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#as)"/><g clip-path="url(#cs)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bs)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><div class="sw"><svg class="wm" viewBox="-2 -3 124 37" height="68" role="img" aria-label="VVM"><defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cs"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gs)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cs)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><div class="sps">Бесплатно · Красиво · Рядом</div></div>
 <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
 <header id="hd"><div class="bar">
-<div class="logo" onclick="window.scrollTo(0,0)" aria-label="VVM"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ah" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="ch"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#ah)"/><g clip-path="url(#ch)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bh)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><svg class="wm" viewBox="-2 -3 124 37" height="22" role="img" aria-label="VVM"><defs><linearGradient id="gh" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="ch"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gh)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#ch)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div>
+<div class="logo" onclick="homeGo()" onkeydown="if(event.key=='Enter')homeGo()" role="link" tabindex="0" aria-label="VVM — на главную"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ah" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="ch"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#ah)"/><g clip-path="url(#ch)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bh)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><svg class="wm" viewBox="-2 -3 124 37" height="22" role="img" aria-label="VVM"><defs><linearGradient id="gh" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="ch"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gh)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#ch)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div>
 <button class="city glass pulse" id="cb" onclick="openCity()" aria-label="Выбрать город"><i style="font-style:normal">📍</i><span id="cn">…</span></button>
-<div class="search glass" id="search" role="search"><svg class="sic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Поиск по VVM" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск"><button class="sbt qx" id="qx" type="button" hidden aria-label="Очистить запрос" onmousedown="event.preventDefault()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="sbt cam" id="cam" type="button" onclick="visPick()" aria-label="Искать по фото" title="Поиск по фото"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg></button><input type="file" accept="image/*" id="vf" hidden><button class="sbt f" id="sfb" type="button" onclick="fOpen()" aria-label="Фильтры" title="Фильтры"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><b class="bdg" id="sfbb" hidden></b></button><div class="sg" id="sg" onmousedown="event.preventDefault()"></div></div>
+<div class="search glass" id="search" role="search"><svg class="sic" viewBox="0 0 24 24" aria-hidden="true" onclick="if($('q').value.trim())sq($('q').value)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Поиск по VVM" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск"><button class="sbt qx" id="qx" type="button" hidden aria-label="Очистить запрос" onmousedown="event.preventDefault()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="sbt cam" id="cam" type="button" onclick="visPick()" aria-label="Искать по фото" title="Поиск по фото"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg></button><input type="file" accept="image/*" id="vf" hidden><button class="sbt f" id="sfb" type="button" onclick="fOpen()" aria-label="Фильтры" title="Фильтры"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><b class="bdg" id="sfbb" hidden></b></button><div class="sg" id="sg" onmousedown="event.preventDefault()"></div></div>
 <button class="btn ghost" id="lg" onclick="profile()">Войти</button><button class="btn ghost" onclick="favOnly()" id="favb" aria-label="Избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></button>
 <button class="ib th" id="thb" onclick="themeCycle()" aria-label="Тема оформления" title="Тема оформления"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 <button class="btn" onclick="openPost()">+ Подать</button>
@@ -880,12 +937,14 @@ body.favview main>:not(.favp){display:none!important}
 <div class="rec" id="rec"></div>
 <div id="rv"></div>
 <div class="cats" id="cats"></div>
-<div class="filters"><div class="chip fl" id="fbtn" role="button" tabindex="0" onclick="fOpen()" onkeydown="if(event.key=='Enter')fOpen()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>Фильтры<b id="fbb" hidden></b></div><div class="chip" id="fd" onclick="tg()">🔥 Выгодные</div><div class="chip" onclick="openMap()">🗺️ Карта</div><div class="chip" onclick="sub()">🔔 Подписаться</div><select id="sort" aria-label="Сортировка"><option value="n">Для тебя</option><option value="a">Дешевле</option><option value="d">Дороже</option><option value="f">Выгодные цены</option><option value="c">Ближе всего</option><option value="t">Сначала новые</option></select></div>
+<section id="feedp" aria-label="Объявления"><div class="srcats" id="srcats" hidden></div>
+<div class="filters"><div class="chip fbt" id="fbtn" role="button" tabindex="0" onclick="fOpen()" onkeydown="if(event.key=='Enter')fOpen()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>Фильтры<b id="fbb" hidden></b></div><div class="chip" id="fd" onclick="tg()">🔥 Выгодные</div><div class="chip" onclick="openMap()">🗺️ Карта</div><div class="chip" onclick="sub()">🔔 Подписаться</div><select id="sort" aria-label="Сортировка"><option value="n">Для тебя</option><option value="a">Дешевле</option><option value="d">Дороже</option><option value="f">Выгодные цены</option><option value="c">Ближе всего</option><option value="t">Сначала новые</option></select></div>
 <div class="afc" id="afc" hidden></div>
-<div class="row" id="feed"><h2 id="ttl">Рядом с тобой</h2><div class="fr"><button class="fair" id="fairb" onclick="whyOpen()">🛡 Честная выдача</button><span class="live"><i></i><span id="lv2">без платных мест</span></span></div></div>
+<div class="row" id="feed"><button class="srb" id="srb" type="button" onclick="homeGo()" aria-label="Назад, на главную"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="srt"><small id="sre"></small><h2 id="ttl">Рядом с тобой</h2><em class="src" id="rcn"></em></div><div class="fr"><button class="fair" id="fairb" onclick="whyOpen()">🛡 Честная выдача</button><span class="live"><i></i><span id="lv2">без платных мест</span></span></div></div>
 <div class="vis" id="vis" hidden></div>
 <div id="grid"></div>
 <div class="more" id="more"><div class="skg" id="skg"><i></i><i></i><i></i><i></i></div></div>
+</section>
 </main>
 
 <div class="mod" id="m1" onclick="if(event.target===this)cl()"><div class="sheet glass" id="s1"></div></div>
@@ -1242,7 +1301,7 @@ function whyOpen(id){
   +`<div class="fine2">${near?"Сейчас включён режим без алгоритма: объявления идут строго от ближних к дальним.":"«По расстоянию» отключает персонализацию: никакой подстройки под тебя, только расстояние."}</div>`;
  $("s11").innerHTML=h;$("m11").classList.add("show");setTimeout(()=>document.querySelectorAll("#s11 .wb i").forEach(e=>e.style.width=e.dataset.w+"%"),60)}
 function back11(){$("m11").classList.remove("show")}
-function fairSet(o){$("sort").value=o;cl();resetFeed();$("feed").scrollIntoView({behavior:"smooth"});toast(o=="c"?"🛡 Без алгоритма: сначала ближайшие":"Вернули «Для тебя»")}
+function fairSet(o){$("sort").value=o;cl();resetFeed();toFeed();toast(o=="c"?"🛡 Без алгоритма: сначала ближайшие":"Вернули «Для тебя»")}
 function fairInts(){cl();$("ints").scrollIntoView({behavior:"smooth",block:"center"})}
 function fairUpd(){const n=$("sort").value=="c",b=$("fairb");b.textContent=n?"🛡 Без алгоритма":"🛡 Честная выдача";b.classList.toggle("on",n)}
 /* ---------- безопасная встреча ---------- */
@@ -1546,7 +1605,10 @@ document.addEventListener("keydown",e=>{if((e.key!="ArrowLeft"&&e.key!="ArrowRig
  const pv=document.querySelector("#s1 .gal .pv");if(!pv)return;pvFill(pv);const p=pvP(pv);if(p.n>1)pvGo(pv,pvClamp(p,Math.round(p.tgt)+(e.key=="ArrowRight"?1:-1)))});
 /* ---------- лента ---------- */
 let cat="all",fav=new Set(),favMode=false,deal=false,cur=null,blocks=[],S={q:[],cycle:0,n:0,skip:0,busy:false},NC=2;
-const filt=()=>!!($("q").value.trim()||cat!="all"||fN()||visOn());
+let AQ="",RM=false,srvHist=false,srvSkip=0,homeY=0,pendY=null,srvY=0,histKeep=false;const DT0=document.title;
+const filt=()=>!!(AQ||cat!="all"||fN()||visOn());
+function qSet(v){AQ=String(v||"").trim().replace(/\s+/g," ");$("q").value=AQ;$("qx").hidden=!AQ}
+const toFeed=()=>RM?scrollTo({top:0,behavior:"smooth"}):$("feed").scrollIntoView({behavior:"smooth"});
 function mq(i,q){if(!q)return true;let mp=0;const m=q.match(/до\s*(\d+(?:[.,]\d+)?)\s*(млн|тыс|к)?/);if(m){mp=parseFloat(m[1].replace(",","."))*(m[2]=="млн"?1e6:m[2]?1e3:1);q=q.replace(m[0],"")}
  if(mp&&i.p>mp)return false;const h=(i.t+" "+i.city+" "+(C.find(c=>c[0]==i.c)||[0,""])[1]+" "+(i.kw||"")).toLowerCase();
  return q.split(/\s+/).filter(w=>w.length>2&&!["для","рядом","метро","около","возле"].includes(w)).every(w=>h.includes(w.slice(0,Math.max(3,w.length-2))))}
@@ -1607,7 +1669,7 @@ const fName=(k,c)=>k=="br"?(c=="auto"?"Марка":"Бренд"):FNAME[k];
 function fN(s){s=s||fS();let n=0;if(s.p1||s.p2)n++;if(s.y1||s.y2)n++;if(s.km)n++;if(s.age)n++;if(s.dist)n++;if(s.disc)n++;if(s.deal)n++;for(const k of FARR)if(s[k].length)n++;return n}
 const poolIds=()=>[...new Set([...MY,...B.map(b=>b.id)])];
 const fBaseIds=()=>visOn()?visIds():poolIds();
-const fQ=()=>visOn()?"":$("q").value.trim().toLowerCase();
+const fQ=()=>visOn()?"":AQ.toLowerCase();
 const fSc=s=>visOn()?Object.assign({},s,{cat:"all"}):s;
 function fpass(i,s,skip,q){
  if(s.cat!="all"&&i.c!=s.cat)return false;
@@ -1623,7 +1685,7 @@ function fpass(i,s,skip,q){
  return true}
 function matchIds(){const s=fS();
  if(visOn()){s.cat="all";return visIds().filter(id=>fpass(getL(id),s,"",""))}
- const q=$("q").value.trim().toLowerCase();
+ const q=AQ.toLowerCase();
  return[...MY,...rank(0,$("sort").value).map(b=>b.id)].filter(id=>fpass(getL(id),s,"",q))}
 const fCount=s=>{const q=fQ(),sc=fSc(s);return fBaseIds().filter(id=>fpass(getL(id),sc,"",q)).length};
 const fObjs=s=>{const sc=fSc(s);return fBaseIds().map(getL).filter(i=>sc.cat=="all"||i.c==sc.cat)};
@@ -1664,7 +1726,7 @@ function fCat(c){if(FDR.cat==c)return;FDR.cat=c;FARR.forEach(k=>{if(k!="cond")FD
 function fReset(){FDR=Object.assign(F0(),{cat:FDR.cat,deal:false});fDraw()}
 function fApply(){if(!FDR)return;const{cat:c2,deal:d2,...rest}=FDR;FL=Object.assign(F0(),rest);deal=d2;$("fd").classList.toggle("on",deal);
  if(c2!=cat){visOff();cat=c2;cats()}
- cl();resetFeed();$("feed").scrollIntoView({behavior:"smooth"})}
+ cl();resetFeed();toFeed()}
 $("fb").addEventListener("scroll",()=>$("s16").classList.toggle("sc",$("fb").scrollTop>6),{passive:true});
 function fClear(){FL=F0();deal=false;$("fd").classList.remove("on");resetFeed()}
 /* ---------- активные фильтры под панелью ---------- */
@@ -1687,7 +1749,8 @@ function afRm(el){const k=el.dataset.k,v=el.dataset.v;
  else if(k=="deal"){deal=false;$("fd").classList.remove("on")}
  else if(FARR.includes(k)){FL[k]=FL[k].filter(x=>x!=v);if(k=="br")pruneMd(FL)}
  resetFeed()}
-function empEl(){const el=document.createElement("div");el.className="emp";el.innerHTML='<div class="eic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><b>Ничего не нашли</b><span>Попробуйте изменить или убрать часть фильтров.</span><div class="acts"><button class="btn ghost" type="button" onclick="fOpen()">Изменить фильтры</button><button class="btn" type="button" onclick="fClear()">Сбросить фильтры</button></div>';return el}
+function empEl(){const el=document.createElement("div"),sf=fN()>0;el.className="emp";
+ el.innerHTML='<div class="eic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><b>'+(AQ?"Ничего не нашли по запросу «"+esc(AQ)+"»":"Ничего не нашли")+'</b><span>'+(AQ?"Проверьте написание или попробуйте запрос покороче.":"Попробуйте изменить или убрать часть фильтров.")+'</span><div class="acts">'+(sf?'<button class="btn ghost" type="button" onclick="fOpen()">Изменить фильтры</button>':"")+'<button class="btn" type="button" onclick="'+(AQ||cat!="all"?"homeGo()":"fClear()")+'">'+(AQ||cat!="all"?(sf?"Сбросить всё":"Сбросить поиск"):"Сбросить фильтры")+'</button></div>';return el}
 
 const colsN=()=>{const w=$("grid").clientWidth||innerWidth;return w>=1000?4:w>=700?3:2};
 function mkBlock(title){const el=document.createElement("div");if(title){const d=document.createElement("div");d.className="dv";d.textContent=title;el.appendChild(d)}
@@ -1696,21 +1759,34 @@ const gcw=c=>((c.clientWidth||$("grid").clientWidth||innerWidth-28)-(NC-1)*(inne
 function setCols(b){b.cw.innerHTML="";b.cw.style.setProperty("--n",NC);b.cw.style.setProperty("--cw",gcw(b.cw).toFixed(1)+"px");b.cols=[];b.h=[]}
 function place(b,e,html){const t=document.createElement("template");t.innerHTML=html;const c=t.content.firstElementChild;b.cw.appendChild(t.content);if(c&&e.ps){const el=c.querySelector(".cim.psw");if(el)psIO.observe(el)}}
 function cyc(){const c=S.cycle++;if(c>0)return[];const ord=$("sort").value;return(ord=="n"&&!filt()?rankMain().slice(18):rank(0,ord)).map(b=>b.id)}
-function endCard(){S.end=true;const el=document.createElement("div");el.className="endc";el.innerHTML=fN()>0&&S.m?'<b>Это все объявления по вашим фильтрам</b><span>Подпишитесь, и мы сообщим, когда появится новое.</span><div class="acts"><button class="btn ghost" onclick="fOpen()">Изменить фильтры</button><button class="btn" onclick="sub()">🔔 Подписаться</button></div>':'<b>Вы посмотрели все объявления рядом</b><span>Новые появляются каждый день. Подпишитесь, и мы сообщим о свежих.</span><div class="acts"><button class="btn ghost" onclick="sub()">🔔 Подписаться</button><button class="btn" onclick="openPost()">+ Подать объявление</button></div>';$("grid").appendChild(el);$("more").style.display="none"}
+function endCard(){S.end=true;const el=document.createElement("div");el.className="endc";el.innerHTML=RM&&S.m?'<b>Это все объявления по вашему запросу</b><span>Подпишитесь, и мы сообщим, когда появится новое.</span><div class="acts"><button class="btn ghost" onclick="homeGo()">На главную</button><button class="btn" onclick="sub()">🔔 Подписаться</button></div>':'<b>Вы посмотрели все объявления рядом</b><span>Новые появляются каждый день. Подпишитесь, и мы сообщим о свежих.</span><div class="acts"><button class="btn ghost" onclick="sub()">🔔 Подписаться</button><button class="btn" onclick="openPost()">+ Подать объявление</button></div>';$("grid").appendChild(el);$("more").style.display="none"}
 function pump(n){let cur=blocks[blocks.length-1];
  while(n>0){if(S.end)return;if(!S.q.length)S.q=cyc();if(!S.q.length){endCard();return}const e=S.q.shift();
   if(typeof e=="object"){if(e.emp){$("grid").appendChild(empEl());cur=null}else cur=mkBlock(e.div);continue}
   if(!cur)cur=mkBlock("");const it=mk(e,S.n++);it.ps=1;cur.items.push(it);place(cur,it,cardH(it,(n%10)*45));n--}}
-function resetFeed(){if(favMode)favClose();navSync();fairUpd();afDraw();const g=$("grid");g.innerHTML="";blocks=[];NC=colsN();$("skg").style.setProperty("--n",NC);S={q:[],cycle:0,n:0,busy:false,end:false,m:0};$("more").style.display="";
- if(filt()){const m=matchIds(),ms=new Set(m),sf=fN()>0,qq=$("q").value.trim();
-  const rest=sf&&m.length?[]:rank(0,$("sort").value).map(b=>b.id).filter(id=>!ms.has(id));
-  S.q=m.slice();S.m=m.length;if(!m.length&&sf)S.q.push({emp:1});
-  if(rest.length){S.q.push({div:m.length?"Похожее рядом с тобой":sf?"Другие объявления рядом с тобой":"Ничего не нашли. Вот что рядом с тобой"});rest.forEach(id=>S.q.push(id))}
+function modeSync(){const want=filt()||!!vis;if(want&&!RM&&!favMode)srvOpen();else if(!want&&RM)srvClose()}
+function resetFeed(){if(favMode)favClose(false,favHist&&!RM&&(filt()||!!vis));modeSync();navSync();fairUpd();afDraw();const g=$("grid");g.innerHTML="";blocks=[];NC=colsN();$("skg").style.setProperty("--n",NC);S={q:[],cycle:0,n:0,busy:false,end:false,m:0};$("more").style.display="";
+ const vp=!!vis&&!visOn();let ey="",tl=($("sort").value=="c"?"Ближе всего · ":"Рядом с тобой · ")+city,cn="";
+ if(!vp&&filt()){const m=matchIds(),ms=new Set(m),sf=fN()>0,n=m.length;
+  const rest=sf&&n?[]:rank(0,$("sort").value).map(b=>b.id).filter(id=>!ms.has(id));
+  S.q=m.slice();S.m=n;if(!n)S.q.push({emp:1});
+  if(rest.length){S.q.push({div:n?"Похожее рядом с тобой":"Другие объявления рядом с тобой"});rest.forEach(id=>S.q.push(id))}
   S.cycle=1;
-  const tl=visOn()?"Похоже на твоё фото":qq?"Результаты поиска":cat!="all"?(C.find(c=>c[0]==cat)[1]):"По вашим фильтрам";
-  $("ttl").innerHTML=esc(tl)+`<em class="rc">${m.length} ${ruN(m.length,"объявление","объявления","объявлений")}</em>`}
- else{S.q=MY.slice();$("ttl").textContent=($("sort").value=="c"?"Ближе всего · ":"Рядом с тобой · ")+city}
- favCount();pump(14);recheck()}
+  if(visOn()){ey="Поиск по фото";tl="Похоже на твоё фото"}else if(AQ){ey="Результаты поиска";tl="«"+AQ+"»"}else if(cat!="all"){ey="Категория";tl=C.find(c=>c[0]==cat)[1]}else{ey="Фильтры";tl="По вашим фильтрам"}
+  cn=n?n+" "+ruN(n,"объявление","объявления","объявлений")+" · "+city:"Ничего не найдено · "+city}
+ else{S.q=MY.slice();if(vp){S.end=!!vis.busy;ey="Поиск по фото";tl=vis.busy?"Ищем похожее…":"Не удалось распознать"}}
+ $("sre").textContent=ey;$("ttl").textContent=tl;$("rcn").textContent=cn;document.title=RM&&AQ?AQ+" — поиск, VVM":DT0;
+ srcDraw();favCount();pump(14);recheck();
+ if(pendY!=null){const y=pendY;pendY=null;scrollTo(0,y)}}
+/* категории в результатах: сколько нашлось в каждой */
+function srcDraw(){const box=$("srcats");
+ if(!RM||visOn()||vis||!(AQ||fN()||cat!="all")){box.hidden=true;box.innerHTML="";return}
+ const s0=Object.assign({},fS(),{cat:"all"}),q=fQ(),cnt={};let tot=0;
+ fBaseIds().forEach(id=>{const i=getL(id);if(fpass(i,s0,"",q)){cnt[i.c]=(cnt[i.c]||0)+1;tot++}});
+ const cs=C.slice(1).filter(c=>cnt[c[0]]||c[0]==cat);
+ if(cs.length<2&&cat=="all"){box.hidden=true;box.innerHTML="";return}
+ box.hidden=false;
+ box.innerHTML=[["all","Все",tot],...cs.map(c=>[c[0],c[1],cnt[c[0]]||0])].map(c=>`<button type="button" class="chip ${cat==c[0]?"on":""}" onclick="setCat('${c[0]}')">${c[1]}<i>${c[2]}</i></button>`).join("")}
 function loadMore(){if(S.busy)return;S.busy=true;const my=S;setTimeout(()=>{if(S!==my)return;pump(10);S.busy=false;recheck()},S.n>14?300:0)}
 function recheck(){const m=$("more");mo.unobserve(m);requestAnimationFrame(()=>mo.observe(m))}
 const mo=new IntersectionObserver(es=>{if(es[0].isIntersecting)loadMore()},{rootMargin:"1500px 0px"});
@@ -1730,12 +1806,32 @@ function favCount(){$("favb").classList.toggle("has",favIds().length>0)}
 function favOpen(){visOff();if(!favMode){favMode=true;favCat="all";document.body.classList.add("favview");
   try{if(top===window&&history.pushState){history.pushState({vvm:"fav"},"");favHist=true}}catch(e){}}
  navSync();favDraw();window.scrollTo(0,0)}
-function favClose(pop){if(!favMode)return;favMode=false;document.body.classList.remove("favview");navSync();
- if(favHist&&!pop){favHist=false;favSkip=true;try{history.back()}catch(e){favSkip=false}}else favHist=false}
+function favClose(pop,keep){if(!favMode)return;favMode=false;document.body.classList.remove("favview");navSync();
+ if(favHist&&!pop&&!keep){favHist=false;favSkip=true;try{history.back()}catch(e){favSkip=false}}else{if(keep&&favHist)histKeep=true;favHist=false}}
 function favOnly(){favMode?favClose():favOpen()}
+/* ---------- отдельный экран результатов поиска ---------- */
+/* запись в историю не раньше, чем закончатся начатые переходы «назад» */
+const hkQ=[],hkP=()=>(favSkip?1:0)+srvSkip+(window.hkPend?hkPend():0);
+function afterHist(fn){if(!hkP()){fn();return}hkQ.push(fn);setTimeout(hkFlush,500)}
+function hkFlush(){if(hkQ.length&&!hkP())hkQ.splice(0).forEach(f=>f())}
+const holdY=y=>{scrollTo(0,y);requestAnimationFrame(()=>{scrollTo(0,y);setTimeout(()=>scrollTo(0,y),90)})};
+function srvOpen(){if(RM)return;RM=true;homeY=scrollY;document.body.classList.add("srv");navSync();
+ if(top===window&&history.pushState){
+  if(histKeep){histKeep=false;try{history.replaceState({vvm:"srv"},"");srvHist=true}catch(e){}}
+  else queueMicrotask(()=>afterHist(()=>{if(!RM||srvHist)return;try{history.pushState({vvm:"srv"},"");srvHist=true}catch(e){}}))}
+ window.scrollTo(0,0)}
+function srvClose(pop){if(!RM)return;RM=false;pendY=srvY=homeY;document.body.classList.remove("srv");navSync();
+ if(srvHist&&!pop){srvHist=false;srvSkip++;try{history.back()}catch(e){srvSkip--}}else srvHist=false}
+/* полный сброс: запрос, категория, фильтры, сортировка, фото-поиск */
+function srvReset(){clearTimeout(qt);sgHide();qSet("");if(cat!="all"){cat="all";cats()}FL=F0();deal=false;$("fd").classList.remove("on");$("sort").value="n";visOff();srvClose();resetFeed()}
 const THN={auto:"как на устройстве",light:"светлая",dark:"тёмная"};
 function themeCycle(){const o=["auto","light","dark"],p=window.vvmThemePref?vvmThemePref():"auto",n=o[(o.indexOf(p)+1)%3];window.vvmTheme&&vvmTheme(n);toast("Тема: "+THN[n]);const t=document.getElementById("thl");if(t)t.textContent=THN[n]}
-function homeGo(){favClose();resetFeed();window.scrollTo(0,0)}
+function homeGo(){
+ const dirty=RM||favMode||AQ||cat!="all"||fN()||vis||$("sort").value!="n",k=(favMode&&favHist?1:0)+(RM&&srvHist?1:0);
+ if(favMode){favMode=false;favHist=false;document.body.classList.remove("favview")}
+ srvHist=false;srvReset();$("q").blur();navSync();
+ if(k>0){srvSkip++;srvY=0;try{history.go(-k)}catch(e){srvSkip--}}
+ if(dirty)window.scrollTo(0,0);else window.scrollTo({top:0,behavior:"smooth"})}
 function favDraw(){const all=favIds(),cnt={};all.forEach(id=>{const c=getL(id).c;cnt[c]=(cnt[c]||0)+1});
  if(favCat!="all"&&!cnt[favCat])favCat="all";
  let ids=favCat=="all"?all:all.filter(id=>getL(id).c==favCat);
@@ -1747,11 +1843,12 @@ function favDraw(){const all=favIds(),cnt={};all.forEach(id=>{const c=getL(id).c
  if(!all.length){g.innerHTML="";e.hidden=false;e.innerHTML=`<div class="fpe-i"><div class="fpe-h">${HEART}</div><b>Здесь пока пусто</b><span>Нажимайте сердечко на любом объявлении, и оно появится здесь.</span><button class="btn" onclick="favClose();window.scrollTo(0,0)">Смотреть объявления</button></div>`;return}
  e.hidden=true;NC=colsN();const fb={cw:g,items:[],h:[],cols:[]};setCols(fb);
  ids.forEach((id,n)=>{const it=mk(id,n);it.ps=1;fb.items.push(it);place(fb,it,cardH(it,Math.min(n,10)*35,"noanim"))})}
-function setCat(c){visOff();cat=c;cats();resetFeed();$("feed").scrollIntoView({behavior:"smooth"})}
+function catSwitch(c){if(c==cat)return;FARR.forEach(k=>{if(k!="cond")FL[k]=[]});FL.y1=FL.y2=FL.km=0;cat=c;cats()}
+function setCat(c){visOff();catSwitch(c);resetFeed();toFeed()}
 function navSync(){$("nvh").classList.toggle("on",!favMode);$("nvf").classList.toggle("on",!!favMode);$("favb").classList.toggle("on",!!favMode)}
 function tg(){deal=!deal;$("fd").classList.toggle("on",deal);resetFeed()}
 $("sort").addEventListener("change",resetFeed);
-function sub(){const q=$("q").value.trim();toast("🔔 Подписка: «"+(q||"все новые объявления")+"». Пришлём уведомление")}
+function sub(){const q=AQ;toast("🔔 Подписка: «"+(q||"все новые объявления")+"». Пришлём уведомление")}
 /* ---------- поиск, история запросов и подсказки ---------- */
 let qt,HIST=ST.g("vvm_hist",[]);if(!Array.isArray(HIST))HIST=[];HIST=HIST.filter(x=>typeof x=="string").slice(0,12);
 const hSave=()=>ST.s("vvm_hist",HIST);
@@ -1776,13 +1873,16 @@ function sgDraw(){const raw=$("q").value.trim(),v=raw.toLowerCase(),box=$("sg");
   h+='<div class="sgsep"></div>'+(a.length?a.map(i=>`<div class="sgi" onclick="sgo(${i.id})"><div class="th2">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${rub(i.p)} · ${locT(i).replace("📍 ","")}</span></div></div>`).join(""):'<div class="sgt">Подходящих объявлений пока нет</div>')}
  box.innerHTML=h;box.classList.add("show")}
 const sgHide=()=>$("sg").classList.remove("show");
-function sq(t){visOff();$("q").value=t;hAdd(t);sgHide();$("q").blur();$("qx").hidden=!t;clearTimeout(qt);resetFeed();$("feed").scrollIntoView({behavior:"smooth"})}
+function sq(t){visOff();qSet(t);hAdd(AQ);sgHide();$("q").blur();clearTimeout(qt);resetFeed();toFeed()}
 function sgo(id){hAdd($("q").value);sgHide();$("q").blur();openL(id)}
 function sgPhoto(){sgHide();$("q").blur();visPick()}
-$("q").addEventListener("focus",sgDraw);$("q").addEventListener("blur",()=>setTimeout(sgHide,150));
-$("q").addEventListener("input",()=>{if(vis)visOff();sgDraw();clearTimeout(qt);qt=setTimeout(resetFeed,220)});
-$("q").addEventListener("keydown",e=>{if(e.key=="Enter"){hAdd($("q").value);sgHide();$("q").blur();clearTimeout(qt);resetFeed();$("feed").scrollIntoView({behavior:"smooth"})}else if(e.key=="Escape"){sgHide();$("q").blur()}});
-$("qx").addEventListener("click",()=>{$("q").value="";$("qx").hidden=true;clearTimeout(qt);resetFeed();$("q").focus()});
+let noSg=0;
+$("q").addEventListener("focus",()=>{if(noSg){noSg=0;return}sgDraw()});
+$("q").addEventListener("blur",()=>setTimeout(()=>{sgHide();if(document.activeElement!==$("q")&&$("q").value.trim()!==AQ){$("q").value=AQ;$("qx").hidden=!AQ}},160));
+$("q").addEventListener("input",()=>sgDraw());
+$("q").addEventListener("keydown",e=>{if(e.key=="Enter"){e.preventDefault();sq($("q").value)}else if(e.key=="Escape"){sgHide();$("q").blur()}});
+/* крестик только стирает запрос: без списка истории */
+$("qx").addEventListener("click",()=>{const had=!!AQ;clearTimeout(qt);sgHide();qSet("");if(had)resetFeed();noSg=1;$("q").focus();noSg=0;sgHide()});
 
 /* ---------- объявление ---------- */
 function gal(i){const ks=i.up?[null]:(i.k.length?i.k:[null]),n=ks.length;
@@ -1908,10 +2008,10 @@ function visDraw(){const e=$("vis");if(!vis){e.hidden=true;return}e.hidden=false
 function visOff(r){if(visCtl)visCtl.abort();visTok++;const was=!!vis;vis=null;visDraw();if(r&&was)resetFeed()}
 async function visGo(f){const tok=++visTok;if(visCtl)visCtl.abort();visCtl=new AbortController();let im;
  try{im=await prepImg(f,900,.88)}catch(e){toast("Не удалось открыть фото");return}
- const had=visOn();vis={busy:true,thumb:im.url};visDraw();if(had)resetFeed();$("feed").scrollIntoView({behavior:"smooth"});
+ qSet("");vis={busy:true,thumb:im.url};visDraw();resetFeed();toFeed();
  try{const sm=await SMP;if(!sm)throw{code:"na"};const o=visClean(await sm.json(VIS_Q,{images:im.blob,modelTier:"quick",signal:visCtl.signal}));if(tok!==visTok)return;
-  if(o.bad){vis={err:"🚫 "+(o.why||"Такое нельзя продавать на VVM"),thumb:im.url};visDraw();return}
-  vis={name:o.name,cat:o.cat,words:o.words,thumb:im.url};visDraw();resetFeed();$("feed").scrollIntoView({behavior:"smooth"})}
+  if(o.bad){vis={err:"🚫 "+(o.why||"Такое нельзя продавать на VVM"),thumb:im.url};visDraw();resetFeed();return}
+  vis={name:o.name,cat:o.cat,words:o.words,thumb:im.url};visDraw();resetFeed();toFeed()}
  catch(e){if(tok!==visTok||(e&&e.code=="cancelled"))return;vis={err:"⚠️ "+aiErr(e),thumb:im.url};visDraw()}}
 function visIds(){const w=vis.words,cn=x=>(C.find(c=>c[0]==x)||[0,""])[1];
  return[...MY,...B.map(b=>b.id)].map(id=>{const i=getL(id),h=(i.t+" "+(i.kw||"")+" "+cn(i.c)).toLowerCase();let hit=0;w.forEach(x=>{if(h.includes(x.slice(0,Math.max(3,x.length-2))))hit++});return[id,(i.c==vis.cat?1.5:0)+hit*2,hit]}).filter(x=>x[2]>0||x[1]>0).sort((a,b)=>b[1]-a[1]).map(x=>x[0])}
@@ -1948,7 +2048,7 @@ async function scanGo(){const d=$("drop"),tok=++aiTok,t0=performance.now();if(ai
 function addMine(o){const id=unid++;UL[id]={id,t:o.t,p:o.p,c:o.c,k:[],up:o.up||null,em:o.em||"🎧",tg:[],pass:o.pass||null,vin:o.vin||"",lo:Math.round(o.p*.85),hi:Math.round(o.p*1.2),s:90,u:"Вы",ct:city,city,dist:.5,dr:0,mine:true,pt:Date.now(),kw:""};MY.unshift(id);saveMine();return id}
 function publish(){if(postBad){toast("Такое выставлять нельзя. Выбери другое фото");return}const t=$("pt").value.trim(),p=+$("pp").value;if(!t||!p){toast("Заполни название и цену");return}
  const vin=$("pc").value=="auto"?$("pv").value.trim().toUpperCase():"";if(vin&&!/^[A-HJ-NPR-Z0-9]{17}$/.test(vin)){toast("VIN: 17 символов, латиница и цифры, без I, O и Q");return}
- const mid=addMine({t,p,c:$("pc").value,up:upl,pass:passSum(),vin});newsAdd(mid,true);cl();cat="all";cats();$("q").value="";resetFeed();toast("🎉 Опубликовано бесплатно");confetti();scrollTo({top:$("feed").offsetTop-80,behavior:"smooth"})}
+ const mid=addMine({t,p,c:$("pc").value,up:upl,pass:passSum(),vin});newsAdd(mid,true);cl();srvReset();toast("🎉 Опубликовано бесплатно");confetti();scrollTo({top:$("feed").getBoundingClientRect().top+scrollY-80,behavior:"smooth"})}
 /* ---------- чат ---------- */
 function chat(id,fl){cur=getL(id);cl();$("cht").innerHTML=(fl?'<a class="lnk3" onclick="openChats()">‹ Чаты</a> · ':"")+(cur.mine?"Чат":`Чат с <a class="lnk3" onclick="selOpen('${esc(cur.u)}',${cur.id})">${esc(cur.u)}</a>`);const o=Math.round(cur.p*.93/100)*100;
  $("cai").innerHTML=`🤖 <b>VVM Ассистент:</b> предложи ${rub(o)}. Продавцы обычно соглашаются на скидку до 7%.`;
@@ -2045,7 +2145,7 @@ $("wf").addEventListener("change",e=>{[...e.target.files].forEach(f=>{const r=ne
    if(!ws.includes(w))return;w.ok=true;drawW()},"image/jpeg",.88)};im.onerror=()=>toast("Не удалось открыть фото");im.src=r.result};r.readAsDataURL(f)});e.target.value=""});
 function listAll(){const a=ws.filter(w=>w.ok&&!w.bad);if(!a.length){toast(ws.some(w=>!w.ok)?"Подожди, ИИ ещё смотрит фото":"Сначала добавь фото вещей");return}
  a.forEach(w=>{const p=wP(w),c={parts:"parts",fash:"fash",tech:"tech",home:"home",sport:"sport",auto:"auto",hobby:"hobby",other:"home"}[w.c];addMine({t:(w.name||WB[w.c][2])+", "+WC[w.k][0].toLowerCase(),p,c,up:w.i})});
- ws=[];wShown=0;cl();cat="all";cats();$("q").value="";resetFeed();confetti();toast("🚀 Выставлено объявлений: "+a.length)}
+ ws=[];wShown=0;cl();srvReset();confetti();toast("🚀 Выставлено объявлений: "+a.length)}
 function shareW(){const t="Мои вещи дома стоят "+rub(wShown)+". Проверь свои на VVM";if(navigator.share)navigator.share({title:"VVM",text:t}).catch(()=>{});else{try{navigator.clipboard.writeText(t);toast("Скопировано")}catch(e){toast(t)}}}
 /* ---------- журнал продаж ---------- */
 let sales=[];
@@ -2118,13 +2218,14 @@ mods.forEach(mod=>{const sh=mod.querySelector(".sheet");if(!sh)return;
  sh.addEventListener("touchend",end,{passive:true});sh.addEventListener("touchcancel",end,{passive:true})});
 /* кнопка «Назад» на телефоне закрывает шторку, а не уводит с сайта */
 if(top===window&&history.pushState){
- let n=0,skip=0;const opened=()=>mods.filter(m=>m.classList.contains("show"));
+ let n=0,skip=0;window.hkPend=()=>skip;const opened=()=>mods.filter(m=>m.classList.contains("show"));
  const sync=()=>{try{const k=opened().length;for(;n<k;n++)history.pushState({vvm:1},"");if(n>k){const d=n-k;n=k;skip++;history.go(-d)}}catch(e){}};
  const mo=new MutationObserver(sync);mods.forEach(m=>mo.observe(m,{attributes:true,attributeFilter:["class"]}));
  addEventListener("popstate",()=>{
-  if(favSkip){favSkip=false;return}
-  if(skip>0){skip--;return}
-  const o=opened();if(!o.length){if(favMode)favClose(true);return}
+  if(favSkip){favSkip=false;hkFlush();return}
+  if(srvSkip>0){srvSkip--;holdY(srvY);hkFlush();return}
+  if(skip>0){skip--;hkFlush();return}
+  const o=opened();if(!o.length){if(favMode)favClose(true);else if(RM){srvHist=false;srvReset();holdY(srvY)}return}
   const top2=["m14","m13","m12","m11"].map(id=>$(id)).find(m=>o.includes(m))||o[o.length-1];
   n=Math.max(0,n-1);closeFn(top2)()})}
 /* поле ввода в шторке не прячется под клавиатурой */
