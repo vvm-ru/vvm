@@ -1177,7 +1177,6 @@ body.favview #cam{display:none}
 .cht2 span{font-size:12.5px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #chslot{display:flex;flex-direction:column;flex:1;min-height:0}
 #chslot #chv{display:flex;flex-direction:column;flex:1;min-height:0}
-#chslot #chv .msgs{flex:1;max-height:none;min-height:90px;margin:8px 0;overscroll-behavior:contain}
 #chslot #chv .box,#chslot #chv .qr,#chslot #chv>.chip,#chslot #chv .cin{flex:none}
 @media(prefers-reduced-motion:reduce){.cv-in,.cv-back{animation:none}}
 </style>
@@ -1188,7 +1187,7 @@ body.favview{overflow-anchor:none}
 #s19>.x,#s20>.x{position:absolute;top:var(--py,24px);right:var(--px,24px);float:none}
 #s19>h2,#s20>h2{padding-right:52px}
 #chv .cai{overflow:hidden;max-height:0;opacity:0;margin:0;padding:0 12px;border:0 solid transparent;border-radius:14px;font-size:13px;line-height:1.4;color:var(--tx);background:rgba(124,92,255,.1);transition:max-height .3s cubic-bezier(.2,.8,.25,1),opacity .2s,margin .3s,padding .3s,border-width .3s,border-color .3s}
-#chv.fresh:not(.typing) .cai{max-height:96px;opacity:1;margin:8px 0 0;padding:9px 12px;border-width:1px;border-color:rgba(124,92,255,.3)}
+#chv.fresh:not(.typing) .cai{max-height:96px;opacity:1;margin:10px 14px 0;padding:9px 12px;border-width:1px;border-color:rgba(124,92,255,.3)}
 #chv .qr{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;max-height:0;opacity:0;margin:0;transition:max-height .3s cubic-bezier(.2,.8,.25,1),opacity .2s,margin .3s}
 #chv .qr::-webkit-scrollbar{display:none}
 #chv.tips .qr{max-height:50px;opacity:1;margin:8px 0 0}
@@ -1198,7 +1197,6 @@ body.favview{overflow-anchor:none}
 .tipb svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .tipb:hover{background:var(--glass2)}
 .tipb.on{color:var(--ac);border-color:rgba(124,92,255,.5);background:rgba(124,92,255,.12)}
-#m3 #msgs{max-height:min(46vh,380px);max-height:min(46dvh,380px)}
 .avw{position:relative;flex:none;display:block}
 .pdt{position:absolute;right:-2px;bottom:-2px;width:14px;height:14px;border-radius:50%;background:var(--ok);border:2.5px solid rgb(var(--sr));box-sizing:border-box}
 .sel-av.big+.pdt{width:18px;height:18px;border-width:3px;right:0;bottom:0}
@@ -1279,6 +1277,53 @@ body.favview{overflow-anchor:none}
 .dk-sl{display:flex;justify-content:flex-end;align-items:flex-end;min-height:32px;border-bottom:1px solid #000;margin-top:22px;font-size:13px;padding:0 2px}
 .dk-c{text-align:center;font-size:13px;padding-top:2px}
 .dk-tel{display:flex;align-items:flex-end;gap:2px;margin-top:22px;text-align:left}
+</style>
+<style id="v50">/* v50: чат на весь экран, компактная шапка */
+.sheet.chfull{display:flex;flex-direction:column;padding:0;overflow:hidden;height:min(88vh,720px);height:min(88dvh,720px)}
+#s15.cfix{padding:0}
+#chx3{flex:none}
+.chx{display:flex;flex-direction:column;gap:8px;padding:calc(12px + env(safe-area-inset-top,0px)) 14px 10px;border-bottom:1px solid var(--line);background:rgb(var(--sr))}
+.chr{display:flex;align-items:center;gap:10px;min-width:0}
+.chx .bk{width:40px;height:40px;flex:none}
+.chx .chxx{flex:none;float:none;margin-left:2px}
+.chwho{display:flex;align-items:center;gap:11px;flex:1;min-width:0;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;border-radius:12px}
+div.chwho{cursor:default}
+.chwho .sel-av{width:42px;height:42px;font-size:17px}
+.chav{width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;font:800 14px Manrope,sans-serif;color:var(--mu);background:var(--glass2)}
+.chwho .t{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.chwho b{display:block;font:800 16.5px/1.2 Manrope,sans-serif;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chwho .prs{display:block;position:relative;padding-left:13px;font-size:12.5px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chwho .prs i{position:absolute;left:0;top:.5em}
+.chad{display:flex;align-items:center;gap:10px;width:100%;min-width:0;margin:0;padding:6px 10px 6px 6px;border:1px solid var(--line);border-radius:14px;background:var(--glass);color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .2s}
+.chad:hover{background:var(--glass2)}
+.chad .cl-th{width:40px;height:40px;border-radius:10px}
+.chad .tx{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+.chad .tt{font-size:13.5px;font-weight:600;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chad .pp{font-size:13px;font-weight:800;color:var(--ac2,var(--tx))}
+.chad>svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--mu);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#chhome,#chslot{display:flex;flex-direction:column;flex:1;min-height:0}
+#chv{display:flex;flex-direction:column;flex:1;min-height:0}
+#chv .msgs{flex:1;min-height:0;max-height:none;margin:0;padding:14px 16px;gap:8px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#chv .msgs>:first-child{margin-top:auto}
+#chv .box,#chv .qr,#chv>.chip,#chv .cai,#chv .cin{flex:none}
+#chv .qr{padding-left:14px;padding-right:14px}
+#chv.tips .qr{margin:10px 0 10px}
+#chv .qr{align-items:center}
+#chv .b.me{color:#fff}
+#chv .qr .chip{padding:9px 14px;font-size:13px;line-height:1.2}
+#chv .cin{margin:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:rgb(var(--sr))}
+#chv.typing .cin{padding-bottom:10px}
+@media(min-width:701px){.chx[data-m=l] .bk{display:none}}
+@media(max-width:700px){
+ #m3,#m15{align-items:flex-start;backdrop-filter:none;-webkit-backdrop-filter:none}
+ #m3 .sheet,#s15.pfull{height:100vh;height:var(--vvh,100dvh);margin-top:var(--vvt,0px);max-height:none;border-radius:0;border:0;background:rgb(var(--sr));backdrop-filter:none;-webkit-backdrop-filter:none}
+ #m3 .sheet::before,#s15.pfull::before,#m3 .sheet::after,#s15.cfix::after{display:none!important}
+ #s15.pfull:not(.cfix){padding:calc(var(--py) + env(safe-area-inset-top,0px)) var(--px) var(--py)}
+ #s15.pfull:not(.cfix)>.x{top:calc(var(--py,24px) + env(safe-area-inset-top,0px))}
+ #s15.pfull:not(.cfix) .cvw>h2{display:flex;align-items:center;min-height:44px;margin:0 0 14px;padding-right:52px}
+ .chx .chxx{display:none}
+}
+@media(max-width:700px) and (max-height:700px){#chv.fresh:not(.typing) .cai{max-height:0;opacity:0;margin:0;padding:0 12px;border-width:0}}
 </style></head>
 <body>
 <div id="sp"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="as" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cs"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#as)"/><g clip-path="url(#cs)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bs)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><div class="sw"><svg class="wm" viewBox="-2 -3 124 37" height="68" role="img" aria-label="VVM"><defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cs"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gs)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cs)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><div class="sps">Бесплатно · Красиво · Рядом</div></div>
@@ -1334,7 +1379,7 @@ body.favview{overflow-anchor:none}
 <div class="mod" id="m20" onclick="if(event.target===this)back20()"><div class="sheet glass" id="s20"></div></div>
 <div class="mod" id="m21" onclick="if(event.target===this)back21()"><div class="sheet glass" id="s21"></div></div>
 <div class="mod" id="m14" onclick="if(event.target===this)back14()"><div class="sheet glass" id="s14"></div></div>
-<div class="mod" id="m15" onclick="if(event.target===this)cl()"><div class="sheet glass" id="s15"></div></div>
+<div class="mod" id="m15" onclick="if(event.target===this)cl()"><div class="sheet glass pfull" id="s15" data-nodrag></div></div>
 <div class="mod" id="m16" onclick="if(event.target===this)cl()"><div class="sheet glass" id="s16"><div class="fh"><button class="fcl" type="button" onclick="cl()" aria-label="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div class="fht">Фильтры</div><button class="frs" id="frs" type="button" onclick="fReset()">Сбросить</button></div><div class="fb" id="fb"></div><div class="ff"><button class="btn" id="fshow" type="button" onclick="fApply()">Показать</button></div></div></div>
 <div class="mod" id="m2" onclick="if(event.target===this)cl()"><div class="sheet glass">
 <button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Новое объявление</h2>
@@ -1352,7 +1397,7 @@ body.favview{overflow-anchor:none}
 <input type="file" accept="image/*" id="pf" hidden>
 <div class="acts lcta"><button class="btn" onclick="publish()">Опубликовать бесплатно</button></div>
 </div></div>
-<div class="mod" id="m3" onclick="if(event.target===this)cl()"><div class="sheet glass"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2 id="cht">Чат</h2><div id="chhome"><div id="chv"><div class="cai" id="cai"></div><div class="msgs" id="msgs"></div><div class="qr" id="qr"></div><div class="cin"><button class="tipb" id="tipb" type="button" onmousedown="event.preventDefault()" onclick="chTips()" aria-label="Быстрые ответы и действия" aria-expanded="false" title="Быстрые ответы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></button><input class="in" id="ci" placeholder="Сообщение…" autocomplete="off" enterkeyhint="send" maxlength="500"><button class="btn" id="csb" type="button" onmousedown="event.preventDefault()" onclick="send()" aria-label="Отправить">➤</button></div></div></div></div></div>
+<div class="mod" id="m3" onclick="if(event.target===this)cl()"><div class="sheet glass chfull" id="s3" data-nodrag><div id="chx3"></div><div id="chhome"><div id="chv"><div class="cai" id="cai"></div><div class="msgs" id="msgs"></div><div class="qr" id="qr"></div><div class="cin"><button class="tipb" id="tipb" type="button" onmousedown="event.preventDefault()" onclick="chTips()" aria-label="Быстрые ответы и действия" aria-expanded="false" title="Быстрые ответы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></button><input class="in" id="ci" placeholder="Сообщение…" autocomplete="off" enterkeyhint="send" maxlength="500"><button class="btn" id="csb" type="button" onmousedown="event.preventDefault()" onclick="send()" aria-label="Отправить">➤</button></div></div></div></div></div>
 </div>
 
 <div class="mod" id="m6" onclick="if(event.target===this)cl()"><div class="sheet glass auth" id="s6">
@@ -3351,19 +3396,34 @@ function chFill(){const id=cur.id,o=Math.round(cur.p*.93/100)*100;
 function chTipSet(on){const v=$("chv"),b=$("tipb");if(!v||!b)return;v.classList.toggle("tips",!!on);b.classList.toggle("on",!!on);b.setAttribute("aria-expanded",!!on)}
 function chTips(){const v=$("chv");if(v)chTipSet(!v.classList.contains("tips"))}
 $("ci").addEventListener("focus",()=>$("chv").classList.add("typing"));$("ci").addEventListener("blur",()=>$("chv").classList.remove("typing"))
+/* ---------- v50: чат на весь экран: сверху стрелка, аватар, имя и статус, ниже плашка объявления ---------- */
+const CHB='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>',CHR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>';
+function chHdr(mode){const i=cur,own=!!i.mine,p=own?null:selP(i.u),nm=own?"Вы":esc(i.u);
+ const av=own?`<span class="chav">Я</span>`:`<span class="avw"><span class="sel-av" style="--h:${p.hue}">${esc(i.u[0])}</span>${pdot(i.u)}</span>`;
+ const st=own?`<span class="prs"><i></i>ваше объявление</span>`:prsL(i.u),body=`${av}<span class="t"><b>${nm}</b>${st}</span>`;
+ const who=own?`<div class="chwho">${body}</div>`:`<button class="chwho" type="button" onclick="selOpen('${esc(i.u)}',${i.id})" aria-label="Профиль: ${nm}">${body}</button>`;
+ return `<div class="chx" data-m="${mode}"><div class="chr"><button class="fpb bk" type="button" onclick="${mode=="l"?"cl()":"chBack()"}" aria-label="${mode=="l"?"Закрыть чат":"Назад к чатам"}">${CHB}</button>${who}<button class="x chxx" type="button" onclick="cl()" aria-label="Закрыть">✕</button></div><button class="chad" type="button" onclick="chAd()" aria-label="Открыть объявление"><span class="cl-th">${imK(i)}</span><span class="tx"><span class="tt">${esc(i.t)}</span><span class="pp">${rub(i.p)}</span></span>${CHR}</button></div>`}
+function chAd(){const id=cur&&cur.id;if(id==null)return;cl();openL(id)}
+/* под экранную клавиатуру: высота окна = видимая область (телефон) */
+const chSm=()=>innerWidth<=700;
+function chVV(){const v=window.visualViewport,r=document.documentElement.style;
+ if(!v||!chSm()||v.scale>1.02){r.removeProperty("--vvh");r.removeProperty("--vvt");return}
+ r.setProperty("--vvh",Math.round(v.height)+"px");r.setProperty("--vvt",Math.round(v.offsetTop)+"px")}
+if(window.visualViewport){const f=()=>{if(!document.querySelector("#m3.show,#m15.show"))return;chVV();if(document.activeElement===$("ci")){const m=$("msgs");if(m)m.scrollTop=1e5}};visualViewport.addEventListener("resize",f);visualViewport.addEventListener("scroll",f)}
+function chEnd(){requestAnimationFrame(()=>{const m=$("msgs");if(m)m.scrollTop=1e5})}
 function chat(id,fl){if(fl){chatIn(id);return}chPark();cur=getL(id);cl();
- $("cht").innerHTML=cur.mine?"Чат":`Чат с <a class="lnk3" onclick="selOpen('${esc(cur.u)}',${cur.id})">${esc(cur.u)}</a>${prsL(cur.u)}`;chFill();$("m3").classList.add("show")}
+ $("chx3").innerHTML=chHdr("l");chFill();chVV();$("m3").classList.add("show");chEnd()}
 /* диалог из списка «Чаты»: открывается в том же окне, без нового окна и вылета */
 /* окно «Чаты» плавно меняет высоту между списком и диалогом, содержимое подменяется на месте */
-function shMorph(sh,swap){const h0=sh.offsetHeight;sh.style.height=h0+"px";sh.style.overflow="hidden";swap();
+function shMorph(sh,swap){if(chSm()){swap();return}const h0=sh.offsetHeight;sh.style.height=h0+"px";sh.style.overflow="hidden";swap();
  let to;if(sh.classList.contains("cfix"))to=Math.round(Math.min(innerHeight*.88,720));else{sh.style.height="auto";to=sh.offsetHeight}
  sh.style.height=h0+"px";void sh.offsetHeight;clearTimeout(sh._mt);
  if(RMOT.matches||Math.abs(to-h0)<4){sh.style.height="";sh.style.overflow="";return}
  sh.style.transition="height .24s cubic-bezier(.2,.8,.25,1)";sh.style.height=to+"px";
  sh._mt=setTimeout(()=>{sh.style.transition="";sh.style.height="";sh.style.overflow=""},270)}
 function chatIn(id){cur=getL(id);chFill();const s=$("s15");
- shMorph(s,()=>{s.classList.add("cfix","chv-on");s.innerHTML=`<button class="x" onclick="cl()" aria-label="Закрыть">✕</button><div class="cvw cv-in"><div class="chh"><button class="fpb" type="button" onclick="chBack()" aria-label="Назад к чатам"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><span class="cl-th">${imK(cur)}</span><div class="cht2"><div class="nm"><b>${esc(cur.mine?"Вы":cur.u)}</b>${prsL(cur.u,1)}</div><span>${esc(cur.t)} · ${rub(cur.p)}</span></div></div><div id="chslot"></div></div>`;
- $("chslot").appendChild($("chv"))});$("m15").classList.add("show");const m=$("msgs");m.scrollTop=1e5;requestAnimationFrame(()=>{m.scrollTop=1e5})}
+ shMorph(s,()=>{s.classList.add("cfix","chv-on","chfull");s.innerHTML=`<div class="cvw cv-in">${chHdr("c")}<div id="chslot"></div></div>`;
+ $("chslot").appendChild($("chv"))});chVV();$("m15").classList.add("show");chEnd()}
 function chBack(){openChats(1)}
 /* «Назад» на телефоне: из диалога возвращает к списку чатов, а не закрывает окно */
 function chClose(){if(window.hkPop&&$("s15").classList.contains("chv-on")){chBack();if(window.hkRe)window.hkRe();return}cl()}
@@ -3382,7 +3442,7 @@ function openChats(back){chPark();const m=$("m15"),was=m.classList.contains("sho
  let h=`<button class="x" onclick="cl()" aria-label="Закрыть">✕</button><div class="cvw${back?" cv-back":""}"><h2>Чаты</h2>`;
  if(!ids.length)h+=`<div class="cl-empty"><i>💬</i><b>Пока нет диалогов</b><span>Открой любое объявление и нажми «Написать» — переписка появится здесь.</span><button class="btn" onclick="cl();$('feed').scrollIntoView({behavior:'smooth'})">Смотреть объявления</button></div>`;
  else h+=`<div class="cl">`+ids.map(k=>{const i=getL(+k),L=CHT[k],m=L[L.length-1];return `<button class="cl-row" onclick="chatIn(${i.id})"><span class="cl-th">${imK(i)}</span><span class="cl-b"><span class="cl-t"><span class="cl-nm"><b>${esc(i.mine?"Вы":i.u)}</b>${!i.mine&&prs(i.u).on?'<span class="prs on"><i></i>в сети</span>':""}</span><em>${chAgo(m.ts)}</em></span><span class="cl-n">${esc(i.t)} · ${rub(i.p)}</span><span class="cl-m">${m.w=="me"?"Вы: ":""}${esc(m.t)}</span></span></button>`}).join("")+`</div>`;
- h+=`</div>`;const put=()=>{sh.classList.remove("chv-on","cfix");sh.innerHTML=h;sh.scrollTop=0};
+ h+=`</div>`;const put=()=>{sh.classList.remove("chv-on","cfix","chfull");sh.innerHTML=h;sh.scrollTop=0};
  if(was&&back)shMorph(sh,put);else put();m.classList.add("show")}
 /* ---------- город ---------- */
 const GLB='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>';
@@ -3640,7 +3700,7 @@ if(top===window&&history.pushState){
   const top2=["m21","m18","m17","m14","m13","m12","m11"].map(id=>$(id)).find(m=>o.includes(m))||o[o.length-1];
   n=Math.max(0,n-1);window.hkPop=1;try{closeFn(top2)()}finally{window.hkPop=0}})}
 /* поле ввода в шторке не прячется под клавиатурой */
-addEventListener("focusin",e=>{const t=e.target;if(!small()||!t.matches||!t.matches("input,textarea,select")||!t.closest(".sheet"))return;
+addEventListener("focusin",e=>{const t=e.target;if(!small()||!t.matches||!t.matches("input,textarea,select")||!t.closest(".sheet")||t.closest("#chv"))return;
  setTimeout(()=>{try{t.scrollIntoView({block:"center",behavior:"smooth"})}catch(_){}},350)});
 /* лёгкий отклик на нажатие (Android) */
 if(matchMedia("(pointer:coarse)").matches&&navigator.vibrate)addEventListener("click",e=>{if(e.target.closest&&e.target.closest(".fav,.nav button,.chip,.ib"))try{navigator.vibrate(6)}catch(_){}},{passive:true});
