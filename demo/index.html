@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<style>.tiles .tile.pwa{grid-column:1/-1;display:flex!important;flex-direction:row!important;align-items:center;justify-content:flex-start;gap:12px;min-height:0;padding-top:14px;padding-bottom:14px}.tiles .tile.pwa i{margin:0}</style>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#07080c" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f3f4f8" media="(prefers-color-scheme: light)">
@@ -1184,8 +1188,8 @@ body.favview #cam{display:none}
 <style id="v49">/* v49: избранное, плашки, чат, статус */
 body.favview{overflow-anchor:none}
 .card.gone{transition:opacity .2s ease,transform .22s ease}
-#s19>.x,#s20>.x{position:absolute;top:var(--py,24px);right:var(--px,24px);float:none}
-#s19>h2,#s20>h2{padding-right:52px}
+#s19>.x,#s20 .x{position:absolute;top:var(--py,24px);right:var(--px,24px);float:none}
+#s19>h2,#s20 h2{padding-right:52px}
 #chv .cai{overflow:hidden;max-height:0;opacity:0;margin:0;padding:0 12px;border:0 solid transparent;border-radius:14px;font-size:13px;line-height:1.4;color:var(--tx);background:rgba(124,92,255,.1);transition:max-height .3s cubic-bezier(.2,.8,.25,1),opacity .2s,margin .3s,padding .3s,border-width .3s,border-color .3s}
 #chv.fresh:not(.typing) .cai{max-height:96px;opacity:1;margin:10px 14px 0;padding:9px 12px;border-width:1px;border-color:rgba(124,92,255,.3)}
 #chv .qr{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;max-height:0;opacity:0;margin:0;transition:max-height .3s cubic-bezier(.2,.8,.25,1),opacity .2s,margin .3s}
@@ -1220,8 +1224,8 @@ body.favview{overflow-anchor:none}
 .dkb-h .d{display:block;color:var(--mu);font-size:13px;line-height:1.45;margin-top:3px}
 .dkb .btn{justify-self:start}
 #s21 .dks{color:var(--mu);font-size:13.5px;margin:-4px 0 0;padding-right:52px;line-height:1.4}
-#s21>.x{position:absolute;top:var(--py,24px);right:var(--px,24px);float:none}
-#s21>h2{padding-right:52px}
+#s21 .x{position:absolute;top:var(--py,24px);right:var(--px,24px);float:none}
+#s21 h2{padding-right:52px}
 .dkseg{display:flex;gap:4px;padding:4px;background:var(--glass);border:1px solid var(--line);border-radius:14px;margin:14px 0 4px}
 .dkseg button{flex:1;padding:9px 10px;border:0;border-radius:10px;background:transparent;color:var(--mu);font:700 14px Manrope,sans-serif;cursor:pointer;transition:background .2s,color .2s}
 .dkseg button.on{background:var(--glass2);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line)}
@@ -1348,6 +1352,72 @@ div.chwho{cursor:default}
  #s13 .sel-bg span{font-size:11.5px;padding:5px 9px}
  #s13 .sel-bg{margin-top:10px}
 }
+</style><style id="v53">/* v53: высокие окна на телефоне занимают весь экран, шапка липкая */
+/* предложение цены */
+.chip.ofc{border-color:rgba(124,92,255,.45);background:rgba(124,92,255,.14)}
+#chv .cai[role=button]{cursor:pointer}
+.b.of{display:flex;flex-direction:column;gap:3px;min-width:232px;max-width:min(86%,310px);padding:12px 14px}
+.b.of .ofh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:5px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;opacity:.9}
+.b.of .ofh>span:first-child{white-space:nowrap}
+.b.of .ofb{flex:none;margin-left:auto;padding:3px 9px;border-radius:99px;font-size:11px;letter-spacing:0;text-transform:none;font-weight:700;background:rgba(255,255,255,.2)}
+.b.of .ofp{font:800 25px/1.15 Manrope,sans-serif;letter-spacing:-.02em;margin-top:2px}
+.b.of .ofm{font-size:12.5px;opacity:.82}
+.b.he.of .ofb{background:var(--glass2);color:var(--mu)}
+.b.he.of .ofb.s-w{background:rgba(124,92,255,.2);color:var(--tx)}
+.b.he.of .ofb.s-ok,.b.me.of .ofb.s-ok{background:rgba(52,211,153,.2);color:var(--ok)}
+.b.me.of .ofb.s-ok{background:#fff;color:#0a7a4a}
+.b.me.of .ofb.s-no{background:rgba(0,0,0,.28)}
+.b.he.of .ofb.s-no{color:#f87171;background:rgba(248,113,113,.14)}
+.b.of .ofa{display:flex;gap:8px;margin-top:10px}
+.b.of .ofa .btn{flex:1;min-width:0;height:42px;padding:0 8px;font-size:13.5px;border-radius:12px;white-space:nowrap}
+.b.of .ofn{align-self:flex-start;margin-top:4px;padding:8px 2px;border:0;background:none;color:var(--mu);font:600 12.5px Manrope,sans-serif;cursor:pointer}
+.b.of .ofdl{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(var(--wr),.18);font-size:12.5px;font-weight:700}
+.b.of .ofdl button{flex:none;border:0;border-radius:99px;padding:7px 12px;font:700 12.5px Manrope,sans-serif;cursor:pointer;background:rgba(255,255,255,.22);color:inherit}
+.b.he.of .ofdl button{background:var(--glass2);color:var(--tx)}
+.ofs .ofin{position:relative;margin:2px 0 0}
+.ofs .ofin .in{height:62px;padding:0 48px 0 16px;font:800 28px Manrope,sans-serif;letter-spacing:-.02em;border-radius:16px}
+.ofs .ofin>span{position:absolute;right:18px;top:50%;transform:translateY(-50%);font:800 22px Manrope,sans-serif;color:var(--mu);pointer-events:none}
+.ofs .ofq{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.ofs .ofq .chip{min-width:62px;text-align:center;justify-content:center}
+.ofs .ofd{min-height:20px;margin:12px 2px 0;font-size:13.5px;line-height:1.4;color:var(--ok);font-weight:600}
+.ofs .ofd.w{color:var(--mu);font-weight:500}
+.ofs .ofd.e{color:#f59e0b}
+.ofs .ofpv{float:right;color:var(--mu);font-weight:600}
+.ofs .acts{margin-top:14px}
+.ofs .acts .btn{width:100%}
+.ofs .fine2{margin-top:10px;color:var(--mu);font-size:12px;line-height:1.4}
+
+.mod.clz{display:flex;pointer-events:none;animation:mdo .26s ease-in forwards}
+.mod.clz>.sheet{animation:shdn .26s cubic-bezier(.4,0,1,1) forwards}
+@keyframes mdo{to{opacity:0}}
+@keyframes shdn{to{transform:translateY(100%)}}
+
+.sel-i .srt{display:flex;flex-wrap:wrap;gap:0 12px;margin-top:2px}
+.sel-i .srt>span{display:block;margin:0;white-space:nowrap}
+.drop{height:150px}
+@media(max-width:700px){
+ .drop{height:128px;margin:12px 0}
+ .sbt::before{content:"";position:absolute;inset:-4px}
+ .sbt.qx::before{inset:-9px}
+}
+.tbar{display:contents}
+@media(max-width:700px){
+ #m2,#m10,#m7,#m20,#m21,#m12,#m16,.mod.pfs{align-items:flex-start;backdrop-filter:none;-webkit-backdrop-filter:none}
+ #m2>.sheet,#m10>.sheet,#m7>.sheet,#m20>.sheet,#m21>.sheet,#m12>.sheet,#m16>.sheet,.mod.pfs>.sheet{height:100vh;height:100dvh;max-height:none;border-radius:0;border:0;background:rgb(var(--sr));backdrop-filter:none;-webkit-backdrop-filter:none}
+ #m2>.sheet::before,#m10>.sheet::before,#m7>.sheet::before,#m20>.sheet::before,#m21>.sheet::before,#m12>.sheet::before,#m16>.sheet::before,.mod.pfs>.sheet::before{display:none}
+ #m2>.sheet,#m10>.sheet,#m7>.sheet,#m20>.sheet,#m21>.sheet,#m12>.sheet{padding-top:0}
+ .mod.pfs>.sheet{padding-top:calc(var(--py) + env(safe-area-inset-top,0px))}
+ .mod.pfs>.sheet>.x{top:calc(var(--py,24px) + env(safe-area-inset-top,0px))!important}
+ .tbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:7;margin:0 calc(var(--px)*-1) 14px;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;background:rgb(var(--sr));border-bottom:1px solid var(--line)}
+ .tbar>.x{order:-1;position:relative!important;inset:auto!important;float:none!important;flex:none;width:40px;height:40px;margin:0;display:flex;align-items:center;justify-content:center;font-size:0;line-height:0;padding:0}
+ .tbar>.x::after{content:"";width:17px;height:17px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E") center/contain no-repeat}
+ .tbar>h2{flex:1;min-width:0;margin:0!important;padding:0!important;font:800 19px/1.2 Manrope,sans-serif!important;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .tbar>h2::before{display:none}
+ #s16 .fh{padding-top:calc(12px + env(safe-area-inset-top,0px));background:rgb(var(--sr));box-shadow:0 1px 0 var(--line)}
+ #s16 .ff{padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+ /* шапка и нижняя кнопка объявления — сплошные, без просвечивающего текста */
+ .lbar,.lcta{background:rgb(var(--sr))}
+}
 </style></head>
 <body>
 <div id="sp"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="as" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cs"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#as)"/><g clip-path="url(#cs)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bs)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><div class="sw"><svg class="wm" viewBox="-2 -3 124 37" height="68" role="img" aria-label="VVM"><defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cs"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gs)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cs)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><div class="sps">Бесплатно · Красиво · Рядом</div></div>
@@ -1406,7 +1476,7 @@ div.chwho{cursor:default}
 <div class="mod" id="m15" onclick="if(event.target===this)cl()"><div class="sheet glass pfull" id="s15" data-nodrag></div></div>
 <div class="mod" id="m16" onclick="if(event.target===this)cl()"><div class="sheet glass" id="s16"><div class="fh"><button class="fcl" type="button" onclick="cl()" aria-label="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div class="fht">Фильтры</div><button class="frs" id="frs" type="button" onclick="fReset()">Сбросить</button></div><div class="fb" id="fb"></div><div class="ff"><button class="btn" id="fshow" type="button" onclick="fApply()">Показать</button></div></div></div>
 <div class="mod" id="m2" onclick="if(event.target===this)cl()"><div class="sheet glass">
-<button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Новое объявление</h2>
+<div class="tbar"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Новое объявление</h2></div>
 <div class="pdbar" id="pdbar" hidden><span id="pdbt">Черновик восстановлен</span><button type="button" class="lnk" onclick="openPost(true)">Начать заново</button></div>
 <div class="drop" id="drop" onclick="scanIt()"><div class="scan"></div><div id="dt">📷<br><b>Нажми, чтобы добавить фото</b><br><small id="dts">Загрузи фото вещи</small></div></div>
 <label for="pt">Название <span class="req">*</span></label><input class="in" id="pt" maxlength="90" autocomplete="off" enterkeyhint="next"><div class="ferr" id="e-pt" role="alert"></div><div class="hint2" id="h-pt"></div>
@@ -1424,6 +1494,7 @@ div.chwho{cursor:default}
 <div class="mod" id="m3" onclick="if(event.target===this)cl()"><div class="sheet glass chfull" id="s3" data-nodrag><div id="chx3"></div><div id="chhome"><div id="chv"><div class="cai" id="cai"></div><div class="msgs" id="msgs"></div><div class="qr" id="qr"></div><div class="cin"><button class="tipb" id="tipb" type="button" onmousedown="event.preventDefault()" onclick="chTips()" aria-label="Быстрые ответы и действия" aria-expanded="false" title="Быстрые ответы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></button><input class="in" id="ci" placeholder="Сообщение…" autocomplete="off" enterkeyhint="send" maxlength="500"><button class="btn" id="csb" type="button" onmousedown="event.preventDefault()" onclick="send()" aria-label="Отправить">➤</button></div></div></div></div></div>
 </div>
 
+<div class="mod" id="m22" onclick="if(event.target===this)back22()"><div class="sheet glass ofs" id="s22"></div></div>
 <div class="mod" id="m6" onclick="if(event.target===this)cl()"><div class="sheet glass auth" id="s6">
 <button class="x" onclick="cl()" aria-label="Закрыть">✕</button>
 <div class="alogo"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="au" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cu"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#au)"/><g clip-path="url(#cu)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bu)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><svg class="wm" viewBox="-2 -3 124 37" height="25" role="img" aria-label="VVM"><defs><linearGradient id="gu" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cu"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gu)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cu)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><p class="asub" id="asub">С возвращением. Войди, чтобы видеть свою ленту везде.</p>
@@ -1445,12 +1516,12 @@ div.chwho{cursor:default}
 </div></div>
 
 <div class="mod" id="m9" onclick="if(event.target===this)cl()"><div class="sheet glass" id="s9"></div></div>
-<div class="mod" id="m10" onclick="if(event.target===this)cl()"><div class="sheet glass cty"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Твой город</h2><button class="btn ghost cauto" id="cauto" type="button" onclick="autoCity()">📍 Определить автоматически</button><div class="csr"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="in" id="cq" type="text" placeholder="Найти любой город" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск города" oninput="cyIn()" onkeydown="cyKey(event)"><button class="csx" id="cqx" type="button" hidden onclick="cyClear()" aria-label="Очистить">✕</button></div><div class="cres" id="cres" role="listbox" hidden></div><div class="cg" id="cg"></div><p class="chint" id="chint">Покажем объявления рядом и расстояние до каждого. «Вся Россия» — объявления из всех городов, ближайшие сверху</p></div></div>
+<div class="mod" id="m10" onclick="if(event.target===this)cl()"><div class="sheet glass cty"><div class="tbar"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Твой город</h2></div><button class="btn ghost cauto" id="cauto" type="button" onclick="autoCity()">📍 Определить автоматически</button><div class="csr"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="in" id="cq" type="text" placeholder="Найти любой город" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск города" oninput="cyIn()" onkeydown="cyKey(event)"><button class="csx" id="cqx" type="button" hidden onclick="cyClear()" aria-label="Очистить">✕</button></div><div class="cres" id="cres" role="listbox" hidden></div><div class="cg" id="cg"></div><p class="chint" id="chint">Покажем объявления рядом и расстояние до каждого. «Вся Россия» — объявления из всех городов, ближайшие сверху</p></div></div>
 <div class="mod" id="m8" onclick="if(event.target===this)cl()"><div class="sheet glass" style="max-width:600px"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Сколько у тебя лежит денег?</h2><p style="color:var(--mu);font-size:14px;margin:6px 0 0">Сфотай вещи в гараже, шкафу или на балконе. VVM оценит каждую и сразу подготовит объявления.</p><div class="wtot" id="wt">0 ₽</div><div id="wl"></div>
 <div class="drop" style="height:110px" onclick="$('wf').click()"><div>📸<br><b>Добавить фото вещей</b><br><small>можно сразу несколько</small></div></div><input type="file" id="wf" accept="image/*" multiple hidden>
 <div class="acts"><button class="btn" onclick="listAll()">🚀 Выставить всё на VVM</button><button class="btn ghost" onclick="shareW()">📤 Поделиться</button></div>
 <div style="color:var(--mu);font-size:12px;margin-top:12px">Название и цену определяет ИИ по фото. Это оценка по знаниям модели, без поиска по рынку. В реальной версии цена будет браться из живых объявлений VVM.</div></div></div>
-<div class="mod" id="m7" onclick="if(event.target===this)cl()"><div class="sheet glass"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Мои продажи</h2><div class="box" id="ls"></div><div id="ll"></div>
+<div class="mod" id="m7" onclick="if(event.target===this)cl()"><div class="sheet glass"><div class="tbar"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Мои продажи</h2></div><div class="box" id="ls"></div><div id="ll"></div>
 <label>Что продано</label><input class="in" id="ln">
 <div style="display:flex;gap:8px"><div style="flex:1"><label>Цена продажи, ₽</label><input class="in" id="lp" type="number" inputmode="numeric"></div><div style="flex:1"><label>Цена покупки, ₽</label><input class="in" id="lb" type="number" inputmode="numeric"></div></div>
 <label style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--tx);cursor:pointer"><input type="checkbox" id="l3"> Владел 3 года и больше</label>
@@ -1796,7 +1867,7 @@ function mtConfirm(){const v=(($("mxin")||{}).value||"").trim();if(v!==MT.code){
  MT.dur=Date.now()-MT.start;MT.phase="done";bonAdd(50);cpsDraw();mtDraw();confetti()}
 function mtCancel(){MT=null;back12();toast("Встреча отменена")}
 function mtClose(){MT=null;back12()}
-function mtDraw(){const i=getL(MT.id),h=`<button class="x" onclick="back12()" aria-label="Закрыть">✕</button><h2 style="font-size:20px;margin:0">🤝 Безопасная встреча</h2><div class="mx-h"><div class="cim" style="--r:1">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${rub(i.p)} · ${locT(i)}</span></div></div>`;let b="";
+function mtDraw(){const i=getL(MT.id),h=`<div class="tbar"><button class="x" onclick="back12()" aria-label="Закрыть">✕</button><h2 style="font-size:20px;margin:0">🤝 Безопасная встреча</h2></div><div class="mx-h"><div class="cim" style="--r:1">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${rub(i.p)} · ${locT(i)}</span></div></div>`;let b="";
  if(MT.phase=="plan"){
   b=`<div class="mx-l">Где встретитесь</div><div class="mx-c">${Object.entries(MT_PL).map(([k,v])=>`<button class="chip ${MT.place==k?"on":""}" onclick="mtSet('place','${k}')">${v[0]} ${v[1]}</button>`).join("")}</div>
 <input class="in" id="mxc" maxlength="60" style="margin-top:10px" placeholder="${MT.place=="own"?"Опиши место":"Уточни место, если нужно"}" value="${esc(MT.custom)}" oninput="MT.custom=this.value">
@@ -1852,7 +1923,7 @@ function selRev(name){const r=rng(hashS(name)*7+3),sold=selSold(name),out=[];
   out.push({star,txt:pool[Math.floor(r()*pool.length)],who:SELL[Math.floor(r()*SELL.length)]+" "+"АБВГДЕЖЗИКЛМНОПРСТ"[Math.floor(r()*18)]+".",item:it?it.b.t:"",days:3+j*9+Math.floor(r()*8)})}
  return out}
 function selCard(i){if(i.mine)return `<div class="sel-card" style="cursor:default"><div class="sel-av" style="--h:260">В</div><div class="sel-i"><b>Это твоё объявление</b><span>Так его видят покупатели</span></div></div>`;
- const p=selP(i.u);return `<div class="sel-card" role="button" tabindex="0" onclick="selOpen('${esc(i.u)}',${i.id})" onkeydown="if(event.key=='Enter')selOpen('${esc(i.u)}',${i.id})"><span class="avw"><div class="sel-av" style="--h:${p.hue}">${esc(i.u[0])}</div>${pdot(i.u)}</span><div class="sel-i"><b>${esc(i.u)}${p.idv?' <i class="vf" title="Личность подтверждена">✓</i>':""}</b><span>⭐ ${fr(p.avg)} · ${p.nRev} ${ruN(p.nRev,"отзыв","отзыва","отзывов")} · отвечает за ~${p.resp} мин <em class="dm">демо</em></span>${prsL(i.u)}</div><div class="sel-ch">›</div></div>`}
+ const p=selP(i.u);return `<div class="sel-card" role="button" tabindex="0" onclick="selOpen('${esc(i.u)}',${i.id})" onkeydown="if(event.key=='Enter')selOpen('${esc(i.u)}',${i.id})"><span class="avw"><div class="sel-av" style="--h:${p.hue}">${esc(i.u[0])}</div>${pdot(i.u)}</span><div class="sel-i"><b>${esc(i.u)}${p.idv?' <i class="vf" title="Личность подтверждена">✓</i>':""}</b><span class="srt"><span>⭐ ${fr(p.avg)} · ${p.nRev} ${ruN(p.nRev,"отзыв","отзыва","отзывов")}<em class="dm">демо</em></span><span>отвечает за ~${p.resp} мин</span></span>${prsL(i.u)}</div><div class="sel-ch">›</div></div>`}
 let SPS={name:"",ctx:0,tab:"a"};
 function selOpen(name,ctx){if(!name||name=="Вы")return;SPS={name,ctx:ctx||0,tab:"a"};selDraw();$("m13").classList.add("show");$("s13").scrollTop=0}
 function back13(){$("m13").classList.remove("show")}
@@ -3188,7 +3259,7 @@ let upl=null;
 function back20(){$("m20").classList.remove("show")}
 function myOpen(){myDraw();$("m20").classList.add("show");const sh=$("s20");void sh.offsetHeight;sh.scrollTop=0}
 function myDraw(){const ids=MY.filter(id=>UL[id]);
- $("s20").innerHTML=`<button class="x" onclick="back20()" aria-label="Закрыть">✕</button><h2>Мои объявления</h2>`+(ids.length?`<div class="myh">Размещение бесплатно. Здесь можно открыть объявление или снять его с публикации.</div>`+ids.map(id=>{const i=UL[id];
+ $("s20").innerHTML=`<div class="tbar"><button class="x" onclick="back20()" aria-label="Закрыть">✕</button><h2>Мои объявления</h2></div>`+(ids.length?`<div class="myh">Размещение бесплатно. Здесь можно открыть объявление или снять его с публикации.</div>`+ids.map(id=>{const i=UL[id];
   return `<div class="myr" id="my${id}"><div class="sel-so"><div class="cim">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${rub(i.p)} · опубликовано ${agoLong(i.pt||Date.now())}</span></div></div><div class="qr"><button class="chip" onclick="back20();setTimeout(()=>openL(${id}),300)">Открыть</button>${isCar(i)?`<button class="chip" onclick="dkOpen(${id})">📄 ДКП</button>`:""}<button class="chip dg" id="mydel${id}" onclick="myDel(${id},this)">Снять с публикации</button></div></div>`}).join("")
   :`<div class="endc" style="padding:26px 8px 14px"><span style="font-size:34px" aria-hidden="true">🗂️</span><b>Пока нет объявлений</b><span>Подай первое: это бесплатно, место в ленте купить нельзя.</span><div class="acts"><button class="btn" onclick="back20();setTimeout(openPost,300)">Подать объявление</button></div></div>`)}
 function myDel(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent="Точно снять?";clearTimeout(b._t);b._t=setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="Снять с публикации"}},3200);return}
@@ -3250,7 +3321,7 @@ function dkMetaT(){const t=DK_CAR.length,n=DK_CAR.filter(f=>(DK.v[f[0]]||"")!=="
  return `<b>✓ Данные авто заполнены: ${n} из ${t}</b><span>Остальное впиши здесь или оставь пустым и допиши ручкой после печати.</span>`+(DK.demo?`<span><em class="dm">демо</em> VIN, ПТС и СТС здесь придуманы. В рабочей версии их вводит продавец, в объявлении они не видны.</span>`:"")}
 function dkDraw(){const i=DK.i,v=DK.v;
  const sec=p=>`<details class="dkd" id="dkd_${p}"${DK_PTY.some(f=>v[p+"_"+f[0]])?" open":""}><summary>${p=="s"?"👤 Продавец":"🧑 Покупатель"}<em id="dkc_${p}">${dkCnt(p)}</em></summary><div class="dkg">${DK_PTY.map(f=>dkF(p+"_"+f[0],f[1],f[2],f[3])).join("")}</div></details>`;
- $("s21").innerHTML=`<button class="x" onclick="back21()" aria-label="Закрыть">✕</button><h2>Договор купли-продажи</h2><div class="dks">${esc(i.t)} · ${rub(i.p)}</div>
+ $("s21").innerHTML=`<div class="tbar"><button class="x" onclick="back21()" aria-label="Закрыть">✕</button><h2>Договор купли-продажи</h2></div><div class="dks">${esc(i.t)} · ${rub(i.p)}</div>
 <div class="dkseg" role="tablist"><button type="button" role="tab" id="dkt-d" class="on" aria-selected="true" onclick="dkTab('d')">Данные</button><button type="button" role="tab" id="dkt-p" aria-selected="false" onclick="dkTab('p')">Бланк</button></div>
 <div id="dkbd"><div class="box dkn" id="dkm">${dkMetaT()}</div>
 <div class="dkh">🚗 Автомобиль и документы</div><div class="dkg">${DK_CAR.map(f=>dkF(f[0],f[1],f[2],f[3])).join("")}</div>
@@ -3368,7 +3439,7 @@ function pfValidate(){const bad=[],c=$("pc").value,t=$("pt").value.trim(),p=+$("
  const vin=c=="auto"?$("pv").value.trim().toUpperCase():"";add("pv",vin&&!/^[A-HJ-NPR-Z0-9]{17}$/.test(vin)?"VIN: 17 символов, латиница и цифры, без I, O и Q":"");
  add("pp",!(p>0)?"Укажи цену в рублях, например 15 000":p>1e8?"Слишком большая цена, проверь число":"");
  return bad}
-const dtH=()=>AIOK?"ИИ заполнит всё сам":"Автозаполнение по фото появится позже";
+const dtH=()=>AIOK?"ИИ заполнит всё сам":"Первое фото станет обложкой";
 function dtReset(){$("dt").innerHTML='📷<br><b>Нажми, чтобы добавить фото</b><br><small id="dts">'+dtH()+'</small>'}
 SMP.then(sm=>{AIOK=!!sm;const d=$("dts");if(d&&!$("drop").classList.contains("hp")&&!$("drop").classList.contains("go"))d.textContent=dtH()});
 const pdCnt=()=>{const n=$("pd").value.length;$("pdn").textContent=n?n+" / 1000":""};
@@ -3414,9 +3485,9 @@ function publish(){if(postBad){toast("Такое выставлять нельз
 /* тело чата (сообщения, быстрые ответы, поле ввода) одно и то же: оно живёт в окне объявления или встаёт внутрь окна «Чаты» */
 function chPark(){const v=$("chv"),h=$("chhome");if(v&&h&&v.parentNode!==h)h.appendChild(v)}
 function chFill(){const id=cur.id,o=Math.round(cur.p*.93/100)*100;
- const fr0=!(CHT[id]&&CHT[id].length);$("cai").innerHTML=`🤖 <b>VVM Ассистент:</b> предложи ${rub(o)}, продавцы обычно уступают до 7%.`;{const v=$("chv");v.classList.toggle("fresh",fr0&&!cur.mine);v.classList.remove("typing");chTipSet(fr0)}
- $("msgs").innerHTML="";const H0=CHT[id];if(H0&&H0.length)H0.forEach(m=>add(m.t,m.w));else add("Здравствуйте! Чем могу помочь?","he");
- $("qr").innerHTML=["Ещё актуально?","Предложу "+rub(o)].concat(canShip(cur)?["Возможна доставка?"]:[]).map(t=>`<div class="chip" onclick="send(this.textContent)">${t}</div>`).join("")+(cur.mine?"":`<div class="chip" onclick="meet(${cur.id})">🤝 Безопасная встреча</div><div class="chip" onclick="callOpen(${cur.id})">📞 Позвонить · номер скрыт</div>`)}
+ const fr0=!(CHT[id]&&CHT[id].length);$("cai").innerHTML=`🤖 <b>VVM Ассистент:</b> предложи ${rub(o)}, продавцы обычно уступают до 7%.`;{const ca=$("cai");if(cur.mine){ca.removeAttribute("role");ca.removeAttribute("tabindex");ca.onclick=null}else{ca.setAttribute("role","button");ca.tabIndex=0;ca.onclick=()=>ofOpen(o)}}{const v=$("chv");v.classList.toggle("fresh",fr0&&!cur.mine);v.classList.remove("typing");chTipSet(fr0)}
+ $("msgs").innerHTML="";const H0=CHT[id];if(H0&&H0.length)H0.forEach(m=>add(m.t,m.w,m.o,m.k));else add("Здравствуйте! Чем могу помочь?","he");
+ $("qr").innerHTML=`<div class="chip" onclick="send(this.textContent)">Ещё актуально?</div>`+(cur.mine?"":`<div class="chip ofc" onclick="ofOpen()">💰 Предложить цену</div>`)+(canShip(cur)?`<div class="chip" onclick="send(this.textContent)">Возможна доставка?</div>`:"")+(cur.mine?"":`<div class="chip" onclick="meet(${cur.id})">🤝 Безопасная встреча</div><div class="chip" onclick="callOpen(${cur.id})">📞 Позвонить · номер скрыт</div>`)}
 function chTipSet(on){const v=$("chv"),b=$("tipb");if(!v||!b)return;v.classList.toggle("tips",!!on);b.classList.toggle("on",!!on);b.setAttribute("aria-expanded",!!on)}
 function chTips(){const v=$("chv");if(v)chTipSet(!v.classList.contains("tips"))}
 $("ci").addEventListener("focus",()=>$("chv").classList.add("typing"));$("ci").addEventListener("blur",()=>$("chv").classList.remove("typing"))
@@ -3434,7 +3505,7 @@ function mSwap(to,go){if(MSF)MSF(to);to.style.zIndex="";const old=[...document.q
  if(askCtl){askCtl.abort();askCtl=null}
  to.style.zIndex=Math.max(...old.map(m=>+getComputedStyle(m).zIndex||100))+1;to.classList.add("swp");go();
  let t1=0,t2=0;const fin=ex=>{clearTimeout(t1);clearTimeout(t2);MSF=null;
-  old.forEach(m=>{if(m!==ex){m.classList.remove("show");m.removeAttribute("data-over")}m.style.transition="";m.style.opacity="";if(m!==ex)m.style.zIndex=""});if(!ex||ex!==to)to.style.zIndex="";if(dirty){dirty=false;refreshTop()}};
+  old.forEach(m=>{m._nz=performance.now();if(m!==ex){m.classList.remove("show");m.removeAttribute("data-over")}m.style.transition="";m.style.opacity="";if(m!==ex)m.style.zIndex=""});if(!ex||ex!==to)to.style.zIndex="";if(dirty){dirty=false;refreshTop()}};
  MSF=fin;t1=setTimeout(()=>{old.forEach(m=>{m.style.transition="opacity .2s ease";m.style.opacity="0"});t2=setTimeout(()=>fin(),230)},300)}
 /* объявление, открытое из чата, лежит поверх чата: «назад» и ✕ возвращают в чат (чат под ним не закрывается) */
 function mClr(m){if(!m)return;m.removeAttribute("data-over");m.removeAttribute("data-cls");m.style.zIndex="";m.style.transition="";m.style.opacity=""}
@@ -3445,7 +3516,7 @@ function chAd(){const id=cur&&cur.id;if(id==null)return;const m=$("m1");if(MSF)M
  openL(id)}
 /* окна поверх чата (карточка продавца, объявление) закрываются плавно: видим тот же чат под ними */
 function mFade(list){list.forEach(m=>{m.style.transition="opacity .2s ease";m.style.opacity="0"});
- setTimeout(()=>{list.forEach(m=>{m.classList.remove("show");mClr(m)});if(dirty){dirty=false;refreshTop()}},220)}
+ setTimeout(()=>{list.forEach(m=>{m._nz=performance.now();m.classList.remove("show");mClr(m)});if(dirty){dirty=false;refreshTop()}},220)}
 /* под экранную клавиатуру: высота окна = видимая область (телефон) */
 const chSm=()=>innerWidth<=700;
 function chVV(){const v=window.visualViewport,r=document.documentElement.style;
@@ -3473,13 +3544,13 @@ function chatIn(id){cur=getL(id);chFill();const s=$("s15");
 function chBack(){openChats(1)}
 /* «Назад» на телефоне: из диалога возвращает к списку чатов, а не закрывает окно */
 function chClose(){if(window.hkPop&&$("s15").classList.contains("chv-on")){chBack();if(window.hkRe)window.hkRe();return}cl()}
-function add(t,w){const d=document.createElement("div");d.className="b "+w;d.textContent=t;const m=$("msgs");m.appendChild(d);m.scrollTop=1e5;return d}
+function add(t,w,o,k){const d=document.createElement("div");d.className="b "+w;if(o){d.classList.add("of");d.dataset.k=k||"";d.setAttribute("role","group");d.setAttribute("aria-label","Предложение цены");d.innerHTML=ofHtml(o,w,k)}else d.textContent=t;const m=$("msgs");m.appendChild(d);m.scrollTop=1e5;return d}
 function send(t){const inp=$("ci");t=(typeof t=="string"?t:inp.value).trim();if(!t||!cur)return;const c=cur,id=c.id;add(t,"me");chPush(id,"me",t);chTipSet(false);$("chv").classList.remove("fresh");inp.value="";const d=add("печатает…","he");
  setTimeout(()=>{const r=/актуаль/i.test(t)?"Да, ещё в продаже.":/предлож|торг/i.test(t)?"Могу уступить, если заберёте сегодня.":/достав/i.test(t)?(canShip(c)?"Да, отправлю через VVM Доставку.":"Доставки нет, передаю только лично. Давайте договоримся о встрече."):"Принял, отвечу в ближайшее время.";chPush(id,"he",r);if(d.isConnected){d.textContent=r;const m=$("msgs");if(m)m.scrollTop=1e5}},1100)}
 $("ci").addEventListener("keydown",e=>{if(e.key=="Enter"&&!e.isComposing){e.preventDefault();send()}});
 /* ---------- список чатов ---------- */
 let CHT=ST.g("vvm_chats",{});
-function chPush(id,w,t){const a=CHT[id]=CHT[id]||[];a.push({w,t,ts:Date.now()});if(a.length>200)a.shift();ST.s("vvm_chats",CHT)}
+function chPush(id,w,t,o){const a=CHT[id]=CHT[id]||[],e={w,t,ts:Date.now()};if(o){e.o=o;e.k=e.ts.toString(36)+Math.random().toString(36).slice(2,6)}a.push(e);if(a.length>200)a.shift();ST.s("vvm_chats",CHT);return e}
 function chAgo(ts){const m=Math.round((Date.now()-ts)/6e4);return m<1?"сейчас":m<60?m+" мин":m<1440?Math.floor(m/60)+" ч":m<2880?"вчера":new Date(ts).toLocaleDateString("ru-RU",{day:"numeric",month:"short"})}
 function chatsTap(){me&&users[me]?openChats():openAuth()}
 function openChats(back){chPark();const m=$("m15"),was=m.classList.contains("show");if(!was)cl();const sh=$("s15");
@@ -3714,7 +3785,7 @@ let ly=0,tk=false;addEventListener("scroll",()=>{if(tk)return;tk=true;requestAni
 addEventListener("pointermove",e=>{if(e.pointerType=="touch")return;const s=document.documentElement.style,st=$("stage");s.setProperty("--cx",e.clientX+"px");s.setProperty("--cy",e.clientY+"px");st.style.setProperty("--px",(e.clientX/innerWidth-.5)*2);st.style.setProperty("--py",(e.clientY/innerHeight-.5)*2)},{passive:true});
 ["grid","nw","dl"].forEach(id=>$(id).addEventListener("mousemove",e=>{const c=e.target.closest(".card");if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")},{passive:true}));
 const rws=["Продай.","Купи выгодно.","Обменяй."];let ri=0;setInterval(()=>{const e=$("rw");e.style.opacity=0;setTimeout(()=>{ri=(ri+1)%3;e.textContent=rws[ri];e.style.opacity=1},350)},2800);
-addEventListener("keydown",e=>{const t=document.activeElement.tagName;if(e.key=="/"&&t!="INPUT"&&t!="TEXTAREA"&&t!="SELECT"){e.preventDefault();$("q").focus()}if(e.key=="Escape"){const tp=["m21","m20","m19","m18","m17","m14","m13","m12","m11"].find(m=>$(m).classList.contains("show"));if(tp==="m21")back21();else if(tp==="m18")back18();else if(tp==="m17")back17();else if(tp)$(tp).classList.remove("show");else if($("m1").dataset.over)back1();else cl();sgHide()}});
+addEventListener("keydown",e=>{const t=document.activeElement.tagName;if(e.key=="/"&&t!="INPUT"&&t!="TEXTAREA"&&t!="SELECT"){e.preventDefault();$("q").focus()}if(e.key=="Escape"){const tp=["m22","m21","m20","m19","m18","m17","m14","m13","m12","m11"].find(m=>$(m).classList.contains("show"));if(tp==="m21")back21();else if(tp==="m18")back18();else if(tp==="m17")back17();else if(tp)$(tp).classList.remove("show");else if($("m1").dataset.over)back1();else cl();sgHide()}});
 /* ---------- старт ---------- */
 try{ST.g("vvm_fav",[]).forEach(x=>fav.add(x>=1000&&x<900000?x%1000:x))}catch(e){}favCount();
 cnDraw();if(!cityNew)$("cb").classList.remove("pulse");
@@ -3725,7 +3796,7 @@ navUser();ints();newsInit();newsDraw();hero(false);dealsDraw();cpsDraw();tmrTick
 /* ---------- мобильные жесты: свайп вниз, кнопка «Назад», клавиатура ---------- */
 (()=>{try{
 const small=()=>innerWidth<=700;
-const closeFn=m=>m.id=="m21"?back21:m.id=="m18"?back18:m.id=="m17"?back17:m.id=="m11"?back11:m.id=="m12"?back12:m.id=="m13"?back13:m.id=="m14"?back14:m.id=="m15"?chClose:m.id=="m1"?back1:cl;
+const closeFn=m=>m.id=="m22"?back22:m.id=="m21"?back21:m.id=="m18"?back18:m.id=="m17"?back17:m.id=="m11"?back11:m.id=="m12"?back12:m.id=="m13"?back13:m.id=="m14"?back14:m.id=="m15"?chClose:m.id=="m1"?back1:cl;
 const NOD=".gal,.rec,.ints,.stage,.map,.mapw,input,textarea,select,[data-nodrag]";
 const mods=[...document.querySelectorAll(".mod")];
 /* свайп вниз закрывает шторку */
@@ -3751,7 +3822,7 @@ mods.forEach(mod=>{const sh=mod.querySelector(".sheet");if(!sh)return;
   if(vy>.55||d>h*.28){
    sh.style.transition="transform .26s cubic-bezier(.3,.6,.3,1)";mod.style.transition="background-color .26s";
    sh.style.transform="translateY("+h+"px)";mod.style.setProperty("--bo","0");
-   setTimeout(()=>{closeFn(mod)();clean()},240)}
+   setTimeout(()=>{mod._nz=performance.now();closeFn(mod)();clean()},240)}
   else{sh.style.transition="transform .3s cubic-bezier(.22,.9,.3,1)";mod.style.transition="background-color .3s";
    sh.style.transform="";mod.style.removeProperty("--bo");setTimeout(clean,330)}};
  sh.addEventListener("touchend",end,{passive:true});sh.addEventListener("touchcancel",end,{passive:true})});
@@ -3765,7 +3836,7 @@ if(top===window&&history.pushState){
   if(srvSkip>0){srvSkip--;holdY(srvY);hkFlush();return}
   if(skip>0){skip--;hkFlush();return}
   const o=opened();if(!o.length){if(favMode)favClose(true);else if(RM){srvHist=false;srvReset();holdY(srvY)}return}
-  const top2=["m21","m18","m17","m14","m13","m12","m11"].map(id=>$(id)).find(m=>o.includes(m))||o.find(m=>m.dataset.over)||o[o.length-1];
+  const top2=["m22","m21","m18","m17","m14","m13","m12","m11"].map(id=>$(id)).find(m=>o.includes(m))||o.find(m=>m.dataset.over)||o[o.length-1];
   n=Math.max(0,n-1);window.hkPop=1;try{closeFn(top2)()}finally{window.hkPop=0}})}
 /* поле ввода в шторке не прячется под клавиатурой */
 addEventListener("focusin",e=>{const t=e.target;if(!small()||!t.matches||!t.matches("input,textarea,select")||!t.closest(".sheet")||t.closest("#chv"))return;
@@ -3773,6 +3844,104 @@ addEventListener("focusin",e=>{const t=e.target;if(!small()||!t.matches||!t.matc
 /* лёгкий отклик на нажатие (Android) */
 if(matchMedia("(pointer:coarse)").matches&&navigator.vibrate)addEventListener("click",e=>{if(e.target.closest&&e.target.closest(".fav,.nav button,.chip,.ib"))try{navigator.vibrate(6)}catch(_){}},{passive:true});
 }catch(e){}})();
+
+
+/* ---------- v53: плавное закрытие окон на телефоне (шторка уезжает вниз) ---------- */
+(function(){const SKIP=["m1","m3","m15","m17","m18"],T=new WeakMap();
+ const mo=new MutationObserver(recs=>{
+  const first=new Map();recs.forEach(r=>{if(!first.has(r.target))first.set(r.target,(r.oldValue||"").split(" ").includes("show"))});
+  const rem=[];let add=false;
+  first.forEach((was,m)=>{const now=m.classList.contains("show");
+   if(now){if(m.classList.contains("clz")){clearTimeout(T.get(m));m.classList.remove("clz")}if(!was)add=true}
+   else if(was)rem.push(m)});
+  if(add||!rem.length||!chSm()||RMOT.matches)return;
+  rem.forEach(m=>{if(SKIP.includes(m.id)||performance.now()-(m._nz||-1e3)<500)return;
+   m.classList.add("clz");T.set(m,setTimeout(()=>m.classList.remove("clz"),280))})
+ });document.querySelectorAll(".mod").forEach(m=>mo.observe(m,{attributes:true,attributeFilter:["class"],attributeOldValue:true}))
+})();
+
+
+/* ---------- v53: «Предложить цену» — карточка в чате, ответ продавца ---------- */
+function ofStep(p){return p>=100000?1000:p>=20000?500:p>=3000?100:p>=500?50:10}
+function ofRound(n,p){const st=ofStep(p||n);return Math.max(st,Math.round(n/st)*st)}
+const ofPc=(p,pr)=>(Math.round((1-p/pr)*1000)/10).toString().replace(".",",");
+const OFL={me:{w:"Ждёт ответа",ok:"Принято",ct:"Есть встречное",no:"Отклонено",x:"Закрыто"},he:{w:"Ждёт ответа",ok:"Ты принял",no:"Ты отклонил",x:"Закрыто"}};
+function ofHtml(o,w,k){const me=w=="me",lb=OFL[me?"me":"he"][o.st]||"",d=o.pr-o.p;
+ let h=`<div class="ofh"><span>${me?"Предложение":"Встречное"}</span><span class="ofb s-${o.st}">${lb}</span></div><div class="ofp">${rub(o.p)}</div>`;
+ h+=`<div class="ofm">${d>0?`на ${rub(d)} ниже цены (−${ofPc(o.p,o.pr)}%)`:"по цене продавца"}</div>`;
+ if(!me&&o.st=="w")h+=`<div class="ofa"><button class="btn" type="button" onclick="ofAct('${k}','ok')">Принять</button><button class="btn ghost" type="button" onclick="ofAct('${k}','own')">Другая цена</button></div><button class="ofn" type="button" onclick="ofAct('${k}','no')">Отклонить</button>`;
+ if(o.st=="ok")h+=`<div class="ofdl"><span>🤝 Договорились</span><button type="button" onclick="meet(${o.id})">Встреча ›</button></div>`;
+ return h}
+function ofFind(id,k){const a=CHT[id]||[];return a.find(x=>x.k==k)}
+function ofUp(id,e){if(!(cur&&cur.id==id)||!$("msgs"))return;const d=$("msgs").querySelector(`[data-k="${e.k}"]`);if(d)d.innerHTML=ofHtml(e.o,e.w,e.k)}
+/* сообщение в переписку: данные всегда, на экран — если этот чат открыт */
+function ofSay(id,w,t,o){const e=chPush(id,w,t,o);if(cur&&cur.id==id&&$("msgs")&&($("m3").classList.contains("show")||$("s15").classList.contains("chv-on")))add(t,w,o,e.k);return e}
+function ofReply(id,fn,ms){const live=()=>cur&&cur.id==id&&$("msgs")&&($("m3").classList.contains("show")||$("s15").classList.contains("chv-on"));
+ const d=live()?add("печатает…","he"):null;
+ setTimeout(()=>{if(d&&d.isConnected)d.remove();fn();ST.s("vvm_chats",CHT)},ms||1300)}
+function back22(){const m=$("m22");if(m.classList.contains("show")){if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();m.classList.remove("show")}}
+const ofNum=()=>{const v=($("ofp")&&$("ofp").value||"").replace(/\D/g,"");return v?Math.min(+v,1e9):0};
+function ofOpen(pre){if(!cur||cur.mine)return;const i=cur,pr=i.p;if(!(pr>=10))return;
+ const def=pre&&pre<pr?pre:ofRound(pr*.95,pr),sh=$("s22");
+ sh.innerHTML=`<button class="x" onclick="back22()" aria-label="Закрыть">✕</button><h2 style="font-size:21px;margin:0">💰 Предложить цену</h2>
+<div class="mx-h"><div class="cim" style="--r:1">${imK(i)}</div><div><b>${esc(i.t)}</b><span>Цена в объявлении: ${rub(pr)}</span></div></div>
+<label for="ofp" style="margin-top:14px">Твоя цена <span class="ofpv" id="ofpv"></span></label>
+<div class="ofin"><input class="in" id="ofp" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="send" maxlength="10" value="${def}" oninput="ofChk()" onkeydown="if(event.key=='Enter'){event.preventDefault();ofSend()}"><span aria-hidden="true">₽</span></div>
+<div class="ofq" id="ofq">${[3,5,7,10].map(k=>`<button class="chip" type="button" data-v="${ofRound(pr*(1-k/100),pr)}" onclick="$('ofp').value=this.dataset.v;ofChk()">−${k}%</button>`).join("")}</div>
+<div class="ofd w" id="ofd" aria-live="polite"></div>
+<div class="acts"><button class="btn" id="ofgo" type="button" onclick="ofSend()">Отправить предложение</button></div>
+<div class="fine2">Продавец увидит предложение в чате и ответит там же. Демо: ответ продавца придёт автоматически.</div>`;
+ ofChk();$("m22").classList.add("show");sh.scrollTop=0}
+function ofChk(){const pr=cur.p,p=ofNum(),d=$("ofd"),b=$("ofgo"),f=$("ofp");
+ const inp=f.value.replace(/\D/g,"");if(inp!==f.value)f.value=inp;
+ $("ofpv").textContent=p?rub(p):"";
+ document.querySelectorAll("#ofq .chip").forEach(c=>c.classList.toggle("on",+c.dataset.v==p));
+ let ok=false,t="Введи сумму, которую готов заплатить",c="w";
+ if(p>0&&p>=pr){t="Это не ниже цены в объявлении. Можно просто написать «Беру».";c="e"}
+ else if(p>0){ok=true;t=`Ниже цены на ${rub(pr-p)} · −${ofPc(p,pr)}%`;c="";if(p<pr*.5){t+=". Слишком маленькая сумма: продавец может не ответить";c="e"}}
+ d.textContent=t;d.className="ofd "+c;b.disabled=!ok}
+function ofSend(){if(!cur||cur.mine)return;const p=ofNum(),pr=cur.p,id=cur.id;if(!(p>0&&p<pr))return;back22();chTipSet(false);$("chv").classList.remove("fresh");
+ (CHT[id]||[]).forEach(m=>{if(m.o&&m.w=="he"&&m.o.st=="w"){m.o.st="x";ofUp(id,m)}});
+ const e=ofSay(id,"me","Предложение: "+rub(p),{p,pr,st:"w",id});
+ ofReply(id,()=>ofJudge(id,e),1500)}
+function ofJudge(id,e){const o=e.o,r=o.p/o.pr;
+ if(r>=.95){o.st="ok";ofUp(id,e);ofSay(id,"he","Согласен, договорились на "+rub(o.p)+". Когда удобно встретиться?")}
+ else if(r>=.88){const c=ofRound(o.pr*.96,o.pr);
+  if(c<=o.p){o.st="ok";ofUp(id,e);ofSay(id,"he","Согласен, договорились на "+rub(o.p)+". Когда удобно встретиться?");return}
+  o.st="ct";ofUp(id,e);ofSay(id,"he","Встречное предложение: "+rub(c),{p:c,pr:o.pr,st:"w",id,from:"he"})}
+ else{o.st="no";ofUp(id,e);ofSay(id,"he","Спасибо, но так сильно уступить не могу. Можете предложить больше?")}
+ ST.s("vvm_chats",CHT)}
+function ofAct(k,a){if(!cur)return;const id=cur.id,e=ofFind(id,k);if(!e||!e.o||e.o.st!="w")return;
+ if(a=="own"){ofOpen(e.o.p);return}
+ if(a=="ok"){e.o.st="ok";ofUp(id,e);ofSay(id,"me","Согласен на "+rub(e.o.p));ofReply(id,()=>ofSay(id,"he","Отлично, договорились на "+rub(e.o.p)+". Давайте обсудим встречу."),1200)}
+ else{e.o.st="no";ofUp(id,e);ofSay(id,"me","Не подходит, спасибо");ofReply(id,()=>ofSay(id,"he","Хорошо. Если передумаете, пишите."),1200)}
+ ST.s("vvm_chats",CHT)}
+
+/* ---------- v53: шторки, которым не хватает высоты, раскрываются на весь экран (без пустой полосы сверху) ---------- */
+(function(){const AUTO=["m6","m8","m9","m11","m14","m19"];
+ function chk(m){const s=m.querySelector(".sheet");if(!s)return;
+  if(!chSm()){m.classList.remove("pfs");return}
+  if(!m.classList.contains("pfs")&&s.scrollHeight>=innerHeight*.84)m.classList.add("pfs")}
+ AUTO.forEach(id=>{const m=document.getElementById(id);if(!m)return;
+  new MutationObserver(()=>{
+   if(m.classList.contains("show"))chk(m);
+   else if(m.classList.contains("pfs"))setTimeout(()=>{if(!m.classList.contains("show"))m.classList.remove("pfs")},500)
+  }).observe(m,{attributes:true,attributeFilter:["class"]});
+  m.addEventListener("click",()=>setTimeout(()=>{if(m.classList.contains("show"))chk(m)},80))});
+})();
+</script>
+<script>
+/* установка на экран телефона */
+(function(){var dp=null,st=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+ addEventListener("beforeinstallprompt",function(e){e.preventDefault();dp=e});
+ addEventListener("appinstalled",function(){dp=null});
+ var ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+ window.pwaInstall=function(){if(dp){dp.prompt();dp.userChoice.then(function(){dp=null},function(){});return}
+  toast(ios?"Нажми «Поделиться» → «На экран Домой»":"Открой меню браузера → «Установить приложение»")};
+ var op=window.openProfile;
+ if(typeof op==="function"&&!st)window.openProfile=function(){var r=op.apply(this,arguments),t=document.querySelector("#s9 .tiles");
+  if(t&&!t.querySelector(".pwa")){var b=document.createElement("button");b.type="button";b.className="tile pwa";b.onclick=window.pwaInstall;b.innerHTML="<i>📲</i>На экран телефона";t.appendChild(b)}return r};
+ if("serviceWorker"in navigator&&location.protocol==="https:")addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})})();
 </script>
 </body>
 </html>
