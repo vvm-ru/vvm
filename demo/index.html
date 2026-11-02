@@ -1314,6 +1314,14 @@ div.chwho{cursor:default}
 #chv .cin{margin:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:rgb(var(--sr))}
 #chv.typing .cin{padding-bottom:10px}
 @media(min-width:701px){.chx[data-m=l] .bk{display:none}}
+#fcl[hidden]{display:none}
+@keyframes swf{from{background-color:rgba(3,4,8,0);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0)}}
+.mod.swp.show{animation:swf .3s ease-out}
+.cpk.fcp{max-height:none;overflow:visible;padding:10px}
+.fcp .csr{margin:0 0 8px}
+.fcp .csr .in{height:44px}
+.fcp .cres{max-height:min(40vh,300px);margin:0 -4px 2px}
+.fcp #fcl{max-height:150px;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 @media(max-width:700px){
  #m3,#m15{align-items:flex-start;backdrop-filter:none;-webkit-backdrop-filter:none}
  #m3 .sheet,#s15.pfull{height:100vh;height:var(--vvh,100dvh);margin-top:var(--vvt,0px);max-height:none;border-radius:0;border:0;background:rgb(var(--sr));backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -1421,7 +1429,7 @@ div.chwho{cursor:default}
 </div></div>
 
 <div class="mod" id="m9" onclick="if(event.target===this)cl()"><div class="sheet glass" id="s9"></div></div>
-<div class="mod" id="m10" onclick="if(event.target===this)cl()"><div class="sheet glass cty"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Твой город</h2><button class="btn ghost cauto" id="cauto" type="button" onclick="autoCity()">📍 Определить автоматически</button><div class="csr"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="in" id="cq" type="text" placeholder="Найти город: начни вводить название" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск города" oninput="cyIn()" onkeydown="cyKey(event)"><button class="csx" id="cqx" type="button" hidden onclick="cyClear()" aria-label="Очистить">✕</button></div><div class="cres" id="cres" role="listbox" hidden></div><div class="cg" id="cg"></div><p class="chint" id="chint">Покажем объявления рядом и расстояние до каждого. «Вся Россия» — объявления из всех городов, ближайшие сверху</p></div></div>
+<div class="mod" id="m10" onclick="if(event.target===this)cl()"><div class="sheet glass cty"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Твой город</h2><button class="btn ghost cauto" id="cauto" type="button" onclick="autoCity()">📍 Определить автоматически</button><div class="csr"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="in" id="cq" type="text" placeholder="Найти любой город" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск города" oninput="cyIn()" onkeydown="cyKey(event)"><button class="csx" id="cqx" type="button" hidden onclick="cyClear()" aria-label="Очистить">✕</button></div><div class="cres" id="cres" role="listbox" hidden></div><div class="cg" id="cg"></div><p class="chint" id="chint">Покажем объявления рядом и расстояние до каждого. «Вся Россия» — объявления из всех городов, ближайшие сверху</p></div></div>
 <div class="mod" id="m8" onclick="if(event.target===this)cl()"><div class="sheet glass" style="max-width:600px"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Сколько у тебя лежит денег?</h2><p style="color:var(--mu);font-size:14px;margin:6px 0 0">Сфотай вещи в гараже, шкафу или на балконе. VVM оценит каждую и сразу подготовит объявления.</p><div class="wtot" id="wt">0 ₽</div><div id="wl"></div>
 <div class="drop" style="height:110px" onclick="$('wf').click()"><div>📸<br><b>Добавить фото вещей</b><br><small>можно сразу несколько</small></div></div><input type="file" id="wf" accept="image/*" multiple hidden>
 <div class="acts"><button class="btn" onclick="listAll()">🚀 Выставить всё на VVM</button><button class="btn ghost" onclick="shareW()">📤 Поделиться</button></div>
@@ -2356,8 +2364,8 @@ function fDraw(){const bd=$("fb"),st=bd.scrollTop,s=FDR,cs=s.cat,P=n=>n?n.toLoca
   pin='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>',
   ru='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>',
   dn='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
- let h=`<div class="fs" id="fgeo"><div class="fl"><b>Где искать</b><em>${all?"Вся Россия":esc((s.gc||my)+(s.gr===0?" · только город":" · до "+KMS(s.gr)+" км"))}</em></div><div class="fcw">${chip(!all&&!oth,"fGeo(null)",pin+esc(my))}${chip(all,"fGeo('*')",ru+"Вся Россия")}${oth?chip(true,"fGeo('"+oth+"')",pin+esc(oth)):""}${chip(GP,"GP=!GP;fDraw()","Другой город"+dn)}</div>`;
- if(GP)h+=`<div class="cpk"><div class="fcw">${CN.filter(c=>c!=my&&c!=oth).sort((a,b)=>a.localeCompare(b,"ru")).map(c=>chip(false,"fGeo('"+c+"')",esc(c))).join("")}</div></div>`;
+ let h=`<div class="fs" id="fgeo"><div class="fl"><b>Где искать</b><em>${all?"Вся Россия":esc((s.gc||my)+(s.gr===0?" · только город":" · до "+KMS(s.gr)+" км"))}</em></div><div class="fcw">${chip(!all&&!oth,"fGeo(null)",pin+esc(my))}${chip(all,"fGeo('*')",ru+"Вся Россия")}${oth?chip(true,"fGeo('"+oth+"')",pin+esc(oth)):""}${chip(GP,"GP=!GP;fDraw();fcFocus()","Другой город"+dn)}</div>`;
+ if(GP)h+=`<div class="cpk fcp"><div class="csr"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="in" id="fcq" type="text" placeholder="Найти любой город" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск города" oninput="fcIn()" onkeydown="fcKey(event)"><button class="csx" id="fcx" type="button" hidden onclick="fcClear()" aria-label="Очистить">✕</button></div><div class="cres" id="fcr" role="listbox" hidden></div><div class="fcw" id="fcl">${CN.filter(c=>c!=my&&c!=oth).sort((a,b)=>a.localeCompare(b,"ru")).map(c=>chip(false,"fGeo('"+c+"')",esc(c))).join("")}</div></div>`;
  if(!all)h+=`<div class="fl sub"><b>Радиус от города</b><em>${esc(s.gc||my)}</em></div><div class="fcw">${[[0,"Только город"],[3,"до 3 км"],[5,"до 5 км"],[10,"до 10 км"],[25,"до 25 км"],[50,"до 50 км"],[100,"до 100 км"],[200,"до 200 км"],[300,"до 300 км"],[500,"до 500 км"],[1000,"до 1 000 км"],[2000,"до 2 000 км"]].map(a=>chip(s.gr===a[0],`fSet('gr',${a[0]})`,a[1])).join("")}</div>`;
  h+=`<div class="ghint">${all?"Показываем объявления из всех городов России. Сначала те, что ближе к вам.":"Если в городе мало объявлений, мы автоматически добавим объявления из ближайших городов."}</div></div>`;
  if(s.fav)h="";
@@ -3403,7 +3411,16 @@ function chHdr(mode){const i=cur,own=!!i.mine,p=own?null:selP(i.u),nm=own?"Вы"
  const st=own?`<span class="prs"><i></i>ваше объявление</span>`:prsL(i.u),body=`${av}<span class="t"><b>${nm}</b>${st}</span>`;
  const who=own?`<div class="chwho">${body}</div>`:`<button class="chwho" type="button" onclick="selOpen('${esc(i.u)}',${i.id})" aria-label="Профиль: ${nm}">${body}</button>`;
  return `<div class="chx" data-m="${mode}"><div class="chr"><button class="fpb bk" type="button" onclick="${mode=="l"?"cl()":"chBack()"}" aria-label="${mode=="l"?"Закрыть чат":"Назад к чатам"}">${CHB}</button>${who}<button class="x chxx" type="button" onclick="cl()" aria-label="Закрыть">✕</button></div><button class="chad" type="button" onclick="chAd()" aria-label="Открыть объявление"><span class="cl-th">${imK(i)}</span><span class="tx"><span class="tt">${esc(i.t)}</span><span class="pp">${rub(i.p)}</span></span>${CHR}</button></div>`}
-function chAd(){const id=cur&&cur.id;if(id==null)return;cl();openL(id)}
+/* плавная смена окон на телефоне: новое выезжает поверх, прежнее гаснет под ним (без резкого мигания ленты) */
+let MSF=null;
+function mSwap(to,go){if(MSF)MSF(to);to.style.zIndex="";const old=[...document.querySelectorAll(".mod.show")].filter(m=>m!==to);
+ if(!old.length||!chSm()||RMOT.matches){cl();go();return}
+ if(askCtl){askCtl.abort();askCtl=null}
+ to.style.zIndex=Math.max(...old.map(m=>+getComputedStyle(m).zIndex||100))+1;to.classList.add("swp");go();
+ let t1=0,t2=0;const fin=ex=>{clearTimeout(t1);clearTimeout(t2);MSF=null;
+  old.forEach(m=>{if(m!==ex){m.classList.remove("show")}m.style.transition="";m.style.opacity=""});if(!ex||ex!==to)to.style.zIndex="";if(dirty){dirty=false;refreshTop()}};
+ MSF=fin;t1=setTimeout(()=>{old.forEach(m=>{m.style.transition="opacity .2s ease";m.style.opacity="0"});t2=setTimeout(()=>fin(),230)},300)}
+function chAd(){const id=cur&&cur.id;if(id==null)return;mSwap($("m1"),()=>openL(id))}
 /* под экранную клавиатуру: высота окна = видимая область (телефон) */
 const chSm=()=>innerWidth<=700;
 function chVV(){const v=window.visualViewport,r=document.documentElement.style;
@@ -3411,8 +3428,8 @@ function chVV(){const v=window.visualViewport,r=document.documentElement.style;
  r.setProperty("--vvh",Math.round(v.height)+"px");r.setProperty("--vvt",Math.round(v.offsetTop)+"px")}
 if(window.visualViewport){const f=()=>{if(!document.querySelector("#m3.show,#m15.show"))return;chVV();if(document.activeElement===$("ci")){const m=$("msgs");if(m)m.scrollTop=1e5}};visualViewport.addEventListener("resize",f);visualViewport.addEventListener("scroll",f)}
 function chEnd(){requestAnimationFrame(()=>{const m=$("msgs");if(m)m.scrollTop=1e5})}
-function chat(id,fl){if(fl){chatIn(id);return}chPark();cur=getL(id);cl();
- $("chx3").innerHTML=chHdr("l");chFill();chVV();$("m3").classList.add("show");chEnd()}
+function chat(id,fl){if(fl){chatIn(id);return}chPark();cur=getL(id);
+ mSwap($("m3"),()=>{$("chx3").innerHTML=chHdr("l");chFill();chVV();$("m3").classList.add("show");chEnd()})}
 /* диалог из списка «Чаты»: открывается в том же окне, без нового окна и вылета */
 /* окно «Чаты» плавно меняет высоту между списком и диалогом, содержимое подменяется на месте */
 function shMorph(sh,swap){if(chSm()){swap();return}const h0=sh.offsetHeight;sh.style.height=h0+"px";sh.style.overflow="hidden";swap();
@@ -3491,22 +3508,44 @@ function cityUse(k,co,reg){if(!CT[k])CT[k]=[+co[0],+co[1]];
  setCity(k)}
 function cyPick(n){const c=CYR.concat(CYW)[n];if(!c)return;cityUse(c.k,[c.la,c.lo],c.r)}
 /* онлайн-поиск по любому населённому пункту (только по нажатию, не на каждую букву) */
-async function cyWeb(){const q=$("cq").value.trim();if(q.length<2||CYBUSY)return;
- const cached=CYC2.get(q.toLowerCase());CYBUSY=1;CYMSG="";cyDraw(q);
- let rs=cached||null;
- if(!rs){let to=0;try{CYCTL=new AbortController();to=setTimeout(()=>CYCTL&&CYCTL.abort(),9000);
+/* запрос к серверу карт и разбор ответа: общие для окна «Твой город» и фильтров */
+async function cyNet(q){const cached=CYC2.get(q.toLowerCase());if(cached)return cached;let to=0,rs=null;
+ try{CYCTL=new AbortController();to=setTimeout(()=>CYCTL&&CYCTL.abort(),9000);
   const r=await fetch("https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&accept-language=ru&countrycodes=ru&limit=8&featureType=settlement&q="+encodeURIComponent(q),{signal:CYCTL.signal});
-  clearTimeout(to);if(!r.ok)throw 0;const j=await r.json();if(!Array.isArray(j))throw 0;rs=j}catch(e){clearTimeout(to);rs=null}}
- CYCTL=null;if($("cq").value.trim()!==q)return;CYBUSY=0;
- if(!rs){CYMSG="Не удалось связаться с сервером карт. Выбери город из списка или проверь интернет";cyDraw(q);return}
- CYC2.set(q.toLowerCase(),rs);
- const have=new Set(CYR.map(c=>c.k));
- CYW=rs.map(x=>{const a=x.address||{},n=String(x.name||a.city||a.town||a.village||a.hamlet||"").replace(/["'`<>]/g,"").trim(),la=+x.lat,lo=+x.lon;
+  clearTimeout(to);if(!r.ok)throw 0;const j=await r.json();if(!Array.isArray(j))throw 0;rs=j}catch(e){clearTimeout(to);rs=null}
+ CYCTL=null;if(rs)CYC2.set(q.toLowerCase(),rs);return rs}
+function cyMapW(rs,have){return rs.map(x=>{const a=x.address||{},n=String(x.name||a.city||a.town||a.village||a.hamlet||"").replace(/["'`<>]/g,"").trim(),la=+x.lat,lo=+x.lon;
   if(!n||!isFinite(la)||!isFinite(lo)||la<40||lo<19)return null;
   const loc=CYC().find(c=>c.q==cyn(n)&&hav([c.la,c.lo],[la,lo])<40);if(loc)return have.has(loc.k)?null:loc;
   const st=String(a.state||"").replace(/["'`<>]/g,"");const k=CT[n]&&hav(CT[n],[la,lo])>40?n+" ("+(st||"?")+")":n;
-  return{n,la,lo,r:st,b:0,k,q:cyn(n),rq:cyn(st),w:1}}).filter(Boolean).filter((c,i,a)=>a.findIndex(z=>z.k==c.k)==i);
+  return{n,la,lo,r:st,b:0,k,q:cyn(n),rq:cyn(st),w:1}}).filter(Boolean).filter((c,i,a)=>a.findIndex(z=>z.k==c.k)==i)}
+async function cyWeb(){const q=$("cq").value.trim();if(q.length<2||CYBUSY)return;CYBUSY=1;CYMSG="";cyDraw(q);
+ const rs=await cyNet(q);if($("cq").value.trim()!==q)return;CYBUSY=0;
+ if(!rs){CYMSG="Не удалось связаться с сервером карт. Выбери город из списка или проверь интернет";cyDraw(q);return}
+ CYW=cyMapW(rs,new Set(CYR.map(c=>c.k)));
  if(!CYW.length)CYMSG="Ничего не нашли. Проверь написание";cyDraw(q)}
+/* ---------- v51: поиск города внутри фильтров ---------- */
+let FCR=[],FCW=[],FCAC=-1,FCMSG="",FCBUSY=0;
+function fcFocus(){if(GP&&innerWidth>700)setTimeout(()=>{const q=$("fcq");if(q)try{q.focus({preventScroll:true})}catch(e){}},60)}
+function fcIn(){const raw=$("fcq").value,q=raw.trim();$("fcx").hidden=!raw;$("fcl").hidden=!!q;FCAC=-1;FCMSG="";FCW=[];FCBUSY=0;if(CYCTL){CYCTL.abort();CYCTL=null}
+ const el=$("fcr");if(!q){el.hidden=true;el.innerHTML="";FCR=[];return}
+ FCR=cyFind(q);fcDraw(q)}
+function fcDraw(q){const el=$("fcr");el.hidden=false;const all=FCR.concat(FCW);
+ let h=all.map((c,n)=>`<button type="button" class="crow${n==FCAC?" act":""}" role="option" onclick="fcPick(${n})"><span>${cyhl(c.n,q)}</span><span>${esc(c.r||"")}</span></button>`).join("");
+ if(q.length>=2&&!FCW.length&&!FCMSG&&(!FCR.length||CYTOP<88))h+=`<button type="button" class="crow cweb" onclick="fcWeb()"><span>${FCBUSY?"Ищем…":"🔎 Не нашли? Искать «"+esc(q)+"» по всей России"}</span><span>${FCBUSY?"":"онлайн"}</span></button>`;
+ if(!all.length&&!FCBUSY&&q.length<2)h=`<div class="cnone">Начни вводить название</div>`;
+ if(FCMSG)h+=`<div class="cnone">${esc(FCMSG)}</div>`;
+ el.innerHTML=h}
+function fcKey(e){const all=FCR.concat(FCW);
+ if(e.key=="ArrowDown"||e.key=="ArrowUp"){if(!all.length)return;e.preventDefault();FCAC=(FCAC+(e.key=="ArrowDown"?1:-1)+all.length)%all.length;fcDraw($("fcq").value.trim());const a=$("fcr").querySelector(".act");if(a)a.scrollIntoView({block:"nearest"})}
+ else if(e.key=="Enter"&&!e.isComposing){e.preventDefault();const n=FCAC>=0?FCAC:0;if(all[n])fcPick(n);else if($("fcq").value.trim().length>=2)fcWeb()}}
+function fcClear(){const q=$("fcq");q.value="";fcIn();q.focus()}
+function fcPick(n){const c=FCR.concat(FCW)[n];if(!c||!FDR)return;if(!CT[c.k])CT[c.k]=[+c.la,+c.lo];fGeo(c.k)}
+async function fcWeb(){const q=$("fcq").value.trim();if(q.length<2||FCBUSY)return;FCBUSY=1;FCMSG="";fcDraw(q);
+ const rs=await cyNet(q),el=$("fcq");if(!el||el.value.trim()!==q)return;FCBUSY=0;
+ if(!rs){FCMSG="Не удалось связаться с сервером карт. Выбери город из списка или проверь интернет";fcDraw(q);return}
+ FCW=cyMapW(rs,new Set(FCR.map(c=>c.k)));
+ if(!FCW.length)FCMSG="Ничего не нашли. Проверь написание";fcDraw(q)}
 const ACI="📍 Определить автоматически";
 function openCity(){const q=$("cq");q.value="";cyIn();
  const ex=!CN.includes(city)&&!RU?[city]:[];
