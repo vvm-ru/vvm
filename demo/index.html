@@ -1449,6 +1449,130 @@ div.chwho{cursor:default}
 .ars{display:block;margin:14px 0 0}.ars:disabled{color:var(--mu);cursor:default}
 #ast3 .ck{margin-top:14px!important}
 #ast1 .err:empty{margin:0;min-height:0}
+/* ---------- v56: фото в подаче (до 30), госномер, «Мои объявления», профиль и настройки ---------- */
+
+/* фото: пусто — большая зона; есть фото — сетка с обложкой, удалением и перестановкой */
+.drop.hp{height:auto;display:block;padding:10px;cursor:default;border-style:solid;border-color:var(--line);text-align:left}
+.drop.hp:hover{border-color:var(--line)}
+.drop.hp #dt{background:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:2px 2px 10px;border-radius:0;color:var(--mu);max-width:none;font-size:13px}
+.drop.hp #dt:empty{display:none}.drop.hp #dt br{display:none}
+.drop:not(.hp) .v6g{display:none}
+.drop.dz{border-color:var(--ac2);background:rgba(var(--wr),.04)}
+.v6g{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
+.v6t{position:relative;aspect-ratio:1;border-radius:12px;background:var(--glass2) center/cover no-repeat;overflow:hidden;cursor:grab;transition:transform .15s,opacity .15s,box-shadow .15s}
+.v6t.cv{box-shadow:0 0 0 2px var(--ac2)}
+.v6t.dg{opacity:.35}.v6t.ov{transform:scale(.96);box-shadow:0 0 0 2px var(--ac2)}
+.v6cv{position:absolute;left:6px;bottom:6px;padding:3px 8px;border-radius:99px;background:rgba(7,8,12,.72);color:#fff;font-size:11px;font-weight:700}
+.v6x{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(7,8,12,.66);cursor:pointer;padding:0}
+.v6x::after{content:"";position:absolute;inset:0;background:#fff;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7 7 17'/%3E%3C/svg%3E") center/16px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7 7 17'/%3E%3C/svg%3E") center/16px no-repeat}
+.v6mv{position:absolute;right:6px;bottom:6px;display:flex;gap:4px}
+.v6mv button{width:28px;height:28px;border-radius:50%;border:0;background:rgba(7,8,12,.66);color:#fff;font:700 16px/1 Manrope,sans-serif;cursor:pointer;padding:0}
+.v6t.cv .v6mv{left:auto}
+.v6add{aspect-ratio:1;border-radius:12px;border:1.5px dashed rgba(var(--wr),.28);background:none;color:var(--mu);display:grid;place-content:center;gap:2px;cursor:pointer;font:600 12px Manrope,sans-serif}
+.v6add b{font-size:26px;font-weight:400;line-height:1;color:var(--tx)}
+.v6add:hover{border-color:var(--ac2);color:var(--tx)}
+.v6n{font-size:12px;color:var(--mu);margin:-8px 2px 12px;min-height:0}
+.v6n:empty{display:none}
+@media (hover:hover){.v6t .v6mv,.v6t .v6x{opacity:0;transition:opacity .15s}.v6t:hover .v6mv,.v6t:hover .v6x,.v6t:focus-within .v6mv,.v6t:focus-within .v6x{opacity:1}}
+
+/* госномер */
+.v6pl{margin:4px 0 14px;padding:14px;border-radius:16px;background:var(--glass);border:1px solid var(--line)}
+.v6pl>label{margin-top:0}.v6pl label em{font-style:normal;font-weight:500;color:var(--mu)}
+.v6pr{display:flex;gap:8px}.v6pr .in{flex:1;min-width:0}
+.v6pr .btn{flex:none;padding-inline:18px}
+.v6pn{text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.v6pf{margin-top:10px;padding:12px 14px;border-radius:12px;background:rgba(var(--wr),.04);border:1px solid var(--line);display:grid;gap:3px;font-size:13px}
+.v6pf b{font-size:14px}.v6pf span{color:var(--tx)}.v6pf small{color:var(--mu)}
+.v6pf.on{display:flex;align-items:center;gap:10px;color:var(--mu)}
+.v6sp{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--ac2);animation:v6spin .8s linear infinite;flex:none}
+@keyframes v6spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.v6sp{animation:none}}
+
+/* «Мои объявления» */
+.v6new{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin:6px 0 14px;padding:14px}
+.v6new b{font-size:20px;font-weight:500;line-height:1}
+.v6sum{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 14px}
+.v6sum>div{padding:12px;border-radius:14px;background:var(--glass);border:1px solid var(--line);display:grid;gap:2px;min-width:0}
+.v6sum b{font-size:19px;font-weight:800}.v6sum span{font-size:12px;color:var(--mu)}
+.v6tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -2px 12px;padding:2px}
+.v6tabs::-webkit-scrollbar{display:none}
+.v6tabs button{flex:none;border:1px solid var(--line);background:var(--glass);color:var(--mu);border-radius:99px;padding:8px 14px;font:700 13px Manrope,sans-serif;cursor:pointer;white-space:nowrap}
+.v6tabs button.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.v6tabs em{font-style:normal;opacity:.7;margin-left:2px}
+.v6list{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.v6c{padding:12px;border-radius:16px;background:var(--glass);border:1px solid var(--line);min-width:0;overflow:hidden}
+.v6ch{display:flex;gap:12px;cursor:pointer;border-radius:12px}
+.v6ch:focus-visible{outline:2px solid var(--ac2);outline-offset:2px}
+.v6ch .cim{width:84px;height:84px;flex:none;border-radius:12px;overflow:hidden;position:relative}
+.v6ci{display:grid;gap:3px;min-width:0;align-content:start}
+.v6ci b{font-size:15px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.v6pr{font-weight:800;font-size:15px}
+.v6ci small{color:var(--mu);font-size:12px}
+.v6st{justify-self:start;font-size:11px;font-weight:800;padding:3px 8px;border-radius:99px;background:rgba(var(--wr),.06);color:var(--mu)}
+.v6st.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,transparent)}
+.v6st.wr{color:var(--warn);background:color-mix(in srgb,var(--warn) 12%,transparent)}
+.v6rv{margin:10px 0 0;padding:10px 12px;border-radius:12px;font-size:13px;color:var(--tx);background:color-mix(in srgb,var(--warn) 9%,transparent)}
+.v6m{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 0}
+.v6m span{display:grid;gap:1px;font-size:11.5px;color:var(--mu);padding:8px 10px;border-radius:10px;background:rgba(var(--wr),.035)}
+.v6m b{font-size:16px;color:var(--tx)}.v6m em{font-style:normal;color:var(--ok);font-weight:700}
+.v6a{margin:10px 0 0!important}.v6a .chip{padding:8px 12px;font-size:13px}
+.v6x2{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.v6bars{display:flex;align-items:flex-end;gap:4px;height:84px}
+.v6bars i{flex:1;border-radius:4px 4px 2px 2px;background:color-mix(in srgb,var(--ac2) 45%,transparent);min-height:3px}
+.v6bars i.td{background:var(--ac2)}
+.v6bl{display:flex;justify-content:space-between;font-size:11px;color:var(--mu);margin:4px 0 10px}
+.v6kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px}
+.v6kv span{color:var(--mu)}.v6kv b{text-align:right}
+.v6tip{margin-top:10px;font-size:13px;color:var(--mu)}
+.v6own{margin:10px 0 0}
+@media (max-width:520px){.v6sum{gap:6px}.v6sum>div{padding:10px 8px}.v6sum b{font-size:16px}.v6sum span{font-size:11px}.v6ch .cim{width:72px;height:72px}
+ .v6a{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;margin-right:-12px!important;padding-right:12px}.v6a::-webkit-scrollbar{display:none}.v6a .chip{flex:none}}
+@media (max-width:359px){.v6sum{grid-template-columns:1fr 1fr}}
+@media (min-width:701px){#m20 .sheet{max-width:640px}}
+
+/* шапка: «Мои объявления» — на компьютере, на телефоне — центральная кнопка */
+@media (max-width:700px){.v6myb{display:none}}
+
+/* профиль */
+.v6phd{display:flex;justify-content:space-between;flex-direction:row-reverse;align-items:center;margin-bottom:6px}
+.v6phd .x{float:none}
+.v6gear,.v6ti svg{display:grid;place-items:center}
+.v6gear{width:38px;height:38px;border-radius:50%;border:0;background:var(--glass2);color:var(--tx);cursor:pointer}
+.v6gear svg,.v6ti svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.v6ti svg{width:24px;height:24px}
+.v6avb{position:relative;border:0;background:none;padding:0;cursor:pointer;border-radius:20px;flex:none}
+.v6avb i{position:absolute;right:-4px;bottom:-4px;width:26px;height:26px;border-radius:50%;background:var(--tx);color:var(--bg);display:grid;place-items:center;box-shadow:0 0 0 3px var(--bg)}
+.v6avb i svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.v6pfh span{display:block}
+.v6img{background:center/cover no-repeat;color:transparent!important}
+.av.v6img{background-size:cover}
+
+/* настройки */
+.v6set h2{font-size:20px}
+.v6sec{margin:16px 0 0}
+.v6sec h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mu);margin:0 0 8px 4px}
+.v6row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:12px 14px;border-radius:14px;background:var(--glass);border:1px solid var(--line);margin:0 0 6px;text-align:left;color:var(--tx);font:inherit;box-sizing:border-box}
+.v6row b{display:block;font-size:14px}
+.v6row small{display:block;font-size:12px;color:var(--mu);margin-top:2px;line-height:1.35}
+.v6row>div:first-child{min-width:0}
+.v6col{flex-direction:column;align-items:stretch}
+.v6col label{margin:0}
+.v6go{cursor:pointer}.v6go:hover{background:var(--glass2)}
+.v6go>span{color:var(--mu);font-size:13px;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.v6go>span::after{content:"›";font-size:20px;line-height:1}
+.v6in{display:flex;gap:8px}.v6in .in{flex:1;min-width:0;margin:0}.v6in .btn{flex:none;padding-inline:16px}
+.v6avr{display:flex;align-items:center;gap:12px;min-width:0}.v6avr .av2{width:48px;height:48px;border-radius:16px;font-size:20px;flex:none}
+.v6bt{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.v6bl2{display:flex;flex-wrap:wrap;gap:6px}.v6bl2 button{border:0;background:none;color:var(--mu);cursor:pointer;padding:0 0 0 4px}
+.v6mu{color:var(--mu);font-size:13px}
+.v6sw{position:relative;flex:none;width:46px;height:28px;border-radius:99px;border:0;background:rgba(var(--wr),.18);cursor:pointer;transition:background .2s;padding:0}
+.v6sw i{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
+.v6sw[aria-checked="true"]{background:var(--ok)}
+.v6sw[aria-checked="true"] i{transform:translateX(18px)}
+.v6seg{display:flex;padding:3px;border-radius:12px;background:rgba(var(--wr),.06);flex:none}
+.v6seg button{border:0;background:none;color:var(--mu);padding:7px 10px;border-radius:9px;font:700 12.5px Manrope,sans-serif;cursor:pointer}
+.v6seg button.on{background:var(--bg);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+@media (max-width:420px){.v6row:has(.v6seg){flex-direction:column;align-items:stretch}.v6seg{justify-content:space-between}.v6seg button{flex:1}}
 </style></head>
 <body>
 <div id="sp"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="as" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cs"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#as)"/><g clip-path="url(#cs)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bs)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><div class="sw"><svg class="wm" viewBox="-2 -3 124 37" height="68" role="img" aria-label="VVM"><defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cs"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gs)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cs)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><div class="sps">Бесплатно · Красиво · Рядом</div></div>
@@ -1459,7 +1583,7 @@ div.chwho{cursor:default}
 <div class="search glass" id="search" role="search"><svg class="sic" viewBox="0 0 24 24" aria-hidden="true" onclick="if($('q').value.trim())sq($('q').value)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Поиск по VVM" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Поиск"><button class="sbt qx" id="qx" type="button" hidden aria-label="Очистить запрос" onmousedown="event.preventDefault()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="sbt cam" id="cam" type="button" onclick="visPick()" aria-label="Искать по фото" title="Поиск по фото"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.2a2 2 0 0 0 1.6-.8l.4-.6A2 2 0 0 1 11.3 4h1.4a2 2 0 0 1 1.6.8l.4.6a2 2 0 0 0 1.6.8h1.2A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg></button><input type="file" accept="image/*" id="vf" hidden><button class="sbt f" id="sfb" type="button" onclick="fOpen()" aria-label="Фильтры" title="Фильтры"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><b class="bdg" id="sfbb" hidden></b></button><div class="sg" id="sg" role="listbox" onmousedown="event.preventDefault()"></div></div>
 <button class="btn ghost" id="lg" onclick="profile()">Войти</button><button class="btn ghost" onclick="favOnly()" id="favb" aria-label="Избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></button>
 <button class="ib th" id="thb" onclick="themeCycle()" aria-label="Тема оформления" title="Тема оформления"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-<button class="btn" onclick="openPost()">+ Подать</button>
+<button class="btn ghost v6myb" onclick="myOpen()">Мои объявления</button><button class="btn" onclick="postGo()">+ Подать</button>
 </div></header>
 <main>
 <section class="favp" id="favp" aria-label="Избранное">
@@ -1475,7 +1599,7 @@ div.chwho{cursor:default}
 <div class="stage" id="stage"></div>
 <div class="cap" id="cap"><div class="ct" id="ct"></div><div class="dots" id="dots"></div></div>
 <div><div class="il"><span>🎯 Что тебе интересно?</span></div><div class="ints" id="ints"></div></div>
-<div class="cta"><button class="btn" onclick="openPost()">+ Подать объявление</button><button class="btn glow" onclick="openWorth()">💰 Оценить мои вещи</button></div>
+<div class="cta"><button class="btn" onclick="postGo()">+ Подать объявление</button><button class="btn glow" onclick="openWorth()">💰 Оценить мои вещи</button></div>
 </section>
 <div class="row"><div class="rh"><h2>✨ Новое</h2><span class="live"><i></i><span id="nwl">свежие объявления рядом</span></span></div><div class="arr"><button onclick="rs('nw',-1)" aria-label="Назад">‹</button><button onclick="rs('nw',1)" aria-label="Вперёд">›</button></div></div>
 <div class="rec nw" id="nw"></div>
@@ -1509,7 +1633,7 @@ div.chwho{cursor:default}
 <div class="mod" id="m2" onclick="if(event.target===this)cl()"><div class="sheet glass">
 <div class="tbar"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><h2>Новое объявление</h2></div>
 <div class="pdbar" id="pdbar" hidden><span id="pdbt">Черновик восстановлен</span><button type="button" class="lnk" onclick="openPost(true)">Начать заново</button></div>
-<div class="drop" id="drop" onclick="scanIt()"><div class="scan"></div><div id="dt">📷<br><b>Нажми, чтобы добавить фото</b><br><small id="dts">Загрузи фото вещи</small></div></div>
+<div class="drop" id="drop" onclick="if(!UPS.length)scanIt()"><div class="scan"></div><div id="dt">📷<br><b>Нажми, чтобы добавить фото</b><br><small id="dts">до 30 фото</small></div><div class="v6g" id="v6g"></div></div><div class="v6n" id="v6n" aria-live="polite"></div>
 <label for="pt">Название <span class="req">*</span></label><input class="in" id="pt" maxlength="90" autocomplete="off" enterkeyhint="next"><div class="ferr" id="e-pt" role="alert"></div><div class="hint2" id="h-pt"></div>
 <label for="pc">Категория</label><select class="in" id="pc"></select>
 <div id="pff"></div>
@@ -1520,12 +1644,13 @@ div.chwho{cursor:default}
 <div class="box" id="pa" style="display:none"></div>
 <div class="pass" id="passbox"><div class="ph"><b>📋 Паспорт вещи</b><span id="pcnt">0/4</span></div><div class="pd2">Покажи вещь с нужных сторон, и у объявления появится значок паспорта. Покупателю проще решиться, когда виден серийный номер и дефекты. На место в ленте значок не влияет.</div><div class="pg" id="pg"></div><div class="pn" id="pn"></div><button type="button" class="btn ghost pbtn" id="pchk" onclick="passCheck()" hidden>Проверить кадры</button><div class="fine2" id="pfine"></div></div>
 <input type="file" accept="image/*" id="pf" hidden>
-<div class="acts lcta"><button class="btn" onclick="publish()">Опубликовать бесплатно</button></div>
+<div class="acts lcta"><button class="btn" id="v6pub" onclick="publish()">Опубликовать бесплатно</button></div>
 </div></div>
 <div class="mod" id="m3" onclick="if(event.target===this)cl()"><div class="sheet glass chfull" id="s3" data-nodrag><div id="chx3"></div><div id="chhome"><div id="chv"><div class="cai" id="cai"></div><div class="msgs" id="msgs"></div><div class="qr" id="qr"></div><div class="cin"><button class="tipb" id="tipb" type="button" onmousedown="event.preventDefault()" onclick="chTips()" aria-label="Быстрые ответы и действия" aria-expanded="false" title="Быстрые ответы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></button><textarea class="in" id="ci" rows="1" placeholder="Сообщение…" autocomplete="off" enterkeyhint="send" maxlength="500"></textarea><button class="btn" id="csb" type="button" onmousedown="event.preventDefault()" onclick="send()" aria-label="Отправить">➤</button></div></div></div></div></div>
 </div>
 
 <div class="mod" id="m22" onclick="if(event.target===this)back22()"><div class="sheet glass ofs" id="s22"></div></div>
+<div class="mod" id="m23" onclick="if(event.target===this)back23()"><div class="sheet glass v6set" id="s23"></div></div>
 <div class="mod" id="m6" onclick="if(event.target===this)cl()"><div class="sheet glass auth" id="s6">
 <button class="x" onclick="cl()" aria-label="Закрыть">✕</button>
 <div class="alogo"><svg class="lm" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="au" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a183ff"/><stop offset=".5" stop-color="#5b8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="bu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d5e4ff"/></linearGradient><clipPath id="cu"><rect x="2" y="2" width="44" height="44" rx="14"/></clipPath></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#au)"/><g clip-path="url(#cu)"><ellipse cx="24" cy="5" rx="24" ry="12" fill="#fff" opacity=".15"/></g><rect x="2.6" y="2.6" width="42.8" height="42.8" rx="13.4" fill="none" stroke="rgba(255,255,255,.42)"/><path class="lv2" d="M12 14 L24 29 L36 14" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="lv1" d="M12 24 L24 39 L36 24" fill="none" stroke="url(#bu)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path class="ld" d="M24 5.8 Q25 10.6 29.8 11.6 Q25 12.6 24 17.4 Q23 12.6 18.2 11.6 Q23 10.6 24 5.8Z" fill="#fff"/></svg><svg class="wm" viewBox="-2 -3 124 37" height="25" role="img" aria-label="VVM"><defs><linearGradient id="gu" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="22"><stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#d3deff"/><stop offset=".72" stop-color="#8fb4ff"/><stop offset="1" stop-color="#3fe0ee"/></linearGradient><clipPath id="cu"><path d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></clipPath></defs><g fill="url(#gu)"><path class="l1" d="M0 0H9.4L15 19.5L20.6 0H30L15 30Z"/><path class="l2" d="M35 0H44.4L50 19.5L55.6 0H65L50 30Z"/><path class="l3" d="M71 30V0H79.6L90 17.4L100.4 0H109V30H101V13.6L90 30L79 13.6V30Z"/></g><g clip-path="url(#cu)"><rect class="shn" x="-24" y="-6" width="12" height="44" fill="#fff" opacity=".8"/></g><path class="wsp" d="M115 -1.5Q116 3.2 120.6 4.2Q116 5.2 115 9.9Q114 5.2 109.4 4.2Q114 3.2 115 -1.5Z" fill="#7ff0ff"/></svg></div><p class="asub" id="asub">Войди по номеру телефона или через VK ID, Яндекс ID, Сбер ID.</p>
@@ -1561,8 +1686,8 @@ div.chwho{cursor:default}
 
 <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
 <button class="fab" id="up" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх">↑</button>
-<nav class="nav" id="nav" aria-label="Основное меню"><button class="on" id="nvh" onclick="homeGo()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span>Главная</span></button><button id="nvf" onclick="favOnly()" aria-label="Избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></button><button class="pl" onclick="openPost()" aria-label="Подать объявление"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></button><button id="nvc" onclick="chatsTap()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>Чаты</span></button><button onclick="profile()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span>Профиль</span></button></nav>
-<input type="file" accept="image/*" id="fi" hidden>
+<nav class="nav" id="nav" aria-label="Основное меню"><button class="on" id="nvh" onclick="homeGo()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span>Главная</span></button><button id="nvf" onclick="favOnly()" aria-label="Избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Избранное</span></button><button class="pl" onclick="myOpen()" aria-label="Мои объявления: разместить и статистика"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></button><button id="nvc" onclick="chatsTap()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>Чаты</span></button><button onclick="profile()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span>Профиль</span></button></nav>
+<input type="file" accept="image/*" id="fi" multiple hidden><input type="file" accept="image/*" id="avf" hidden>
 
 <div id="dkpP" aria-hidden="true"></div>
 <script>
@@ -1866,7 +1991,10 @@ function dpos(id,ad){const r=rng(id*977+31),a=r()*6.2832,k=r();return offKm(DST[
 let NEAR=[];function calcNear(){NEAR=CN.filter(c=>c!=city).map(c=>[c,hav(CT[city],CT[c])]).sort((a,b)=>a[1]-b[1])}calcNear();
 const dkm=n=>n<10?n.toFixed(1).replace(".",","):Math.round(n);
 let Lc={},UL={},MY=[],unid=900001;
-function saveMine(){let a=MY.map(id=>UL[id]).filter(Boolean).slice(0,8);while(a.length){try{localStorage.setItem("vvm_mine",JSON.stringify(a));return}catch(e){a.pop()}}try{localStorage.removeItem("vvm_mine")}catch(e){}}
+/** свои объявления в ленте и поиске — только опубликованные (не на проверке, не в архиве, не проданные) */
+const MYA=()=>MY.filter(id=>UL[id]&&(!UL[id].st||UL[id].st=="active"));
+// все фото — в IndexedDB (IDB в 16-post-form.js), здесь только обложка
+function saveMine(){let a=MY.map(id=>UL[id]).filter(Boolean).slice(0,40).map(o=>{const{ups,...r}=o;return r});while(a.length){try{localStorage.setItem("vvm_mine",JSON.stringify(a));return}catch(e){a.pop()}}try{localStorage.removeItem("vvm_mine")}catch(e){}}
 try{JSON.parse(localStorage.getItem("vvm_mine")||"[]").forEach(o=>{if(o&&o.id&&o.t&&o.p){UL[o.id]=o;MY.push(o.id);unid=Math.max(unid,o.id+1)}})}catch(e){}
 const PASS={
  tech:[["🔢","Серийный номер или IMEI","читается без бликов"],["📱","Экран включён","без чёрных пятен"],["🔍","Дефекты вблизи","царапины и сколы"],["📦","Комплект","всё, что отдаёшь"]],
@@ -2014,11 +2142,12 @@ ${MT.manual?`<div class="box mx-msg">${esc(mtMsg())}<div class="fine2" style="wh
 setInterval(()=>{if(!MT||MT.phase!="live")return;const e=Date.now()-MT.start,t=$("mxt"),sh=$("m12").classList.contains("show");if(t&&sh)t.textContent=fmtT(e);
  if(Date.now()>=MT.next){MT.next+=30*6e4;MT.late=true;toast("🤝 Прошло "+Math.round(e/6e4)+" мин. Отметься, что всё хорошо");if(sh)mtDraw()}},1000);
 /* ---------- продавец, звонок, доставка, автоотчёт ---------- */
-const SHIP_MAX=20000;
+/* доставка — только с безопасной сделкой (решение 2026-11-03); потолок заказа предварительный, как на сервере */
+const SHIP_MAX=150000;
 /* где доставка невозможна по природе объявления: транспорт, недвижимость, услуги, работа (новые разделы добавлять сюда) */
 const NOSHIP=new Set(["auto","moto","realty","flat","rent","svc","serv","job"]);
 const noShip=i=>NOSHIP.has(i.c);
-const canShip=i=>!noShip(i)&&i.p<SHIP_MAX;
+const canShip=i=>!noShip(i)&&i.p<=SHIP_MAX;
 const isCar=i=>i.c=="auto";
 const fr=n=>n.toFixed(1).replace(".",",");
 const agoD=d=>d<14?d+" дн. назад":d<60?Math.floor(d/7)+" нед. назад":Math.floor(d/30)+" мес. назад";
@@ -2043,7 +2172,7 @@ function selRev(name){const r=rng(hashS(name)*7+3),sold=selSold(name),out=[];
  for(let j=0;j<6;j++){const star=r()<.82?5:r()<.8?4:3,pool=star==3?REV_N:REV_P,it=sold[j%Math.max(1,sold.length)];
   out.push({star,txt:pool[Math.floor(r()*pool.length)],who:SELL[Math.floor(r()*SELL.length)]+" "+"АБВГДЕЖЗИКЛМНОПРСТ"[Math.floor(r()*18)]+".",item:it?it.b.t:"",days:3+j*9+Math.floor(r()*8)})}
  return out}
-function selCard(i){if(i.mine)return `<div class="sel-card" style="cursor:default"><div class="sel-av" style="--h:260">В</div><div class="sel-i"><b>Это твоё объявление</b><span>Так его видят покупатели</span></div></div>`;
+function selCard(i){if(i.mine)return `<div class="sel-card" style="cursor:default"><div class="sel-av" style="--h:260">В</div><div class="sel-i"><b>Это твоё объявление</b><span>Так его видят покупатели</span></div></div><div class="qr v6own"><button class="chip" onclick="cl();setTimeout(()=>openPost(false,${i.id}),300)">✏️ Редактировать</button><button class="chip" onclick="myOpen()">📊 Статистика и управление</button></div>`;
  const p=selP(i.u);return `<div class="sel-card" role="button" tabindex="0" onclick="selOpen('${esc(i.u)}',${i.id})" onkeydown="if(event.key=='Enter')selOpen('${esc(i.u)}',${i.id})"><span class="avw"><div class="sel-av" style="--h:${p.hue}">${esc(i.u[0])}</div>${pdot(i.u)}</span><div class="sel-i"><b>${esc(i.u)}${p.idv?' <i class="vf" title="Личность подтверждена">✓</i>':""}</b><span class="srt"><span>⭐ ${fr(p.avg)} · ${p.nRev} ${ruN(p.nRev,"отзыв","отзыва","отзывов")}<em class="dm">демо</em></span><span>отвечает за ~${p.resp} мин</span></span>${prsL(i.u)}</div><div class="sel-ch">›</div></div>`}
 let SPS={name:"",ctx:0,tab:"a"};
 function selOpen(name,ctx){if(!name||name=="Вы")return;SPS={name,ctx:ctx||0,tab:"a"};selDraw();$("m13").classList.add("show");$("s13").scrollTop=0}
@@ -2123,6 +2252,9 @@ async function repAI(id){const sm=await SMP,o=$("repo"),b=$("repb");if(!sm||!o)r
  finally{if($("repb")===b)b.disabled=false}}
 function vinUpd(){const w=$("vinw"),d=$("dkw");if(w)w.hidden=$("pc").value!="auto";if(d)d.hidden=$("pc").value!="auto"}
 /* ---------- картинки и карточки ---------- */
+/** все фото своего объявления: массив dataURL или null (у демо-объявлений фото из набора) */
+function upsOf(i){return i.ups&&i.ups.length?i.ups:(i.up?[i.up]:null)}
+const imU=(u,z)=>`<div class="im" style="background-image:url(${u});--z:${z||1}"></div>`;
 function imK(i,z,dy,k0){const k=k0||i.k[0];
  if(i.up)return `<div class="im" style="background-image:url(${i.up});--z:${z||1}"></div>`;
  if(!k||!PM[k])return `<div class="im emo">${i.em||"📦"}</div>`;
@@ -2523,7 +2655,7 @@ function gpass(i,s){if(s.fav||gAll(s))return true;const ref=s.gc||city;return s.
 const KMS=n=>n.toLocaleString("ru-RU").replace(/[\u00a0\u202f]/g," ");
 function gLabel(s,full){s=s||fS();if(gAll(s))return full?"Вся Россия":"вся Россия";const ref=s.gc||city;return ref+(s.gr===100&&!full?"":s.gr===0?" · только город":s.gr===100&&!s.gc?"":" · до "+KMS(s.gr)+" км")}
 function fN(s){s=s||fS();let n=0;if(s.p1||s.p2)n++;if(s.y1||s.y2)n++;if(s.km)n++;if(s.age)n++;if(!s.fav&&geoOn(s))n++;if(s.disc)n++;if(s.deal)n++;for(const k of FARR)if(s[k].length)n++;return n}
-const poolIds=()=>[...new Set([...MY,...B.map(b=>b.id)])];
+const poolIds=()=>[...new Set([...MYA(),...B.map(b=>b.id)])];
 const fBaseIds=()=>favMode?favIds():visOn()?visIds():poolIds();
 const fQ=()=>favMode?FQ.toLowerCase():visOn()?"":AQ.toLowerCase();
 const fSc=s=>visOn()?Object.assign({},s,{cat:"all"}):s;
@@ -2542,7 +2674,7 @@ function fpass(i,s,skip,q){
 function matchIds(s0){const s=s0||fS();
  if(visOn()){s.cat="all";return visIds().filter(id=>fpass(getL(id),s,"",""))}
  const q=AQ.toLowerCase();
- return[...MY,...rank(0,$("sort").value).map(b=>b.id)].filter(id=>fpass(getL(id),s,"",q))}
+ return[...MYA(),...rank(0,$("sort").value).map(b=>b.id)].filter(id=>fpass(getL(id),s,"",q))}
 const FEW=6,EXTN=12;
 function geoTitle(){const s=fS(),c=$("sort").value=="c"?"Ближе всего · ":"";if(gAll(s))return c?c+"вся Россия":"Вся Россия";const ref=s.gc||city;return ref==city?(c||"Рядом с тобой · ")+city:(c||"Объявления · ")+ref}
 function nearIds(ms,n){const s=fS();if(gAll(s)||n>=FEW)return[];const ref=s.gc||city;
@@ -2694,7 +2826,7 @@ function resetFeed(){const fm0=favMode,rm0=RM;if(favMode)favClose(false,favHist&
   S.cycle=1;
   if(visOn()){ey="Поиск по фото";tl="Похоже на твоё фото"}else if(AQ){ey="Результаты поиска";tl="«"+AQ+"»"}else if(cat!="all"){ey="Категория";tl=C.find(c=>c[0]==cat)[1]}else{ey="Фильтры";if(RM)tl="По вашим фильтрам"}
   cn=(n?n+" "+ruN(n,"объявление","объявления","объявлений")+" · "+gLabel()+(nr.length?" · ещё "+nr.length+" из ближайших городов":""):nr.length?nr.length+" "+ruN(nr.length,"объявление","объявления","объявлений")+" из ближайших городов · "+gLabel():"Ничего не найдено · "+gLabel())}
- else{S.q=MY.slice();if(vp){S.end=!!vis.busy;ey="Поиск по фото";tl=vis.busy?"Ищем похожее…":"Не удалось распознать"}}
+ else{S.q=MYA();if(vp){S.end=!!vis.busy;ey="Поиск по фото";tl=vis.busy?"Ищем похожее…":"Не удалось распознать"}}
  $("sre").textContent=ey;$("ttl").textContent=tl;$("rcn").textContent=cn;document.title=RM&&AQ?AQ+" — поиск, VVM":DT0;
  gsegDraw();srcDraw();favCount();pump(14);recheck();
  if(pendY!=null){const y=pendY;pendY=null;jump(y)}else if(calm){if(Math.abs(scrollY-y0)>1)jump(y0);gFree(g)}}
@@ -2818,8 +2950,8 @@ function qSync(){if(qFav===!!favMode)return;qFav=!!favMode;const q=$("q"),v=favM
  q.value=v;q.placeholder=favMode?"Поиск в избранном":"Поиск по VVM";q.setAttribute("aria-label",favMode?"Поиск в избранном":"Поиск");$("qx").hidden=!v;sgHide();afDraw()}
 
 /* ---------- объявление ---------- */
-function gal(i){const ks=i.up?[null]:(i.k.length?i.k:[null]),n=ks.length;
- return `<div class="gal psw p0" data-lid="${i.id}"><div class="gt pv"><div class="pt">${ks.map(k=>`<div class="gs"><div style="position:absolute;inset:0">${i.up?imK(i):k?imK(i,1,0,k):imK(i)}</div></div>`).join("")}</div></div>${n>1?`<div class="gd">${ks.map((_,j)=>`<i class="${j?"":"on"}"></i>`).join("")}</div><span class="gc" id="gcn">1 / ${n}</span><button type="button" class="pa l" tabindex="-1" aria-label="Предыдущее фото">${CHVL}</button><button type="button" class="pa r" tabindex="-1" aria-label="Следующее фото">${CHV}</button>`:""}<span class="gx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></div>`}
+function gal(i){const us=upsOf(i),ks=us||(i.k.length?i.k:[null]),n=ks.length;
+ return `<div class="gal psw p0" data-lid="${i.id}"><div class="gt pv"><div class="pt">${ks.map(k=>`<div class="gs"><div style="position:absolute;inset:0">${us?imU(k):k?imK(i,1,0,k):imK(i)}</div></div>`).join("")}</div></div>${n>1?`<div class="gd">${ks.map((_,j)=>`<i class="${j?"":"on"}"></i>`).join("")}</div><span class="gc" id="gcn">1 / ${n}</span><button type="button" class="pa l" tabindex="-1" aria-label="Предыдущее фото">${CHVL}</button><button type="button" class="pa r" tabindex="-1" aria-label="Следующее фото">${CHV}</button>`:""}<span class="gx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></div>`}
 function dscBox(i){if(!i.d&&!i.sp)return"";
  return `${i.sp?`<div class="box"><b>Характеристики</b><dl class="spc">${i.sp.map(r=>`<dt>${esc(r[0])}</dt><dd>${esc(String(r[1]))}</dd>`).join("")}</dl></div>`:""}${i.d?`<div class="box"><b>Описание</b><div class="dtx">${esc(i.d)}</div></div>`:""}`}
 function openL(id){ovOff();const i=getL(id),v=verdict(i);if(!i.mine&&!VWS.has(i.id)){VWS.add(i.id);try{ST.s("vvm_vws",[...VWS])}catch(e){}}addRecent(id);if(i.tg&&!i.mine)bump(i.tg,1);
@@ -2842,9 +2974,9 @@ function buy(id){const i=getL(id),cb=Math.round(i.p*.05);cl();bonAdd(cb);cpsDraw
 function cl(){if(askCtl){askCtl.abort();askCtl=null}document.querySelectorAll(".mod").forEach(m=>m.classList.remove("show"));mClr($("m1"));if(dirty){dirty=false;refreshTop()}}
 function spark(i){const R=i.dr?i.old/i.p:1,k=i.dr?[R,R,1+(R-1)*.62,1+(R-1)*.62,1+(R-1)*.25,1,1]:[1,1,1,1,1,1,1],mx=R>1.001?R:1,p=k.map((v,n)=>(n*50)+","+(mx>1?36-(v-1)/(mx-1)*30:21)).join(" ");return `<svg viewBox="0 0 300 40" width="100%" height="48"><polyline points="${p}" fill="none" class="spk" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
 function extra(i){const d=2+i.id%3,dp=290+(i.id%5)*40,ins=i.p>=30000?`<div class="box">💳 В рассрочку <b>${rub(Math.round(i.p/12/10)*10)}/мес</b> на 12 месяцев без переплат</div>`:"";
- if(canShip(i))return `<div class="box">🚚 Доставка в твой город: <b>${d}–${d+2} дня</b>, от ${rub(dp)}</div>`;
+ if(canShip(i))return `<div class="box">🚚 Доставка в твой город: <b>${d}–${d+2} дня</b>, от ${rub(dp)}<br><small>🛡️ С безопасной сделкой: деньги дойдут продавцу, только когда ты получишь и проверишь товар</small></div>`;
  if(noShip(i))return ins;
- return `<div class="box">🚫 <b>Доставки нет.</b> Вещи дороже ${rub(SHIP_MAX)} передаём только лично: договоритесь о встрече и проведите её безопасно.</div>${ins}`}
+ return `<div class="box">🚫 <b>Доставки нет.</b> Доставка с безопасной сделкой — для заказов до ${rub(SHIP_MAX)}. Дороже передаём лично: договоритесь о встрече и проведите её безопасно.</div>${ins}`}
 function share(id){const i=getL(id),t=i.t+" — "+rub(i.p)+" на VVM";if(navigator.share)navigator.share({title:"VVM",text:t}).catch(()=>{});else{try{navigator.clipboard.writeText(t).then(()=>toast("Скопировано"),()=>toast(t))}catch(e){toast(t)}}}
 /* ---------- где лежит объявление: район, метка, время в пути ---------- */
 function lpos(i){const r=rng(i.id*977+31),a=r()*6.2832,k=r();
@@ -2884,15 +3016,15 @@ function pxUi(){const v=$("pvx");v.classList.toggle("f0",PX.i==0);v.classList.to
  $("pvxc").textContent=(PX.i+1)+" / "+PX.n;
  [...$("pvxh").children].forEach((b,j)=>b.classList.toggle("on",j==PX.i));
  const a=$("pvxh").children[PX.i];if(a&&a.scrollIntoView)try{a.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"})}catch(_){}}
-function pvxOpen(id,idx){const i=getL(id),ks=i.up?[null]:(i.k.length?i.k:[null]);if(!i.up&&!(ks[0]&&PM[ks[0]]))return;
+function pvxOpen(id,idx){const i=getL(id),us=upsOf(i),ks=us||(i.k.length?i.k:[null]);if(!us&&!(ks[0]&&PM[ks[0]]))return;
  PX.id=id;PX.ks=ks;PX.n=ks.length;PX.i=pxCl(idx|0,0,PX.n-1);PX.sc=1;PX.tx=PX.ty=PX.dx=PX.dy=0;PX.off=0;
- PX.rs=ks.map(k=>i.up?.75:(k&&PM[k]?PM[k][0]:1));PX.bw=[];PX.bh=[];
- $("pvxr").innerHTML=ks.map(k=>`<div class="pvx-sl"><div class="pvx-bx">${i.up?imK(i):k?imK(i,1,0,k):imK(i)}</div></div>`).join("");
- $("pvxh").innerHTML=PX.n>1?ks.map((k,j)=>`<button type="button" class="pvx-t" onclick="pxGo(${j})" aria-label="Фото ${j+1}">${i.up?imK(i):imK(i,1,0,k)}</button>`).join(""):"";
+ PX.rs=ks.map(k=>us?.75:(k&&PM[k]?PM[k][0]:1));PX.bw=[];PX.bh=[];
+ $("pvxr").innerHTML=ks.map(k=>`<div class="pvx-sl"><div class="pvx-bx">${us?imU(k):k?imK(i,1,0,k):imK(i)}</div></div>`).join("");
+ $("pvxh").innerHTML=PX.n>1?ks.map((k,j)=>`<button type="button" class="pvx-t" onclick="pxGo(${j})" aria-label="Фото ${j+1}">${us?imU(k):imK(i,1,0,k)}</button>`).join(""):"";
  const v=$("pvx");v.classList.toggle("mn",PX.n>1);v.classList.remove("off","zm");
  $("m18").style.removeProperty("--vb");$("m18").classList.add("show");
  requestAnimationFrame(()=>{pxMeasure();pxUi();const a=$("pvxh").children[PX.i];if(a)a.scrollIntoView({inline:"center",block:"nearest"})});
- if(i.up){const im=new Image();im.onload=()=>{if(PX.id==id&&im.naturalWidth){PX.rs[0]=im.naturalHeight/im.naturalWidth;pxMeasure()}};im.src=i.up}}
+ if(us)us.forEach((u,j)=>{const im=new Image();im.onload=()=>{if(PX.id==id&&im.naturalWidth){PX.rs[j]=im.naturalHeight/im.naturalWidth;pxMeasure()}};im.src=u})}
 function pxGo(j){j=pxCl(j,0,PX.n-1);
  const o=pxBox();if(o&&j!=PX.i){o.style.transition="none";o.style.transform=""}
  PX.i=j;PX.sc=1;PX.tx=PX.ty=PX.dx=PX.dy=0;pxPaint(1);pxUi()}
@@ -3360,7 +3492,7 @@ async function visGo(f){const tok=++visTok;if(visCtl)visCtl.abort();visCtl=new A
   vis={name:o.name,cat:o.cat,words:o.words,thumb:im.url};visDraw();resetFeed();toFeed()}
  catch(e){if(tok!==visTok||(e&&e.code=="cancelled"))return;vis={err:"⚠️ "+aiErr(e),thumb:im.url};visDraw()}}
 function visIds(){const w=vis.words,cn=x=>(C.find(c=>c[0]==x)||[0,""])[1];
- return[...MY,...B.map(b=>b.id)].map(id=>{const i=getL(id),h=(i.t+" "+(i.kw||"")+" "+cn(i.c)).toLowerCase();let hit=0;w.forEach(x=>{if(h.includes(x.slice(0,Math.max(3,x.length-2))))hit++});return[id,(i.c==vis.cat?1.5:0)+hit*2,hit]}).filter(x=>x[2]>0||x[1]>0).sort((a,b)=>b[1]-a[1]).map(x=>x[0])}
+ return[...MYA(),...B.map(b=>b.id)].map(id=>{const i=getL(id),h=(i.t+" "+(i.kw||"")+" "+cn(i.c)).toLowerCase();let hit=0;w.forEach(x=>{if(h.includes(x.slice(0,Math.max(3,x.length-2))))hit++});return[id,(i.c==vis.cat?1.5:0)+hit*2,hit]}).filter(x=>x[2]>0||x[1]>0).sort((a,b)=>b[1]-a[1]).map(x=>x[0])}
 /* ---------- ИИ-помощник покупателя ---------- */
 async function aiAsk(id,q){q=(q||($("aiq")||{}).value||"").trim();if(!q)return;const sm=await SMP,o=$("aio");if(!sm||!o)return;$("aiq").value="";
  if(askCtl)askCtl.abort();const ctl=askCtl=new AbortController(),i=getL(id),cn=(C.find(c=>c[0]==i.c)||[0,""])[1];
@@ -3379,17 +3511,65 @@ async function aiAsk(id,q){q=(q||($("aiq")||{}).value||"").trim();if(!q)return;c
  catch(e){if(e&&e.code=="cancelled")return;ae.textContent=e&&e.text?e.text+"\n\n(ответ оборвался)":aiErr(e)}}
 /* ---------- публикация ---------- */
 let upl=null;
-/* ---------- v48: мои объявления, офлайн ---------- */
+/* ---------- v56: «Мои объявления» — центральная кнопка: разместить, статусы, статистика, действия ---------- */
+let MYT="active",MYX=null;
+const MY_TABS=[["active","Активные"],["review","На проверке"],["draft","Черновики"],["sold","Проданные"],["archived","Архив"]];
+const mySt=i=>i.st||"active";
 function back20(){$("m20").classList.remove("show")}
-function myOpen(){myDraw();$("m20").classList.add("show");const sh=$("s20");void sh.offsetHeight;sh.scrollTop=0}
-function myDraw(){const ids=MY.filter(id=>UL[id]);
- $("s20").innerHTML=`<div class="tbar"><button class="x" onclick="back20()" aria-label="Закрыть">✕</button><h2>Мои объявления</h2></div>`+(ids.length?`<div class="myh">Размещение бесплатно. Здесь можно открыть объявление или снять его с публикации.</div>`+ids.map(id=>{const i=UL[id];
-  return `<div class="myr" id="my${id}"><div class="sel-so"><div class="cim">${imK(i)}</div><div><b>${esc(i.t)}</b><span>${prc(i)} · опубликовано ${agoLong(i.pt||Date.now())}</span></div></div><div class="qr"><button class="chip" onclick="back20();setTimeout(()=>openL(${id}),300)">Открыть</button>${isCar(i)?`<button class="chip" onclick="dkOpen(${id})">📄 ДКП</button>`:""}<button class="chip dg" id="mydel${id}" onclick="myDel(${id},this)">Снять с публикации</button></div></div>`}).join("")
-  :`<div class="endc" style="padding:26px 8px 14px"><span style="font-size:34px" aria-hidden="true">🗂️</span><b>Пока нет объявлений</b><span>Подай первое: это бесплатно, место в ленте купить нельзя.</span><div class="acts"><button class="btn" onclick="back20();setTimeout(openPost,300)">Подать объявление</button></div></div>`)}
-function myDel(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent="Точно снять?";clearTimeout(b._t);b._t=setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="Снять с публикации"}},3200);return}
- MY=MY.filter(x=>x!=id);delete UL[id];fav.delete(id);saveMine();NW=NW.filter(n=>n.id!=id);
- document.querySelectorAll(`[onclick="openL(${id})"]`).forEach(e=>{const c=e.closest(".card")||e;c.remove()});
- try{favCount()}catch(e){}myDraw();toast("Объявление снято с публикации")}
+/** разместить объявление: только со входом — как будет на сайте */
+function postGo(){if(!me||!users[me]){aNext=()=>openPost();openAuth();toast("Войди или зарегистрируйся — так покупатели смогут тебе написать");return}openPost()}
+function myOpen(tab){if(tab)MYT=tab;MYX=null;myDraw();cl();$("m20").classList.add("show");const sh=$("s20");void sh.offsetHeight;sh.scrollTop=0}
+/** статистика своего объявления. В прототипе — правдоподобная модель от времени размещения; на сайте — настоящие цифры с сервера */
+function myStats(i){const t0=i.pt||Date.now(),now=Date.now(),r=rng((i.id%100000)*13+7),base=5+r()*9,day=864e5,days=[];
+ const end=(mySt(i)=="sold"&&i.sd)||(mySt(i)=="archived"&&i.ad)||now;let v=0;
+ for(let k=13;k>=0;k--){const ds=new Date(now-k*day);ds.setHours(0,0,0,0);const a=Math.max(ds.getTime(),t0),b=Math.min(ds.getTime()+day,end);
+  const d=Math.floor((ds.getTime()-new Date(t0).setHours(0,0,0,0))/day);let x=0;
+  if(b>a){const w=(b-a)/day,dec=d<=0?1.7:Math.max(.35,1-d*.05),j=.75+.5*rng((i.id%100000)*31+d)();x=Math.round(base*dec*j*w*(d<=0?Math.max(.4,w):1))}days.push(x)}
+ for(let d=0,ds=new Date(t0).setHours(0,0,0,0);ds<end-13*day&&d<400;d++,ds+=day){const dec=d<=0?1.7:Math.max(.35,1-d*.05);v+=Math.round(base*dec)}
+ v+=days.reduce((a,b)=>a+b,0);const vt=days[13];
+ return{v,vt,f:Math.floor(v*.07),m:Math.floor(v*.035),days,live:Math.max(0,Math.floor((end-t0)/day))}}
+function myDays(n){return n<1?"меньше дня":n+" "+ruN(n,"день","дня","дней")}
+function myBars(st){const mx=Math.max(1,...st.days);return `<div class="v6bars" role="img" aria-label="Просмотры за 14 дней">${st.days.map((x,k)=>`<i style="height:${Math.max(3,Math.round(x/mx*100))}%" title="${x} ${ruN(x,"просмотр","просмотра","просмотров")}"${k==13?' class="td"':""}></i>`).join("")}</div><div class="v6bl"><span>14 дней назад</span><span>сегодня</span></div>`}
+function myCard(i){const st=mySt(i),s=myStats(i),car=isCar(i),open=MYX==i.id;
+ const chip={active:["Опубликовано","ok"],review:["На проверке","wr"],sold:["Продано","mu"],archived:["Снято с продажи","mu"]}[st];
+ const acts=st=="active"?`<button class="chip" onclick="myEdit(${i.id})">Редактировать</button><button class="chip" onclick="myAct(${i.id},'sold',this)">Продано</button><button class="chip" onclick="myAct(${i.id},'archived',this)">Снять</button>${car?`<button class="chip" onclick="dkOpen(${i.id})">📄 ДКП</button>`:""}<button class="chip" onclick="myShare(${i.id})">Поделиться</button>`
+  :st=="review"?`<button class="chip" onclick="myEdit(${i.id})">Редактировать</button><button class="chip" onclick="myAct(${i.id},'archived',this)">Снять</button>`
+  :`<button class="chip" onclick="myAct(${i.id},'back',this)">Вернуть в продажу</button><button class="chip dg" onclick="myAct(${i.id},'del',this)">Удалить навсегда</button>`;
+ const when=st=="sold"&&i.sd?"продано "+agoLong(i.sd):st=="archived"&&i.ad?"снято "+agoLong(i.ad):"размещено "+agoLong(i.pt||Date.now())+" · висит "+myDays(s.live);
+ return `<article class="v6c" id="my${i.id}"><div class="v6ch" onclick="myL(${i.id})" role="button" tabindex="0" onkeydown="if(event.key=='Enter')myL(${i.id})" aria-label="Открыть «${esc(i.t)}»"><div class="cim">${imK(i)}</div><div class="v6ci"><b>${esc(i.t)}</b><span class="v6pr">${prcH(i)}</span><span class="v6st ${chip[1]}">${chip[0]}</span><small>${when}</small></div></div>
+ ${st=="review"?`<div class="v6rv">🔎 Проверяем изменения. Обычно это занимает несколько минут — потом объявление снова будет в ленте.</div>`:""}
+ <div class="v6m"><span title="Просмотры"><b>${s.v.toLocaleString("ru-RU")}</b>${ruN(s.v,"просмотр","просмотра","просмотров")}${st=="active"&&s.vt?` <em>+${s.vt} сегодня</em>`:""}</span><span title="В избранном"><b>${s.f}</b>в избранном</span><span title="Написали"><b>${s.m}</b>${ruN(s.m,"сообщение","сообщения","сообщений")}</span></div>
+ <div class="qr v6a">${acts}<button class="chip" onclick="myX(${i.id})" aria-expanded="${open}">${open?"Скрыть статистику":"Статистика"}</button></div>
+ ${open?`<div class="v6x2">${myBars(s)}<div class="v6kv"><span>Опубликовано</span><b>${new Date(i.pt||Date.now()).toLocaleDateString("ru-RU",{day:"numeric",month:"long",year:"numeric"})}</b><span>Висит</span><b>${myDays(s.live)}</b><span>Просмотров сегодня</span><b>${s.vt}</b><span>Фото</span><b>${(upsOf(i)||[]).length}</b></div><div class="v6tip">${myTip(i)}</div></div>`:""}</article>`}
+function myTip(i){const n=(upsOf(i)||[]).length;if(n<3)return"💡 Добавь фото с разных сторон: покупателю проще решиться, когда видно вещь целиком.";if(!i.d||i.d.length<60)return"💡 Расскажи в описании о состоянии и комплекте — так будет меньше одинаковых вопросов в чате.";if(isCar(i)&&!i.vin)return"💡 Укажи VIN — покупатель сможет бесплатно проверить историю машины.";return"Место в ленте купить нельзя, поднимать объявление не нужно: его видят по запросу, расстоянию и свежести."}
+function myDraw(){const s20=$("s20");
+ if(!me||!users[me]){s20.innerHTML=`<div class="tbar"><button class="x" onclick="back20()" aria-label="Закрыть">✕</button><h2>Мои объявления</h2></div><div class="endc" style="padding:26px 8px 14px"><span style="font-size:34px" aria-hidden="true">🗂️</span><b>Войди, чтобы размещать объявления</b><span>Здесь будут все твои объявления, черновики и статистика: просмотры, избранное, сообщения.</span><div class="acts"><button class="btn" onclick="aNext=()=>myOpen();openAuth()">Войти или зарегистрироваться</button></div></div>`;return}
+ const all=MY.filter(id=>UL[id]).map(id=>UL[id]),dr=pdLoad(),cnt={draft:dr?1:0};all.forEach(i=>{cnt[mySt(i)]=(cnt[mySt(i)]||0)+1});
+ const act=all.filter(i=>mySt(i)=="active"),sum=act.reduce((a,i)=>{const s=myStats(i);a.v+=s.v;a.f+=s.f;a.m+=s.m;a.t+=s.vt;return a},{v:0,f:0,m:0,t:0});
+ const list=MYT=="draft"?[]:all.filter(i=>mySt(i)==MYT).sort((a,b)=>(b.et||b.pt||0)-(a.et||a.pt||0));
+ const empty={active:["📭","Активных объявлений нет","Размести первое — это бесплатно, а место в ленте купить нельзя."],review:["🔎","Сейчас ничего не проверяется","После публикации или правки объявление коротко проверяется и появляется в ленте."],sold:["🤝","Проданных пока нет","Когда продашь, отметь объявление проданным — оно уйдёт из ленты, а статистика сохранится."],archived:["🗄️","Архив пуст","Сюда попадают снятые с продажи объявления. Их можно вернуть в продажу в одно нажатие."],draft:["📝","Черновиков нет","Если начать объявление и закрыть форму, оно сохранится здесь."]}[MYT];
+ s20.innerHTML=`<div class="tbar"><button class="x" onclick="back20()" aria-label="Закрыть">✕</button><h2>Мои объявления</h2></div>
+<button class="btn v6new" onclick="back20();setTimeout(postGo,280)"><b>+</b> Разместить объявление</button>
+${act.length?`<div class="v6sum"><div><b>${act.length}</b><span>${ruN(act.length,"активное","активных","активных")}</span></div><div><b>${sum.v.toLocaleString("ru-RU")}</b><span>просмотров${sum.t?` · +${sum.t} сегодня`:""}</span></div><div><b>${sum.f}</b><span>в избранном</span></div><div><b>${sum.m}</b><span>${ruN(sum.m,"сообщение","сообщения","сообщений")}</span></div></div>`:""}
+<div class="v6tabs" role="tablist">${MY_TABS.map(([k,n])=>`<button role="tab" aria-selected="${MYT==k}" class="${MYT==k?"on":""}" onclick="MYT='${k}';MYX=null;myDraw()">${n}${cnt[k]?` <em>${cnt[k]}</em>`:""}</button>`).join("")}</div>
+<div class="v6list">${MYT=="draft"&&dr?`<article class="v6c"><div class="v6ch" onclick="back20();setTimeout(()=>openPost(),280)" role="button" tabindex="0"><div class="cim"><div class="im emo">📝</div></div><div class="v6ci"><b>${esc(String(dr.t||"").trim()||"Без названия")}</b><span class="v6pr">${dr.p?rub(+dr.p):"цена не указана"}</span><span class="v6st wr">Черновик</span><small>сохранён ${agoLong(dr.ts||Date.now())}${dr.n?" · "+dr.n+" фото":""}</small></div></div><div class="qr v6a"><button class="chip" onclick="back20();setTimeout(()=>openPost(),280)">Продолжить</button><button class="chip dg" onclick="myAct(0,'draftdel',this)">Удалить</button></div></article>`
+ :list.length?list.map(myCard).join(""):`<div class="endc" style="padding:22px 8px 10px"><span style="font-size:30px" aria-hidden="true">${empty[0]}</span><b>${empty[1]}</b><span>${empty[2]}</span></div>`}</div>
+<div class="fine">Размещение бесплатно. Статистика в прототипе — демонстрационная.</div>`}
+function myL(id){back20();setTimeout(()=>openL(id),280)}
+function myX(id){MYX=MYX==id?null:id;myDraw();const c=$("my"+id);if(c)c.scrollIntoView({block:"nearest",behavior:RMOT.matches?"auto":"smooth"})}
+function myEdit(id){if(mySt(UL[id])=="sold"){toast("Сначала верни объявление в продажу");return}back20();setTimeout(()=>openPost(false,id),280)}
+function myShare(id){const u=location.origin+location.pathname+"#l"+id;try{navigator.clipboard.writeText(u).then(()=>toast("Ссылка скопирована"),()=>toast("Ссылка: "+u))}catch(e){toast("Ссылка: "+u)}}
+function myOff(id){NW=NW.filter(n=>n.id!=id);document.querySelectorAll(`[onclick="openL(${id})"]`).forEach(e=>{if(e.closest("#m20"))return;const c=e.closest(".card")||e;c.remove()});try{newsDraw()}catch(e){}}
+function myAct(id,a,b){const ask={sold:"Точно продано?",archived:"Точно снять?",del:"Удалить навсегда?",draftdel:"Удалить черновик?",back:""}[a];
+ if(ask&&!b.dataset.sure){b.dataset.sure=1;const t0=b.textContent;b.textContent=ask;clearTimeout(b._t);b._t=setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent=t0}},3200);return}
+ if(a=="draftdel"){pdClear();myDraw();toast("Черновик удалён");return}
+ const i=UL[id];if(!i)return;
+ if(a=="sold"){i.st="sold";i.sd=Date.now();myOff(id);toast("🤝 Отмечено как проданное. Поздравляем!")}
+ else if(a=="archived"){i.st="archived";i.ad=Date.now();myOff(id);toast("Объявление снято с продажи — оно в архиве")}
+ else if(a=="back"){i.st="review";i.et=Date.now();delete i.sd;delete i.ad;MYT="review";toast("Объявление проверяется перед возвращением в ленту");
+  setTimeout(()=>{const x=UL[id];if(x&&x.st=="review"){x.st="active";saveMine();if($("m20").classList.contains("show")){if(MYT=="review")MYT="active";myDraw()}toast("✅ Объявление снова в ленте")}},2600)}
+ else if(a=="del"){MY=MY.filter(x=>x!=id);delete UL[id];fav.delete(id);IDB.del("l"+id);myOff(id);try{favCount()}catch(e){}toast("Объявление удалено")}
+ saveMine();myDraw()}
 (function(){const b=document.createElement("div");b.id="offb";b.setAttribute("role","status");b.hidden=true;b.textContent="Нет сети. Карта и поиск городов могут не работать";document.body.appendChild(b);
  const upd=()=>{const off=navigator.onLine===false;if(off===b.hidden){b.hidden=!off;if(!off)toast("Сеть вернулась")}};addEventListener("offline",upd);addEventListener("online",upd);upd()})();
 
@@ -3533,7 +3713,7 @@ function repSend(){if(!RPS.r){const e=$("e-rp");e.textContent="Выбери пр
 /* ---------- v48: форма подачи: поля по категориям, черновик, проверки ---------- */
 const SC5=["Новое","Отличное","Хорошее","Среднее","Требует ремонта"];
 const PF={
- auto:[{k:"Год выпуска",t:"n",ph:"2015",min:1950,max:new Date().getFullYear()+1},{k:"Пробег",t:"n",ph:"120000",min:0,max:3e6,u:"км"},{k:"Кузов",t:"s",o:["Седан","Хэтчбек","Лифтбэк","Универсал","Внедорожник","Купе","Минивэн","Пикап"]},{k:"Двигатель",t:"c",o:["Бензин","Бензин + газ","Дизель","Гибрид","Электро"]},{k:"КПП",t:"c",o:["Механика","Автомат","Робот","Вариатор"]},{k:"Привод",t:"c",o:["Передний","Задний","Полный"]},{k:"Владельцев по ПТС",t:"c",o:["1","2","3+"]},{k:"Состояние",t:"c",o:SC5}],
+ auto:[{k:"Марка",t:"t",ph:"Lada, Toyota, Haval…",req:1},{k:"Модель",t:"t",ph:"Granta, Camry, Jolion…",req:1},{k:"Год выпуска",t:"n",ph:"2015",min:1950,max:new Date().getFullYear()+1,req:1},{k:"Пробег",t:"n",ph:"120000",min:0,max:3e6,u:"км",req:1},{k:"Кузов",t:"s",o:["Седан","Хэтчбек","Лифтбэк","Универсал","Внедорожник","Купе","Минивэн","Пикап"]},{k:"Двигатель",t:"c",o:["Бензин","Бензин + газ","Дизель","Гибрид","Электро"]},{k:"КПП",t:"c",o:["Механика","Автомат","Робот","Вариатор"]},{k:"Привод",t:"c",o:["Передний","Задний","Полный"]},{k:"Владельцев по ПТС",t:"c",o:["1","2","3+"]},{k:"Состояние",t:"c",o:SC5}],
  tech:[{k:"Бренд",t:"t",ph:"Apple, Samsung…"},{k:"Модель",t:"t",ph:"Например, iPhone 13"},{k:"Состояние",t:"c",o:SC5},{k:"Комплект",t:"t",ph:"Коробка, зарядка, чек"}],
  fash:[{k:"Бренд",t:"t",ph:"Nike, Adidas…"},{k:"Размер",t:"t",ph:"Например, 46 (M) или 42"},{k:"Сезон",t:"c",o:["Зима","Демисезон","Лето","Всесезонный"]},{k:"Состояние",t:"c",o:SC5}],
  home:[{k:"Состояние",t:"c",o:SC5},{k:"Материал",t:"t",ph:"Дерево, металл…"},{k:"Габариты",t:"t",ph:"Ш × Г × В, см"}],
@@ -3547,13 +3727,13 @@ const PD_K="vvm_draft",PD_I="vvm_draft_img";
 function pfErr(id,msg,inp){const e=$("e-"+id);if(e){e.textContent=msg||"";e.classList.toggle("on",!!msg)}const i=$(inp||id);if(i){i.classList.toggle("bad",!!msg);if(msg)i.setAttribute("aria-invalid","true");else i.removeAttribute("aria-invalid")}}
 function pfBuild(){const c=$("pc").value,L=PF[c]||[],keep={};L.forEach(f=>{if(PFV[f.k])keep[f.k]=PFV[f.k]});PFV=keep;
  let h="",run=[];const flush=()=>{if(run.length){h+=`<div class="pf2">${run.join("")}</div>`;run=[]}};
- L.forEach((f,n)=>{const v=PFV[f.k]||"",id="pf"+n,lab=f.k+(f.u?", "+f.u:"");
-  if(f.t=="n"){run.push(`<div><label for="${id}">${esc(lab)}</label><input class="in" id="${id}" inputmode="numeric" autocomplete="off" placeholder="${esc(f.ph||"")}" value="${esc(v)}" maxlength="8" oninput="pfIn(${n},this)"><div class="ferr" id="e-${id}" role="alert"></div></div>`);return}
+ L.forEach((f,n)=>{const v=PFV[f.k]||"",id="pf"+n,lab=f.k+(f.u?", "+f.u:""),rq=f.req?' <span class="req">*</span>':"";
+  if(f.t=="n"){run.push(`<div><label for="${id}">${esc(lab)}${rq}</label><input class="in" id="${id}" inputmode="numeric" autocomplete="off" placeholder="${esc(f.ph||"")}" value="${esc(v)}" maxlength="8" oninput="pfIn(${n},this)"><div class="ferr" id="e-${id}" role="alert"></div></div>`);return}
   flush();
-  if(f.t=="t")h+=`<label for="${id}">${esc(f.k)}</label><input class="in" id="${id}" autocomplete="off" maxlength="60" placeholder="${esc(f.ph||"")}" value="${esc(v)}" oninput="pfIn(${n},this)">`;
+  if(f.t=="t")h+=`<label for="${id}">${esc(f.k)}${rq}</label><input class="in" id="${id}" autocomplete="off" maxlength="60" placeholder="${esc(f.ph||"")}" value="${esc(v)}" oninput="pfIn(${n},this)"><div class="ferr" id="e-${id}" role="alert"></div>`;
   else if(f.t=="s")h+=`<label for="${id}">${esc(f.k)}</label><select class="in" id="${id}" onchange="pfIn(${n},this)"><option value="">Не указано</option>${f.o.map(o=>`<option ${o==v?"selected":""}>${esc(o)}</option>`).join("")}</select>`;
-  else h+=`<label id="l-${id}">${esc(f.k)}</label><div class="pfc" role="group" aria-labelledby="l-${id}">${f.o.map(o=>`<button type="button" class="chip ${o==v?"on":""}" aria-pressed="${o==v}" data-v="${esc(o)}" onclick="pfPick(${n},this)">${esc(o)}</button>`).join("")}</div>`});
- flush();$("pff").innerHTML=h;pfHints()}
+  else h+=`<label id="l-${id}">${esc(f.k)}${rq}</label><div class="pfc" role="group" aria-labelledby="l-${id}">${f.o.map(o=>`<button type="button" class="chip ${o==v?"on":""}" aria-pressed="${o==v}" data-v="${esc(o)}" onclick="pfPick(${n},this)">${esc(o)}</button>`).join("")}</div>`});
+ flush();$("pff").innerHTML=(c=="auto"?plateH():"")+h;pfHints()}
 function pfHints(){$("h-pt").textContent=$("pc").value=="auto"?"Начни с марки и модели, например «Lada Granta»: по ним работают поиск и фильтры.":$("pc").value=="realty"?"Главное в заголовке: тип жилья, комнаты, площадь и этаж, например «2-к. квартира, 54 м², 5/9 эт.».":$("pc").value=="svc"?"Что именно делаешь: «Укладка плитки», «Репетитор по математике», «Грузоперевозки, Газель».":"Что продаёшь: тип вещи, бренд и модель."}
 function pfIn(n,el){const f=(PF[$("pc").value]||[])[n];if(!f)return;let v=el.value;if(f.t=="n"){v=v.replace(/\D/g,"").slice(0,8);el.value=v}PFV[f.k]=v.trim();pfErr("pf"+n,"");pdSave()}
 function pfPick(n,el){const f=(PF[$("pc").value]||[])[n];if(!f)return;const v=el.dataset.v;PFV[f.k]=PFV[f.k]==v?"":v;[...el.parentNode.children].forEach(b=>{const on=!!PFV[f.k]&&b.dataset.v==PFV[f.k];b.classList.toggle("on",on);b.setAttribute("aria-pressed",on)});pdSave()}
@@ -3562,52 +3742,120 @@ function pfValidate(){const bad=[],c=$("pc").value,t=$("pt").value.trim(),p=+$("
  const add=(id,msg)=>{pfErr(id,msg);if(msg)bad.push(id)};
  add("pt",t.length<3?"Напиши, что продаёшь: минимум 3 символа":"");
  (PF[c]||[]).forEach((f,n)=>{if(f.t!="n")return;const raw=PFV[f.k];let m="";if(raw){const x=+raw;if(x<f.min||x>f.max)m=f.k=="Год выпуска"?"Год от "+f.min+" до "+f.max:"Проверь число: от "+f.min+" до "+f.max.toLocaleString("ru-RU")}add("pf"+n,m)});
+ (PF[c]||[]).forEach((f,n)=>{if(f.req&&!PFV[f.k])add("pf"+n,"Заполни поле «"+f.k+"»")});
  const vin=c=="auto"?$("pv").value.trim().toUpperCase():"";add("pv",vin&&!/^[A-HJ-NPR-Z0-9]{17}$/.test(vin)?"VIN: 17 символов, латиница и цифры, без I, O и Q":"");
  add("pp",!(p>0)?"Укажи цену в рублях, например 15 000":p>1e8?"Слишком большая цена, проверь число":"");
  return bad}
-const dtH=()=>AIOK?"ИИ заполнит всё сам":"Первое фото станет обложкой";
-function dtReset(){$("dt").innerHTML='📷<br><b>Нажми, чтобы добавить фото</b><br><small id="dts">'+dtH()+'</small>'}
+const dtH=()=>AIOK?"ИИ заполнит остальное сам":"первое станет обложкой";
+function dtReset(){$("dt").innerHTML='📷<br><b>Нажми, чтобы добавить фото</b><br><small id="dts">до '+PH_MAX+' фото · '+dtH()+'</small>'}
 SMP.then(sm=>{AIOK=!!sm;const d=$("dts");if(d&&!$("drop").classList.contains("hp")&&!$("drop").classList.contains("go"))d.textContent=dtH()});
 const pdCnt=()=>{const n=$("pd").value.length;$("pdn").textContent=n?n+" / 1000":""};
 const ppv=()=>{const p=+$("pp").value;$("ppv").textContent=p>0&&p<=1e8?"· "+rub(Math.round(p)):""};
-function pdEmpty(){return !$("pt").value.trim()&&!$("pd").value.trim()&&!$("pp").value&&!$("pv").value&&!Object.values(PFV).some(Boolean)&&!upl}
-function pdSave(){clearTimeout(pdT);pdT=setTimeout(pdSave0,300)}
-function pdSave0(){clearTimeout(pdT);try{if(pdEmpty()){localStorage.removeItem(PD_K);localStorage.removeItem(PD_I);pdImg=null;return}
- localStorage.setItem(PD_K,JSON.stringify({t:$("pt").value,c:$("pc").value,d:$("pd").value,p:$("pp").value,v:$("pv").value,f:PFV,k:DKV,ts:Date.now()}));
- if(upl!==pdImg){if(upl&&upl.length<800000)localStorage.setItem(PD_I,upl);else localStorage.removeItem(PD_I);pdImg=upl}}catch(e){}}
-function pdClear(){clearTimeout(pdT);pdImg=null;try{localStorage.removeItem(PD_K);localStorage.removeItem(PD_I)}catch(e){}}
+function pdEmpty(){return !$("pt").value.trim()&&!$("pd").value.trim()&&!$("pp").value&&!$("pv").value&&!Object.values(PFV).some(Boolean)&&!UPS.length&&!PGN}
+function pdSave(){if(PEDIT)return;clearTimeout(pdT);pdT=setTimeout(pdSave0,300)}
+function pdSave0(){clearTimeout(pdT);if(PEDIT)return;try{if(pdEmpty()){localStorage.removeItem(PD_K);localStorage.removeItem(PD_I);IDB.del("draft");pdImg=null;return}
+ localStorage.setItem(PD_K,JSON.stringify({t:$("pt").value,c:$("pc").value,d:$("pd").value,p:$("pp").value,v:$("pv").value,g:PGN,f:PFV,k:DKV,n:UPS.length,ts:Date.now()}));
+ const sig=UPS.map(u=>u.length).join(",");if(sig!==pdImg){pdImg=sig;localStorage.removeItem(PD_I);if(UPS.length)IDB.set("draft",UPS.slice());else IDB.del("draft")}}catch(e){}}
+function pdClear(){clearTimeout(pdT);pdImg=null;try{localStorage.removeItem(PD_K);localStorage.removeItem(PD_I)}catch(e){}IDB.del("draft")}
 function pdLoad(){try{const o=JSON.parse(localStorage.getItem(PD_K)||"null");return o&&typeof o=="object"?o:null}catch(e){return null}}
 ["pt","pp","pv","pd"].forEach(i=>$(i).addEventListener("input",()=>{pfErr(i,"");if(i=="pd")pdCnt();if(i=="pp")ppv();pdSave()}));
 $("pc").addEventListener("change",()=>{pfBuild();pdSave()});
-new MutationObserver(()=>{const sh=$("m2").classList.contains("show");if(pm2&&!sh){if(!pdPub)pdSave0();let has=false;try{has=localStorage.getItem(PD_K)!=null}catch(e){}if(!pdPub&&has)toast("Черновик сохранён");pdPub=false}pm2=sh}).observe($("m2"),{attributes:true,attributeFilter:["class"]});
+new MutationObserver(()=>{const sh=$("m2").classList.contains("show");if(pm2&&!sh){if(PEDIT){PEDIT=null;pdPub=false}else{if(!pdPub)pdSave0();let has=false;try{has=localStorage.getItem(PD_K)!=null}catch(e){}if(!pdPub&&has)toast("Черновик сохранён");pdPub=false}}pm2=sh}).observe($("m2"),{attributes:true,attributeFilter:["class"]});
 
 let aiCtl=null,aiTok=0,aiBlob=null,postBad=false;
-$("fi").addEventListener("change",e=>{const f=e.target.files[0];e.target.value="";if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);upl=c.toDataURL("image/jpeg",.82);$("drop").style.background=`center/cover url(${upl})`;$("drop").classList.add("hp");c.toBlob(bl=>{aiBlob=bl;scanGo()},"image/jpeg",.88)};im.onerror=()=>toast("Не удалось открыть фото");im.src=r.result};r.readAsDataURL(f)});
-function openPost(fresh){if(aiCtl)aiCtl.abort();aiTok++;postBad=false;aiBlob=null;upl=null;pdImg=null;$("drop").style.background="";$("drop").classList.remove("hp","go");["pt","pd","pp"].forEach(i=>$(i).value="");$("pa").style.display="none";PFV={};DKV={};dtReset();passReset();
- if(fresh===true)pdClear();const dr=fresh===true?null:pdLoad();$("pdbar").hidden=true;
- if(dr){$("pt").value=String(dr.t||"").slice(0,90);if(C.some(c=>c[0]==dr.c&&c[0]!="all"))$("pc").value=dr.c;$("pd").value=String(dr.d||"").slice(0,1000);$("pp").value=dr.p||"";$("pv").value=String(dr.v||"").slice(0,17);PFV=dr.f&&typeof dr.f=="object"?dr.f:{};DKV=dr.k&&typeof dr.k=="object"?dr.k:{};
-  try{const im=localStorage.getItem(PD_I);if(im&&/^data:image\//.test(im)){upl=im;pdImg=im;$("drop").style.background=`center/cover url(${im})`;$("drop").classList.add("hp");$("dt").innerHTML='✅<br><b>Фото добавлено</b><br><small id="dts">нажми, чтобы заменить</small>'}}catch(e){}
+$("fi").addEventListener("change",e=>{const fs=[...e.target.files];e.target.value="";if(fs.length)v6add(fs)});
+function openPost(fresh,eid){if(aiCtl)aiCtl.abort();aiTok++;postBad=false;aiBlob=null;UPS=[];upl=null;pdImg=null;PGN="";PEDIT=eid&&UL[eid]?eid:null;$("drop").classList.remove("hp","go");["pt","pd","pp","pv"].forEach(i=>$(i).value="");$("pa").style.display="none";PFV={};DKV={};dtReset();passReset();
+ const ed=PEDIT?UL[PEDIT]:null;$("m2").querySelector(".tbar h2").textContent=ed?"Редактирование":"Новое объявление";$("v6pub").textContent=ed?"Сохранить изменения":"Опубликовать бесплатно";$("v6pub").disabled=false;
+ if(fresh===true)pdClear();const dr=ed||fresh===true?null:pdLoad();$("pdbar").hidden=true;
+ if(ed){$("pt").value=ed.t;if(C.some(c=>c[0]==ed.c&&c[0]!="all"))$("pc").value=ed.c;$("pd").value=ed.d||"";$("pp").value=ed.p;$("pv").value=ed.vin||"";PGN=ed.gn||"";DKV=ed.dkp?Object.assign({},ed.dkp):{};
+  (ed.sp||[]).forEach(([k,v])=>{PFV[k]=k=="Пробег"?String(v).replace(/\D/g,""):String(v).replace(/\s*м²$/,"")});UPS=upsOf(ed)?upsOf(ed).slice():[]}
+ if(dr){$("pt").value=String(dr.t||"").slice(0,90);if(C.some(c=>c[0]==dr.c&&c[0]!="all"))$("pc").value=dr.c;$("pd").value=String(dr.d||"").slice(0,1000);$("pp").value=dr.p||"";$("pv").value=String(dr.v||"").slice(0,17);PGN=String(dr.g||"").slice(0,12);PFV=dr.f&&typeof dr.f=="object"?dr.f:{};DKV=dr.k&&typeof dr.k=="object"?dr.k:{};
+  try{const im=localStorage.getItem(PD_I);if(im&&/^data:image\//.test(im))UPS=[im]}catch(e){}
+  if(dr.n)IDB.get("draft").then(a=>{if(Array.isArray(a)&&!UPS.length&&!PEDIT&&$("m2").classList.contains("show")){UPS=a.filter(u=>typeof u=="string"&&/^data:image\//.test(u)).slice(0,PH_MAX);pdImg=UPS.map(u=>u.length).join(",");v6draw()}});
   $("pdbt").textContent="Черновик от "+new Date(dr.ts||Date.now()).toLocaleString("ru-RU",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})+" восстановлен";$("pdbar").hidden=false}
- pfBuild();dkfBuild();passDraw();pdCnt();ppv();["pt","pd","pp","pv"].forEach(i=>pfErr(i,""));pdPub=false;cl();$("m2").classList.add("show");const sh2=$("m2").querySelector(".sheet");if(sh2){void sh2.offsetHeight;sh2.scrollTop=0}}
+ pfBuild();dkfBuild();passDraw();pdCnt();ppv();v6draw();["pt","pd","pp","pv"].forEach(i=>pfErr(i,""));pdPub=false;cl();$("m2").classList.add("show");const sh2=$("m2").querySelector(".sheet");if(sh2){void sh2.offsetHeight;sh2.scrollTop=0}}
 function scanIt(){$("fi").click()}
 async function scanGo(){const d=$("drop"),tok=++aiTok,t0=performance.now();if(aiCtl)aiCtl.abort();aiCtl=new AbortController();postBad=false;
- if(!AIOK){d.classList.remove("go");$("dt").innerHTML='✅<br><b>Фото добавлено</b><br><small id="dts">нажми, чтобы заменить</small>';$("pa").style.display="none";pdSave();return}
- d.classList.add("go");$("dt").innerHTML="🔍<br><b>ИИ смотрит на фото…</b><br><small>определяет вещь и цену</small>";$("pa").style.display="none";
+ if(!AIOK){d.classList.remove("go");$("dt").innerHTML='✅ <b>Фото добавлены</b>';$("pa").style.display="none";pdSave();return}
+ d.classList.add("go");$("dt").innerHTML="🔍 <b>ИИ смотрит на фото…</b> определяет вещь и цену";$("pa").style.display="none";
  try{const o=await aiScan(aiBlob,aiCtl.signal);if(tok!==aiTok)return;d.classList.remove("go");const a=$("pa");a.style.display="block";
-  if(o.bad){postBad=true;["pt","pd","pp"].forEach(i=>$(i).value="");$("dt").innerHTML="🚫<br><b>Такое выставлять нельзя</b>";a.innerHTML="🚫 <b>На VVM нельзя продавать такие вещи.</b> "+esc(o.why||"Это запрещено правилами площадки и законом.")+"<br>Выбери другое фото или вещь.";return}
+  if(o.bad){postBad=true;["pt","pd","pp"].forEach(i=>$(i).value="");$("dt").innerHTML="🚫 <b>Такое выставлять нельзя</b>";a.innerHTML="🚫 <b>На VVM нельзя продавать такие вещи.</b> "+esc(o.why||"Это запрещено правилами площадки и законом.")+"<br>Выбери другое фото или вещь.";return}
   $("pt").value=o.name;$("pc").value=o.cat;passDraw();pfBuild();pfCond(o.cnd);$("pd").value=o.desc;if(o.p)$("pp").value=o.p;else $("pp").value="";
-  pdCnt();ppv();pdSave();const sec=Math.max(1,Math.round((performance.now()-t0)/1000));$("dt").innerHTML="✅<br><b>Распознано за "+sec+" с</b><br><small>проверь и поправь, если нужно</small>";
+  pdCnt();ppv();pdSave();const sec=Math.max(1,Math.round((performance.now()-t0)/1000));$("dt").innerHTML="✅ <b>Распознано за "+sec+" с</b> — проверь и поправь, если нужно";
   a.innerHTML=(o.conf<.55?"🤔 <b>Не уверен, что назвал верно.</b> Проверь название.<br>":"")+(o.p?"⚖️ <b>Ориентир по цене: "+rub(o.p)+".</b> Вероятный диапазон: "+rub(o.lo)+" – "+rub(o.hi)+". Это оценка ИИ без поиска по рынку, сверь с похожими объявлениями рядом.":"⚖️ Цену оценить не получилось, укажи её сам.")+(o.tip?"<br>💡 "+esc(o.tip):"")}
- catch(e){if(tok!==aiTok||(e&&e.code=="cancelled"))return;d.classList.remove("go");$("dt").innerHTML="📷<br><b>Не удалось распознать</b><br><small>нажми, чтобы выбрать фото ещё раз</small>";const a=$("pa");a.style.display="block";a.innerHTML="⚠️ "+esc(aiErr(e))+"<br>Название, категорию и цену можно ввести вручную."}}
-function addMine(o){const id=unid++;UL[id]={id,t:o.t,p:o.p,pp:o.pp||"",ps:o.ps||"",c:o.c,k:[],up:o.up||null,em:o.em||((C.find(c=>c[0]==o.c)||[])[2])||"📦",tg:[],pass:o.pass||null,vin:o.vin||"",lo:Math.round(o.p*.85),hi:Math.round(o.p*1.2),s:90,u:"Вы",ct:city,city,dist:.5,dr:0,mine:true,pt:Date.now(),kw:"",d:o.d||"",sp:o.sp&&o.sp.length?o.sp:null,yr:o.yr||0,km:o.km||0,ow:o.ow||0,dkp:o.dkp||null};MY.unshift(id);saveMine();return id}
-function publish(){if(postBad){toast("Такое выставлять нельзя. Выбери другое фото");return}
+ catch(e){if(tok!==aiTok||(e&&e.code=="cancelled"))return;d.classList.remove("go");$("dt").innerHTML="📷 <b>Не удалось распознать</b> — заполни вручную";const a=$("pa");a.style.display="block";a.innerHTML="⚠️ "+esc(aiErr(e))+"<br>Название, категорию и цену можно ввести вручную."}}
+function addMine(o){const id=unid++;UL[id]={id,t:o.t,p:o.p,pp:o.pp||"",ps:o.ps||"",c:o.c,k:[],up:o.up||null,ups:o.ups||null,gn:o.gn||"",st:o.st||"active",em:o.em||((C.find(c=>c[0]==o.c)||[])[2])||"📦",tg:[],pass:o.pass||null,vin:o.vin||"",lo:Math.round(o.p*.85),hi:Math.round(o.p*1.2),s:90,u:"Вы",ct:city,city,dist:.5,dr:0,mine:true,pt:Date.now(),kw:"",d:o.d||"",sp:o.sp&&o.sp.length?o.sp:null,yr:o.yr||0,km:o.km||0,ow:o.ow||0,dkp:o.dkp||null};MY.unshift(id);saveMine();return id}
+function publish(){if(postBad){toast("Такое выставлять нельзя. Удали это фото или выбери другую вещь");return}
  const bad=pfValidate();if(bad.length){const el=$(bad[0]);try{el.scrollIntoView({block:"center",behavior:RMOT.matches?"auto":"smooth"});el.focus({preventScroll:true})}catch(e){}toast(bad.length>1?"Проверь отмеченные поля":($("e-"+bad[0]).textContent||"Проверь поля"));return}
+ const b=$("v6pub");if(b.disabled)return;
  const t=$("pt").value.trim(),p=Math.round(+$("pp").value),c=$("pc").value,d=$("pd").value.trim(),vin=c=="auto"?$("pv").value.trim().toUpperCase():"",sp=[];
  (PF[c]||[]).forEach(f=>{let v=PFV[f.k];if(!v)return;if(f.k=="Пробег")v=(+v).toLocaleString("ru-RU")+" км";if(f.k=="Общая площадь")v=v+" м²";sp.push([f.k,v])});
  const num=k=>+(PFV[k]||0)||0,au=c=="auto";
- const mid=addMine({pp:c=="svc"?"от ":"",ps:c=="realty"&&PFV["Сделка"]=="Аренда"?" в месяц":"",t,p,c,up:upl,pass:passSum(),vin,d,sp,yr:au?num("Год выпуска"):0,km:au?num("Пробег"):0,ow:au?(parseInt(PFV["Владельцев по ПТС"]||"0",10)||0):0,dkp:au&&Object.values(DKV).some(Boolean)?Object.assign({},DKV):null});
- pdPub=true;pdClear();newsAdd(mid,true);cl();srvReset();toast("🎉 Опубликовано бесплатно");confetti();scrollTo({top:$("feed").getBoundingClientRect().top+scrollY-80,behavior:"smooth"})}
-/* ---------- чат ---------- */
+ const o={pp:c=="svc"?"от ":"",ps:c=="realty"&&PFV["Сделка"]=="Аренда"?" в месяц":"",t,p,c,pass:passSum(),vin,d,sp,yr:au?num("Год выпуска"):0,km:au?num("Пробег"):0,ow:au?(parseInt(PFV["Владельцев по ПТС"]||"0",10)||0):0,dkp:au&&Object.values(DKV).some(Boolean)?Object.assign({},DKV):null,gn:au?PGN:"",ups:UPS.length?UPS.slice():null};
+ // автопроверка: в прототипе — короткая пауза; на сайте здесь ответ сервера (в ленту / на проверку / отказ)
+ b.disabled=true;b.textContent="Проверяем объявление…";const eid=PEDIT;
+ (UPS[0]?v6thumb(UPS[0],720):Promise.resolve(null)).then(cv=>setTimeout(()=>{b.disabled=false;o.up=cv;
+  if(eid&&UL[eid]){const i=UL[eid];Object.assign(i,o,{lo:Math.round(p*.85),hi:Math.round(p*1.2),st:"review",et:Date.now()});saveMine();if(o.ups)IDB.set("l"+eid,o.ups);else IDB.del("l"+eid);
+   pdPub=true;cl();myRefresh(eid);toast("Изменения отправлены на проверку");setTimeout(()=>myOpen("review"),380);
+   setTimeout(()=>{const x=UL[eid];if(x&&x.st=="review"){x.st="active";saveMine();myRefresh(eid);toast("✅ Изменения прошли проверку и уже в ленте")}},2600);return}
+  const mid=addMine(o);if(o.ups)IDB.set("l"+mid,o.ups);pdPub=true;pdClear();newsAdd(mid,true);cl();srvReset();toast("🎉 Опубликовано бесплатно");confetti();scrollTo({top:$("feed").getBoundingClientRect().top+scrollY-80,behavior:"smooth"})},700))}
+
+
+/* ---------- v56: до 30 фото, госномер, редактирование ---------- */
+const PH_MAX=30;let UPS=[],PEDIT=null,PGN="",v6dj=-1;
+// фото своих объявлений — в IndexedDB (в localStorage 30 фото не помещаются)
+const IDB=(()=>{let p=null;const db=()=>p||(p=new Promise((ok,no)=>{try{const r=indexedDB.open("vvm",1);r.onupgradeneeded=()=>r.result.createObjectStore("img");r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}catch(e){no(e)}}));
+ const run=(m,f)=>db().then(d=>new Promise((ok,no)=>{const t=d.transaction("img",m),q=f(t.objectStore("img"));t.oncomplete=()=>ok(q.result);t.onerror=()=>no(t.error)}));
+ return{get:k=>run("readonly",s=>s.get(k)).catch(()=>null),set:(k,v)=>run("readwrite",s=>s.put(v,k)).catch(()=>null),del:k=>run("readwrite",s=>s.delete(k)).catch(()=>null)}})();
+MY.forEach(id=>IDB.get("l"+id).then(a=>{if(Array.isArray(a)&&a.length&&UL[id])UL[id].ups=a}));
+function v6load(f){return new Promise(ok=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>ok(im);im.onerror=()=>ok(null);im.src=r.result};r.onerror=()=>ok(null);r.readAsDataURL(f)})}
+function v6canvas(im,max,q){const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);return c.toDataURL("image/jpeg",q)}
+function v6thumb(u,max){return new Promise(ok=>{const im=new Image();im.onload=()=>ok(v6canvas(im,max,.8));im.onerror=()=>ok(u);im.src=u})}
+async function v6add(fs){const free=PH_MAX-UPS.length;if(free<=0){toast("Уже "+PH_MAX+" фото — больше не поместится");return}
+ if(fs.length>free)toast("Добавлю "+free+" из "+fs.length+": в объявлении до "+PH_MAX+" фото");
+ const first=!UPS.length;let small=0,badf=0;
+ for(const f of fs.slice(0,free)){const im=await v6load(f);if(!im){badf++;continue}if(Math.min(im.width,im.height)<200){small++;continue}UPS.push(v6canvas(im,1280,.82))}
+ if(badf)toast(badf==1?"Один файл не открылся — это точно фото?":badf+" файла не открылись — это точно фото?");else if(small)toast("Слишком маленькие фото пропущены: нужно хотя бы 200 × 200 точек");
+ v6draw();pdSave();
+ if(first&&UPS.length&&!PEDIT&&!$("pt").value.trim()){const im=new Image();im.onload=()=>{const c=document.createElement("canvas"),k=Math.min(1,1000/Math.max(im.width,im.height));c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);c.toBlob(bl=>{aiBlob=bl;scanGo()},"image/jpeg",.88)};im.src=UPS[0]}
+ else if(UPS.length&&$("dt").textContent.includes("Нажми"))$("dt").innerHTML="✅ <b>Фото добавлены</b>"}
+function v6draw(){const d=$("drop"),n=UPS.length;upl=UPS[0]||null;d.classList.toggle("hp",n>0);d.style.background="";
+ if(!n&&!d.classList.contains("go"))dtReset();
+ $("v6g").innerHTML=UPS.map((u,j)=>`<div class="v6t${j?"":" cv"}" draggable="true" data-j="${j}" style="background-image:url(${u})">${j?"":'<b class="v6cv">Обложка</b>'}<button type="button" class="v6x" onclick="event.stopPropagation();v6del(${j})" aria-label="Удалить фото ${j+1}"></button><span class="v6mv">${j?`<button type="button" onclick="event.stopPropagation();v6mv(${j},-1)" aria-label="Фото ${j+1} — левее">‹</button>`:""}${j<n-1?`<button type="button" onclick="event.stopPropagation();v6mv(${j},1)" aria-label="Фото ${j+1} — правее">›</button>`:""}</span></div>`).join("")+(n&&n<PH_MAX?`<button type="button" class="v6add" onclick="event.stopPropagation();scanIt()"><b>+</b><span>Ещё фото</span></button>`:"");
+ $("v6n").textContent=n?`${n} из ${PH_MAX} · первое — обложка. ${n>1?"Порядок меняется стрелками или перетаскиванием":"Добавь ещё фото с разных сторон"}`:""}
+function v6del(j){UPS.splice(j,1);if(j==0&&postBad){postBad=false;$("pa").style.display="none"}v6draw();pdSave()}
+function v6mv(j,dx){const k=j+dx;if(k<0||k>=UPS.length)return;[UPS[j],UPS[k]]=[UPS[k],UPS[j]];v6draw();pdSave();const b=$("v6g").children[k]&&$("v6g").children[k].querySelector(dx<0?".v6mv button":".v6mv button:last-child");if(b)b.focus()}
+// перетаскивание мышью на компьютере
+$("v6g").addEventListener("dragstart",e=>{const t=e.target.closest(".v6t");if(!t)return;v6dj=+t.dataset.j;t.classList.add("dg");try{e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",String(v6dj))}catch(x){}});
+$("v6g").addEventListener("dragover",e=>{if(v6dj<0)return;e.preventDefault();const t=e.target.closest(".v6t");document.querySelectorAll(".v6t.ov").forEach(x=>x!==t&&x.classList.remove("ov"));if(t)t.classList.add("ov")});
+$("v6g").addEventListener("drop",e=>{if(v6dj<0)return;e.preventDefault();const t=e.target.closest(".v6t");if(t){const k=+t.dataset.j,[u]=UPS.splice(v6dj,1);UPS.splice(k,0,u);v6dj=-1;v6draw();pdSave()}});
+$("v6g").addEventListener("dragend",()=>{v6dj=-1;document.querySelectorAll(".v6t.dg,.v6t.ov").forEach(x=>x.classList.remove("dg","ov"))});
+// файлы, брошенные на область фото
+$("drop").addEventListener("dragover",e=>{if(v6dj<0&&e.dataTransfer&&[...e.dataTransfer.types].includes("Files")){e.preventDefault();$("drop").classList.add("dz")}});
+$("drop").addEventListener("dragleave",()=>$("drop").classList.remove("dz"));
+$("drop").addEventListener("drop",e=>{$("drop").classList.remove("dz");if(v6dj>=0||!e.dataTransfer||!e.dataTransfer.files.length)return;e.preventDefault();v6add([...e.dataTransfer.files].filter(f=>/^image\//.test(f.type)))});
+
+/* госномер → данные машины. В прототипе — демо-база; на сайте — сервис по договору (см. документ «Автомодерация» и DECISIONS) */
+const PL_L="АВЕКМНОРСТУХ",PL_LAT={A:"А",B:"В",E:"Е",K:"К",M:"М",H:"Н",O:"О",P:"Р",C:"С",T:"Т",Y:"У",X:"Х"};
+const plNorm=s=>String(s||"").toUpperCase().replace(/[ABEKMHOPCTYX]/g,ch=>PL_LAT[ch]).replace(/[\s\-]/g,"");
+const plOk=s=>new RegExp(`^[${PL_L}]\\d{3}[${PL_L}]{2}\\d{2,3}$`).test(s)&&!/^.000/.test(s);
+const plFmt=s=>plOk(s)?s.slice(0,1)+" "+s.slice(1,4)+" "+s.slice(4,6)+" "+s.slice(6):s;
+const PL_DB=[["Lada","Granta","Седан","Бензин","Механика","Передний"],["Lada","Vesta","Седан","Бензин","Механика","Передний"],["Kia","Rio","Седан","Бензин","Автомат","Передний"],["Hyundai","Solaris","Седан","Бензин","Автомат","Передний"],["Toyota","Camry","Седан","Бензин","Автомат","Передний"],["Volkswagen","Polo","Лифтбэк","Бензин","Автомат","Передний"],["Renault","Duster","Внедорожник","Бензин","Механика","Полный"],["Skoda","Octavia","Лифтбэк","Бензин","Робот","Передний"],["Haval","Jolion","Внедорожник","Бензин","Робот","Передний"],["Lada","Niva Legend","Внедорожник","Бензин","Механика","Полный"],["Kia","Sportage","Внедорожник","Дизель","Автомат","Полный"],["Chery","Tiggo 7 Pro","Внедорожник","Бензин","Вариатор","Передний"]];
+const PL_REG={"73":"Ульяновская область","173":"Ульяновская область","63":"Самарская область","163":"Самарская область","763":"Самарская область","16":"Республика Татарстан","116":"Республика Татарстан","716":"Республика Татарстан","77":"Москва","97":"Москва","99":"Москва","177":"Москва","197":"Москва","199":"Москва","777":"Москва","797":"Москва","799":"Москва","64":"Саратовская область","164":"Саратовская область","58":"Пензенская область","13":"Республика Мордовия","113":"Республика Мордовия","21":"Чувашская Республика","121":"Чувашская Республика"};
+function plateH(){return `<div class="v6pl" id="v6pl"><label for="pgn">Госномер <em>по желанию</em></label><div class="v6pr"><input class="in v6pn" id="pgn" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="А 123 ВС 73" value="${esc(plFmt(PGN))}" oninput="plIn(this)" onkeydown="if(event.key=='Enter'){event.preventDefault();plateGo()}"><button type="button" class="btn" id="pgb" onclick="plateGo()">Заполнить</button></div><div class="ferr" id="e-pgn" role="alert"></div><div class="hint2">Подставим марку, модель, год и характеристики. Номер в объявлении никто не увидит.</div><div id="plr"></div></div>`}
+function plIn(el){PGN=plNorm(el.value).slice(0,9);pfErr("pgn","");pdSave()}
+function plateGo(){const g=plNorm($("pgn").value);if(!plOk(g)){pfErr("pgn","Номер в формате А 123 ВС 73: буквы А, В, Е, К, М, Н, О, Р, С, Т, У, Х");$("pgn").focus();return}
+ PGN=g;$("pgn").value=plFmt(g);const b=$("pgb");if(b.disabled)return;b.disabled=true;b.textContent="Ищем…";$("plr").innerHTML='<div class="v6pf on"><span class="v6sp"></span>Ищем машину по номеру…</div>';
+ setTimeout(()=>{b.disabled=false;b.textContent="Заполнить";if(!$("plr"))return;
+  const r=rng(hashS(g)*7+3),m=PL_DB[Math.floor(r()*PL_DB.length)],yr=2008+Math.floor(r()*16),reg=PL_REG[g.slice(6)]||"",
+   vin=Array.from({length:17},()=> "ABCDEFGHJKLMNPRSTUVWXYZ0123456789"[Math.floor(r()*33)]).join("");
+  Object.assign(PFV,{"Марка":m[0],"Модель":m[1],"Год выпуска":String(yr),"Кузов":m[2],"Двигатель":m[3],"КПП":m[4],"Привод":m[5]});
+  if(!$("pt").value.trim())$("pt").value=`${m[0]} ${m[1]}, ${yr}`;if(!$("pv").value.trim())$("pv").value=vin;
+  pfBuild();pdSave();$("plr").innerHTML=`<div class="v6pf"><b>✓ ${esc(m[0]+" "+m[1])}, ${yr}</b><span>${esc([m[2],m[3].toLowerCase(),m[4].toLowerCase(),m[5].toLowerCase()+" привод"].join(" · "))}${reg?" · "+esc(reg):""}</span><small>Проверь и поправь, если что-то не так. Пробег и состояние укажи сам. В прототипе данные демонстрационные.</small></div>`;
+  toast("Данные машины заполнены")},900)}
+
+/* обновить объявление везде, где оно на экране */
+function myRefresh(id){try{if(NW.some(n=>n.id==id))newsDraw()}catch(e){}if($("m20").classList.contains("show"))myDraw()}/* ---------- чат ---------- */
 /* тело чата (сообщения, быстрые ответы, поле ввода) одно и то же: оно живёт в окне объявления или встаёт внутрь окна «Чаты» */
 function chPark(){const v=$("chv"),h=$("chhome");if(v&&h&&v.parentNode!==h)h.appendChild(v)}
 function chFill(){const id=cur.id,o=Math.round(cur.p*.93/100)*100;
@@ -3836,11 +4084,11 @@ function aVerify(){const c=$("acd");
  aCd="";clearTimeout(aTmr);const id="p"+aPh;
  if(users[id]){aLogin(id);return}
  $("aph3").textContent=fmtD(aPh);$("anm").value="";$("acs").checked=false;aShow(3);setTimeout(()=>$("anm").focus({preventScroll:true}),60)}
-function aLogin(id){const u=users[id],p=aProv;if(p){u.ids=Object.assign({},u.ids,{[p]:1});aWrite("vvm_users",users)}aProv=null;aRemember(id);setMe(id);cl();toast((p?"Вход через "+APN[p]+". ":"")+"С возвращением"+(u.n?", "+u.n:"")+" 👋")}
+function aLogin(id){const u=users[id],p=aProv;if(p){u.ids=Object.assign({},u.ids,{[p]:1});aWrite("vvm_users",users)}aProv=null;aRemember(id);setMe(id);cl();toast((p?"Вход через "+APN[p]+". ":"")+"С возвращением"+(u.n?", "+u.n:"")+" 👋");aGo()}
 function aFinish(){if(!$("acs").checked){aErr("Нужно принять условия и согласие на обработку данных",null,"aer3");return}
  const id="p"+aPh;users[id]={n:$("anm").value.trim().slice(0,30),t:Date.now(),ids:aProv?{[aProv]:1}:{}};aProv=null;
  const saved=aWrite("vvm_users",users)&&!!(aRead("vvm_users",{})[id]);aRemember(id);
- setMe(id);cl();toast("🎉 Аккаунт создан. Добро пожаловать в VVM");confetti();regBonus();
+ setMe(id);cl();toast("🎉 Аккаунт создан. Добро пожаловать в VVM");confetti();regBonus();aGo();
  if(!saved||!aPersist())setTimeout(()=>toast(saved?"⚠️ Браузер не хранит данные надолго (приватный режим?). Аккаунт сохранится только до закрытия вкладки":"⚠️ Браузер не даёт сохранить аккаунт. Он будет работать, пока открыта страница"),3600)}
 /* демо входа через сервис: в настоящем VVM откроется окно VK ID / Яндекс ID / Сбер ID, сервис вернёт подтверждённый номер.
    В демо: если на этом устройстве уже входили — входим в тот же аккаунт и привязываем сервис, иначе просим подтвердить номер кодом */
@@ -3852,19 +4100,100 @@ function aRemember(id){aWrite("vvm_last",id)}
 function nameOf(id){const u=users[id];return u&&u.n?u.n:id[0]=="e"?id.slice(1).split("@")[0]:"Пользователь"}
 function mask(id){const v=id.slice(1);if(id[0]=="p")return"+7 ("+v.slice(0,1)+"••) •••-••-"+v.slice(8);const a=v.split("@");return a[0].slice(0,2)+"•••@"+a[1]}
 function setMe(id){me=id;aWrite("vvm_me",id);navUser()}
-function navUser(){const b=$("lg");if(me&&users[me]){b.classList.add("has");b.setAttribute("aria-label","Профиль");b.title="Профиль";b.innerHTML=`<span class="av">${esc(nameOf(me)[0].toUpperCase())}</span><span class="lgt">Профиль</span>`}else{me=null;b.classList.remove("has");b.removeAttribute("aria-label");b.removeAttribute("title");b.textContent="Войти"}}
+function navUser(){const b=$("lg");if(me&&users[me]){b.classList.add("has");b.setAttribute("aria-label","Профиль");b.title="Профиль";b.innerHTML=`${avH(me,"av")}<span class="lgt">Профиль</span>`}else{me=null;b.classList.remove("has");b.removeAttribute("aria-label");b.removeAttribute("title");b.textContent="Войти"}}
 function openAuth(){cl();aProv=null;aCd="";clearTimeout(aTmr);const ph=$("aph");ph.value="";ph.dataset.pd="";$("acd").value="";$("anm").value="";$("acs").checked=false;
  aTab(0);const id=aRead("vvm_last",null);if(typeof id=="string"&&id[0]=="p"&&users[id]){const d=id.slice(1);ph.value=fmtD(d);ph.dataset.pd=d.length}
  $("m6").classList.add("show");setTimeout(()=>ph.focus({preventScroll:true}),350)}
-function profile(){me&&users[me]?openProfile():openAuth()}
-function openProfile(){if(!me||!users[me]){openAuth();return}const n=nameOf(me),ws=INT.filter(t=>(W[t[0]]||0)>=3);
- $("s9").innerHTML=`<button class="x" onclick="cl()" aria-label="Закрыть">✕</button><div class="pf"><div class="av2">${esc(n[0].toUpperCase())}</div><div><b>${esc(n)}</b><span>${mask(me)}${(()=>{const u=users[me],l=Object.keys(u.ids||{}).filter(k=>APN[k]).map(k=>APN[k]);return l.length?" · "+l.join(", "):""})()}</span></div></div>
-<div class="tiles"><button class="tile fvt" onclick="cl();setTimeout(favOpen,380)"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></i>Избранное</button><button class="tile" onclick="themeCycle()"><i>🌓</i>Тема: <span id="thl">${THN[window.vvmThemePref?vvmThemePref():"auto"]}</span></button><button class="tile" onclick="cl();setTimeout(myOpen,380)"><i>🗂️</i>Мои объявления${MY.length?" · "+MY.length:""}</button><button class="tile" onclick="openLedger()"><i>📒</i>Мои продажи</button><button class="tile" onclick="openWorth()"><i>💰</i>Оценить вещи</button><button class="tile" onclick="openCity()"><i>📍</i>${esc(city)}</button><button class="tile" onclick="cl();window.scrollTo({top:$('dl').offsetTop-140,behavior:'smooth'})"><i>💎</i>Бонусы · ${BON.toLocaleString("ru-RU")}</button><button class="tile" onclick="cl();window.scrollTo({top:$('cps').offsetTop-120,behavior:'smooth'})"><i>🎟</i>Купоны · ${(CPN.ship?1:0)+1}</button></div>
+let aNext=null;
+function aGo(){if(aNext){const f=aNext;aNext=null;setTimeout(f,450)}}
+function profile(){aNext=null;me&&users[me]?openProfile():openAuth()}
+/* ---------- v56: профиль с аватаркой и шестерёнкой, настройки ---------- */
+const GEAR='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',CAMI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
+const SETD={nMsg:1,nOffer:1,nPrice:1,nSub:1,nNews:0,mail:0,online:1,calls:1};
+const setOf=()=>Object.assign({},SETD,(users[me]&&users[me].set)||{});
+function avH(id,cls){const u=users[id];return u&&u.av?`<span class="${cls} v6img" style="background-image:url(${u.av})" aria-hidden="true"></span>`:`<span class="${cls}" aria-hidden="true">${esc(nameOf(id)[0].toUpperCase())}</span>`}
+function uSave(){aWrite("vvm_users",users)}
+function openProfile(){if(!me||!users[me]){openAuth();return}const u=users[me],n=nameOf(me),ws=INT.filter(t=>(W[t[0]]||0)>=3),act=MY.filter(id=>UL[id]&&(UL[id].st||"active")=="active").length,
+ since=(d=>["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"][d.getMonth()]+" "+d.getFullYear()+" года")(new Date(u.t||Date.now())),ids=Object.keys(u.ids||{}).filter(k=>APN[k]).map(k=>APN[k]);
+ $("s9").innerHTML=`<div class="v6phd"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><button type="button" class="v6gear" onclick="openSettings()" aria-label="Настройки" title="Настройки">${GEAR}</button></div>
+<div class="pf v6pfh"><button type="button" class="v6avb" onclick="avPick()" aria-label="Сменить фото профиля" title="Сменить фото">${avH(me,"av2")}<i>${CAMI}</i></button><div><b>${esc(n)}</b><span>${mask(me)}${ids.length?" · "+ids.join(", "):""}</span><span>На VVM с ${since}</span></div></div>
+<div class="tiles"><button class="tile" onclick="myOpen()"><i>🗂️</i>Мои объявления${act?" · "+act:""}</button><button class="tile fvt" onclick="cl();setTimeout(favOpen,380)"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></i>Избранное</button><button class="tile" onclick="openLedger()"><i>📒</i>Мои продажи</button><button class="tile" onclick="openWorth()"><i>💰</i>Оценить вещи</button><button class="tile" onclick="openCity()"><i>📍</i>${esc(city)}</button><button class="tile" onclick="cl();window.scrollTo({top:$('dl').offsetTop-140,behavior:'smooth'})"><i>💎</i>Бонусы · ${BON.toLocaleString("ru-RU")}</button><button class="tile" onclick="openSettings()"><i class="v6ti">${GEAR}</i>Настройки</button><button class="tile" onclick="themeCycle()"><i>🌓</i>Тема: <span id="thl">${THN[window.vvmThemePref?vvmThemePref():"auto"]}</span></button></div>
 <div class="box"><b>🎯 Мои интересы</b><div class="qr" style="margin:10px 0 0">${ws.length?ws.map(t=>`<span class="chip on">${t[1]} ${t[2]}</span>`).join(""):'<span style="color:var(--mu)">Пока пусто. Выбери на главной.</span>'}</div></div>
 <div class="acts"><button class="btn ghost" onclick="resetInt()">Сбросить интересы</button><button class="btn ghost" onclick="logout()">Выйти</button></div>
 <div class="fine">VVM · прототип интерфейса · данные демонстрационные</div>`;$("m9").classList.add("show")}
+/* аватарка: квадрат по центру, 320 × 320 */
+function avPick(){$("avf").click()}
+$("avf").addEventListener("change",e=>{const f=e.target.files[0];e.target.value="";if(!f||!me||!users[me])return;v6load(f).then(im=>{if(!im){toast("Не получилось открыть фото");return}
+ const s=Math.min(im.width,im.height),c=document.createElement("canvas");c.width=c.height=320;c.getContext("2d").drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,320,320);
+ users[me].av=c.toDataURL("image/jpeg",.85);uSave();navUser();if($("m9").classList.contains("show"))openProfile();if($("m23").classList.contains("show"))setDraw();toast("Фото профиля обновлено")})});
+function avDel(){if(!users[me])return;delete users[me].av;uSave();navUser();setDraw();toast("Фото профиля удалено")}
+/* настройки */
+function back23(){$("m23").classList.remove("show");setTimeout(()=>{if(me&&users[me]&&!document.querySelector(".mod.show"))openProfile()},300)}
+function openSettings(){if(!me||!users[me]){openAuth();return}cl();setDraw();$("m23").classList.add("show");const sh=$("s23");void sh.offsetHeight;sh.scrollTop=0}
+const swH=(k,on,lab,sub)=>`<div class="v6row"><div><b id="sl-${k}">${lab}</b>${sub?`<small>${sub}</small>`:""}</div><button type="button" class="v6sw" role="switch" aria-checked="${!!on}" aria-labelledby="sl-${k}" onclick="setT('${k}',this)"><i></i></button></div>`;
+const rowB=(lab,val,fn,sub)=>`<button type="button" class="v6row v6go" onclick="${fn}"><div><b>${lab}</b>${sub?`<small>${sub}</small>`:""}</div><span>${val||""}</span></button>`;
+function setDraw(){const u=users[me],st=setOf(),ids=u.ids||{},th=window.vvmThemePref?vvmThemePref():"auto",bl=u.bl||[];
+ $("s23").innerHTML=`<div class="tbar"><button class="x" onclick="back23()" aria-label="Назад к профилю">✕</button><h2>Настройки</h2></div>
+<section class="v6sec"><h3>Профиль</h3>
+<div class="v6row"><div class="v6avr">${avH(me,"av2")}<div><b>Фото профиля</b><small>Видно покупателям и продавцам в чате</small></div></div><div class="v6bt"><button type="button" class="chip" onclick="avPick()">${u.av?"Сменить":"Загрузить"}</button>${u.av?`<button type="button" class="chip dg" onclick="avDel()">Удалить</button>`:""}</div></div>
+<div class="v6row v6col"><label for="stn"><b>Имя</b><small>Так тебя видят в объявлениях и чатах</small></label><div class="v6in"><input class="in" id="stn" maxlength="30" autocomplete="name" value="${esc(u.n||"")}" placeholder="Например, Вова"><button type="button" class="btn" onclick="setName()">Сохранить</button></div><div class="ferr" id="e-stn" role="alert"></div></div>
+${rowB("Город",esc(city),"openCity()","Для ленты «Рядом» и новых объявлений")}
+</section>
+<section class="v6sec"><h3>Вход и безопасность</h3>
+${rowB("Телефон",mask(me),"setPhone()","Вход по коду. Номер не видит никто, кроме тебя")}
+<div id="stph"></div>
+${Object.keys(APN).map(k=>`<div class="v6row"><div><b>${APN[k]}</b><small>${ids[k]?"Привязан — можно входить в одно нажатие":"Не привязан"}</small></div><button type="button" class="chip${ids[k]?" dg":""}" onclick="setId('${k}')">${ids[k]?"Отвязать":"Привязать"}</button></div>`).join("")}
+<div class="v6row"><div><b>Где выполнен вход</b><small>Этот браузер · сейчас</small></div><button type="button" class="chip dg" onclick="setAll(this)">Выйти на всех</button></div>
+</section>
+<section class="v6sec"><h3>Уведомления</h3>
+${swH("nMsg",st.nMsg,"Сообщения в чатах","Новые сообщения от покупателей и продавцов")}
+${swH("nOffer",st.nOffer,"Предложения цены","Новые предложения и ответы на твои")}
+${swH("nPrice",st.nPrice,"Снижение цены в избранном","Когда сохранённая вещь подешевела")}
+${swH("nSub",st.nSub,"Новые по подпискам","Подходящие объявления по сохранённым поискам")}
+${swH("nNews",st.nNews,"Новости и советы VVM","Не чаще раза в неделю")}
+${swH("mail",st.mail,"Дублировать на почту",st.mail&&u.em?esc(u.em):"Почта — только для уведомлений, входа по ней нет")}
+${st.mail?`<div class="v6row v6col"><label for="stm"><b>Почта для уведомлений</b></label><div class="v6in"><input class="in" id="stm" type="email" inputmode="email" autocomplete="email" value="${esc(u.em||"")}" placeholder="name@example.ru"><button type="button" class="btn" onclick="setMail()">Сохранить</button></div><div class="ferr" id="e-stm" role="alert"></div></div>`:""}
+</section>
+<section class="v6sec"><h3>Приватность</h3>
+${swH("online",st.online,"Показывать, что я в сети","Иначе другие не увидят «в сети» и время последнего визита")}
+${swH("calls",st.calls,"Звонки через VVM","Покупатель звонит на подменный номер — твой настоящий скрыт")}
+<div class="v6row v6col"><div><b>Чёрный список</b><small>${bl.length?"Эти люди не могут тебе писать":"Пусто. Заблокировать можно в чате: «⋯» → «Заблокировать»"}</small></div>${bl.length?`<div class="v6bl2">${bl.map((x,j)=>`<span class="chip">${esc(x)} <button type="button" onclick="setUnblock(${j})" aria-label="Разблокировать ${esc(x)}">✕</button></span>`).join("")}</div>`:""}</div>
+</section>
+<section class="v6sec"><h3>Оформление</h3>
+<div class="v6row"><div><b>Тема</b><small>Авто — как на устройстве</small></div><div class="v6seg" role="radiogroup" aria-label="Тема">${[["auto","Авто"],["light","Светлая"],["dark","Тёмная"]].map(([k,n])=>`<button type="button" role="radio" aria-checked="${th==k}" class="${th==k?"on":""}" onclick="setTheme('${k}')">${n}</button>`).join("")}</div></div>
+</section>
+<section class="v6sec"><h3>Помощь и документы</h3>
+${rowB("Поддержка","@vvm_support","setSupport()","Ответим в Telegram")}
+${rowB("Правила размещения","скоро","toast('Правила размещения скоро будут опубликованы')")}
+${rowB("Политика конфиденциальности","скоро","toast('Политика конфиденциальности скоро будет опубликована')")}
+${rowB("Пользовательское соглашение","скоро","toast('Соглашение скоро будет опубликовано')")}
+<div class="v6row"><div><b>Версия</b><small>Прототип интерфейса</small></div><span class="v6mu">v56</span></div>
+</section>
+<section class="v6sec"><h3>Аккаунт</h3>
+${rowB("Мои данные","запросить","setData()","Пришлём, какие данные о тебе хранит VVM")}
+<div class="v6row"><div><b>Удалить аккаунт</b><small>Объявления скроются сразу. Передумаешь в течение 30 дней — просто войди по номеру</small></div><button type="button" class="chip dg" onclick="setDelete(this)">Удалить</button></div>
+<div class="acts"><button class="btn ghost" onclick="logout()">Выйти</button></div>
+</section>`}
+function setT(k,b){const u=users[me];u.set=Object.assign({},u.set||{},{[k]:setOf()[k]?0:1});uSave();if(k=="mail"){setDraw();return}b.setAttribute("aria-checked",String(!!u.set[k]))}
+function setName(){const v=$("stn").value.replace(/\s+/g," ").trim().slice(0,30);if(v.length<2){pfErr("stn","Имя — хотя бы 2 буквы");return}pfErr("stn","");users[me].n=v;uSave();navUser();toast("Имя сохранено")}
+function setMail(){const v=$("stm").value.trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){pfErr("stm","Проверь адрес почты");return}pfErr("stm","");users[me].em=v;uSave();setDraw();toast("Почта сохранена. На сайте пришлём письмо для подтверждения")}
+function setId(k){const u=users[me];u.ids=Object.assign({},u.ids||{});if(u.ids[k])delete u.ids[k];else u.ids[k]=1;uSave();setDraw();toast(u.ids[k]?APN[k]+" привязан":APN[k]+" отвязан. Входить по номеру можно как раньше")}
+function setTheme(k){if(window.vvmTheme)vvmTheme(k);setDraw();const l=$("thl");if(l)l.textContent=THN[k]}
+function setUnblock(j){const u=users[me];(u.bl=u.bl||[]).splice(j,1);uSave();setDraw();toast("Разблокировано")}
+function setAll(b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent="Точно выйти везде?";setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="Выйти на всех"}},3200);return}logout();toast("Вы вышли на всех устройствах")}
+function setSupport(){try{navigator.clipboard.writeText("@vvm_support").then(()=>toast("Скопировано: @vvm_support"),()=>toast("Поддержка в Telegram: @vvm_support"))}catch(e){toast("Поддержка в Telegram: @vvm_support")}}
+function setData(){toast("Запрос принят: пришлём выгрузку данных (по закону — в течение 30 дней). В прототипе это демонстрация")}
+function setDelete(b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent="Точно удалить?";setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="Удалить"}},3200);return}
+ MY.forEach(id=>{const i=UL[id];if(i&&(i.st||"active")=="active"){i.st="archived";i.ad=Date.now();myOff(id)}});saveMine();
+ const id=me;delete users[id];uSave();aWrite("vvm_last",null);logout();toast("Аккаунт удалён. Объявления скрыты")}
+/* смена номера: новый номер → код (в демо показываем его на экране) → готово */
+let SPH=null;
+function setPhone(){SPH={st:0};$("stph").innerHTML=`<div class="v6row v6col"><label for="spn"><b>Новый номер</b><small>Пришлём код. Старый номер перестанет работать для входа</small></label><div class="v6in"><input class="in" id="spn" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 123-45-67" maxlength="18"><button type="button" class="btn" onclick="setPhone2()">Получить код</button></div><div class="ferr" id="e-spn" role="alert"></div></div>`;setTimeout(()=>{const e=$("spn");if(e)e.focus()},60)}
+function setPhone2(){const d=$("spn").value.replace(/\D/g,"").replace(/^[78](?=\d{10}$)/,"");if(!/^9\d{9}$/.test(d)){pfErr("spn","Мобильный номер: +7 (9XX) XXX-XX-XX");return}if("p"+d==me){pfErr("spn","Это и есть твой текущий номер");return}if(users["p"+d]){pfErr("spn","Этот номер уже занят другим аккаунтом");return}
+ const code=String(1000+Math.floor(Math.random()*9000));SPH={d,code};$("stph").innerHTML=`<div class="v6row v6col"><label for="spc"><b>Код из SMS</b><small>Отправили на +7 ${d.slice(0,3)} ${d.slice(3,6)}-${d.slice(6,8)}-${d.slice(8)}. В демо код: <b>${code}</b></small></label><div class="v6in"><input class="in" id="spc" inputmode="numeric" autocomplete="one-time-code" maxlength="4" placeholder="••••"><button type="button" class="btn" onclick="setPhone3()">Подтвердить</button></div><div class="ferr" id="e-spc" role="alert"></div></div>`;setTimeout(()=>{const e=$("spc");if(e)e.focus()},60)}
+function setPhone3(){if(!SPH||$("spc").value.trim()!==SPH.code){pfErr("spc","Неверный код");return}const nid="p"+SPH.d;users[nid]=users[me];delete users[me];uSave();aRemember(nid);setMe(nid);SPH=null;setDraw();toast("Номер изменён")}
 function resetInt(){W={};saveW();cl();ints();refreshTop();resetFeed();toast("Интересы сброшены")}
-function logout(){me=null;aWrite("vvm_me",null);navUser();cpsDraw();cl();toast("Вы вышли из аккаунта")}
+function logout(){me=null;aNext=null;aWrite("vvm_me",null);navUser();cpsDraw();cl();toast("Вы вышли из аккаунта")}
 /* ---------- оценка вещей ---------- */
 const WB={auto:[150000,800000,"Транспорт"],hobby:[500,5000,"Хобби и подарки"],parts:[4000,20000,"Запчасти и шины"],fash:[1500,9000,"Одежда"],tech:[5000,60000,"Техника"],home:[3000,25000,"Мебель"],sport:[2000,30000,"Спорт и хобби"],other:[500,5000,"Вещь"]};
 const WC=[["Новое",1],["Хорошее",.75],["Б/у",.5],["На запчасти",.25]];
